@@ -52,6 +52,7 @@ function ProjectSection() {
         <section id ="projects">
             <Container className = "h-100">
                 <SectionHeader  text="Projects"/>
+                
 
                 {projects.map((proj, index)=>
                     <ProjectCard proj={proj} side={index%2}/>

@@ -4,16 +4,19 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
+import Fade from 'react-reveal/Fade';
 
 function ProjectDescription({ description, side }) {
     return (
-        <ul className={side === 0 ? "project-description-left" : "project-description-right"}>
-            {description.map((line, index) =>
-                <li className="project-description-text">
-                    {line}
-                </li>
-            )}
-        </ul>
+        <div className="project-description">
+            <ul className={side === 0 ? "project-description-left" : "project-description-right"}>
+                {description.map((line, index) =>
+                    <li className="project-description-text">
+                        {line}
+                    </li>
+                )}
+            </ul>
+        </div>
     );
 }
 
@@ -31,16 +34,21 @@ function ProjectCard({ proj, side }) {
 
         <Container className="project-card w-100">
             {side === 0 ? (
-                <Row>
-                    <Col><ProjectDescription description={proj.description} side={side} /></Col>
-                    <Col className = "text-center"><ProjectImage img={proj.img} /></Col>
-                </Row>
+                <Fade left>
+                    <Row>
+                        <Col className="description-col"><ProjectDescription description={proj.description} side={side} /></Col>
+                        <Col className="text-center "><ProjectImage img={proj.img} /></Col>
+                    </Row>
+                </Fade>
+
             ) :
                 (
-                    <Row>
-                        <Col className = "text-center"><ProjectImage img={proj.img} /></Col>
-                        <Col><ProjectDescription description={proj.description} side={side} /></Col>
-                    </Row>
+                    <Fade right>
+                        <Row>
+                            <Col className="text-center"><ProjectImage img={proj.img} /></Col>
+                            <Col className="description-col"><ProjectDescription description={proj.description} side={side} /></Col>
+                        </Row>
+                    </Fade>
                 )
 
 

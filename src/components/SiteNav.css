@@ -1,3 +1,7 @@
 .site-nav{
     background-color: transparent;
 }
+
+.btn .btn-outline-light:hover{
+    background-color: transparent!important;
+}

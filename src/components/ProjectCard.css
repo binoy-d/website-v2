@@ -9,7 +9,6 @@ ul{
 
 
 .project-description-left{
-    
     text-align:left;
 }
 
@@ -23,15 +22,31 @@ ul{
 
 
 .project-card{
-    margin-top:1em;
-    margin-bottom:1em;
-    padding-top:1em;
-    padding-bottom:1em;
-    border: 1px solid white;
+    margin-top:2em;
+    margin-bottom:2em;
+    padding-top:2em;
+    padding-bottom:2em;
     border-radius: 0.25em;
 }
 
 
 .project-image{
-    width: 20em;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.project-description{
+    background-color: #2f3b54;
+    padding:2em;
+    width:40em;
+    vertical-align: middle;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.description-col{
+    display: flex;
+    
+    align-items: center;
 }

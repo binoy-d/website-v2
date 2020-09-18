@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Container from 'react-bootstrap/Container'
 import SiteNav from './components/SiteNav'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AboutSection from './components/AboutSection';
@@ -10,11 +9,9 @@ function App() {
   return (
     <>
     <SiteNav></SiteNav>
-    <Container>
       <LandingSection />
       <AboutSection />
       <ProjectSection />
-    </Container>
     </>
 
   );
