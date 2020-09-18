@@ -1,0 +1,17 @@
+.masthead-profile{
+    width:10em;
+    margin-top:25vh;
+}
+img{
+    vertical-align: middle;
+    border-style: none;
+}
+
+#home{
+    height:80vh;
+}
+
+#name-header{
+    color:white;
+    font-size: 5em;
+}
