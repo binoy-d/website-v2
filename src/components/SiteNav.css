@@ -1,9 +1,16 @@
 .site-nav{
     background-color: transparent;
+    position: fixed!important;
+    right:1em;
 }
 
 .btn .btn-outline-light:hover{
+    
     background-color: transparent!important;
 }
 
 
+.resume-btn{
+    margin-left:1.5em;
+    background-color: transparent!important;
+}

@@ -6,7 +6,7 @@
 }
 
 #name-header{
-    color:#d7dce2;
+    color:#EFF1F3;
     
     font-size: 5em;
     transition: font-size 0.2s;
@@ -19,7 +19,7 @@
 
 }
 #landing-tagline{
-    color:#a2aabc
+    color:#EFF1F3
 }
 
 .landing-stuff{
@@ -31,11 +31,3 @@
 }
 
 
-.proj-title-left{
-    color: #ef6b73;
-    text-align: left;
-}
-.proj-title-right{
-    color: #ef6b73;
-    text-align:right;
-}

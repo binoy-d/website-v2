@@ -18,7 +18,7 @@ ul{
 }
 
 .project-description-text{
-    color:white;
+    color:EFF1F3;
 }
 
 
@@ -51,6 +51,8 @@ ul{
 
 .project-description{
     background-color: #2f3b54;
+    margin:auto;
+    color:#EFF1F3;
     position:relative;
     padding:2em;
     width:35vw;
@@ -75,4 +77,39 @@ ul{
     margin-right:0.25em;
     background-color: #1d2433;
     padding:0.5em;
+}
+
+.project-card-mobile{
+    max-width:100%;
+}
+
+.project-card-mobile img{
+    max-width:100%;
+}
+
+.proj-title-mobile{
+    color: #EFF1F3;
+    font-size:2em;
+    margin-bottom:0.5em;
+    text-align:center;
+}
+
+.project-description-mobile{
+    margin-top:1em;
+}
+
+.proj-title-left{
+    color: #EFF1F3;
+    text-align: left;
+}
+.proj-title-right{
+    color: #EFF1F3;
+    text-align:right;
+}
+
+.desc-right{
+    height:100%;
+}
+.desc-left{
+    height:100%;
 }

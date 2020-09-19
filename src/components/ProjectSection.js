@@ -25,8 +25,8 @@ function ProjectSection() {
           title: 'Bubbles, Together',
           description: ['Website allowing users to concurrently draw with bubbles',
                         'Particle effects and graphics done with p5.js',
-                        'Backend written in NodeJS using SocketIO'],
-          languages: ['p5.js', 'Node', 'JavaScript', 'SocketIO'],
+                        'Backend written in NodeJS using SocketIO, hosted on Heroku'],
+          languages: ['p5.js', 'Node', 'JavaScript', 'SocketIO', 'Heroku'],
           link: "https://bubbles-together.herokuapp.com/",
           img: BubblesTogetherImg
         },
@@ -70,15 +70,16 @@ function ProjectSection() {
 
     return (
         <section id ="projects">
-            <Container className = "h-100">
-                <SectionHeader  text="Projects"/>
+          <div class="projects-stuff">
+          <SectionHeader  text="Projects"/>
+            <Container>
                 
-
                 {projects.map((proj, index)=>
                     <ProjectCard proj={proj} side={index%2}/>
                 )}
 
             </Container>
+            </div>
         </section>
     );
 }

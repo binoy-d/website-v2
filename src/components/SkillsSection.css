@@ -1,0 +1,48 @@
+#skills{
+    background-color:  transparent;
+    margin-top: 2em;
+    margin-bottom:2em;
+    border-radius:0.5em;
+}
+
+
+.projects-button{
+    margin-top: 5em;
+    margin-bottom:5em;
+
+}
+
+.skills-stuff{
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, 0%);
+}
+
+.other-skill{
+    margin-top:1em;
+    width:90%;
+    color:white;
+    /*border: 1px solid white;*/
+    padding:1em;
+    border-radius: 0.25em;
+}
+
+.main-skill{
+    font-size: 2em;
+    font-weight: 600;
+    
+    color:white;
+    /*border: 1px solid white;*/
+    
+    
+}
+
+.main-skill-wrapper{
+    position: relative;
+    left:50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.4em;
+    padding:1em;
+}

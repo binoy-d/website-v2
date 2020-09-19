@@ -9,18 +9,16 @@ import Fade from 'react-reveal/Fade'
 function SiteNav() {
     return (
         <Fade top>
+            <Navbar collapseOnSelect expand="lg" className="site-nav" variant="dark">
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse className="justify-content-end">
+                    <NavLink text="About" destination="about"></NavLink>
+                    <NavLink text="Skills" destination="skills"></NavLink>
+                    <NavLink text="Projects" destination="projects"></NavLink>
+                    <Navbar.Text><a href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/16Wg_20VOGJKFWW39OyZLx-RnD5bGEbWOpJPwh8O4wZo/export?format=pdf" className="btn btn-outline-light resume-btn">Resume</a></Navbar.Text>
+                </Navbar.Collapse>
 
-        
-        <Navbar collapseOnSelect expand="lg" className="site-nav" variant="dark">
-            <Navbar.Brand href="#home"><NavLink text="Binoy" destination="home"></NavLink></Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse className="justify-content-end">
-                <NavLink text="About" destination="about"></NavLink>
-                <NavLink text="Projects" destination="projects"></NavLink>
-                <Navbar.Text><a href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/16Wg_20VOGJKFWW39OyZLx-RnD5bGEbWOpJPwh8O4wZo/export?format=pdf" className = "btn btn-outline-light">Resume</a></Navbar.Text>
-            </Navbar.Collapse>
-
-        </Navbar>
+            </Navbar>
         </Fade>
 
     );

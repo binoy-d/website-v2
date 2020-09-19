@@ -1,6 +1,14 @@
 #projects{
     background-color:  transparent;
-    margin:2em;
+    margin-top: 2em;
+    margin-bottom:7em;
     border-radius:0.5em;
-    padding-bottom:4em;
+}
+
+.projects-stuff{
+    position: relative;
+    left:50%;
+    top:25%;
+    transform: translate(-50%, 0%);
+
 }
