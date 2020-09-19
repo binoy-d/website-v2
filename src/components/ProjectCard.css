@@ -34,8 +34,9 @@ ul{
 .project-image{
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: transform .2s; /* Animation */
-    
+    transition: transform 0.3s;
+    transition-timing-function: ease-out;
+    border-radius: 0.4em;
     z-index:-1;
 
 }
@@ -43,7 +44,8 @@ ul{
 .project-image:hover{
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transform:scale(1.1)
+    transform:scale(1.1);
+    
     
 }
 
@@ -55,6 +57,7 @@ ul{
     vertical-align: middle;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-decoration: none;
+    border-radius: 0.4em;
     position:relative;
     z-index:2;
 }
@@ -68,6 +71,8 @@ ul{
 
 .proj-tag{
     margin-left:0.25em;
+    margin-top:0.5em;
     margin-right:0.25em;
     background-color: #1d2433;
+    padding:0.5em;
 }

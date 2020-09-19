@@ -9,10 +9,15 @@
     color:#d7dce2;
     
     font-size: 5em;
+    transition: font-size 0.2s;
+    transition-timing-function: ease-out;
     text-shadow: 3px 3px 6px #000000;
 
 }
+#name-header:hover{
+    font-size:6em;
 
+}
 #landing-tagline{
     color:#a2aabc
 }

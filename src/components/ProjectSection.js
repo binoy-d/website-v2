@@ -7,44 +7,64 @@ import {BubblifyImg,
     PuzzleGameImg,
     BubblesTogetherImg,
     ColorGameImg,
-    TodoListImg} from '../img'
+    TodoListImg,
+    WebsiteImg} from '../img'
 
 function ProjectSection() {
     const projects = [
         {
+          title: 'This Website!',
+          description: ['Responsive personal portfolio website', 
+                        'Features smooth animations encouraging interaction',
+                        'Currently under development ;)'],
+          languages: ['ReactJS', 'Bootstrap', 'HTML', 'CSS', 'JavaScript'],
+          link: "https://bubbles-together.herokuapp.com/",
+          img: WebsiteImg
+        },
+        {
           title: 'Bubbles, Together',
-          description: ['this is a very cool project I made', 'I sure loved making this project', '10/10 would make again'],
-          languages: ['HTML', 'CSS', 'React', 'JavaScript'],
-          link: "https://binoy.co",
+          description: ['Website allowing users to concurrently draw with bubbles',
+                        'Particle effects and graphics done with p5.js',
+                        'Backend written in NodeJS using SocketIO'],
+          languages: ['p5.js', 'Node', 'JavaScript', 'SocketIO'],
+          link: "https://bubbles-together.herokuapp.com/",
           img: BubblesTogetherImg
         },
         {
           title: 'Color Game',
-          description: ['this is a very cool project I made', 'I sure loved making this project', '10/10 would make again'],
-          languages: ['HTML', 'CSS', 'React', 'JavaScript'],
-          link: "https://binoy.co",
+          description: ['Color guessing game to help developers and designers',
+                        'Given an rgb value, players guess which color is represented',
+                        'Bootstrap for responsive layout, with smooth fades in CSS'],
+          languages: ['Bootstrap', 'CSS', 'JavaScript'],
+          link: "https://binoy-d.github.io/color-game/",
           img: ColorGameImg
         },
         {
-          title: 'To Do List',
-          description: ['this is a very cool project I made', 'I sure loved making this project', '10/10 would make again'],
-          languages: ['HTML', 'CSS', 'React', 'JavaScript'],
-          link: "https://binoy.co",
-          img: TodoListImg
-        },
-        {
           title: 'Puzzle Game',
-          description: ['this is a very cool project I made', 'I sure loved making this project', '10/10 would make again'],
-          languages: ['HTML', 'CSS', 'React', 'JavaScript'],
-          link: "https://binoy.co",
+          description: ['Turn based game where moving one character moves the other as well',
+                        'Written purely with Java and standard libraries',
+                        'Reads custom map files as matrix of tiles'],
+          languages: ['Java', 'Graphics2D'],
+          link: "https://github.com/binoy-d/2p1p-puzzle-game",
           img: PuzzleGameImg
         },
         {
           title: 'Bubblify',
-          description: ['this is a very cool project I made', 'I sure loved making this project', '10/10 would make again'],
-          languages: ['HTML', 'CSS', 'React', 'JavaScript'],
-          link: "https://binoy.co",
+          description: ['Recreates any online image out of bubbles',
+                        'Visualization done with p5.js',
+                        'Bubblified images can be downloaded'],
+          languages: ['p5.js', 'HTML', 'CSS', 'JavaScript'],
+          link: "https://www.binoy.co/pages/bubblify.html",
           img: BubblifyImg
+        },
+        {
+          title: 'To Do List',
+          description: ['To Do List app with simple and clean interfacve',
+                        'Easily add to-do items, cross off, delete, and create multiple lists',
+                        'Bootstrap for layout, JavaScript with jQuery for handling data'],
+          languages: ['jQuery', 'JavaScript', 'Bootstrap', 'CSS', 'HTML'],
+          link: "https://binoy-d.github.io/to-do-app/",
+          img: TodoListImg
         }
       ]
 
