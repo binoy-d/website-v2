@@ -8,7 +8,7 @@ import Fade from 'react-reveal/Fade';
 import Badge from 'react-bootstrap/Badge'
 
 
-function ProjectLanguageTags({ languages }) {
+function ProjectLanguageTags({languages}) {
     return (
         <span className="project-tags">
             {languages.map((lang, index) =>
@@ -18,19 +18,19 @@ function ProjectLanguageTags({ languages }) {
     );
 }
 
-function ProjectDescription({ title, languages, description, side }) {
+function ProjectDescription({proj, side} ) {
     return (
         <div className={"desc-" + (side === 0 ? "left" : "right")}>
-            <h2 className={"proj-title-" + (side === 0 ? "left" : "right")}>{title}</h2>
+            <h2 className={"proj-title-" + (side === 0 ? "left" : "right")}>{proj.title}</h2>
             <div className="project-description">
                 <ul className={side === 0 ? "project-description-left" : "project-description-right"}>
-                    {description.map((line, index) =>
+                    {proj.description.map((line, index) =>
                         <li className="project-description-text">
                             {line}
                         </li>
                     )}
                     <li>
-                        <ProjectLanguageTags languages={languages} />
+                        <ProjectLanguageTags languages={proj.languages} />
                     </li>
                 </ul>
             </div>
@@ -39,46 +39,61 @@ function ProjectDescription({ title, languages, description, side }) {
 }
 
 
-function ProjectImage({ img, side }) {
+function ProjectImage({proj}) {
     return (
-        <Image className="project-image" src={img}></Image>
+        <a href={proj.link}>
+            <Image className="project-image" src={proj.img}></Image>
+        </a>
+    );
+}
+
+
+function ProjectCardLeftDesktop({proj}) {
+    return (
+        <Fade left>
+            <Row>
+                <Col className="description-col">
+                    <ProjectDescription className="desc-left" proj={proj} side={0}/>
+                </Col>
+                <Col className="text-center ">
+                    <ProjectImage proj={proj}/>
+                </Col>
+            </Row>
+        </Fade>
+    );
+}
+
+
+
+function ProjectCardRightDesktop({proj}){
+    return (
+        <Fade right>
+            <Row>
+                <Col className="text-center">
+                    <ProjectImage proj={proj}/>
+                </Col>
+                <Col className="description-col">
+                    <ProjectDescription className="desc-right" proj={proj} side={1}/>
+                </Col>
+            </Row>
+        </Fade>
     );
 }
 
 function ProjectCard({ proj, side }) {
     return (
         <Container className="project-card w-100">
-            {side === 0 ? (
-                <Fade left>
-                    <Row>
-                        <Col className="description-col">
-                            <ProjectDescription className="desc-left" languages={proj.languages} description={proj.description} side={side} title={proj.title} />
-                        </Col>
-                        <Col className="text-center ">
-                            <ProjectImage img={proj.img} />
-                        </Col>
-                    </Row>
-                </Fade>
-
-            ) :
-                (
-                    <Fade right>
-                        <Row>
-                            <Col className="text-center">
-                                <ProjectImage img={proj.img} />
-                            </Col>
-                            <Col className="description-col">
-                                <ProjectDescription className="desc-right" languages={proj.languages} description={proj.description} side={side} title={proj.title} />
-                            </Col>
-                        </Row>
-                    </Fade>
-                )
-
-            }
-
-
+            {side === 0 ?
+            <ProjectCardLeftDesktop proj={proj}/>:
+            <ProjectCardRightDesktop proj={proj}/>}
         </Container>
     );
 }
+
+
+
+
+
+
 
 export default ProjectCard;
