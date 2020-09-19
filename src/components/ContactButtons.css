@@ -1,0 +1,16 @@
+.contact-wrapper{
+    position: fixed;
+    bottom:0em;
+    left:0em;
+    color:rgb(230, 234, 247);
+}
+
+.contact-button{
+    margin:0.5em;
+}
+
+a svg {
+    width: 30px;
+    height: 30px;
+    fill:#bac2d6;
+}

@@ -7,11 +7,30 @@
 
 #name-header{
     color:#d7dce2;
-    margin-top:30vh;
+    
     font-size: 5em;
     text-shadow: 3px 3px 6px #000000;
+
 }
 
 #landing-tagline{
     color:#a2aabc
+}
+
+.landing-stuff{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+
+.proj-title-left{
+    color: #ef6b73;
+    text-align: left;
+}
+.proj-title-right{
+    color: #ef6b73;
+    text-align:right;
 }

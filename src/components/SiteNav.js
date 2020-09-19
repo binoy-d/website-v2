@@ -17,7 +17,7 @@ function SiteNav() {
             <Navbar.Collapse className="justify-content-end">
                 <NavLink text="About" destination="about"></NavLink>
                 <NavLink text="Projects" destination="projects"></NavLink>
-                <Navbar.Text><a href="https://binoy.co/files/resume.pdf" className = "btn btn-outline-light">Resume</a></Navbar.Text>
+                <Navbar.Text><a href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/16Wg_20VOGJKFWW39OyZLx-RnD5bGEbWOpJPwh8O4wZo/export?format=pdf" className = "btn btn-outline-light">Resume</a></Navbar.Text>
             </Navbar.Collapse>
 
         </Navbar>
