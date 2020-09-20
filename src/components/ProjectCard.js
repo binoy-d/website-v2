@@ -11,11 +11,11 @@ import Modal from 'react-bootstrap/Modal'
 
 function ProjectLanguageTags({ languages }) {
     return (
-        <span className="project-tags">
+        <div className="project-tags">
             {languages.map((lang, index) =>
                 <Badge className="proj-tag" variant="info">{lang}</Badge>
             )}
-        </span>
+        </div>
     );
 }
 
@@ -53,10 +53,13 @@ function ProjectImage({ proj }) {
             </a>
             <Modal className = "project-modal" show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>{proj.title}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Body>
+                    <ProjectDescription proj={proj}/>
+                </Modal.Body>
                 <Modal.Footer>
+                
                 </Modal.Footer>
             </Modal>
         </>

@@ -71,13 +71,15 @@ ul{
     border-radius: 0.4em;
     align-items: center;
 }
+.project-tags{
+    margin-top:2em;
+}
 
 .proj-tag{
-    margin-left:0.25em;
-    margin-top:0.5em;
-    margin-right:0.25em;
-    background-color: #1d2433;
-    padding:0.5em;
+    margin:0.25em;
+    background-color: transparent;
+    border: 1px solid #EFF1F3;
+    padding:0.75em;
 }
 
 .project-card-mobile{
