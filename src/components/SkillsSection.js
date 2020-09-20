@@ -10,51 +10,72 @@ import Button from 'react-bootstrap/Button'
 
 
 function SkillsTable() {
-    const main_langs = [
-        'Python',
-        'C++',
-        'Java',
-        'React',
+
+    const skills_sections = [
+        {
+            title: 'Languages',
+            items:[ 'Python',
+                    'C++',
+                    'Java',
+                    'Javascript',
+                    'Processing',
+                    'C#']
+        },
+        {
+            title: 'Libraries/Frameworks',
+            items:[ 'ReactJS',
+                    'Bootstrap',
+                    'Selenium',
+                    'NodeJS',
+                    'jQuery',
+                    'p5.js',
+                    'GTest',
+                    'Express.js',
+                    'SemanticUI']
+        },
+        {
+            title: 'Tools',
+            items:[ 'Git/Github',
+                    'NPM',
+                    'Selenium',
+                    'NodeJS',
+                    'p5.js',
+                    'Heroku',
+                    'VirtualBox',
+                    'VMWare Workstation',
+                    'Express.js',
+                    'ffmpeg',
+                    'Github',
+                    'MongoDB']
+        },
+        {
+            title: 'Operating Systems',
+            items:[ 'Linux',
+                    'Windows',
+                    'macOS',
+                    'Unix']
+        },
+        {
+            title: 'Other',
+            items:[ 'Agile',
+                    'Photoshop',
+                    'Premiere Pro',
+                    'Illustrator',
+                    'After Effects',
+                    'Javascript',
+                    '3D Printing',
+                    'Sketchup(CAD)',
+                    'Arduino',
+                    
+                    'After Effects',
+                    'Javascript',
+                    'Processing']
+        }
+
     ]
-    const other_skills = [
-        'JavaScript',
-        'NodeJS',
-        'Processing',
-        'p5.js',
-        'Bootstrap',
-        'Selenium',
-        'Git/Github',
-        'MongoDB',
-        'GTest',
-        'Linux',
-        'Unix',
-        'Arduino',
-        'Express',
-        'Photoshop',
-        'Premiere Pro',
-        'Unity3D'
-    ];
     return (
         <Container>
-            <div className="main-skill-wrapper">
-                <Row>
-
-                    {main_langs.map((skill, index) =>
-                        <Col lg={3} sm={4} xs={6}>
-                            <div className="main-skill">{skill}</div>
-                        </Col>
-                    )}
-
-                </Row>
-            </div>
-
-            <Row>
-                {other_skills.map((skill, index) =>
-                    <Col lg={3} sm={4} xs={6}>
-                        <div className="other-skill">{skill}</div>
-                    </Col>
-                )}
-            </Row>
+            
         </Container>
     );
 
