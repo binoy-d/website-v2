@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SkillsSection.css';
 import Container from 'react-bootstrap/Container'
 import SectionHeader from './SectionHeader'
@@ -7,26 +7,43 @@ import NavLink from './NavLink'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-
+import Modal from 'react-bootstrap/Modal'
 
 function SkillCard({ title, items }) {
+    const [show, setShow] = useState(false);
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     let shown_languages = []
     for (let index = 0; index < 4; index++) {
         shown_languages.push(items[index]);
     }
 
     return (
-        <div className='skill-card'>
-            <h2 className="skill-card-title">
-                {title}
-            </h2>
-            <p className="short-skill-list">
-                {shown_languages.map((item, index) =>
-                    <span className = "main-skill-item">{item}</span>
-                )}
-            </p>
-        </div>
+
+        <>
+            <div className='skill-card'>
+                <h2 className="skill-card-title" onClick={handleShow}>
+                    {title}
+                </h2>
+                <p className="short-skill-list">
+                    {shown_languages.map((item, index) =>
+                        <span className="main-skill-item">{item}</span>
+                    )}
+                </p>
+            </div>
+            <Modal className = "skill-modal" show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>{title}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    This is a test
+                </Modal.Body>
+                <Modal.Footer>
+                
+                </Modal.Footer>
+            </Modal>
+        </>
     );
 }
 
@@ -93,9 +110,9 @@ function SkillsWrapper() {
 
     ]
     return (
+
         <Container>
             <Row>
-
                 {skills_sections.map((sec, index) =>
                     <Col lg={12}>
                         <SkillCard title={sec.title} items={sec.items} />
