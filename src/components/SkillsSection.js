@@ -9,73 +9,100 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 
 
-function SkillsTable() {
+function SkillCard({ title, items }) {
 
+    let shown_languages = []
+    for (let index = 0; index < 4; index++) {
+        shown_languages.push(items[index]);
+    }
+
+    return (
+        <div className='skill-card'>
+            <h2 className="skill-card-title">
+                {title}
+            </h2>
+            <p className="short-skill-list">
+                {shown_languages.map((item, index) =>
+                    <span className = "main-skill-item">{item}</span>
+                )}
+            </p>
+        </div>
+    );
+}
+
+
+function SkillsWrapper() {
     const skills_sections = [
         {
             title: 'Languages',
-            items:[ 'Python',
-                    'C++',
-                    'Java',
-                    'Javascript',
-                    'Processing',
-                    'C#']
+            items: [
+                'Python',
+                'C++',
+                'Java',
+                'Javascript',
+                'Processing',
+                'C#',
+                'p5.js',]
         },
         {
-            title: 'Libraries/Frameworks',
-            items:[ 'ReactJS',
-                    'Bootstrap',
-                    'Selenium',
-                    'NodeJS',
-                    'jQuery',
-                    'p5.js',
-                    'GTest',
-                    'Express.js',
-                    'SemanticUI']
+            title: 'Frameworks',
+            items: [
+                'ReactJS',
+                'Bootstrap',
+                'NodeJS',
+                'jQuery',
+                'p5.js',
+                'GTest',
+                'Beautiful Soup',
+                'Express.js',
+                'SemanticUI']
         },
         {
             title: 'Tools',
-            items:[ 'Git/Github',
-                    'NPM',
-                    'Selenium',
-                    'NodeJS',
-                    'p5.js',
-                    'Heroku',
-                    'VirtualBox',
-                    'VMWare Workstation',
-                    'Express.js',
-                    'ffmpeg',
-                    'Github',
-                    'MongoDB']
-        },
-        {
-            title: 'Operating Systems',
-            items:[ 'Linux',
-                    'Windows',
-                    'macOS',
-                    'Unix']
+            items: [
+                'Git/Github',
+                'Selenium',
+                'Heroku',
+                'NPM',
+                'VirtualBox',
+                'VMWare Workstation',
+                'Express.js',
+                'ffmpeg',
+                'Github',
+                'MongoDB']
         },
         {
             title: 'Other',
-            items:[ 'Agile',
-                    'Photoshop',
-                    'Premiere Pro',
-                    'Illustrator',
-                    'After Effects',
-                    'Javascript',
-                    '3D Printing',
-                    'Sketchup(CAD)',
-                    'Arduino',
-                    
-                    'After Effects',
-                    'Javascript',
-                    'Processing']
+            items: [
+                'Linux',
+                'Agile',
+                'Windows',
+                'macOS',
+                'Photoshop',
+                'Premiere Pro',
+                'Illustrator',
+                'After Effects',
+                'Javascript',
+                '3D Printing',
+                'Sketchup(CAD)',
+                'Arduino',
+                'MS Office',
+                'G Suite',
+                'Audacity']
         }
 
     ]
     return (
         <Container>
-            
+            <Row>
+
+                {skills_sections.map((sec, index) =>
+                    <Col lg={12}>
+                        <SkillCard title={sec.title} items={sec.items} />
+                    </Col>
+                )}
+
+            </Row>
         </Container>
     );
 
@@ -95,7 +122,7 @@ function SkillsSection() {
                         <SectionHeader text="Skills" />
                     </Fade>
                     <Fade bottom>
-                        <SkillsTable />
+                        <SkillsWrapper />
                         <div className="btn btn-outline-light projects-button">
                             <NavLink destination="projects" text="Projects"></NavLink>
                         </div>
