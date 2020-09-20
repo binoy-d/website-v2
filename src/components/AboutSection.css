@@ -16,8 +16,11 @@ img{
 
 .about-me-paragraph{
     color: var(--main-text-color);
+    margin-top:3em;
+    margin-bottom:3em;
     text-align: center;
     margin-left: auto;
+
     margin-right: auto;
     max-width:95%;
 }
@@ -40,7 +43,7 @@ img{
 }
 .code-window-top{
     width:100%;
-    height:1em;
+    height:1.25em;
     border:black;
     background-color: grey;
     border-top-left-radius: 0.4em;
@@ -49,11 +52,13 @@ img{
 
 .code-line{
     color: white;
+    font-size: 0.9em;
+    padding-left: 1em;
 }
 .code-window-content{
     background-color: black;
     padding:2em;
-    padding-left: 3em;
+    
     border-bottom-left-radius: 0.4em;
     border-bottom-right-radius: 0.4em;
     width:100%;
@@ -62,6 +67,29 @@ img{
 
 .code-key{
     color: var(--accent-color-1);
-    font-weight: bolder;
+    
     
 }
+
+.code-command{
+    color: var(--accent-color-1);
+    font-weight: bolder;
+}
+.typewriter {
+   
+    border-right: .2em solid var(--accent-color-1); /* The typwriter cursor */
+    letter-spacing: .07em; /* Adjust as needed */
+    animation: 
+      blink-caret .75s step-end infinite;
+  }
+  
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color-1); }
+    
+  }
+
+  .code-window-wrapper{
+    border-radius: 0.4em;
+  }

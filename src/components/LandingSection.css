@@ -1,5 +1,7 @@
 
-
+#tsparticles{
+    --color: var(--main-text-color);
+}
 
 #home{
     height:100vh;

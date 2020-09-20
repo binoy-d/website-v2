@@ -51,7 +51,7 @@ function SkillCard({ title, items }) {
                                         </p>
                                     </Col>
                                 )}
-                                
+
                             </Row>
                         </Container>
                     </p>
@@ -152,11 +152,13 @@ function SkillsSection() {
                     <Fade top>
                         <SectionHeader text="Skills" />
                     </Fade>
-                    <Fade bottom>
+                    <Fade bottom >
                         <SkillsWrapper />
-                            <div className = "projects-button">
+                    </Fade>
+                    <Fade bottom big>
+                        <div className="projects-button">
                             <NavLink className="btn btn-outline-light projects-button" destination="projects" text="Projects"></NavLink>
-                            </div>
+                        </div>
                     </Fade>
                 </div>
 

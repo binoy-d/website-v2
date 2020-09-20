@@ -7,11 +7,12 @@ var nightMode = false;
 function toggleNightMode(){
     let root = document.documentElement;    
     if(nightMode){
-        root.style.setProperty('--main-bg-color',"#EFF1F3");
-        root.style.setProperty('--main-text-color',"#080705");
-    }else{
         root.style.setProperty('--main-bg-color',"#080705");
         root.style.setProperty('--main-text-color',"#EFF1F3");
+        
+    }else{
+        root.style.setProperty('--main-bg-color',"#EFF1F3");
+        root.style.setProperty('--main-text-color',"#080705");
     }
     nightMode = !nightMode;
 

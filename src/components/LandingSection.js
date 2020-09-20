@@ -6,10 +6,8 @@ import Fade from 'react-reveal/Fade'
 import { Media } from 'react-breakpoints'
 import { Link } from 'react-scroll'
 function LandingParticles() {
-    let root = document.documentElement;
-    let color = root.style.getPropertyValue("--accent-color-1");
-
     return (
+        <>
         <Particles
             params={{
                 "particles": {
@@ -25,7 +23,7 @@ function LandingParticles() {
 
                     "links": {
                         "color": {
-                            "value":"#C52233"
+                            "value": "#C52233"
                         },
                     },
 
@@ -39,6 +37,7 @@ function LandingParticles() {
                     }
                 }
             }} />
+            </>
     );
 }
 

@@ -23,6 +23,7 @@ function App() {
 
   return (
     <>
+    <div id = "app-root">
       <ReactBreakpoints breakpoints={breakpoints}>
         
         <SiteNav></SiteNav>
@@ -33,6 +34,7 @@ function App() {
         <ProjectSection />
         
       </ReactBreakpoints>
+      </div>
     </>
 
   );
