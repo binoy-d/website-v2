@@ -38,3 +38,30 @@ img{
     margin-left: 35%;
     width:30%;
 }
+.code-window-top{
+    width:100%;
+    height:1em;
+    border:black;
+    background-color: grey;
+    border-top-left-radius: 0.4em;
+    border-top-right-radius: 0.4em;
+}
+
+.code-line{
+    color: white;
+}
+.code-window-content{
+    background-color: black;
+    padding:2em;
+    padding-left: 3em;
+    border-bottom-left-radius: 0.4em;
+    border-bottom-right-radius: 0.4em;
+    width:100%;
+    text-align: left;
+}
+
+.code-key{
+    color: var(--accent-color-1);
+    font-weight: bolder;
+    
+}
