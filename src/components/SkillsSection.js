@@ -15,7 +15,7 @@ function SkillCard({ title, items }) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     let shown_languages = []
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < 3; index++) {
         shown_languages.push(items[index]);
     }
 
@@ -32,16 +32,29 @@ function SkillCard({ title, items }) {
                     )}
                 </p>
             </div>
-            <Modal className = "skill-modal" show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{title}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    This is a test
-                </Modal.Body>
-                <Modal.Footer>
+            <Modal className="skill-modal" show={show} onHide={handleClose}>
                 
-                </Modal.Footer>
+                    <Modal.Title>
+                        <h2>
+                            {title}
+                        </h2>
+                    </Modal.Title>
+                <Modal.Body>
+                    <p className="short-skill-list">
+                        <Container >
+                            <Row>
+                                {items.map((item, index) =>
+                                    <Col lg={3} md = {4} xs={6}>
+                                        <p className="skill-item">
+                                            {item}
+                                        </p>
+                                    </Col>
+                                )}
+                            </Row>
+                        </Container>
+                    </p>
+                </Modal.Body>
+                <Button className = "exit-button" onClick={handleClose}>Exit</Button>
             </Modal>
         </>
     );
@@ -93,16 +106,15 @@ function SkillsWrapper() {
             items: [
                 'Linux',
                 'Agile',
+                'Arduino',
                 'Windows',
                 'macOS',
                 'Photoshop',
                 'Premiere Pro',
                 'Illustrator',
                 'After Effects',
-                'Javascript',
                 '3D Printing',
                 'Sketchup(CAD)',
-                'Arduino',
                 'MS Office',
                 'G Suite',
                 'Audacity']

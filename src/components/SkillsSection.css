@@ -62,8 +62,41 @@
 }
 
 .modal-content{
-    top:50vh;
-    transform:translateY(-100%);
     background-color: #080705!important;
     color: #EFF1F3!important;
+}
+
+.skill-item{
+    font-size: 0.8em;
+    margin-left:1%;
+    margin-right:1%;
+    padding-top:0.1em;
+    padding-bottom:0.2em;
+    padding-left:0.5em;
+    padding-right:0.5em;
+}
+
+ .modal-dialog {
+    max-width: 80%;
+    margin: 2rem auto;
+}
+
+.modal-title{
+    text-align:center;
+}
+
+.exit-button{
+    position:relative;
+    background-color: transparent;
+    border: 1px solid #d7d9db;
+    border-radius: 0.4em;
+    left:50%;
+    max-width:5em;
+    transition: transform 0.3s;
+    transform:translateX(-50%);
+}
+
+.exit-button:hover{
+    background-color: transparent;
+    border: 1px solid #d7d9db;
 }
