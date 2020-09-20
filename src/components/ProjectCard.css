@@ -31,6 +31,7 @@ ul{
 }
 
 
+
 .project-image{
     max-width: 100%;
     max-height:100%;
@@ -40,7 +41,6 @@ ul{
     transition-timing-function: ease-out;
     border-radius: 0.4em;
     z-index:-1;
-
 }
 
 .project-image:hover{

@@ -66,10 +66,12 @@ function ProjectImage({ proj }) {
 
     return (
         <>
+            <div class="img-wrapper">
             <a onClick={handleShow}>
                 <Image className="project-image" src={proj.img}></Image>
             </a>
             <ProjectModal proj={proj} show={show} handleClose={handleClose} />
+            </div>
         </>
     );
 }

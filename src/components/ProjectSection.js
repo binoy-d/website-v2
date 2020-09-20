@@ -61,6 +61,17 @@ function ProjectSection() {
           codeLink: "https://github.com/binoy-d/debug-duck"
         },
         {
+          title: 'Game of Life',
+          description: ['Minimalist clone of Conway\'s Game of life',
+                        'Features play, pause, toggle cell state, and randomize',
+                        'Done as a project to begin learning C#'],
+          languages: ['Bootstrap', 'CSS', 'JavaScript'],
+          link: "https://github.com/binoy-d/Game-Of-Life",
+          img: ColorGameImg,
+          featured: false,
+          codeLink: "https://github.com/binoy-d/Game-Of-Life"
+        },
+        {
           title: 'Color Game',
           description: ['Color guessing game to help developers and designers',
                         'Given an rgb value, players guess which color is represented',
@@ -85,7 +96,7 @@ function ProjectSection() {
         },
         {
           title: 'To Do List',
-          description: ['To Do List app with simple and clean interfacve',
+          description: ['To Do List app with simple and clean interface',
                         'Features: add, delete, mark as done, add new list',
                         'Bootstrap for layout, JavaScript with jQuery for handling data'],
           languages: ['jQuery', 'JavaScript', 'Bootstrap', 'CSS', 'HTML'],
@@ -93,6 +104,17 @@ function ProjectSection() {
           img: TodoListImg,
           featured: false,
           codeLink: "https://github.com/binoy-d/to-do-app"
+        },
+        {
+          title: 'Pong',
+          description: ['The classic game of pong, reacreated in Processing',
+                        'Features smooth movement and responsive controls',
+                        'Done as learning project to learn Processing'],
+          languages: ['jQuery', 'JavaScript', 'Bootstrap', 'CSS', 'HTML'],
+          link: "https://github.com/binoy-d/pong",
+          img: TodoListImg,
+          featured: false,
+          codeLink: "https://github.com/binoy-d/pong"
         }
       ]
 
