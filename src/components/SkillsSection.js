@@ -123,16 +123,16 @@ function SkillsWrapper() {
     ]
     return (
 
-        <Container>
-            <Row>
-                {skills_sections.map((sec, index) =>
-                    <Col lg={12}>
-                        <SkillCard title={sec.title} items={sec.items} />
-                    </Col>
-                )}
+        <>
 
-            </Row>
-        </Container>
+                {skills_sections.map((sec, index) =>
+                    <Fade bottom cascade>
+                        <SkillCard title={sec.title} items={sec.items} />
+                    </Fade>
+                )}
+                
+            
+        </>
     );
 
 
