@@ -27,8 +27,8 @@ function AboutSection() {
                     </Fade>
                     <Fade bottom>
                         <p className="about-me-paragraph">{description}</p>
-                        <div className="btn btn-outline-light skills-btn">
-                            <NavLink destination="skills" text="Skills"></NavLink>
+                        <div className="skills-btn">
+                            <NavLink className="btn btn-outline-light skills-btn" destination="skills" text="Skills"></NavLink>
                         </div>
                     </Fade>
                 </div>

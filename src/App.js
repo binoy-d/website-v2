@@ -7,8 +7,7 @@ import AboutSection from './components/AboutSection';
 import LandingSection from './components/LandingSection'
 import ProjectSection from './components/ProjectSection'
 import ReactBreakpoints from 'react-breakpoints'
-import SkillsSection from './components/SkillsSection';
-
+import SkillsSection from './components/SkillsSection'
 
 
 function App() {
@@ -25,12 +24,14 @@ function App() {
   return (
     <>
       <ReactBreakpoints breakpoints={breakpoints}>
+        
         <SiteNav></SiteNav>
         <ContactButtons />
         <LandingSection />
         <AboutSection />
         <SkillsSection />
         <ProjectSection />
+        
       </ReactBreakpoints>
     </>
 

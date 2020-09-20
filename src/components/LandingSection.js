@@ -6,6 +6,9 @@ import Fade from 'react-reveal/Fade'
 import { Media } from 'react-breakpoints'
 import { Link } from 'react-scroll'
 function LandingParticles() {
+    let root = document.documentElement;
+    let color = root.style.getPropertyValue("--accent-color-1");
+
     return (
         <Particles
             params={{
@@ -15,7 +18,17 @@ function LandingParticles() {
                     },
                     "size": {
                         "value": 3
-                    }
+                    },
+                    "color": {
+                        "value": "#C52233"
+                    },
+
+                    "links": {
+                        "color": {
+                            "value":"#C52233"
+                        },
+                    },
+
                 },
                 "interactivity": {
                     "events": {
@@ -36,7 +49,7 @@ function LandingSection() {
         <section id="home">
             <Media>
                 {({ breakpoints, currentBreakpoint }) =>
-                    breakpoints[currentBreakpoint] > breakpoints.tabletLandscape ? (
+                    breakpoints[currentBreakpoint] > breakpoints.desktop ? (
                         <LandingParticles />
                     ) : (
                             <>

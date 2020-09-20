@@ -33,5 +33,8 @@ img{
 
 .skills-btn{
     margin-top:1em;
+    border-radius:0.4em;
     border: 1px solid var(--accent-color-1);
+    margin-left: 35%;
+    width:30%;
 }

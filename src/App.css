@@ -1,6 +1,6 @@
 :root {
-  --main-bg-color: #080705;
-  --main-text-color: #EFF1F3;
+  --main-bg-color: #EFF1F3;
+  --main-text-color: #080705;
   --accent-color-1: #C52233;
 }
 
@@ -14,4 +14,3 @@ html{
 body{
   background-color:var(--main-bg-color)!important;
 }
-

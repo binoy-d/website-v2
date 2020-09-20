@@ -3,6 +3,22 @@ import './ContactButtons.css';
 import Fade from 'react-reveal/Fade'
 import Button from 'react-bootstrap/Button'
 
+var nightMode = false;
+function toggleNightMode(){
+    let root = document.documentElement;    
+    if(nightMode){
+        root.style.setProperty('--main-bg-color',"#EFF1F3");
+        root.style.setProperty('--main-text-color',"#080705");
+    }else{
+        root.style.setProperty('--main-bg-color',"#080705");
+        root.style.setProperty('--main-text-color',"#EFF1F3");
+    }
+    nightMode = !nightMode;
+
+    
+    
+}
+
 
 function ContactButtons() {
     return (
@@ -26,6 +42,11 @@ function ContactButtons() {
                 <div className="contact-button ">
                     <a href="mailto:dbinoy15@gmail.com">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+                    </a>
+                </div>
+                <div className="contact-button night-button">
+                    <a onClick={toggleNightMode}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className = "night-button" width="24" height="24" viewBox="0 0 26 26"><path xmlns="http://www.w3.org/2000/svg" d="M19.282 17.038c-4.15-.513-7.691-3.379-9.245-7.261a11.042 11.042 0 0 1-.748-5.355.5.5 0 0 0-.772-.468C5.09 6.156 2.905 10.121 3.261 14.573c.442 5.524 4.959 10.056 10.482 10.513 5.646.468 10.522-3.148 12.01-8.213.118-.402-.274-.774-.661-.614a11.43 11.43 0 0 1-5.81.779z"/></svg>
                     </a>
                 </div>
             </Fade>

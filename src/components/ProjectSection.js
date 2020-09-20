@@ -12,7 +12,10 @@ import {BubblifyImg,
     BubblesTogetherImg,
     ColorGameImg,
     TodoListImg,
-    WebsiteImg} from '../img'
+    WebsiteImg,
+    DebugDuckImg,
+    PongImg,
+    GameOfLifeImg} from '../img'
 
 function ProjectSection() {
     const projects = [
@@ -36,7 +39,7 @@ function ProjectSection() {
           link: "https://bubbles-together.herokuapp.com/",
           img: BubblesTogetherImg,
           featured: true,
-          codeLink: ""
+          codeLink: "https://github.com/binoy-d/particle-draw2"
         },
         {
           title: 'Puzzle Game',
@@ -56,8 +59,8 @@ function ProjectSection() {
                         'My role: Programming in c# and creating assets'],
           languages: ['Java', 'Graphics2D'],
           link: "https://globalgamejam.org/2020/games/debug-duck-2",
-          img: PuzzleGameImg,
-          featured: false,
+          img: DebugDuckImg,
+          featured: true,
           codeLink: "https://github.com/binoy-d/debug-duck"
         },
         {
@@ -65,16 +68,16 @@ function ProjectSection() {
           description: ['Minimalist clone of Conway\'s Game of life',
                         'Features play, pause, toggle cell state, and randomize',
                         'Done as a project to begin learning C#'],
-          languages: ['Bootstrap', 'CSS', 'JavaScript'],
+          languages: ['C#', '.NET'],
           link: "https://github.com/binoy-d/Game-Of-Life",
-          img: ColorGameImg,
+          img: GameOfLifeImg,
           featured: false,
           codeLink: "https://github.com/binoy-d/Game-Of-Life"
         },
         {
           title: 'Color Game',
-          description: ['Color guessing game to help developers and designers',
-                        'Given an rgb value, players guess which color is represented',
+          description: [
+                        'Guess which color is represented from rgb value',
                         'Bootstrap for responsive layout, with smooth fades in CSS'],
           languages: ['Bootstrap', 'CSS', 'JavaScript'],
           link: "https://binoy-d.github.io/color-game/",
@@ -92,14 +95,13 @@ function ProjectSection() {
           link: "https://www.binoy.co/pages/bubblify.html",
           img: BubblifyImg,
           featured: false,
-          codeLink: ""
+          codeLink: "https://www.binoy.co/pages/bubblify.html"
         },
         {
           title: 'To Do List',
-          description: ['To Do List app with simple and clean interface',
-                        'Features: add, delete, mark as done, add new list',
-                        'Bootstrap for layout, JavaScript with jQuery for handling data'],
-          languages: ['jQuery', 'JavaScript', 'Bootstrap', 'CSS', 'HTML'],
+          description: ['To Do List app with clean interface',
+                        'Add, delete, mark as done, add new list'],
+          languages: ['jQuery', 'JavaScript', 'Bootstrap', 'CSS'],
           link: "https://binoy-d.github.io/to-do-app/",
           img: TodoListImg,
           featured: false,
@@ -107,12 +109,11 @@ function ProjectSection() {
         },
         {
           title: 'Pong',
-          description: ['The classic game of pong, reacreated in Processing',
-                        'Features smooth movement and responsive controls',
-                        'Done as learning project to learn Processing'],
-          languages: ['jQuery', 'JavaScript', 'Bootstrap', 'CSS', 'HTML'],
+          description: ['The classic game of pong',
+                        'Smooth movement and responsive controls'],
+          languages: ['Processing'],
           link: "https://github.com/binoy-d/pong",
-          img: TodoListImg,
+          img: PongImg,
           featured: false,
           codeLink: "https://github.com/binoy-d/pong"
         }

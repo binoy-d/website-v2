@@ -1,9 +1,9 @@
 .nav-link{
-    color: white;
+    color:var(--main-text-color);
     text-decoration: none;   
 }
 .nav-link:hover{
-    color: white;
+    color:var(--accent-color-1);
     text-decoration: none;  
     cursor: pointer; 
 }
