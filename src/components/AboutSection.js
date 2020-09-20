@@ -10,11 +10,11 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
 function CodeWindow() {
-    const sendEmail = ()=>{
+    const sendEmail = () => {
         window.open("mailto:dbinoy@gmail.com");
     }
     const info = {
-        "Name": ["'Daniel", "Binoy'"],
+        "Name": ["'Daniel'", "'Binoy'"],
         "Location": ["'San Jose CA'", "'Irvine CA'"],
         "Education": ["'University of California Irvine'", "'2022'"],
         "Major": "Computer Science",
@@ -27,17 +27,17 @@ function CodeWindow() {
         output.push(
             <>
                 <span className='code-line'>
-                    <span className = 'code-key'>daniel.{key} --> </span>
+                    <span className='code-key'>daniel.{key} --> </span>
                     <span>
-                        {(!Array.isArray(info[key])?
-                            <span>'{info[key]}'</span>:
+                        {(!Array.isArray(info[key]) ?
+                            <span>'{info[key]}'</span> :
                             <span>
                                 <span>[ </span>
                                 {info[key].join(", ")}
                                 <span> ]</span>
                             </span>)}
                     </span>
-                
+
                 </span>
                 <br />
             </>
@@ -45,12 +45,12 @@ function CodeWindow() {
     }
 
     return (
-        <div onClick = {sendEmail} className='code-window-wrapper'>
+        <div onClick={sendEmail} className='code-window-wrapper'>
             <div className='code-window-top'>
                 <p>click_to_contact.exe</p>
             </div>
             <div className='code-window-content'>
-                <span className= 'code-command typewriter'>> print(getInfo(daniel))</span>
+                <span className='code-command typewriter'>> print(getInfo(daniel))</span>
                 <br />
                 {output.map((item, index) =>
                     item
@@ -67,10 +67,10 @@ function CodeWindow() {
 
 
 function AboutSection() {
-    const description = "Hi! I\'m Daniel! I\'m a computer science student at the Donald Bren " +
-        "School of Information and  Computer Sciences at University of California, Irvine." +
-        " At my core, I am a creator. Whether its developing applications, filming and editing" +
-        " videos, or making art, I\'m always making something. Connect with me " +
+    const description = "I\'m a computer science student at " +
+        "University of California, Irvine. I love designing and coding beautiful, " +
+        "functional applications and interfaces that have a real impact on users. Whether " +
+        "its writing code, filming videos, or creating art, I\'m always making something. Connect with me " +
         "to make something great, together!";
 
 
@@ -93,16 +93,27 @@ function AboutSection() {
                         </Col>
                     </Row>
                     <Fade bottom>
-                    <Row>
-                        
-                        <Col lg = {6} md={12} className= "d-flex justify-content-center">
-                            <p className='about-me-paragraph'>{description}</p>
-                        </Col>
-                        
-                        <Col lg = {6} md={12}>
-                            <CodeWindow />
-                        </Col>
-                    </Row>
+                        <Row>
+
+                            <Col lg={6} md={12} className="d-flex justify-content-center">
+                                <Container>
+                                <Row>
+                                    <Col>
+                                        <h2 id="hello" >Hi, I'm Daniel!</h2>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <p className='about-me-paragraph'>{description}</p>
+                                    </Col>
+                                </Row>
+                                </Container>
+                            </Col>
+
+                            <Col lg={6} md={12}>
+                                <CodeWindow />
+                            </Col>
+                        </Row>
                     </Fade>
                     <Row>
                         <Col>
