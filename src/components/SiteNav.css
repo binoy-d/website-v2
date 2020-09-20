@@ -1,11 +1,11 @@
 .site-nav{
     background-color: transparent;
     position: fixed!important;
+    transition:transform 0.2s;
     right:1em;
 }
 
 .btn .btn-outline-light:hover{
-    
     background-color: transparent!important;
 }
 
@@ -15,4 +15,10 @@
     background-color: transparent!important;
     color: var(--main-text-color)!important;
     border: 1px solid var(--accent-color-1)!important;
+    transition: transform 0.2s;
+}
+
+.resume-btn:hover{
+    transition: transform 0.2s;
+    transform: scale(1.1);
 }

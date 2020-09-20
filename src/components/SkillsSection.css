@@ -13,8 +13,8 @@
     margin-left: 35%;
     width:30%;
     color:var(--main-text-color);
+    transition: transform 0.2s;
 }
-
 .skills-stuff{
     position: relative;
     top:50%;

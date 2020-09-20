@@ -10,14 +10,17 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
 function CodeWindow() {
-
+    const sendEmail = ()=>{
+        window.open("mailto:dbinoy@gmail.com");
+    }
     const info = {
         "Name": ["'Daniel", "Binoy'"],
-        "Location": ["'San Jose'", "'CA'", "'US'"],
+        "Location": ["'San Jose CA'", "'Irvine CA'"],
         "Education": ["'University of California Irvine'", "'2022'"],
         "Major": "Computer Science",
         "Hobbies": ["'Coding'", "'Video Editing'", "'Longboarding'", "'Art'"],
-        "Email": "dbinoy15@gmail.com",
+        "Status": "Looking for software engineering internships",
+        "Email": "dbinoy15@gmail.com"
     }
     let output = [];
     for (var key in info) {
@@ -42,8 +45,10 @@ function CodeWindow() {
     }
 
     return (
-        <div className='code-window-wrapper'>
-            <div className='code-window-top'></div>
+        <div onClick = {sendEmail} className='code-window-wrapper'>
+            <div className='code-window-top'>
+                <p>click_to_contact.exe</p>
+            </div>
             <div className='code-window-content'>
                 <span className= 'code-command typewriter'>> print(getInfo(daniel))</span>
                 <br />

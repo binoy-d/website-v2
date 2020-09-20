@@ -43,11 +43,11 @@ img{
 }
 .code-window-top{
     width:100%;
-    height:1.25em;
-    border:black;
+    color:var(--main-bg-color);
     background-color: grey;
     border-top-left-radius: 0.4em;
     border-top-right-radius: 0.4em;
+    margin-bottom: 0;
 }
 
 .code-line{
@@ -58,10 +58,11 @@ img{
 .code-window-content{
     background-color: black;
     padding:2em;
-    
+    padding-top: 0;
+    margin-top:0;
+    padding-bottom: 1em;
     border-bottom-left-radius: 0.4em;
     border-bottom-right-radius: 0.4em;
-    width:100%;
     text-align: left;
 }
 
@@ -81,15 +82,20 @@ img{
     letter-spacing: .07em; /* Adjust as needed */
     animation: 
       blink-caret .75s step-end infinite;
-  }
-  
+}
 
-  @keyframes blink-caret {
+
+@keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: var(--accent-color-1); }
-    
-  }
+}
 
-  .code-window-wrapper{
+.code-window-wrapper{
     border-radius: 0.4em;
-  }
+    background-color: black;
+    transition: transform 0.3s;
+}
+
+.code-window-wrapper:hover{
+    transform:scale(1.07);
+}
