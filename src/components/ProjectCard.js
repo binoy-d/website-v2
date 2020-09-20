@@ -21,10 +21,10 @@ function ProjectLanguageTags({ languages }) {
 
 function ProjectDescription({ proj, side }) {
     return (
-        <div className={"desc-" + (side === 0 ? "left" : "right")}>
-            <h2 className={"proj-title-" + (side === 0 ? "left" : "right")}>{proj.title}</h2>
+        <div className="desc">
+            <h2 className="proj-title">{proj.title}</h2>
             <div className="project-description">
-                <ul className={side === 0 ? "project-description-left" : "project-description-right"}>
+                <ul>
                     {proj.description.map((line, index) =>
                         <li className="project-description-text">
                             {line}
@@ -39,6 +39,24 @@ function ProjectDescription({ proj, side }) {
     );
 }
 
+function ProjectModal({ proj, show, handleClose }) {
+    return (
+        <Modal className="project-modal" show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+                <Modal.Title>{proj.title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <ProjectDescription proj={proj} />
+            </Modal.Body>
+            <Modal.Footer>
+
+            </Modal.Footer>
+        </Modal>
+    );
+
+}
+
+
 
 function ProjectImage({ proj }) {
     const [show, setShow] = useState(false);
@@ -51,17 +69,7 @@ function ProjectImage({ proj }) {
             <a onClick={handleShow}>
                 <Image className="project-image" src={proj.img}></Image>
             </a>
-            <Modal className = "project-modal" show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{proj.title}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <ProjectDescription proj={proj}/>
-                </Modal.Body>
-                <Modal.Footer>
-                
-                </Modal.Footer>
-            </Modal>
+            <ProjectModal proj={proj} show={show} handleClose={handleClose} />
         </>
     );
 }
@@ -72,7 +80,7 @@ function ProjectCardLeftDesktop({ proj }) {
         <Fade left>
             <Row>
                 <Col className="description-col">
-                    <ProjectDescription className="desc-left" proj={proj} side={0} />
+                    <ProjectDescription className="desc" proj={proj} side={0} />
                 </Col>
                 <Col className="text-center ">
                     <ProjectImage proj={proj} />
@@ -88,12 +96,11 @@ function ProjectCardRightDesktop({ proj }) {
     return (
         <Fade right>
             <Row>
-
                 <Col className="text-center">
                     <ProjectImage proj={proj} />
                 </Col>
                 <Col className="description-col">
-                    <ProjectDescription className="desc-right" proj={proj} side={1} />
+                    <ProjectDescription className="desc" proj={proj} side={1} />
                 </Col>
             </Row>
         </Fade>
@@ -140,7 +147,7 @@ function ProjectCard({ proj, side }) {
                         <Col className="project-card-col" xl={4} lg={4} md={6} sm={6}>
                             <ProjectCardMobile proj={proj} />
                         </Col>
-                    
+
                 ) : (
                         <Col className="project-card-col" xl={12} lg={6} md={6} sm={6}>
                             <ProjectCardMobile proj={proj} />

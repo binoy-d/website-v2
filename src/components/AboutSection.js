@@ -18,7 +18,7 @@ function AboutSection() {
     return (
         <section id="about">
             <Container className="h-100 text-center">
-
+            
                 <div className = "about-stuff">
                     <Fade top>
                         <Image className="masthead-profile" src={ProfileImg} roundedCircle />

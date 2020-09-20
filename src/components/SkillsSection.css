@@ -38,7 +38,7 @@
 
 .skill-card-title:hover{
     transform: scale(1.1);
-    
+    cursor: pointer;
 }
 
 .short-skill-list{
@@ -98,4 +98,19 @@
 .exit-button:hover{
     background-color: transparent;
     border: 1px solid var(--accent-color-1);
+}
+
+.more-btn{
+    border: 1px solid var(--accent-color-1);
+    border-radius: 0.4em;
+    padding-left:0.5em;
+    padding-right:0.5em;
+    padding-top:0.1em;
+    padding-bottom:0.1em;
+    margin-left:1em;
+}
+
+.more-btn:hover{
+    transform: scale(1.1);
+    cursor:pointer;
 }

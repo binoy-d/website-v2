@@ -30,31 +30,33 @@ function SkillCard({ title, items }) {
                     {shown_languages.map((item, index) =>
                         <span className="main-skill-item">{item}</span>
                     )}
+                    <span className="more-btn" onClick={handleShow}>More</span>
                 </p>
             </div>
             <Modal className="skill-modal" show={show} onHide={handleClose}>
-                
-                    <Modal.Title>
-                        <h2>
-                            {title}
-                        </h2>
-                    </Modal.Title>
+
+                <Modal.Title>
+                    <h2>
+                        {title}
+                    </h2>
+                </Modal.Title>
                 <Modal.Body>
                     <p className="short-skill-list">
                         <Container >
                             <Row>
                                 {items.map((item, index) =>
-                                    <Col lg={3} md = {4} xs={6}>
+                                    <Col lg={3} md={4} xs={6}>
                                         <p className="skill-item">
                                             {item}
                                         </p>
                                     </Col>
                                 )}
+                                
                             </Row>
                         </Container>
                     </p>
                 </Modal.Body>
-                <Button className = "exit-button" onClick={handleClose}>Exit</Button>
+                <Button className="exit-button" onClick={handleClose}>Exit</Button>
             </Modal>
         </>
     );
@@ -125,13 +127,13 @@ function SkillsWrapper() {
 
         <>
 
-                {skills_sections.map((sec, index) =>
-                    <Fade bottom cascade>
-                        <SkillCard title={sec.title} items={sec.items} />
-                    </Fade>
-                )}
-                
-            
+            {skills_sections.map((sec, index) =>
+                <Fade bottom cascade>
+                    <SkillCard title={sec.title} items={sec.items} />
+                </Fade>
+            )}
+
+
         </>
     );
 

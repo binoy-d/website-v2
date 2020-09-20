@@ -36,7 +36,7 @@ function LandingSection() {
         <section id="home">
             <Media>
                 {({ breakpoints, currentBreakpoint }) =>
-                    breakpoints[currentBreakpoint] > breakpoints.desktop ? (
+                    breakpoints[currentBreakpoint] > breakpoints.tabletLandscape ? (
                         <LandingParticles />
                     ) : (
                             <>

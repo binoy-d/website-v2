@@ -102,21 +102,13 @@ ul{
     color:var(--main-text-color);
 }
 
-.proj-title-left{
+.proj-title{
     margin-top:1em;
     color: var(--accent-color-1);
     text-align: center;
 }
-.proj-title-right{
-    margin-top:1em;
-    color: var(--accent-color-1);
-    text-align:center;
-}
 
-.desc-right{
-    height:100%;
-}
-.desc-left{
+.desc{
     height:100%;
 }
 
