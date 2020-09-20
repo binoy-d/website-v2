@@ -154,9 +154,9 @@ function SkillsSection() {
                     </Fade>
                     <Fade bottom>
                         <SkillsWrapper />
-                        <div className="btn btn-outline-light projects-button">
-                            <NavLink destination="projects" text="Projects"></NavLink>
-                        </div>
+                            <div className = "projects-button">
+                            <NavLink className="btn btn-outline-light projects-button" destination="projects" text="Projects"></NavLink>
+                            </div>
                     </Fade>
                 </div>
 

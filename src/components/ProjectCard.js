@@ -8,7 +8,7 @@ import Fade from 'react-reveal/Fade';
 import Badge from 'react-bootstrap/Badge'
 import { Media } from 'react-breakpoints'
 import Modal from 'react-bootstrap/Modal'
-
+import Button from 'react-bootstrap/Button'
 function ProjectLanguageTags({ languages }) {
     return (
         <div className="project-tags">
@@ -42,15 +42,39 @@ function ProjectDescription({ proj, side }) {
 function ProjectModal({ proj, show, handleClose }) {
     return (
         <Modal className="project-modal" show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-                <Modal.Title>{proj.title}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <ProjectDescription proj={proj} />
-            </Modal.Body>
-            <Modal.Footer>
+            <Container>
+                <Modal.Header closeButton />
+                <Modal.Body>
 
-            </Modal.Footer>
+                    <Row>
+                        <Col>
+                            <ProjectDescription proj={proj} />
+                        </Col>
+                        <Col>
+                            <Container className="w-100 h-100 ">
+                                <Row className = "h-50">
+                                    <Col className = "modal-btn-wrapper align-items-center">
+                                        <Button href = {proj.link} className = "modal-btn">View Project</Button>
+                                    </Col>
+                                </Row>
+                                <Row className = "h-50">
+                                    <Col className = "modal-btn-wrapper">
+                                        <Button href = {proj.codeLink} className = "modal-btn">View Code</Button>
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </Col>
+                    </Row>
+                    <Modal.Footer className = "modal-ftr"/>
+                    <Row>
+                        <Col className="modal-img-wrapper">
+                            <Image className="modal-image" src={proj.img}></Image>
+                        </Col>
+                    </Row>
+
+                </Modal.Body>
+                
+            </Container>
         </Modal>
     );
 
@@ -67,10 +91,10 @@ function ProjectImage({ proj }) {
     return (
         <>
             <div class="img-wrapper">
-            <a onClick={handleShow}>
-                <Image className="project-image" src={proj.img}></Image>
-            </a>
-            <ProjectModal proj={proj} show={show} handleClose={handleClose} />
+                <a onClick={handleShow}>
+                    <Image className="project-image" src={proj.img}></Image>
+                </a>
+                <ProjectModal proj={proj} show={show} handleClose={handleClose} />
             </div>
         </>
     );

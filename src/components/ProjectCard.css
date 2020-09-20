@@ -117,8 +117,6 @@ ul{
 }
 
 .modal-content{
-    top:50vh;
-    transform:translateY(-100%);
     background-color: var(--main-bg-color)!important;
     color: var(--main-text-color)!important;
 }
@@ -127,4 +125,52 @@ ul{
     color:var(--main-text-color)!important;
     opacity: 1;
     font-size:2em;
+}
+
+.modal-image{
+    text-align:center;
+    width:80%;
+}
+
+.modal-img-wrapper{
+    text-align: center;
+}
+
+.modal-btn-wrapper{
+    vertical-align: middle;
+    text-align:center;
+}
+
+.modal-btn{
+    margin:2.5%;
+    height:80%;
+    width:50%;
+    font-size: 1.5em;
+    padding-top: 7.5%;
+    transition: transform 0.3s;
+    background-color: transparent;
+    border: 1px solid var(--accent-color-1);
+}
+
+.modal-btn:hover{
+    border: 1px solid var(--accent-color-1);
+    transform: scale(1.1);
+    background-color: transparent;
+    
+}
+.modal-btn:after{
+    background-color: transparent;
+    border: 1px solid var(--accent-color-1);
+}
+.modal-btn:active{
+    background-color: transparent;
+    border: 1px solid var(--accent-color-1);
+}
+.modal-btn:active:after{
+    background-color: transparent;
+    border: 1px solid var(--accent-color-1);
+}
+
+.modal-ftr{
+    margin-top:1%;
 }
