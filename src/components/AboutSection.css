@@ -13,7 +13,9 @@ img{
 .masthead-profile{
     width:10em;
 }
-
+#about-header{
+    margin-top:0em;
+}
 .about-me-paragraph{
     color: var(--main-text-color);
     margin-bottom:3em;
@@ -35,7 +37,7 @@ img{
 
 
 .skills-btn{
-    margin-top:1em;
+    margin-top:2em;
     border-radius:0.4em;
     border: 1px solid var(--accent-color-1);
     margin-left: 35%;

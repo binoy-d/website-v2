@@ -88,7 +88,7 @@ function AboutSection() {
                     <Row >
                         <Col>
                             <Fade top>
-                                <SectionHeader text='About me' />
+                                <SectionHeader id="about-header" text='About me' />
                             </Fade>
                         </Col>
                     </Row>

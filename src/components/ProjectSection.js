@@ -21,8 +21,9 @@ function ProjectSection() {
     const projects = [
         {
           title: 'This Website!',
-          description: ['Responsive personal portfolio website', 
-                        'Features smooth animations encouraging interaction',
+          description: ['Mobile-friendly responsive personal portfolio website', 
+                        'Smooth animations encourage interaction',
+                        'Night mode button offers two aesthetic color modes',
                         'Currently under development ;)'],
           languages: ['ReactJS', 'Bootstrap', 'HTML', 'CSS', 'JavaScript'],
           link: "https://binoy.co/",
