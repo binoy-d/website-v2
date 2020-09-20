@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ProjectCard.css';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -7,7 +7,7 @@ import Image from 'react-bootstrap/Image'
 import Fade from 'react-reveal/Fade';
 import Badge from 'react-bootstrap/Badge'
 import { Media } from 'react-breakpoints'
-
+import Modal from 'react-bootstrap/Modal'
 
 function ProjectLanguageTags({ languages }) {
     return (
@@ -41,10 +41,25 @@ function ProjectDescription({ proj, side }) {
 
 
 function ProjectImage({ proj }) {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
-        <a href={proj.link}>
-            <Image className="project-image" src={proj.img}></Image>
-        </a>
+        <>
+            <a onClick={handleShow}>
+                <Image className="project-image" src={proj.img}></Image>
+            </a>
+            <Modal className = "project-modal" show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Footer>
+                </Modal.Footer>
+            </Modal>
+        </>
     );
 }
 
@@ -70,7 +85,7 @@ function ProjectCardRightDesktop({ proj }) {
     return (
         <Fade right>
             <Row>
-                
+
                 <Col className="text-center">
                     <ProjectImage proj={proj} />
                 </Col>
@@ -112,23 +127,23 @@ function ProjectCard({ proj, side }) {
         <Media>
             {({ breakpoints, currentBreakpoint }) =>
                 breakpoints[currentBreakpoint] > breakpoints.tabletLandscape ? (
-                    (proj.featured?
-                        <Col className = "project-card-col" xl={12} lg={6} md={6} sm={6}>
-                            ({side === 0?
-                            <ProjectCardLeftDesktop proj={proj} />:
-                            <ProjectCardRightDesktop proj={proj} />})
+                    proj.featured ?
+                        <Col className="project-card-col" xl={12} lg={6} md={6} sm={6}>
+                            {side === 0 ?
+                                <ProjectCardLeftDesktop proj={proj} /> :
+                                <ProjectCardRightDesktop proj={proj} />}
                         </Col>
                         :
-                        <Col className = "project-card-col" xl={4} lg={4} md={6} sm={6}>
+                        <Col className="project-card-col" xl={4} lg={4} md={6} sm={6}>
+                            <ProjectCardMobile proj={proj} />
+                        </Col>
+                    
+                ) : (
+                        <Col className="project-card-col" xl={12} lg={6} md={6} sm={6}>
                             <ProjectCardMobile proj={proj} />
                         </Col>
                     )
-                    ):(
-                        <Col className = "project-card-col" xl={12} lg={6} md={6} sm={6}>
-                            <ProjectCardMobile proj={proj} />
-                        </Col>
-                    )
-                
+
             }
         </Media>
 

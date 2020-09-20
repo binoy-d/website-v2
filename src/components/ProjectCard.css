@@ -117,3 +117,20 @@ ul{
 .desc-left{
     height:100%;
 }
+
+.project-modal{
+    background-color: #080705!important;
+}
+
+.modal-content{
+    top:50vh;
+    transform:translateY(-100%);
+    background-color: #080705!important;
+    color: #EFF1F3!important;
+}
+
+.close{
+    color:#EFF1F3!important;
+    opacity: 1;
+    font-size:2em;
+}
