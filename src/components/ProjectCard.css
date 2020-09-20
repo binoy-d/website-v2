@@ -53,7 +53,7 @@ ul{
     
     height:100%;
     margin:auto;
-    color:#EFF1F3;
+    color: var(--main-text-color);
     position:relative;
     padding:2em;
     width:100%;
@@ -67,7 +67,6 @@ ul{
 
 .description-col{
     display: flex;
-    border: 1px solid #EFF1F3;
     border-radius: 0.4em;
     align-items: center;
 }
@@ -78,7 +77,8 @@ ul{
 .proj-tag{
     margin:0.25em;
     background-color: transparent;
-    border: 1px solid #EFF1F3;
+    border: 1px solid var(--main-text-color);
+    color: var(--main-text-color);
     padding:0.75em;
 }
 
@@ -91,7 +91,7 @@ ul{
 }
 
 .proj-title-mobile{
-    color: #EFF1F3;
+    color: var(--accent-color-1);
     font-size:2em;
     margin-bottom:0.5em;
     text-align:center;
@@ -99,17 +99,17 @@ ul{
 
 .project-description-mobile{
     margin-top:1em;
-    color:#EFF1F3;
+    color:var(--main-text-color);
 }
 
 .proj-title-left{
     margin-top:1em;
-    color: #EFF1F3;
+    color: var(--accent-color-1);
     text-align: center;
 }
 .proj-title-right{
     margin-top:1em;
-    color: #EFF1F3;
+    color: var(--accent-color-1);
     text-align:center;
 }
 
@@ -121,18 +121,18 @@ ul{
 }
 
 .project-modal{
-    background-color: #080705!important;
+    background-color: var(--main-bg-color)!important;
 }
 
 .modal-content{
     top:50vh;
     transform:translateY(-100%);
-    background-color: #080705!important;
-    color: #EFF1F3!important;
+    background-color: var(--main-bg-color)!important;
+    color: var(--main-text-color)!important;
 }
 
 .close{
-    color:#EFF1F3!important;
+    color:var(--main-text-color)!important;
     opacity: 1;
     font-size:2em;
 }

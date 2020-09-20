@@ -7,9 +7,8 @@
 
 
 .projects-button{
-    margin-top: 5em;
     margin-bottom:5em;
-
+    border: 1px solid var(--accent-color-1);
 }
 
 .skills-stuff{
@@ -27,11 +26,11 @@
 
 .skill-card-title{
     text-align: center;
-    color: #EFF1F3;
+    color: var(--main-text-color);
     margin-left:25%;
     width:50%;
     padding-bottom:0.25em;
-    border-bottom: 1px solid #d7d9db;
+    border-bottom: 1px solid var(--accent-color-1);
     transition: transform 0.3s;
     transition-timing-function: ease-out;
     
@@ -44,7 +43,7 @@
 
 .short-skill-list{
     text-align: center;
-    color: #d7d9db;
+    color: var(--main-text-color);
     font-size: 1.5em;
 }
 
@@ -58,12 +57,12 @@
 }
 
 .skill-modal{
-    background-color: #080705!important;
+    background-color: var(--main-bg-color)!important;
 }
 
 .modal-content{
-    background-color: #080705!important;
-    color: #EFF1F3!important;
+    background-color:var(--main-bg-color)!important;
+    color: var(--main-text-color)!important;
 }
 
 .skill-item{
@@ -88,7 +87,7 @@
 .exit-button{
     position:relative;
     background-color: transparent;
-    border: 1px solid #d7d9db;
+    border: 1px solid var(--accent-color-1);
     border-radius: 0.4em;
     left:50%;
     max-width:5em;
@@ -98,5 +97,5 @@
 
 .exit-button:hover{
     background-color: transparent;
-    border: 1px solid #d7d9db;
+    border: 1px solid var(--accent-color-1);
 }

@@ -1,9 +1,18 @@
+:root {
+  --main-bg-color: #080705;
+  --main-text-color: #EFF1F3;
+  --secondary-text-color: #AED4E6;
+  --accent-color-1: #C52233;
+}
+
+
 .App {
   text-align: center;
 }
 html{
-  background-color: #080705!important;
+  background-color: var(--main-bg-color)!important;
 }
 body{
-  background-color: #080705!important;
+  background-color:var(--main-bg-color)!important;
 }
+

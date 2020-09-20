@@ -2,15 +2,18 @@
     position: fixed;
     bottom:0em;
     left:0em;
-    color:rgb(230, 234, 247);
+    color: var(--main-text-color);
+    z-index:10;
 }
 
 .contact-button{
-    margin:0.5em;
+    margin:1em;
+    margin-bottom:2em;
 }
 
 a svg {
     width: 30px;
     height: 30px;
-    fill:#bac2d6;
+    fill:var(--main-text-color);
+    opacity:50%;
 }

@@ -6,12 +6,12 @@
 }
 
 #name-header{
-    color:#EFF1F3;
+    color:var(--main-text-color);
     
     font-size: 5em;
     transition: font-size 0.2s;
     transition-timing-function: ease-out;
-    text-shadow: 3px 3px 6px #000000;
+    text-shadow: 3px 3px 6px black;
 
 }
 #name-header:hover{
@@ -19,7 +19,7 @@
 
 }
 #landing-tagline{
-    color:#EFF1F3
+    color:var(--accent-color-1);
 }
 
 .landing-stuff{

@@ -12,16 +12,16 @@ img{
 
 .masthead-profile{
     width:10em;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.description-para{
-    color: #bac2d6;
+.about-me-paragraph{
+    color: var(--main-text-color);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width:80%;
 }
 
-.projects-button{
-    margin-top: 1em;
-}
 
 .about-stuff{
     position:relative;
@@ -30,7 +30,8 @@ img{
     transform: translate(-50%, -50%);
 }
 
-.main-skill-wrapper{
-    background-color: #2f3b54;
-    border-radius: 0.3em;
+
+.skills-btn{
+    margin-top:1em;
+    border: 1px solid var(--accent-color-1);
 }

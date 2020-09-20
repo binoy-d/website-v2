@@ -1,6 +1,7 @@
 .section-header{
     text-align: center;
     padding: 0.5em;
-    color:#ffae57;
-    text-shadow: 3px 3px 6px #000000;
+    color:var(--main-text-color);
+    font-size: 4em;
+    text-shadow: 3px 3px 6px black;
 }
