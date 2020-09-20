@@ -70,6 +70,7 @@ function ProjectCardRightDesktop({ proj }) {
     return (
         <Fade right>
             <Row>
+                
                 <Col className="text-center">
                     <ProjectImage proj={proj} />
                 </Col>
@@ -81,24 +82,24 @@ function ProjectCardRightDesktop({ proj }) {
     );
 }
 
-function ProjectCardMobile({proj}){
+function ProjectCardMobile({ proj }) {
     return (
-        <div className = "project-card-mobile">
-            <h2 className = "proj-title-mobile">{proj.title}</h2>
+        <div className="project-card-mobile">
+            <h2 className="proj-title-mobile">{proj.title}</h2>
             <a href={proj.link}><Image className="project-image" src={proj.img}></Image></a>
             <div>
-            <div className="project-description-mobile">
-                <ul>
-                    {proj.description.map((line, index) =>
-                        <li className="project-description-text">
-                            {line}
+                <div className="project-description-mobile">
+                    <ul>
+                        {proj.description.map((line, index) =>
+                            <li className="project-description-text">
+                                {line}
+                            </li>
+                        )}
+                        <li>
+                            <ProjectLanguageTags languages={proj.languages} />
                         </li>
-                    )}
-                    <li>
-                        <ProjectLanguageTags languages={proj.languages} />
-                    </li>
-                </ul>
-            </div>
+                    </ul>
+                </div>
             </div>
         </div>
     );
@@ -107,24 +108,35 @@ function ProjectCardMobile({proj}){
 
 function ProjectCard({ proj, side }) {
     return (
-        <Container className="project-card w-100">
-            <Media>
-                {({ breakpoints, currentBreakpoint }) =>
-                    breakpoints[currentBreakpoint] > breakpoints.desktop ? (
-                        (side === 0 ?
-                            <ProjectCardLeftDesktop proj={proj} /> :
-                            <ProjectCardRightDesktop proj={proj} />)
-                    ) : (
+
+        <Media>
+            {({ breakpoints, currentBreakpoint }) =>
+                breakpoints[currentBreakpoint] > breakpoints.tabletLandscape ? (
+                    (proj.featured?
+                        <Col className = "project-card-col" xl={12} lg={6} md={6} sm={6}>
+                            ({side === 0?
+                            <ProjectCardLeftDesktop proj={proj} />:
+                            <ProjectCardRightDesktop proj={proj} />})
+                        </Col>
+                        :
+                        <Col className = "project-card-col" xl={4} lg={4} md={6} sm={6}>
                             <ProjectCardMobile proj={proj} />
-                        )
-                }
-            </Media>
+                        </Col>
+                    )
+                    ):(
+                        <Col className = "project-card-col" xl={12} lg={6} md={6} sm={6}>
+                            <ProjectCardMobile proj={proj} />
+                        </Col>
+                    )
+                
+            }
+        </Media>
 
 
 
 
-            
-        </Container>
+
+
     );
 }
 

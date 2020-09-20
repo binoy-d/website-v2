@@ -3,6 +3,10 @@ import './ProjectSection.css';
 import Container from 'react-bootstrap/Container'
 import SectionHeader from './SectionHeader'
 import ProjectCard from './ProjectCard'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
+
 import {BubblifyImg,
     PuzzleGameImg,
     BubblesTogetherImg,
@@ -19,7 +23,9 @@ function ProjectSection() {
                         'Currently under development ;)'],
           languages: ['ReactJS', 'Bootstrap', 'HTML', 'CSS', 'JavaScript'],
           link: "https://bubbles-together.herokuapp.com/",
-          img: WebsiteImg
+          img: WebsiteImg,
+          featured: true,
+          codeLink: ""
         },
         {
           title: 'Bubbles, Together',
@@ -28,7 +34,20 @@ function ProjectSection() {
                         'Backend written in NodeJS using SocketIO, hosted on Heroku'],
           languages: ['p5.js', 'Node', 'JavaScript', 'SocketIO', 'Heroku'],
           link: "https://bubbles-together.herokuapp.com/",
-          img: BubblesTogetherImg
+          img: BubblesTogetherImg,
+          featured: true,
+          codeLink: ""
+        },
+        {
+          title: 'Puzzle Game',
+          description: ['Turn based puzzle game with retro aesthetic',
+                        'Written purely with Java and standard libraries',
+                        'Reads custom map files as matrix of tiles'],
+          languages: ['Java', 'Graphics2D'],
+          link: "https://github.com/binoy-d/2p1p-puzzle-game",
+          img: PuzzleGameImg,
+          featured: true,
+          codeLink: ""
         },
         {
           title: 'Color Game',
@@ -37,17 +56,11 @@ function ProjectSection() {
                         'Bootstrap for responsive layout, with smooth fades in CSS'],
           languages: ['Bootstrap', 'CSS', 'JavaScript'],
           link: "https://binoy-d.github.io/color-game/",
-          img: ColorGameImg
+          img: ColorGameImg,
+          featured: false,
+          codeLink: ""
         },
-        {
-          title: 'Puzzle Game',
-          description: ['Turn based game where moving one character moves the other as well',
-                        'Written purely with Java and standard libraries',
-                        'Reads custom map files as matrix of tiles'],
-          languages: ['Java', 'Graphics2D'],
-          link: "https://github.com/binoy-d/2p1p-puzzle-game",
-          img: PuzzleGameImg
-        },
+        
         {
           title: 'Bubblify',
           description: ['Recreates any online image out of bubbles',
@@ -55,16 +68,20 @@ function ProjectSection() {
                         'Bubblified images can be downloaded'],
           languages: ['p5.js', 'HTML', 'CSS', 'JavaScript'],
           link: "https://www.binoy.co/pages/bubblify.html",
-          img: BubblifyImg
+          img: BubblifyImg,
+          featured: false,
+          codeLink: ""
         },
         {
           title: 'To Do List',
           description: ['To Do List app with simple and clean interfacve',
-                        'Easily add to-do items, cross off, delete, and create multiple lists',
+                        'Features: add, delete, mark as done, add new list',
                         'Bootstrap for layout, JavaScript with jQuery for handling data'],
           languages: ['jQuery', 'JavaScript', 'Bootstrap', 'CSS', 'HTML'],
           link: "https://binoy-d.github.io/to-do-app/",
-          img: TodoListImg
+          img: TodoListImg,
+          featured: false,
+          codeLink: ""
         }
       ]
 
@@ -73,11 +90,15 @@ function ProjectSection() {
           <div class="projects-stuff">
           <SectionHeader  text="Projects"/>
             <Container>
-                
+                <Row>
+                  
                 {projects.map((proj, index)=>
+               
                     <ProjectCard proj={proj} side={index%2}/>
+                    
                 )}
-
+                
+                </Row>
             </Container>
             </div>
         </section>

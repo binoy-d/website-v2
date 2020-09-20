@@ -14,7 +14,7 @@ ul{
 }
 
 .project-description-right{
-    text-align:right;
+    text-align:left;
 }
 
 .project-description-text{
@@ -32,8 +32,10 @@ ul{
 
 
 .project-image{
-    width: 100%;
+    max-width: 100%;
+    max-height:100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform:scale(1.0);
     transition: transform 0.3s;
     transition-timing-function: ease-out;
     border-radius: 0.4em;
@@ -44,22 +46,20 @@ ul{
 .project-image:hover{
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transform:scale(1.1);
-    
-    
+    transform:scale(0.9);
 }
 
 .project-description{
-    background-color: #2f3b54;
+    
+    height:100%;
     margin:auto;
     color:#EFF1F3;
     position:relative;
     padding:2em;
-    width:35vw;
+    width:100%;
     vertical-align: middle;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-decoration: none;
-    border-radius: 0.4em;
+    
     position:relative;
     z-index:2;
 }
@@ -67,7 +67,8 @@ ul{
 
 .description-col{
     display: flex;
-    
+    border: 1px solid #EFF1F3;
+    border-radius: 0.4em;
     align-items: center;
 }
 
@@ -96,15 +97,18 @@ ul{
 
 .project-description-mobile{
     margin-top:1em;
+    color:#EFF1F3;
 }
 
 .proj-title-left{
+    margin-top:1em;
     color: #EFF1F3;
-    text-align: left;
+    text-align: center;
 }
 .proj-title-right{
+    margin-top:1em;
     color: #EFF1F3;
-    text-align:right;
+    text-align:center;
 }
 
 .desc-right{
