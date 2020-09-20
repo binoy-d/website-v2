@@ -22,10 +22,10 @@ function ProjectSection() {
                         'Features smooth animations encouraging interaction',
                         'Currently under development ;)'],
           languages: ['ReactJS', 'Bootstrap', 'HTML', 'CSS', 'JavaScript'],
-          link: "https://bubbles-together.herokuapp.com/",
+          link: "https://binoy.co/",
           img: WebsiteImg,
           featured: true,
-          codeLink: ""
+          codeLink: "https://github.com/binoy-d/portfolio-website"
         },
         {
           title: 'Bubbles, Together',
@@ -47,7 +47,18 @@ function ProjectSection() {
           link: "https://github.com/binoy-d/2p1p-puzzle-game",
           img: PuzzleGameImg,
           featured: true,
-          codeLink: ""
+          codeLink: "https://github.com/binoy-d/2p1p-puzzle-game"
+        },
+        {
+          title: 'Debug Duck',
+          description: ['Story based TDS video game written in 48 hours for GGJ 2020',
+                        'Play as the duck from "rubber duck debugging"',
+                        'My role: Programming in c# and creating assets'],
+          languages: ['Java', 'Graphics2D'],
+          link: "https://globalgamejam.org/2020/games/debug-duck-2",
+          img: PuzzleGameImg,
+          featured: false,
+          codeLink: "https://github.com/binoy-d/debug-duck"
         },
         {
           title: 'Color Game',
@@ -58,7 +69,7 @@ function ProjectSection() {
           link: "https://binoy-d.github.io/color-game/",
           img: ColorGameImg,
           featured: false,
-          codeLink: ""
+          codeLink: "https://github.com/binoy-d/color-game"
         },
         
         {
@@ -81,7 +92,7 @@ function ProjectSection() {
           link: "https://binoy-d.github.io/to-do-app/",
           img: TodoListImg,
           featured: false,
-          codeLink: ""
+          codeLink: "https://github.com/binoy-d/to-do-app"
         }
       ]
 
