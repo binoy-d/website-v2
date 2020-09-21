@@ -15,7 +15,7 @@ function SkillCard({ title, items }) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     let shown_languages = []
-    for (let index = 0; index < 3; index++) {
+    for (let index = 0; index < 4; index++) {
         shown_languages.push(items[index]);
     }
 
@@ -23,24 +23,32 @@ function SkillCard({ title, items }) {
 
         <>
             <div className='skill-card'>
-                <Container>
-                <Row>
-                    <Col>
-                <h2 className="skill-card-title" onClick={handleShow}>
-                    {title}
-                </h2>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                <p className="short-skill-list">
-                    {shown_languages.map((item, index) =>
-                        <span className="main-skill-item">{item}</span>
-                    )}
-                    <span className="more-btn" onClick={handleShow}>More</span>
-                </p>
-                    </Col>
-                </Row>
+                <Container className ="w-50">
+                    <Row>
+                        <Col>
+                            <h2 className="skill-card-title" onClick={handleShow}>
+                                {title}
+                            </h2>
+                        </Col>
+                    </Row>
+                    <Row>
+
+                        {shown_languages.map((item, index) =>
+                            <Col>
+                                <div className="main-skill-item">
+                                    <p >{item}</p>
+                                </div>
+                            </Col>
+
+                        )}
+                    </Row>
+                    <Row>
+                        <Col>
+                            <div className="more-btn">
+                                <a onClick={handleShow}>More</a>
+                            </div>
+                        </Col>
+                    </Row>
                 </Container>
             </div>
 
@@ -120,9 +128,9 @@ function SkillsWrapper() {
                 'Linux',
                 'Agile',
                 'Arduino',
+                'Photoshop',
                 'Windows',
                 'macOS',
-                'Photoshop',
                 'Premiere Pro',
                 'Illustrator',
                 'After Effects',
@@ -139,9 +147,9 @@ function SkillsWrapper() {
         <>
 
             {skills_sections.map((sec, index) =>
-                
-                    <SkillCard title={sec.title} items={sec.items} />
-                
+
+                <SkillCard title={sec.title} items={sec.items} />
+
             )}
 
 
@@ -157,16 +165,21 @@ function SkillsWrapper() {
 
 function SkillsSection() {
     return (
+        
         <section id="skills">
+            <div id="about-skills-separator">
+        </div>
             <Container className="w-100">
+                
                 <div className="skills-stuff">
+                
                     <Fade top>
                         <SectionHeader text="Skills" />
                     </Fade>
-                    
-                        
-                        <SkillsWrapper />
-                    
+
+
+                    <SkillsWrapper />
+
                     <Fade bottom big>
                         <div className="projects-button">
                             <NavLink className="btn btn-outline-light projects-button" destination="projects" text="Projects"></NavLink>

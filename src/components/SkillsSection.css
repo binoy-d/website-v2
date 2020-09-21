@@ -1,4 +1,5 @@
 #skills{
+    position:relative;
     background-color:  transparent;
     margin-top: 10em;
     margin-bottom:10em;
@@ -31,7 +32,7 @@
 
 .skill-card-title{
     text-align: center;
-    color: var(--main-text-color);
+    color: var(--accent-color-1);
     margin-left:0%;
     width:100%;
     padding-bottom:0.25em;
@@ -48,7 +49,6 @@
 
 .short-skill-list{
     text-align: center;
-    border-top: 1px solid var(--accent-color-1);
     color: var(--main-text-color);
     font-size: 1.5em;
 }
@@ -56,9 +56,12 @@
 .main-skill-item{
     margin-left:1%;
     margin-right:1%;
-    padding-top:0.1em;
-    padding-bottom:0.2em;
-    font-size: 0.75em;
+    padding:0.2em;
+    padding-left:0.5em;
+    padding-right: 0.5em;
+    font-size: 1em;
+    border-radius: 0.2em;
+    color: var(--main-text-color);
 }
 
 .skill-modal{
@@ -110,16 +113,24 @@
 
 .more-btn{
     border: 1px solid var(--accent-color-1);
+    background-color:transparent;
+    color: var(--main-text-color)!important;
+    text-decoration: none;
+    margin-left:1%;
+    margin-right:1%;
+    padding:0.7em;
+    padding-left:1em;
+    padding-right: 1em;
     font-size: 0.75em;
     border-radius: 0.2em;
-    padding-left:0.5em;
-    padding-right:0.5em;
-    padding-top:0.1em;
-    padding-bottom:0.1em;
-    margin-left:1%;
+    width:50%;
+    margin-left:25%;
+    transition: transform 0.2s;
 }
 
 .more-btn:hover{
     transform: scale(1.1);
+    color: var(--main-text-color);
+    text-decoration: none;
     cursor:pointer;
 }
