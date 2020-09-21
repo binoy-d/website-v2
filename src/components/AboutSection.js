@@ -20,7 +20,7 @@ function CodeWindow() {
         "Major": "Computer Science",
         "Hobbies": ["'Coding'", "'Video Editing'", "'Longboarding'", "'Art'"],
         "Status": "Looking for software engineering internships",
-        "Email": "dbinoy15@gmail.com"
+        "Email": ["'dbinoy15@gmail.com'", "'dbinoy@uci.edu'"]
     }
     let output = [];
     for (var key in info) {

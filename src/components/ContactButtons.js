@@ -21,6 +21,8 @@ function toggleNightMode(){
 
 
 function ContactButtons() {
+
+
     return (
         <div className="contact-wrapper">
             <Fade left>

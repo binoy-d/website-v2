@@ -1,24 +1,32 @@
 .contact-wrapper{
-    position: fixed;
-    bottom:0em;
-    left:0em;
+
     color: var(--main-text-color);
-    z-index:10;
+
+    position: sticky;
+    position: -webkit-sticky;
+    top:45%;
+    bottom: 0; /* required */
 }
 
 .contact-button{
-    margin:1em;
-    margin-bottom:2em;
+    margin-left:0.4em;
+    margin-bottom:1em;
     
 }
 
 
 
 a svg {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     fill:var(--main-text-color)!important;
+    transition:transform 0.2s;
     /*opacity:100%;*/
+}
+
+a svg:hover{
+    transform: scale(1.1);
+    cursor:pointer;
 }
 
 .night-button{
