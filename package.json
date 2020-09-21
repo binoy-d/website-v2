@@ -1,8 +1,8 @@
 {
-  "name": "Daniel-Binoy",
+  "name": "daniel-binoy",
   "version": "0.9.0",
   "private": true,
-  "homepage": "https://binoy.co",
+  "homepage": "binoy.co",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

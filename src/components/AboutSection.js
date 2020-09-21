@@ -11,7 +11,7 @@ import Col from "react-bootstrap/Col"
 
 function CodeWindow() {
     const sendEmail = () => {
-        window.open("mailto:dbinoy@gmail.com");
+        window.open("mailto:dbinoy15@gmail.com");
     }
     const info = {
         "Name": ["'Daniel'", "'Binoy'"],
