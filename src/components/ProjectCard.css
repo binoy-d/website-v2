@@ -8,15 +8,6 @@ ul{
 
 
 
-.project-description-left{
-    text-align:left;
-    
-}
-
-.project-description-right{
-    text-align:left;
-}
-
 .project-description-text{
     color:EFF1F3;
 }
@@ -44,9 +35,9 @@ ul{
 }
 
 .project-image:hover{
-    width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transform:scale(0.9);
+    cursor:pointer;
 }
 
 .project-description{
@@ -71,7 +62,7 @@ ul{
     align-items: center;
 }
 .project-tags{
-    margin-top:2em;
+    margin-top:1em;
 }
 
 .proj-tag{
@@ -93,7 +84,7 @@ ul{
 
 .proj-title-mobile{
     color: var(--accent-color-1);
-    font-size:2em;
+    font-size:1.5em;
     margin-bottom:0.5em;
     text-align:center;
 }
@@ -101,10 +92,12 @@ ul{
 .project-description-mobile{
     margin-top:1em;
     color:var(--main-text-color);
+    font-size:0.8em!important;
 }
 
 .proj-title{
     margin-top:1em;
+    font-size:2em;
     color: var(--accent-color-1);
     text-align: center;
 }
@@ -144,14 +137,13 @@ ul{
 
 .modal-btn{
     color: var(--main-text-color);
-    margin:2.5%;
-    height:80%;
-    width:50%;
     font-size: 1.5em;
-    padding-top: 7.5%;
+    text-align: center;
     transition: transform 0.3s;
     background-color: transparent;
+    border-radius: 0.4em;
     border: 1px solid var(--accent-color-1);
+    margin:0.5em;
 }
 
 .modal-btn:hover{
@@ -161,6 +153,11 @@ ul{
     background-color: transparent;
     
 }
+
+.modal-descriptiopn{
+    padding:1em;
+}
+
 .modal-btn:after{
     background-color: transparent;
     border: 1px solid var(--accent-color-1);

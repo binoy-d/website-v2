@@ -1,0 +1,14 @@
+THIS IS FROM DANIEL, TO DANIEL:
+
+
+steps to push an update:
+
+1. do the code changes and commit to master
+2. cd to repo directory, and "npm run deploy"
+3. once published, go to repo settings on github
+4. make sure branch is gh-pages(this should already be set)
+5. set custom domain to "binoy.co"
+6. change theme to anything(this is weird ik but just do it)
+7. give it a minute or two
+8. check if it works
+9. if not working, figure it out lmao

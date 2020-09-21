@@ -43,29 +43,28 @@ function ProjectModal({ proj, show, handleClose }) {
     return (
         <Modal className="project-modal" show={show} onHide={handleClose}>
             <Container>
-                <Modal.Header closeButton />
+                <Modal.Header closeButton>
+                    <Modal.Title>{proj.title}</Modal.Title>
+                </Modal.Header>
                 <Modal.Body>
-
                     <Row>
                         <Col>
-                            <ProjectDescription proj={proj} />
-                        </Col>
-                        <Col>
-                            <Container className="w-100 h-100 ">
-                                <Row className = "h-50">
-                                    <Col className = "modal-btn-wrapper align-items-center">
-                                        <Button href = {proj.link} className = "modal-btn">View Project</Button>
-                                    </Col>
-                                </Row>
-                                <Row className = "h-50">
-                                    <Col className = "modal-btn-wrapper">
-                                        <Button href = {proj.codeLink} className = "modal-btn">View Code</Button>
-                                    </Col>
-                                </Row>
-                            </Container>
+                        <div className = "modal-description">
+                        <p>{proj.longDescription}</p>
+                        </div>
                         </Col>
                     </Row>
-                    <Modal.Footer className = "modal-ftr"/>
+                    <Row>
+                        <Col>
+                            <Button href={proj.link} className="modal-btn">View Project</Button>
+                            <Button href={proj.codeLink} className="modal-btn">View Code</Button>
+                        </Col>
+                        <Col>
+                            <ProjectLanguageTags languages={proj.languages} />
+                        </Col>
+                    </Row>
+
+                    <Modal.Footer className="modal-ftr" />
                     <Row>
                         <Col className="modal-img-wrapper">
                             <Image className="modal-image" src={proj.img}></Image>
@@ -73,7 +72,7 @@ function ProjectModal({ proj, show, handleClose }) {
                     </Row>
 
                 </Modal.Body>
-                
+
             </Container>
         </Modal>
     );
