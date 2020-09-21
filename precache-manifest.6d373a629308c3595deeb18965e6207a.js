@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "aa9c3ca1aa852285ea2957b60dc14834",
+    "revision": "9e3254524095668660178336c2589d64",
     "url": "/binoy.co/index.html"
   },
   {
-    "revision": "6709bb73069e743fb51d",
+    "revision": "547063403e56caeb8b2b",
     "url": "/binoy.co/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "9591cfe417def83b2dcb",
+    "revision": "00a954d2d99c97464e83",
     "url": "/binoy.co/static/css/main.7e9fe58a.chunk.css"
   },
   {
-    "revision": "6709bb73069e743fb51d",
-    "url": "/binoy.co/static/js/2.05506ae2.chunk.js"
+    "revision": "547063403e56caeb8b2b",
+    "url": "/binoy.co/static/js/2.fb9c9c01.chunk.js"
   },
   {
     "revision": "a73511fdd0e79fea52c5f42ad1574633",
-    "url": "/binoy.co/static/js/2.05506ae2.chunk.js.LICENSE.txt"
+    "url": "/binoy.co/static/js/2.fb9c9c01.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "9591cfe417def83b2dcb",
-    "url": "/binoy.co/static/js/main.1238b9c8.chunk.js"
+    "revision": "00a954d2d99c97464e83",
+    "url": "/binoy.co/static/js/main.6ea8719d.chunk.js"
   },
   {
-    "revision": "51981b02e3cf9e62a501",
-    "url": "/binoy.co/static/js/runtime-main.9a147134.js"
+    "revision": "102437bc024fba344f5c",
+    "url": "/binoy.co/static/js/runtime-main.2d9a93bf.js"
   },
   {
     "revision": "36b4ba6db6ec415fd91e435d8a824ea6",

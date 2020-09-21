@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/binoy.co/static/css/main.7e9fe58a.chunk.css",
-    "main.js": "/binoy.co/static/js/main.1238b9c8.chunk.js",
-    "main.js.map": "/binoy.co/static/js/main.1238b9c8.chunk.js.map",
-    "runtime-main.js": "/binoy.co/static/js/runtime-main.9a147134.js",
-    "runtime-main.js.map": "/binoy.co/static/js/runtime-main.9a147134.js.map",
+    "main.js": "/binoy.co/static/js/main.6ea8719d.chunk.js",
+    "main.js.map": "/binoy.co/static/js/main.6ea8719d.chunk.js.map",
+    "runtime-main.js": "/binoy.co/static/js/runtime-main.2d9a93bf.js",
+    "runtime-main.js.map": "/binoy.co/static/js/runtime-main.2d9a93bf.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/binoy.co/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.05506ae2.chunk.js": "/binoy.co/static/js/2.05506ae2.chunk.js",
-    "static/js/2.05506ae2.chunk.js.map": "/binoy.co/static/js/2.05506ae2.chunk.js.map",
+    "static/js/2.fb9c9c01.chunk.js": "/binoy.co/static/js/2.fb9c9c01.chunk.js",
+    "static/js/2.fb9c9c01.chunk.js.map": "/binoy.co/static/js/2.fb9c9c01.chunk.js.map",
     "index.html": "/binoy.co/index.html",
-    "precache-manifest.66d45eb831ef268419170e08808a8448.js": "/binoy.co/precache-manifest.66d45eb831ef268419170e08808a8448.js",
+    "precache-manifest.6d373a629308c3595deeb18965e6207a.js": "/binoy.co/precache-manifest.6d373a629308c3595deeb18965e6207a.js",
     "service-worker.js": "/binoy.co/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/binoy.co/static/css/2.d9ad5f5c.chunk.css.map",
     "static/css/main.7e9fe58a.chunk.css.map": "/binoy.co/static/css/main.7e9fe58a.chunk.css.map",
-    "static/js/2.05506ae2.chunk.js.LICENSE.txt": "/binoy.co/static/js/2.05506ae2.chunk.js.LICENSE.txt",
+    "static/js/2.fb9c9c01.chunk.js.LICENSE.txt": "/binoy.co/static/js/2.fb9c9c01.chunk.js.LICENSE.txt",
     "static/media/bubbles-together.png": "/binoy.co/static/media/bubbles-together.36b4ba6d.png",
     "static/media/bubblify.png": "/binoy.co/static/media/bubblify.20e3ec16.png",
     "static/media/color-game.png": "/binoy.co/static/media/color-game.00dcd0a9.png",
@@ -25,10 +25,10 @@
     "static/media/website.png": "/binoy.co/static/media/website.b3c0b214.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9a147134.js",
+    "static/js/runtime-main.2d9a93bf.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.05506ae2.chunk.js",
+    "static/js/2.fb9c9c01.chunk.js",
     "static/css/main.7e9fe58a.chunk.css",
-    "static/js/main.1238b9c8.chunk.js"
+    "static/js/main.6ea8719d.chunk.js"
   ]
 }
