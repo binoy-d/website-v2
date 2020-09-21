@@ -31,10 +31,10 @@
 .skill-card-title{
     text-align: center;
     color: var(--main-text-color);
-    margin-left:25%;
-    width:50%;
+    margin-left:0%;
+    width:100%;
     padding-bottom:0.25em;
-    border-bottom: 1px solid var(--accent-color-1);
+    
     transition: transform 0.3s;
     transition-timing-function: ease-out;
     
@@ -47,6 +47,7 @@
 
 .short-skill-list{
     text-align: center;
+    border-top: 1px solid var(--accent-color-1);
     color: var(--main-text-color);
     font-size: 1.5em;
 }
@@ -56,8 +57,7 @@
     margin-right:1%;
     padding-top:0.1em;
     padding-bottom:0.2em;
-    padding-left:0.5em;
-    padding-right:0.5em;
+    font-size: 0.75em;
 }
 
 .skill-modal{
@@ -109,12 +109,13 @@
 
 .more-btn{
     border: 1px solid var(--accent-color-1);
+    font-size: 0.75em;
     border-radius: 0.2em;
     padding-left:0.5em;
     padding-right:0.5em;
     padding-top:0.1em;
     padding-bottom:0.1em;
-    margin-left:1em;
+    margin-left:1%;
 }
 
 .more-btn:hover{

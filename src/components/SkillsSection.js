@@ -23,18 +23,29 @@ function SkillCard({ title, items }) {
 
         <>
             <div className='skill-card'>
+                <Container>
+                <Row>
+                    <Col>
                 <h2 className="skill-card-title" onClick={handleShow}>
                     {title}
                 </h2>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
                 <p className="short-skill-list">
                     {shown_languages.map((item, index) =>
                         <span className="main-skill-item">{item}</span>
                     )}
                     <span className="more-btn" onClick={handleShow}>More</span>
                 </p>
+                    </Col>
+                </Row>
+                </Container>
             </div>
-            <Modal className="skill-modal" show={show} onHide={handleClose}>
 
+
+            <Modal className="skill-modal" show={show} onHide={handleClose}>
                 <Modal.Title>
                     <h2>
                         {title}
@@ -128,9 +139,9 @@ function SkillsWrapper() {
         <>
 
             {skills_sections.map((sec, index) =>
-                <Fade bottom cascade>
+                
                     <SkillCard title={sec.title} items={sec.items} />
-                </Fade>
+                
             )}
 
 
@@ -147,14 +158,15 @@ function SkillsWrapper() {
 function SkillsSection() {
     return (
         <section id="skills">
-            <Container className="text-center">
+            <Container className="w-100">
                 <div className="skills-stuff">
                     <Fade top>
                         <SectionHeader text="Skills" />
                     </Fade>
-                    <Fade bottom >
+                    
+                        
                         <SkillsWrapper />
-                    </Fade>
+                    
                     <Fade bottom big>
                         <div className="projects-button">
                             <NavLink className="btn btn-outline-light projects-button" destination="projects" text="Projects"></NavLink>
