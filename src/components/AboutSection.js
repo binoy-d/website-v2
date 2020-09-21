@@ -18,9 +18,12 @@ function CodeWindow() {
         "Location": ["'San Jose CA'", "'Irvine CA'"],
         "Education": ["'University of California Irvine'", "'2022'"],
         "Major": "Computer Science",
-        "Hobbies": ["'Coding'", "'Video Editing'", "'Longboarding'", "'Art'"],
+        
         "Status": "Looking for software engineering internships",
-        "Email": ["'dbinoy15@gmail.com'", "'dbinoy@uci.edu'"]
+        "Email": ["'dbinoy15@gmail.com'", "'dbinoy@uci.edu'"],
+        "LatestWork": ["'CS Instructor'", "'KTBYTE'"],
+        "Hobbies": ["'Coding'", "'Video Editing'", "'Longboarding'", "'Art'"]
+
     }
     let output = [];
     for (var key in info) {

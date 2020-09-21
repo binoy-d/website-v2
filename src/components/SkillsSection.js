@@ -111,7 +111,7 @@ function SkillsWrapper() {
                 'VMWare Workstation',
                 'Express.js',
                 'ffmpeg',
-                'Github',
+                'CLIs',
                 'MongoDB']
         },
         {
