@@ -10,6 +10,7 @@
     margin-bottom:5em;
     border: 1px solid var(--accent-color-1);
     border-radius: 0.4em;
+    text-align:center;
     margin-left: 35%;
     width:30%;
     color:var(--main-text-color);
