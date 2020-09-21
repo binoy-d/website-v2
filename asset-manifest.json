@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/portfolio-website/static/css/main.4f1e56a7.chunk.css",
+    "main.js": "/portfolio-website/static/js/main.22307b39.chunk.js",
+    "main.js.map": "/portfolio-website/static/js/main.22307b39.chunk.js.map",
+    "runtime-main.js": "/portfolio-website/static/js/runtime-main.c16362e1.js",
+    "runtime-main.js.map": "/portfolio-website/static/js/runtime-main.c16362e1.js.map",
+    "static/css/2.d9ad5f5c.chunk.css": "/portfolio-website/static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.dcb9f49b.chunk.js": "/portfolio-website/static/js/2.dcb9f49b.chunk.js",
+    "static/js/2.dcb9f49b.chunk.js.map": "/portfolio-website/static/js/2.dcb9f49b.chunk.js.map",
+    "index.html": "/portfolio-website/index.html",
+    "precache-manifest.3e3ca47b42c7a64dc8fb736885c1a7d6.js": "/portfolio-website/precache-manifest.3e3ca47b42c7a64dc8fb736885c1a7d6.js",
+    "service-worker.js": "/portfolio-website/service-worker.js",
+    "static/css/2.d9ad5f5c.chunk.css.map": "/portfolio-website/static/css/2.d9ad5f5c.chunk.css.map",
+    "static/css/main.4f1e56a7.chunk.css.map": "/portfolio-website/static/css/main.4f1e56a7.chunk.css.map",
+    "static/js/2.dcb9f49b.chunk.js.LICENSE.txt": "/portfolio-website/static/js/2.dcb9f49b.chunk.js.LICENSE.txt",
+    "static/media/bubbles-together.png": "/portfolio-website/static/media/bubbles-together.36b4ba6d.png",
+    "static/media/bubblify.png": "/portfolio-website/static/media/bubblify.20e3ec16.png",
+    "static/media/color-game.png": "/portfolio-website/static/media/color-game.00dcd0a9.png",
+    "static/media/daniel-profile.jpg": "/portfolio-website/static/media/daniel-profile.167189ab.jpg",
+    "static/media/debug-duck.png": "/portfolio-website/static/media/debug-duck.0db173e4.png",
+    "static/media/pong.png": "/portfolio-website/static/media/pong.3648b303.png",
+    "static/media/puzzle-game.PNG": "/portfolio-website/static/media/puzzle-game.16dd7b3a.PNG",
+    "static/media/todo-list.png": "/portfolio-website/static/media/todo-list.a0bd6997.png",
+    "static/media/website.png": "/portfolio-website/static/media/website.b3c0b214.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c16362e1.js",
+    "static/css/2.d9ad5f5c.chunk.css",
+    "static/js/2.dcb9f49b.chunk.js",
+    "static/css/main.4f1e56a7.chunk.css",
+    "static/js/main.22307b39.chunk.js"
+  ]
+}
