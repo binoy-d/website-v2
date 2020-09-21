@@ -1,0 +1,6 @@
+#footer-text{
+    margin-top: 3em;
+    color:var(--main-text-color);
+    opacity:80%;
+    text-align: center;
+}

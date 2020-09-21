@@ -1,6 +1,7 @@
 #about{
     background-color:  transparent;
     margin:2em;
+    margin-top:15em;
     border-radius:0.5em;
     height:100vh;
 }
@@ -50,6 +51,8 @@ img{
     border-top-left-radius: 0.4em;
     border-top-right-radius: 0.4em;
     margin-bottom: 0;
+    font-weight: bolder;
+    color:black;
 }
 
 .code-line{
@@ -70,7 +73,7 @@ img{
 
 .code-key{
     color: var(--accent-color-1);
-    
+    font-weight: bolder;
     
 }
 

@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container'
 import SectionHeader from './SectionHeader'
 import ProjectCard from './ProjectCard'
 import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 
 
 import {BubblifyImg,

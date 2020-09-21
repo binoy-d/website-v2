@@ -1,7 +1,6 @@
 import React from 'react';
 import './ContactButtons.css';
 import Fade from 'react-reveal/Fade'
-import Button from 'react-bootstrap/Button'
 
 var nightMode = false;
 function toggleNightMode(){

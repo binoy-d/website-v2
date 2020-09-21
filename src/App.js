@@ -8,7 +8,7 @@ import LandingSection from './components/LandingSection'
 import ProjectSection from './components/ProjectSection'
 import ReactBreakpoints from 'react-breakpoints'
 import SkillsSection from './components/SkillsSection'
-
+import Footer from './components/Footer'
 
 function App() {
   const breakpoints = {
@@ -32,7 +32,7 @@ function App() {
         <AboutSection />
         <SkillsSection />
         <ProjectSection />
-        
+        <Footer />
       </ReactBreakpoints>
       </div>
     </>

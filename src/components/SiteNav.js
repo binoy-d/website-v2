@@ -9,7 +9,7 @@ import Fade from 'react-reveal/Fade'
 function SiteNav() {
     return (
         <Fade top>
-            <Navbar collapseOnSelect className="justify-content-end" expand="lg" className="site-nav" variant="dark">
+            <Navbar collapseOnSelect className="justify-content-end site-nav" expand="lg" variant="dark">
                 <Navbar.Toggle className="justify-content-end" id="site-nav-toggle" aria-controls="responsive-navbar-nav" >
                     <svg viewBox="0 0 100 80" width="20" height="20">
                         <rect x="0" width="100" height="10" rx="4"></rect>
