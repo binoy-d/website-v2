@@ -5,13 +5,6 @@
     border-radius:0.5em;
 }
 
-.projects-stuff{
-    position: relative;
-    left:50%;
-    top:25%;
-    transform: translate(-50%, 0%);
-
-}
 
 .project-card-col{
     margin-top:2em;

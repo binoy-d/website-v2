@@ -103,4 +103,5 @@ img{
 
 .code-window-wrapper:hover{
     transform:scale(1.07);
+    cursor:pointer
 }
