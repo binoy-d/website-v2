@@ -1,7 +1,7 @@
 {
   "name": "daniel-binoy",
   "version": "0.9.0",
-  "private": true,
+  "private": false,
   "homepage": "https://binoy.co",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
