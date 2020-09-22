@@ -1,7 +1,7 @@
 .contact-wrapper{
 
     color: var(--main-text-color);
-
+    width:5%;
     position: sticky;
     position: -webkit-sticky;
     top:45%;
