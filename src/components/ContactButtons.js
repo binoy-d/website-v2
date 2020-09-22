@@ -3,20 +3,20 @@ import './ContactButtons.css';
 import Fade from 'react-reveal/Fade'
 
 var nightMode = false;
-function toggleNightMode(){
-    let root = document.documentElement;    
-    if(nightMode){
-        root.style.setProperty('--main-bg-color',"#080705");
-        root.style.setProperty('--main-text-color',"#EFF1F3");
-        
-    }else{
-        root.style.setProperty('--main-bg-color',"#EFF1F3");
-        root.style.setProperty('--main-text-color',"#080705");
+function toggleNightMode() {
+    let root = document.documentElement;
+    if (nightMode) {
+        root.style.setProperty('--main-bg-color', "#080705");
+        root.style.setProperty('--main-text-color', "#EFF1F3");
+
+    } else {
+        root.style.setProperty('--main-bg-color', "#EFF1F3");
+        root.style.setProperty('--main-text-color', "#080705");
     }
     nightMode = !nightMode;
 
-    
-    
+
+
 }
 
 
@@ -34,25 +34,25 @@ function ContactButtons() {
                 <div className="contact-button ">
                     <a href="https://linkedin.com/in/binoy-d">
                         <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 430.117 430.117"><title>LinkedIn</title><path d="M430.117,261.543V420.56h-92.188V272.193c0-37.271-13.334-62.707-46.703-62.707 c-25.473,0-40.632,17.142-47.301,33.724c-2.432,5.928-3.058,14.179-3.058,22.477V420.56h-92.219c0,0,1.242-251.285,0-277.32h92.21 v39.309c-0.187,0.294-0.43,0.611-0.606,0.896h0.606v-0.896c12.251-18.869,34.13-45.824,83.102-45.824 C384.633,136.724,430.117,176.361,430.117,261.543z M52.183,9.558C20.635,9.558,0,30.251,0,57.463 c0,26.619,20.038,47.94,50.959,47.94h0.616c32.159,0,52.159-21.317,52.159-47.94C103.128,30.251,83.734,9.558,52.183,9.558z M5.477,420.56h92.184v-277.32H5.477V420.56z"></path></svg>
-                        </a>
-                </div>
-                <div className="contact-button ">
-                    <a href="https://instagram/b.inoy">
-                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 512 512"><title>Instagram</title><g><g><path d="M352,0H160C71.648,0,0,71.648,0,160v192c0,88.352,71.648,160,160,160h192c88.352,0,160-71.648,160-160V160 C512,71.648,440.352,0,352,0z M464,352c0,61.76-50.24,112-112,112H160c-61.76,0-112-50.24-112-112V160C48,98.24,98.24,48,160,48 h192c61.76,0,112,50.24,112,112V352z"></path></g></g><g><g><path d="M256,128c-70.688,0-128,57.312-128,128s57.312,128,128,128s128-57.312,128-128S326.688,128,256,128z M256,336 c-44.096,0-80-35.904-80-80c0-44.128,35.904-80,80-80s80,35.872,80,80C336,300.096,300.096,336,256,336z"></path></g></g><g><g><circle cx="393.6" cy="118.4" r="17.056"></circle></g></g></svg>
-                        </a>
-                </div>
-                <div className="contact-button ">
-                    <a href="mailto:dbinoy15@gmail.com">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
                     </a>
                 </div>
-                <div className="contact-button night-button">
-                    <a onClick={toggleNightMode}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className = "night-button" width="24" height="24" viewBox="0 0 26 26"><path xmlns="http://www.w3.org/2000/svg" d="M19.282 17.038c-4.15-.513-7.691-3.379-9.245-7.261a11.042 11.042 0 0 1-.748-5.355.5.5 0 0 0-.772-.468C5.09 6.156 2.905 10.121 3.261 14.573c.442 5.524 4.959 10.056 10.482 10.513 5.646.468 10.522-3.148 12.01-8.213.118-.402-.274-.774-.661-.614a11.43 11.43 0 0 1-5.81.779z"/></svg>
-                    </a>
+                <div className="contact-button ">
+                    <a href="https://leetcode.com/dbinoy15/">
+                    <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 430.117 430.117"><title>LeetCode</title> <path xmlns="http://www.w3.org/2000/svg" d="M343.5,382.5l-57.5,55.6c-10,10-23.7,14.2-38.9,14.2c-15.2,0-28.9-4.2-38.9-14.2l-92.4-93c-9.9-10-15-24.6-15-39.8   c0-15.2,5.1-29,15-38.9l92.2-93.5c9.9-9.9,24-13.7,39.2-13.7c15.2,0,28.9,4.2,38.9,14.2l57.5,55.6c11,11,29.2,10.6,40.6-0.8   c11.3-11.4,11.8-29.6,0.8-40.6l-55.6-56.2c-14.4-14.3-32.5-24.1-52.2-28.6l52.6-53.3c11-11,10.7-29.2-0.8-40.6   C317.5-2.6,299.3-3,288.3,8L72.8,223.5c-20.9,21-31.8,49.8-31.8,81.8c0,31.9,10.9,61.8,31.8,82.7l92.8,93   c20.9,20.9,49.8,31,81.8,31c31.9,0,60.8-10.9,81.8-31.8l55.7-56.3c11-10.9,10.6-29.1-0.8-40.5C372.6,371.9,354.4,371.5,343.5,382.5   L343.5,382.5z M444,277.6H227.4c-14.9,0-27.1,12.8-27.1,28.7c0,15.9,12.2,28.8,27.1,28.8H444c14.9,0,27.1-12.9,27.1-28.8   C471,290.4,458.9,277.6,444,277.6z"/> </svg>
+                        </a>
                 </div>
+            <div className="contact-button ">
+                <a href="mailto:dbinoy15@gmail.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z" /></svg>
+                </a>
+            </div>
+            <div className="contact-button night-button">
+                <a onClick={toggleNightMode}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="night-button" width="24" height="24" viewBox="0 0 26 26"><path xmlns="http://www.w3.org/2000/svg" d="M19.282 17.038c-4.15-.513-7.691-3.379-9.245-7.261a11.042 11.042 0 0 1-.748-5.355.5.5 0 0 0-.772-.468C5.09 6.156 2.905 10.121 3.261 14.573c.442 5.524 4.959 10.056 10.482 10.513 5.646.468 10.522-3.148 12.01-8.213.118-.402-.274-.774-.661-.614a11.43 11.43 0 0 1-5.81.779z" /></svg>
+                </a>
+            </div>
             </Fade>
-        </div>
+        </div >
 
 
     );

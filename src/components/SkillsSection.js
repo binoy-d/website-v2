@@ -91,9 +91,13 @@ function SkillsWrapper() {
                 'C++',
                 'Java',
                 'Javascript',
+                'HTML',
+                'CSS',
                 'Processing',
                 'C#',
-                'p5.js',]
+                'p5.js',
+                
+            ]
         },
         {
             title: 'Frameworks',
