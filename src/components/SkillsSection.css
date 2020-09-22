@@ -113,7 +113,7 @@
 
 .more-btn{
     border: 1px solid var(--accent-color-1);
-    background-color:transparent;
+    background-color:transparent!important;
     color: var(--main-text-color)!important;
     text-decoration: none;
     margin-left:1%;
@@ -124,13 +124,18 @@
     font-size: 0.75em;
     border-radius: 0.2em;
     width:50%;
-    margin-left:25%;
     transition: transform 0.2s;
 }
 
 .more-btn:hover{
     transform: scale(1.1);
     color: var(--main-text-color);
+    border: 1px solid var(--accent-color-1);
     text-decoration: none;
     cursor:pointer;
 }
+
+.more-btn:focus,.more-btn:active {
+    outline: none!important;
+    box-shadow: none!important;
+ }

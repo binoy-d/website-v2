@@ -34,7 +34,7 @@ function SkillCard({ title, items }) {
                     <Row>
 
                         {shown_languages.map((item, index) =>
-                            <Col>
+                            <Col xl={3} lg={3} md={4} sm={6} xs={12}>
                                 <div className="main-skill-item">
                                     <p >{item}</p>
                                 </div>
@@ -44,8 +44,8 @@ function SkillCard({ title, items }) {
                     </Row>
                     <Row>
                         <Col>
-                            <div className="more-btn">
-                                <a onClick={handleShow}>More</a>
+                            <div >
+                                <Button className="more-btn" onClick={handleShow}>More</Button>
                             </div>
                         </Col>
                     </Row>
@@ -176,7 +176,6 @@ function SkillsSection() {
                     <Fade top>
                         <SectionHeader text="Skills" />
                     </Fade>
-
 
                     <SkillsWrapper />
 
