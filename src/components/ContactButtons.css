@@ -6,6 +6,7 @@
     position: -webkit-sticky;
     top:45%;
     bottom: 0; /* required */
+    z-index:10;
 }
 
 .contact-button{
