@@ -141,10 +141,10 @@ function ProjectSection() {
                         'Visualization done with p5.js',
                         'Bubblified images can be downloaded'],
           languages: ['p5.js', 'HTML', 'CSS', 'JavaScript'],
-          link: "https://www.binoy.co/pages/bubblify.html",
+          link: "https://binoy-d.github.io/bubblify",
           img: BubblifyImg,
           featured: false,
-          codeLink: "https://www.binoy.co/pages/bubblify.html",
+          codeLink: "https://github.com/binoy-d/bubblify",
           longDescription: "this is a test"
         },
         {
