@@ -22,8 +22,8 @@ function SkillCard({ title, items }) {
     return (
 
         <>
-            <div className='skill-card'>
-                <Container className ="w-50">
+            <div className='skill-card' onClick={handleShow}>
+                <Container className ="w-100">
                     <Row>
                         <Col>
                             <h2 className="skill-card-title" onClick={handleShow}>

@@ -1,6 +1,21 @@
+#footer{
+    background-color: var(--main-text-color);
+    height:20vh;
+}
+
 #footer-text{
-    margin-top: 3em;
-    color:var(--main-text-color);
+    margin-top:5%;
+    color:var(--main-bg-color);
     opacity:80%;
     text-align: center;
+}
+
+#back{
+    width:50%;
+    margin-left:25%;
+    margin-right:25%;
+    
+    background-color: black;
+    color:var(--main-bg-color)!important;
+    text-align:center!important;
 }

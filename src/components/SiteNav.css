@@ -5,6 +5,7 @@
     position: fixed!important;
     transition:transform 0.2s;
     right:1em;
+    z-index:10!important;
 }
 
 

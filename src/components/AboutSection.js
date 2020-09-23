@@ -21,7 +21,7 @@ function CodeWindow() {
         
         "Status": "Looking for software engineering internships",
         "Email": ["'dbinoy15@gmail.com'", "'dbinoy@uci.edu'"],
-        "LatestWork": ["'CS Instructor'", "'KTBYTE'"],
+        "LatestWork": ["'Web Dev / UI Intern'", "'Curicular'"],
         "Hobbies": ["'Coding'", "'Video Editing'", "'Longboarding'", "'Art'"]
 
     }

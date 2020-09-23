@@ -30,6 +30,18 @@
     text-align: center;
     margin-bottom:1em;
     margin-top: 1em;
+    transition: transform 0.3s;
+    
+    
+}
+
+.skill-card:hover{
+    text-align: center;
+    margin-bottom:1em;
+    margin-top: 1em;
+    
+    transform: scale(1.1);
+    cursor:pointer;
 }
 
 .skill-card-title{
@@ -61,7 +73,7 @@
     padding:0.2em;
     padding-left:0.5em;
     padding-right: 0.5em;
-    font-size: 1em;
+    font-size: 124%;
     border-radius: 0.2em;
     color: var(--main-text-color);
 }
@@ -141,7 +153,7 @@
 .more-btn:hover{
     transform: scale(1.1);
     color: var(--main-text-color);
-    border: 1px solid var(--main-text-color);
+    border: 1px solid var(--main-text-color)!important;
     text-decoration: none;
     cursor:pointer;
 }
@@ -149,6 +161,6 @@
 .more-btn:focus,.more-btn:active {
     outline: none!important;
     background-color: transparent!important;
-    border: 1px solid var(--main-text-color);
+    border: 1px solid var(--main-text-color)!important;
     box-shadow: none!important;
  }
