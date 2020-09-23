@@ -9,8 +9,9 @@ import ProjectSection from './components/ProjectSection'
 import ReactBreakpoints from 'react-breakpoints'
 import SkillsSection from './components/SkillsSection'
 import Footer from './components/Footer'
-
 function App() {
+
+
   const breakpoints = {
     mobile: 320,
     mobileLandscape: 480,
@@ -23,17 +24,17 @@ function App() {
 
   return (
     <>
-    <div id = "app-root">
-      <ReactBreakpoints breakpoints={breakpoints}>
-        
-        <SiteNav></SiteNav>
-        <ContactButtons />
-        <LandingSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectSection />
-        <Footer />
-      </ReactBreakpoints>
+      <div id="app-root">
+          <ReactBreakpoints breakpoints={breakpoints}>
+          
+            <SiteNav></SiteNav>
+            <ContactButtons />
+            <LandingSection />
+            <AboutSection />
+            <SkillsSection />
+            <ProjectSection />
+            <Footer />
+          </ReactBreakpoints>
       </div>
     </>
 

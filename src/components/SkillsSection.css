@@ -8,6 +8,7 @@
 
 
 .projects-button{
+    margin-top:3em;
     margin-bottom:5em;
     border: 1px solid var(--accent-color-1);
     border-radius: 0.4em;
@@ -27,7 +28,8 @@
 
 .skill-card{
     text-align: center;
-    margin-bottom:5em;
+    margin-bottom:1em;
+    margin-top: 1em;
 }
 
 .skill-card-title{
@@ -106,36 +108,47 @@
 }
 
 .exit-button:hover{
-    background-color: transparent;
+    background-color: transparent!important;
     color: var(--main-text-color);
-    border: 1px solid var(--accent-color-1);
+    border: 1px solid var(--accent-color-1)!important;
 }
 
+.exit-btn:focus,.exit:active {
+    outline: none!important;
+    background-color: transparent;
+    color: var(--main-text-color);
+    border: 1px solid var(--accent-color-1)!important;
+    box-shadow: none!important;
+ }
+
+
 .more-btn{
-    border: 1px solid var(--accent-color-1);
+    border: 1px solid var(--main-text-color);
     background-color:transparent!important;
     color: var(--main-text-color)!important;
     text-decoration: none;
     margin-left:1%;
     margin-right:1%;
     padding:0.7em;
-    padding-left:1em;
+    padding-left: 1em;
     padding-right: 1em;
     font-size: 0.75em;
-    border-radius: 0.2em;
-    width:50%;
+    border-radius: 0.4em;
+    
     transition: transform 0.2s;
 }
 
 .more-btn:hover{
     transform: scale(1.1);
     color: var(--main-text-color);
-    border: 1px solid var(--accent-color-1);
+    border: 1px solid var(--main-text-color);
     text-decoration: none;
     cursor:pointer;
 }
 
 .more-btn:focus,.more-btn:active {
     outline: none!important;
+    background-color: transparent!important;
+    border: 1px solid var(--main-text-color);
     box-shadow: none!important;
  }

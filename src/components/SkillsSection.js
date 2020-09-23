@@ -173,7 +173,7 @@ function SkillsSection() {
         <section id="skills">
             <div id="about-skills-separator">
         </div>
-            <Container className="w-100">
+            <Container className="">
                 
                 <div className="skills-stuff">
                 
