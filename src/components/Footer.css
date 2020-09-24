@@ -13,9 +13,17 @@
     width:30%;
     margin-left:35%;
     margin-right:35%;
-    border-radius: 0.1em;
+    padding:0.5em;
+    
+    border-radius: 0.3em;
     background-color: var(--main-bg-color);
     color:var(--main-text-color)!important;
     text-align:center!important;
     cursor:pointer;
+    transition: transform 0.2s;
+}
+
+#back:hover{
+    text-decoration: none;
+    transform: scale(1.1);
 }
