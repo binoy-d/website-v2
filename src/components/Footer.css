@@ -10,11 +10,12 @@
 }
 
 #back{
-    width:50%;
-    margin-left:25%;
-    margin-right:25%;
-    
-    background-color: black;
-    color:var(--main-bg-color)!important;
+    width:30%;
+    margin-left:35%;
+    margin-right:35%;
+    border-radius: 0.1em;
+    background-color: var(--main-bg-color);
+    color:var(--main-text-color)!important;
     text-align:center!important;
+    cursor:pointer;
 }

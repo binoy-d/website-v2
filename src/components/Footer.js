@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.css";
+import { Link} from 'react-scroll'
+
 
 import Container from "react-bootstrap/Container"
 
@@ -15,8 +17,11 @@ function Footer() {
                 <Row>
                     <Col>
                         <p id = "footer-text">Made with ♥ by Daniel Binoy, 2020</p>
-                        <div id="back"><NavLink text="Back to top" destination = "home" /></div>
+                        
                     </Col>
+                </Row>
+                <Row>
+                <Link id="back" className = "back-link" to="home" spy={true} smooth={true} offset={-700} duration={1000}>Back to top</Link>
                 </Row>
             </Container>
         </section>
