@@ -158,7 +158,6 @@ function ProjectCardMobile({ proj }) {
 
 function ProjectCard({ proj, side }) {
     return (
-
         <Media>
             {({ breakpoints, currentBreakpoint }) =>
                 breakpoints[currentBreakpoint] > breakpoints.tabletLandscape ? (
@@ -181,12 +180,6 @@ function ProjectCard({ proj, side }) {
 
             }
         </Media>
-
-
-
-
-
-
     );
 }
 
