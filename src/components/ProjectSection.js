@@ -14,6 +14,7 @@ import {BubblifyImg,
     WebsiteImg,
     DebugDuckImg,
     PongImg,
+    FractalTreeImg,
     GameOfLifeImg} from '../img'
 
 function ProjectSection() {
@@ -120,6 +121,17 @@ function ProjectSection() {
           img: GameOfLifeImg,
           featured: false,
           codeLink: "https://github.com/binoy-d/Game-Of-Life",
+          longDescription: "this is a test"
+        },
+        {
+          title: 'Fractal Tree',
+          description: ['Demonstrates recursion by drawing a fractal tree',
+                        'Users change starting node position, length, and angle of branches'],
+          languages: ['p5.js', 'JavaScript', 'HTML', 'CSS'],
+          link: "https://binoy-d.github.io/fractal-tree",
+          img: FractalTreeImg,
+          featured: false,
+          codeLink: "https://github.com/binoy-d/fractal-tree",
           longDescription: "this is a test"
         },
         {
