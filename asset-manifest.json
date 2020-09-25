@@ -1,24 +1,25 @@
 {
   "files": {
     "main.css": "/static/css/main.5d739994.chunk.css",
-    "main.js": "/static/js/main.c851631c.chunk.js",
-    "main.js.map": "/static/js/main.c851631c.chunk.js.map",
+    "main.js": "/static/js/main.3e0ea39e.chunk.js",
+    "main.js.map": "/static/js/main.3e0ea39e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a64d78df.js",
     "runtime-main.js.map": "/static/js/runtime-main.a64d78df.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.afd21053.chunk.js": "/static/js/2.afd21053.chunk.js",
-    "static/js/2.afd21053.chunk.js.map": "/static/js/2.afd21053.chunk.js.map",
+    "static/js/2.1c572fb9.chunk.js": "/static/js/2.1c572fb9.chunk.js",
+    "static/js/2.1c572fb9.chunk.js.map": "/static/js/2.1c572fb9.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.a209fab700ec7f2c4f0fc0c2ce029e9f.js": "/precache-manifest.a209fab700ec7f2c4f0fc0c2ce029e9f.js",
+    "precache-manifest.71926866b05825a633f1dfc789204584.js": "/precache-manifest.71926866b05825a633f1dfc789204584.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/static/css/2.d9ad5f5c.chunk.css.map",
     "static/css/main.5d739994.chunk.css.map": "/static/css/main.5d739994.chunk.css.map",
-    "static/js/2.afd21053.chunk.js.LICENSE.txt": "/static/js/2.afd21053.chunk.js.LICENSE.txt",
+    "static/js/2.1c572fb9.chunk.js.LICENSE.txt": "/static/js/2.1c572fb9.chunk.js.LICENSE.txt",
     "static/media/bubbles-together.png": "/static/media/bubbles-together.36b4ba6d.png",
     "static/media/bubblify.png": "/static/media/bubblify.20e3ec16.png",
     "static/media/color-game.png": "/static/media/color-game.00dcd0a9.png",
     "static/media/daniel-profile.jpg": "/static/media/daniel-profile.167189ab.jpg",
     "static/media/debug-duck.png": "/static/media/debug-duck.0db173e4.png",
+    "static/media/fractaltree.png": "/static/media/fractaltree.93a54274.png",
     "static/media/pong.png": "/static/media/pong.3648b303.png",
     "static/media/puzzle-game.PNG": "/static/media/puzzle-game.16dd7b3a.PNG",
     "static/media/todo-list.png": "/static/media/todo-list.a0bd6997.png",
@@ -27,8 +28,8 @@
   "entrypoints": [
     "static/js/runtime-main.a64d78df.js",
     "static/css/2.d9ad5f5c.chunk.css",
-    "static/js/2.afd21053.chunk.js",
+    "static/js/2.1c572fb9.chunk.js",
     "static/css/main.5d739994.chunk.css",
-    "static/js/main.c851631c.chunk.js"
+    "static/js/main.3e0ea39e.chunk.js"
   ]
 }
