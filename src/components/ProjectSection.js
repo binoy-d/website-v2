@@ -93,7 +93,7 @@ function ProjectSection() {
           description: ['Story based TDS video game written in 48 hours for GGJ 2020',
                         'Play as the duck from "rubber duck debugging"',
                         'My role: Programming in c# and creating assets'],
-          languages: ['Java', 'Graphics2D'],
+          languages: ['C#', 'Unity3D', 'Piskelapp'],
           link: "https://globalgamejam.org/2020/games/debug-duck-2",
           img: DebugDuckImg,
           featured: true,
