@@ -1,0 +1,5 @@
+#pls be nice ty
+User-Agent: *
+Disallow: 
+
+Sitemap: https://www.binoy.co/sitemap.xml
