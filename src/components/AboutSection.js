@@ -22,8 +22,8 @@ function CodeWindow() {
 
         "Status": "Looking for software engineering internships",
         "Email": ["dbinoy15@gmail.com", "dbinoy@uci.edu"],
-        "CurrentWork": ["Web Dev / UX Intern @ Curicular ", "CS Instructor @ KTBYTE"],
-        "Hobbies": ["Coding", "Video Editing", "Longboarding", "Graphic Design"]
+        "CurrentWork": ["Web Dev/UX Intern @ Curicular", "CS Instructor @ KTBYTE"],
+        "Interests": ["Coding", "Film", "Longboarding", "Design"]
 
     }
     let output = [];
