@@ -2,6 +2,7 @@ import React from "react";
 import "./AboutSection.css";
 import Image from "react-bootstrap/Image"
 import ProfileImg from "../img/daniel-profile.jpg"
+import ProfileImgAlt1 from "../img/daniel-profile-alt-1.jpg"
 import Container from "react-bootstrap/Container"
 import SectionHeader from "./SectionHeader"
 import Fade from "react-reveal/Fade"
@@ -18,7 +19,7 @@ function CodeWindow() {
         "Location": ["'San Jose CA'", "'Irvine CA'"],
         "Education": ["'University of California Irvine'", "'2022'"],
         "Major": "Computer Science",
-        
+
         "Status": "Looking for software engineering internships",
         "Email": ["'dbinoy15@gmail.com'", "'dbinoy@uci.edu'"],
         "LatestWork": ["'Web Dev / UI Intern'", "'Curicular'"],
@@ -63,7 +64,33 @@ function CodeWindow() {
     );
 }
 
+class ProfileImage extends React.Component {
+    constructor() {
+        super();
+        this.state = { alt: false };
+    }
+    handleHoverOn() {
+        this.setState({ alt: true });
+        console.log("enter");
+    }
 
+    handleHoverOff() {
+        this.setState({ alt: false });
+        console.log("exit");
+    }
+
+    render() {
+        return (
+            <Image
+                id="about-img"
+                onMouseEnter={e => (e.currentTarget.src = ProfileImgAlt1)}
+                onMouseLeave={e => (e.currentTarget.src = ProfileImg)}
+                className='masthead-profile'
+                src={this.state.alt ? ProfileImg : ProfileImgAlt1}
+                roundedCircle />
+        );
+    }
+}
 
 
 
@@ -83,9 +110,9 @@ function AboutSection() {
                 <div className='about-stuff'>
                     <Row >
                         <Col>
-                            <Fade top>
-                                <Image className='masthead-profile' src={ProfileImg} roundedCircle />
-                            </Fade>
+                            
+                                <ProfileImage  />
+                            
                         </Col>
                     </Row>
                     <Row >
@@ -100,16 +127,16 @@ function AboutSection() {
 
                             <Col lg={6} md={12} className="d-flex justify-content-center">
                                 <Container>
-                                <Row>
-                                    <Col>
-                                        <h2 id="hello" >Hi, I'm Daniel!</h2>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                        <p className='about-me-paragraph'>{description}</p>
-                                    </Col>
-                                </Row>
+                                    <Row>
+                                        <Col>
+                                            <h2 id="hello" >Hi, I'm Daniel!</h2>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                            <p className='about-me-paragraph'>{description}</p>
+                                        </Col>
+                                    </Row>
                                 </Container>
                             </Col>
 

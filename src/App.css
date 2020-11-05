@@ -17,5 +17,5 @@ body{
 }
 
 .body:empty {
-  background: lime;
+  background: black;
 }
