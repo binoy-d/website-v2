@@ -2,7 +2,7 @@ import React from "react";
 import "./AboutSection.css";
 import Image from "react-bootstrap/Image"
 import ProfileImg from "../img/daniel-profile.jpg"
-import ProfileImgAlt1 from "../img/daniel-profile-alt-1.jpg"
+import ProfileImgAlt1 from "../img/daniel-profile-alt-1.png"
 import Container from "react-bootstrap/Container"
 import SectionHeader from "./SectionHeader"
 import Fade from "react-reveal/Fade"
@@ -15,15 +15,15 @@ function CodeWindow() {
         window.open("mailto:dbinoy15@gmail.com");
     }
     const info = {
-        "Name": ["'Daniel'", "'Binoy'"],
-        "Location": ["'San Jose CA'", "'Irvine CA'"],
-        "Education": ["'University of California Irvine'", "'2022'"],
+        "Name": ["Daniel", "Binoy"],
+        "Location": ["San Jose CA", "Irvine CA"],
+        "Education": ["University of California Irvine", "2022"],
         "Major": "Computer Science",
 
         "Status": "Looking for software engineering internships",
-        "Email": ["'dbinoy15@gmail.com'", "'dbinoy@uci.edu'"],
-        "LatestWork": ["'Web Dev / UI Intern'", "'Curicular'"],
-        "Hobbies": ["'Coding'", "'Video Editing'", "'Longboarding'", "'Art'"]
+        "Email": ["dbinoy15@gmail.com", "dbinoy@uci.edu"],
+        "CurrentWork": ["Web Dev / UX Intern @ Curicular ", "CS Instructor @ KTBYTE"],
+        "Hobbies": ["Coding", "Video Editing", "Longboarding", "Graphic Design"]
 
     }
     let output = [];
@@ -34,7 +34,7 @@ function CodeWindow() {
                     <span className='code-key'>>binoy.{key} </span>
                     <span>
                         {(!Array.isArray(info[key]) ?
-                            <span>'{info[key]}'</span> :
+                            <span>{info[key]}</span> :
                             <span>
                                 <span>[ </span>
                                 {info[key].join(", ")}
@@ -67,6 +67,7 @@ function CodeWindow() {
 class ProfileImage extends React.Component {
     constructor() {
         super();
+        this.src = ProfileImg;
         this.state = { alt: false };
     }
     handleHoverOn() {
@@ -86,7 +87,7 @@ class ProfileImage extends React.Component {
                 onMouseEnter={e => (e.currentTarget.src = ProfileImgAlt1)}
                 onMouseLeave={e => (e.currentTarget.src = ProfileImg)}
                 className='masthead-profile'
-                src={this.state.alt ? ProfileImg : ProfileImgAlt1}
+                src={this.state.alt ? ProfileImgAlt1 : ProfileImg}
                 roundedCircle />
         );
     }
