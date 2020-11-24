@@ -60,7 +60,7 @@ class ProfileImage extends React.Component {
         this.state = { alt: false };
     }
     handleHoverOn() {
-        this.setState({ alt: true });
+        //this.setState({ alt: true });
         console.log("enter");
     }
 
@@ -73,10 +73,8 @@ class ProfileImage extends React.Component {
         return (
             <Image
                 id="about-img"
-                onMouseEnter={e => (e.currentTarget.src = ProfileImgAlt1)}
-                onMouseLeave={e => (e.currentTarget.src = ProfileImg)}
                 className='masthead-profile'
-                src={this.state.alt ? ProfileImgAlt1 : ProfileImg}
+                src={ ProfileImg}
                 roundedCircle />
         );
     }
