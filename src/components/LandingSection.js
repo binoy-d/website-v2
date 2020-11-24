@@ -5,6 +5,7 @@ import Particles from 'react-particles-js'
 import Fade from 'react-reveal/Fade'
 import { Media } from 'react-breakpoints'
 import { Link } from 'react-scroll'
+import {toggleNightMode, getTagline} from './data.js'
 function LandingParticles() {
     return (
         <>
@@ -43,40 +44,51 @@ function LandingParticles() {
 
 
 
-function LandingSection() {
-    return (
-        <section id="home">
-            <Media>
-                {({ breakpoints, currentBreakpoint }) =>
-                    breakpoints[currentBreakpoint] > breakpoints.tablet ? (
-                        <LandingParticles />
-                    ) : (
-                            <>
-                            </>
-                        )
-                }
-            </Media>
 
 
 
-            <header className="landing-stuff text-center">
-                <Container>
-                    <Fade top>
-                        <Link className="nav-link" to="about" spy={true} smooth={true} duration={500}>
+class  LandingSection extends React.Component {
+    dark = ()=>{
+        toggleNightMode();
+        this.forceUpdate();
+    }
+    render(){
+        return (
+            <section id="home">
+                <Media>
+                    {({ breakpoints, currentBreakpoint }) =>
+                        breakpoints[currentBreakpoint] > breakpoints.tablet ? (
+                            <LandingParticles />
+                        ) : (
+                                <>
+                                </> 
+                            )
+                    }
+                </Media>
+                
+                
 
-                            <h1 id="name-header" >Daniel Binoy</h1>
-                        </Link>
 
-                    </Fade>
-                    <Fade bottom>
-                        <h2 id="landing-tagline">Student developer</h2>
-                    </Fade>
+                <header className="landing-stuff text-center">
+                    <Container>
+                        <Fade top>
+                            <h1 id="landing-name" onClick={this.dark} id="name-header" >Daniel Binoy</h1>
+                            <Link className="nav-link" to="about" spy={true} smooth={true} duration={500}>
+                                
+                            </Link>
+                            
 
-                </Container>
-            </header>
+                        </Fade>
+                        <Fade bottom>
+                            <h2 id="landing-tagline">{getTagline()}</h2>
+                        </Fade>
 
-        </section>
-    );
+                    </Container>
+                </header>
+
+            </section>
+        );
+    }
 }
 
 export default LandingSection;

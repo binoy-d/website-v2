@@ -9,23 +9,12 @@ import Fade from "react-reveal/Fade"
 import NavLink from "./NavLink"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-
+import {info, description} from './data.js'
 function CodeWindow() {
     const sendEmail = () => {
         window.open("mailto:dbinoy15@gmail.com");
     }
-    const info = {
-        "Name": ["Daniel", "Binoy"],
-        "Location": ["San Jose CA", "Irvine CA"],
-        "Education": ["University of California Irvine", "2022"],
-        "Major": "Computer Science",
-
-        "Status": "Looking for software engineering internships",
-        "Email": ["dbinoy15@gmail.com", "dbinoy@uci.edu"],
-        "XP": ["Web Dev/UX Intern @ Curicular", "CS Instructor @ KTBYTE"],
-        "Interests": ["Coding", "Film", "Longboarding", "Design"]
-
-    }
+    
     let output = [];
     for (var key in info) {
         output.push(
@@ -97,14 +86,8 @@ class ProfileImage extends React.Component {
 
 
 
+
 function AboutSection() {
-    const description = "I'm a computer science student at " +
-        "University of California, Irvine. I love designing and coding beautiful, " +
-        "functional applications and interfaces that have a real impact on users. Whether " +
-        "its writing code, filming videos, or creating art, I'm always making something. Connect with me " +
-        "to make something great, together!";
-
-
     return (
         <section id='about'>
             <Container className='h-100 w-100 text-center'>
