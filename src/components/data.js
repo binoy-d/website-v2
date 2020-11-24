@@ -185,7 +185,7 @@ export const projects = [
     "Status": "Looking for software engineering internships",
     "Email": ["dbinoy15@gmail.com", "dbinoy@uci.edu"],
     "XP": ["Web Dev/UX Intern @ Curicular", "CS Instructor @ KTBYTE"],
-    "Interests": ["Coding", "Film", "Longboarding", "Design"]
+    "Interests": ["Coding", "Film", "Longboarding", "Design", "Chess"]
 }
 
 export const description = "I'm a computer science student at " +
