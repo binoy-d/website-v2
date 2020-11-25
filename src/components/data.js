@@ -211,7 +211,7 @@ var taglineList = [
 "proudly made on earth",
 "based on a true story",
 "six seasons and a movie!",
-"or is it?",
+"or is he?",
 "click, rinse, repeat!",
 "makes egg sandwiches",
 "2, electric boogaloo",
