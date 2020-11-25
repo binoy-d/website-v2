@@ -221,7 +221,7 @@ var taglineList = [
 "consider scrolling down",
 "s'all good, man",
 "yeah science!",
-"cool cool cool",
+"cool. cool cool cool",
 "movie reference",
 "you really made it this far",
 "I'm proud of you",
@@ -239,7 +239,18 @@ var taglineList = [
 "the darkest timeline",
 "the creator",
 ".com was taken",
-"more coming soon"
+"somebody once told me",
+"the world is gonna roll me",
+"I aint the sharpest tool in the shed",
+"execute plan Y",
+"https://youtu.be/dQw4w9WgXcQ",
+"2 to the 1",
+"from the 1 to the 3",
+"I like good coding",
+"but I don't like C",
+"shoutouts MESA",
+"more coming soon",
+"ok back to the top"
 ];
 
 var tagIndex = 0;
