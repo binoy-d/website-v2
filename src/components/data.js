@@ -197,23 +197,67 @@ export const description = "I'm a computer science student at " +
 var nightMode = false;
 
 var tagline  = "student developer";
+var taglineList = [
+"student developer",
+"dark mode lover",
+"cs instructor",
+"web dev intern",
+"swe intern",
+"chess player",
+"longboarder",
+"filmmaker",
+"graphic designer",
+"proud anteater",
+"proudly made on earth",
+"based on a true story",
+"six seasons and a movie!",
+"or is it?",
+"click, rinse, repeat!",
+"makes egg sandwiches",
+"2, electric boogaloo",
+"this time, its personal",
+"check out my pixels",
+"no refunds",
+"consider scrolling down",
+"s'all good, man",
+"yeah science!",
+"cool cool cool",
+"movie reference",
+"you really made it this far",
+"I'm proud of you",
+"no, really",
+"good job",
+"keep it up",
+"now please hire me ty",
+"669-377-5085",
+"- micheal scott",
+"who's joe?",
+"GMO free",
+"binoy#4941",
+"stop clicking!",
+"expect the unexpected",
+"the darkest timeline",
+"the creator",
+".com was taken",
+"more coming soon"
+];
 
-
-
+var tagIndex = 0;
 export const toggleNightMode = ()=> {
     let root = document.documentElement;
     nightMode = !nightMode;
+    tagIndex++;
+    if(tagIndex>=taglineList.length){
+      tagIndex = 0;
+    }
     if (nightMode) {
-        
         root.style.setProperty('--main-bg-color', "#080705");
         root.style.setProperty('--main-text-color', "#EFF1F3");
-        tagline  = "dark mode everything"
-
     } else {
         root.style.setProperty('--main-bg-color', "#EFF1F3");
         root.style.setProperty('--main-text-color', "#080705");
-        tagline  = "student developer"
     }
+    tagline  = taglineList[tagIndex];
     console.log(tagline);
 }
 
