@@ -8,3 +8,4 @@ export const PongImg = require('./project-images/pong.png');
 export const GameOfLifeImg = require('./project-images/game-of-life.png');
 export const WebsiteImg = require('./project-images/website.png');
 export const FractalTreeImg = require('./project-images/fractaltree.png');
+export const SpiralOrbitImg = require('./project-images/spiral-orbit.png');

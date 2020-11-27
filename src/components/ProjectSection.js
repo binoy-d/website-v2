@@ -8,24 +8,17 @@ import {projects} from './data.js'
 
 
 function ProjectSection() {
-  
-     
-      
-
-
     return (
         <section id ="projects">
           <div class="projects-stuff">
           <SectionHeader  text="Projects"/>
             <Container>
                 <Row>
-                  
-                {projects.map((proj, index)=>
-               
-                    <ProjectCard proj={proj} side={index%2}/>
-                    
-                )}
+                    {projects.map((proj, index)=>
                 
+                        <ProjectCard proj={proj} side={index%2}/>
+                        
+                    )}
                 </Row>
             </Container>
             </div>
