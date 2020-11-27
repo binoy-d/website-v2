@@ -65,7 +65,7 @@ export const projects = [
       languages: ['p5.js', 'Node', 'JavaScript', 'SocketIO', 'Heroku'],
       link: "https://bubbles-together.herokuapp.com/",
       img: BubblesTogetherImg,
-      featured: true,
+      featured: false,
       codeLink: "https://github.com/binoy-d/particle-draw2",
       longDescription:  'I have always loved simple, beautiful particle effects.'+
                         'Any user that visits this website can generate randomly colored'+
@@ -89,7 +89,7 @@ export const projects = [
       languages: ['Java', 'Graphics2D'],
       link: "https://github.com/binoy-d/2p1p-puzzle-game",
       img: PuzzleGameImg,
-      featured: true,
+      featured: false,
       codeLink: "https://github.com/binoy-d/2p1p-puzzle-game",
       longDescription:  "A puzzle game I made as a sophomore. The player uses the arrow keys to "+
                         'move two characters at once. Avoid lava and moving enemies to get to the'+
@@ -107,7 +107,7 @@ export const projects = [
       languages: ['C#', 'Unity3D', 'Piskelapp'],
       link: "https://globalgamejam.org/2020/games/debug-duck-2",
       img: DebugDuckImg,
-      featured: true,
+      featured: false,
       codeLink: "https://github.com/binoy-d/debug-duck",
       longDescription:  "This was my first time going to a game jam, and I went with my friend Evan Cheng"+
                         '(https://frolicks.itch.io/) From there, we met a few more people and formed a team.'+
