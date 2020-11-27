@@ -39,6 +39,25 @@ export const projects = [
                         ' to update it. '
     },
     {
+      title: 'Generative Spiral Art',
+      description: ['3d generative art made of beziers',
+                    'Viewers can interact with an orbiting spiral visual',
+                    'Implemented with p5.js webGL'],
+      languages: ['p5.js', 'WEBGL', 'JavaScript', 'HTML', 'CSS'],
+      link: "https://binoy-d.github.io/spiral-orbit/",
+      img: SpiralOrbitImg,
+      featured: true,
+      codeLink: "https://github.com/binoy-d/spiral-orbit",
+      longDescription:  "This is the product of a late night coding session with some buddies. "+
+                        "I started out wanting to make some sort of simple music visualizer that works "+
+                        "using perlin noise. However, as we added more and more to the visual, it ended up "+
+                        "resulting in a wild visual experience. Adding mouse and keyboard interaction made it even more"+
+                        " interesting. By using WASD to move around, QE to zoom in and out, and ZX to increase and "+
+                        "decrease number of strands, the user can create complex visuals. Some of my favorites include "+
+                        "shapes that act like a jellyfish, mushroom, and even one that looked like an iris. "+
+                        "This was my first time working with webgl in p5.js."
+    },
+    {
       title: 'Bubbles, Together',
       description: ['Website allowing users to concurrently draw with bubbles',
                     'Particle effects and graphics done with p5.js',
@@ -103,25 +122,7 @@ export const projects = [
                         ' as a TDS interactive fiction experience.'
                   
     },
-    {
-      title: 'Generative Spiral Art',
-      description: ['3d generative art made of beziers',
-                    'Viewers can interact with an orbiting spiral visual',
-                    'Implemented with p5.js webGL'],
-      languages: ['p5.js', 'WEBGL', 'JavaScript', 'HTML', 'CSS'],
-      link: "https://binoy-d.github.io/spiral-orbit/",
-      img: SpiralOrbitImg,
-      featured: true,
-      codeLink: "https://github.com/binoy-d/spiral-orbit",
-      longDescription:  "This is the product of a late night coding session with some buddies. "+
-                        "I started out wanting to make some sort of simple music visualizer that works "+
-                        "using perlin noise. However, as we added more and more to the visual, it ended up "+
-                        "resulting in a wild visual experience. Adding mouse and keyboard interaction made it even more"+
-                        " interesting. By using WASD to move around, QE to zoom in and out, and ZX to increase and "+
-                        "decrease number of strands, the user can create complex visuals. Some of my favorites include "+
-                        "shapes that act like a jellyfish, mushroom, and even one that looked like an iris. "+
-                        "This was my first time working with webgl in p5.js."
-    },
+    
     {
       title: 'Game of Life',
       description: ['Minimalist clone of Conway\'s Game of life',
