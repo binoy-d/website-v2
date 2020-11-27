@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8c04f8813f0c82563b34d4a63e51e9f1",
+    "revision": "10e4c21a3d835642cab03227230e23e3",
     "url": "/index.html"
   },
   {
-    "revision": "3959a465fd0002dcecbd",
+    "revision": "60dce4fafa471ec0cee4",
     "url": "/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "749124cdee7cbaf37771",
+    "revision": "4fe8bd05a401ad609a60",
     "url": "/static/css/main.3d9203f2.chunk.css"
   },
   {
-    "revision": "3959a465fd0002dcecbd",
-    "url": "/static/js/2.951dab93.chunk.js"
+    "revision": "60dce4fafa471ec0cee4",
+    "url": "/static/js/2.f7e6cb1d.chunk.js"
   },
   {
     "revision": "a73511fdd0e79fea52c5f42ad1574633",
-    "url": "/static/js/2.951dab93.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.f7e6cb1d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "749124cdee7cbaf37771",
-    "url": "/static/js/main.e71da194.chunk.js"
+    "revision": "4fe8bd05a401ad609a60",
+    "url": "/static/js/main.38b43f81.chunk.js"
   },
   {
     "revision": "df33f72422b3f1819f3e",
@@ -62,6 +62,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "16dd7b3ac4d6c0e0e3cb2e918127e435",
     "url": "/static/media/puzzle-game.16dd7b3a.PNG"
+  },
+  {
+    "revision": "5b0cfaf179df734ae43adf0221a7c392",
+    "url": "/static/media/spiral-orbit.5b0cfaf1.png"
   },
   {
     "revision": "a0bd69978b60db67f00b88f42364193d",
