@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.3d9203f2.chunk.css",
-    "main.js": "/static/js/main.38b43f81.chunk.js",
-    "main.js.map": "/static/js/main.38b43f81.chunk.js.map",
+    "main.js": "/static/js/main.a05e0281.chunk.js",
+    "main.js.map": "/static/js/main.a05e0281.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a64d78df.js",
     "runtime-main.js.map": "/static/js/runtime-main.a64d78df.js.map",
     "static/css/2.d9ad5f5c.chunk.css": "/static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.f7e6cb1d.chunk.js": "/static/js/2.f7e6cb1d.chunk.js",
     "static/js/2.f7e6cb1d.chunk.js.map": "/static/js/2.f7e6cb1d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.bd4375d3f8ef3999613d4ff08f4c18df.js": "/precache-manifest.bd4375d3f8ef3999613d4ff08f4c18df.js",
+    "precache-manifest.baeb4311a55043ed954315923a06d6e4.js": "/precache-manifest.baeb4311a55043ed954315923a06d6e4.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.d9ad5f5c.chunk.css.map": "/static/css/2.d9ad5f5c.chunk.css.map",
     "static/css/main.3d9203f2.chunk.css.map": "/static/css/main.3d9203f2.chunk.css.map",
@@ -25,13 +25,13 @@
     "static/media/puzzle-game.PNG": "/static/media/puzzle-game.16dd7b3a.PNG",
     "static/media/spiral-orbit.png": "/static/media/spiral-orbit.5b0cfaf1.png",
     "static/media/todo-list.png": "/static/media/todo-list.a0bd6997.png",
-    "static/media/website.png": "/static/media/website.b3c0b214.png"
+    "static/media/website.png": "/static/media/website.1e604d45.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a64d78df.js",
     "static/css/2.d9ad5f5c.chunk.css",
     "static/js/2.f7e6cb1d.chunk.js",
     "static/css/main.3d9203f2.chunk.css",
-    "static/js/main.38b43f81.chunk.js"
+    "static/js/main.a05e0281.chunk.js"
   ]
 }
