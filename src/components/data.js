@@ -296,3 +296,65 @@ export const toggleNightMode = ()=> {
 export const getTagline = ()=>{
   return tagline;
 }
+
+
+export const skills= [
+  {
+      title: 'Languages',
+      items: [
+          'Python',
+          'C++',
+          'Java',
+          'Javascript',
+          'HTML',
+          'CSS',
+          'Processing',
+          'C#',
+          'p5.js']
+  },
+  {
+      title: 'Frameworks',
+      items: [
+          'ReactJS',
+          'Bootstrap',
+          'NodeJS',
+          'jQuery',
+          'p5.js',
+          'GTest',
+          'Beautiful Soup',
+          'Express.js',
+          'SemanticUI']
+  },
+  {
+      title: 'Tools',
+      items: [
+          'Git/Github',
+          'Selenium',
+          'Heroku',
+          'NPM',
+          'VirtualBox',
+          'VMWare Workstation',
+          'Express.js',
+          'ffmpeg',
+          'CLIs',
+          'MongoDB']
+  },
+  {
+      title: 'Other',
+      items: [
+          'Linux',
+          'Agile',
+          'Arduino',
+          'Photoshop',
+          'Windows',
+          'macOS',
+          'Premiere Pro',
+          'Illustrator',
+          'After Effects',
+          '3D Printing',
+          'Sketchup(CAD)',
+          'MS Office',
+          'G Suite',
+          'Audacity']
+  }
+]

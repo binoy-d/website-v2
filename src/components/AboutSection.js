@@ -92,9 +92,7 @@ function AboutSection() {
                 <div className='about-stuff'>
                     <Row >
                         <Col>
-                            
                                 <ProfileImage  />
-                            
                         </Col>
                     </Row>
                     <Row >
