@@ -14,10 +14,8 @@ function ProjectSection() {
           <SectionHeader  text="Projects"/>
             <Container>
                 <Row>
-                    {projects.map((proj, index)=>
-                
+                    {projects.map((proj, index)=>   
                         <ProjectCard proj={proj} side={index%2}/>
-                        
                     )}
                 </Row>
             </Container>

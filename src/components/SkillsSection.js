@@ -11,16 +11,13 @@ import Modal from 'react-bootstrap/Modal'
 
 function SkillCard({ title, items }) {
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     let shown_languages = []
     for (let index = 0; index < 4; index++) {
         shown_languages.push(items[index]);
     }
-
     return (
-
         <>
             <div className='skill-card' onClick={handleShow}>
                 <Container className ="w-100">
@@ -32,14 +29,12 @@ function SkillCard({ title, items }) {
                         </Col>
                     </Row>
                     <Row>
-
                         {shown_languages.map((item, index) =>
                             <Col xl={3} lg={3} md={4} sm={6} xs={12}>
                                 <div className="main-skill-item">
                                     <p >{item}</p>
                                 </div>
                             </Col>
-
                         )}
                     </Row>
                     <Row>
@@ -51,8 +46,6 @@ function SkillCard({ title, items }) {
                     </Row>
                 </Container>
             </div>
-
-
             <Modal className="skill-modal" show={show} onHide={handleClose}>
                 <Modal.Title>
                     <h2>
@@ -81,7 +74,6 @@ function SkillCard({ title, items }) {
     );
 }
 
-
 function SkillsWrapper() {
     const skills_sections = [
         {
@@ -95,9 +87,7 @@ function SkillsWrapper() {
                 'CSS',
                 'Processing',
                 'C#',
-                'p5.js',
-                
-            ]
+                'p5.js']
         },
         {
             title: 'Frameworks',
@@ -144,52 +134,44 @@ function SkillsWrapper() {
                 'G Suite',
                 'Audacity']
         }
-
     ]
     return (
-
         <>
-
             {skills_sections.map((sec, index) =>
-
                 <SkillCard title={sec.title} items={sec.items} />
-
             )}
-
-
         </>
     );
-
-
 }
 
 
-
+class SkillsIconBackground extends React.Component {
+    render() {
+      return <h1>Hello, {this.props.name}</h1>;
+    }
+  }
 
 
 function SkillsSection() {
     return (
-        
         <section id="skills">
-            <div id="about-skills-separator">
-        </div>
-            <Container className="">
-                
+            
+            <Container className="">    
                 <div className="skills-stuff">
-                
                     <Fade top>
                         <SectionHeader text="Skills" />
                     </Fade>
-
+                    
+                    
                     <SkillsWrapper />
-
+                    
+                    
                     <Fade bottom big>
                         <div className="projects-button">
                             <NavLink className="btn btn-outline-light projects-button" destination="projects" text="Projects"></NavLink>
                         </div>
                     </Fade>
                 </div>
-
             </Container>
         </section>
     );
