@@ -98,7 +98,7 @@ function AboutSection() {
                     <Row >
                         <Col>
                             <Fade top>
-                                <SectionHeader id="about-header" text='About me' />
+                                <SectionHeader id="about-header" className = "color-text" text='About me' />
                             </Fade>
                         </Col>
                     </Row>

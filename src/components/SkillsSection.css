@@ -1,208 +1,209 @@
-#skills-wrapper{
-    position: relative;
-    width:100%;
-    height:840px;
-    background-color: var(--main-text-color);
-}
 
-#skills-background{
-    --x: 0px;
-    --y: 0px;
-    transition-duration: 2s;
-    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-
-    width:100%;
-    height:100%;
-    background-position: var(--x) var(--y);
-    z-index:-100;
-    background-image: url("./icons.svg");
-    filter: invert(19%) sepia(89%) saturate(2939%) hue-rotate(341deg) brightness(84%) contrast(92%);
-    opacity: 0.1;
-    background-repeat: repeat;
-    
+.skills-header:hover{
+    cursor: default;
 }
 
 
-.skills-content{
-    position: absolute;
-    left:50%;
-    transform: translate(-50%, -50%);
-    top:0;
-    z-index: 100;
+
+#skills-wrapper {
+  position: relative;
+  width: 100%;
+  height: 840px;
 }
 
-.over{
-    position: relative;
-    opacity:1;
-    filter:none;
-}
-.skills-tile-svg{
-    fill: var(--accent-color-1);
-}
+#skills-background {
+  --x: 0px;
+  --y: 0px;
+  transition-duration: 2s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 
-#skills{
-    position:relative;
-    background-color:  transparent;
-    margin-top: 10em;
-    margin-bottom:10em;
-    border-radius:0.5em;
-}
-
-
-.projects-button{
-    margin-top:3em;
-    margin-bottom:5em;
-    border: 1px solid var(--accent-color-1);
-    border-radius: 0.4em;
-    text-align:center;
-    margin-left: 35%;
-    width:30%;
-    color:var(--main-text-color);
-    transition: transform 0.2s;
-}
-.skills-stuff{
-    position: relative;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, 0%);
+  width: 100%;
+  height: 100%;
+  background-position: var(--x) var(--y);
+  z-index: -100;
+  background-image: url("./icons.svg");
+  filter: invert(19%) sepia(89%) saturate(2939%) hue-rotate(341deg)
+    brightness(84%) contrast(92%);
+  opacity: 0.1;
+  background-repeat: repeat;
 }
 
-
-.skill-card{
-    text-align: center;
-    margin-bottom:1em;
-    margin-top: 1em;
-    transition: transform 0.3s;
-    
-    
+.skills-content {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 0;
+  z-index: 100;
 }
 
-.skill-card:hover{
-    text-align: center;
-    margin-bottom:1em;
-    margin-top: 1em;
-    
-    transform: scale(1.1);
-    cursor:pointer;
+.over {
+  position: relative;
+  opacity: 1;
+  filter: none;
+}
+.skills-tile-svg {
+  fill: var(--accent-color-1);
 }
 
-.skill-card-title{
-    text-align: center;
-    color: var(--accent-color-1);
-    margin-left:0%;
-    width:100%;
-    padding-bottom:0.25em;
-    
-    transition: transform 0.3s;
-    transition-timing-function: ease-out;
-    
+#skills {
+  position: relative;
+  background-color: transparent;
+  margin-top: 10em;
+  margin-bottom: 10em;
+  border-radius: 0.5em;
 }
 
-.skill-card-title:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+.projects-button {
+  margin-top: 3em;
+  margin-bottom: 5em;
+  border: 1px solid var(--accent-color-1);
+  border-radius: 0.4em;
+  text-align: center;
+  margin-left: 35%;
+  width: 30%;
+  color: var(--main-text-color);
+  transition: transform 0.2s;
+}
+.skills-stuff {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
-.short-skill-list{
-    text-align: center;
-    color: var(--main-text-color);
-    font-size: 1.5em;
+.skill-card {
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  transition: transform 0.3s;
 }
 
-.main-skill-item{
-    margin-left:1%;
-    margin-right:1%;
-    padding:0.2em;
-    padding-left:0.5em;
-    padding-right: 0.5em;
-    font-size: 124%;
-    border-radius: 0.2em;
-    color: var(--main-text-color);
+.skill-card:hover {
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-.skill-modal{
-    background-color: var(--main-bg-color)!important;
+.skill-card-title {
+  text-align: center;
+  color: var(--accent-color-1);
+  margin-left: 0%;
+  width: 100%;
+  padding-bottom: 0.25em;
+
+  transition: transform 0.3s;
+  transition-timing-function: ease-out;
 }
 
-.modal-content{
-    background-color:var(--main-bg-color)!important;
-    color: var(--main-text-color)!important;
+.skill-card-title:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
-.skill-item{
-    font-size: 0.8em;
-    margin-left:1%;
-    margin-right:1%;
-    padding-top:0.1em;
-    padding-bottom:0.2em;
-    padding-left:0.5em;
-    padding-right:0.5em;
+.short-skill-list {
+  text-align: center;
+  color: var(--main-text-color);
+  font-size: 1.5em;
 }
 
- .modal-dialog {
-    max-width: 80%;
-    margin: 2rem auto;
+.main-skill-item {
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-size: 124%;
+  border-radius: 0.2em;
+  color: var(--main-text-color);
 }
 
-.modal-title{
-    text-align:center;
+.skill-modal {
+  background-color: var(--main-bg-color) !important;
 }
 
-.exit-button{
-    position:relative;
-    background-color: transparent;
-    color: var(--main-text-color);
-    border: 1px solid var(--accent-color-1);
-    border-radius: 0.4em;
-    left:50%;
-    max-width:5em;
-    margin-bottom:2em;
-    transition: transform 0.3s;
-    transform:translateX(-50%);
+.modal-content {
+  background-color: var(--main-bg-color) !important;
+  color: var(--main-text-color) !important;
 }
 
-.exit-button:hover{
-    background-color: transparent!important;
-    color: var(--main-text-color);
-    border: 1px solid var(--accent-color-1)!important;
+.skill-item {
+  font-size: 0.8em;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding-top: 0.1em;
+  padding-bottom: 0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
-.exit-btn:focus,.exit:active {
-    outline: none!important;
-    background-color: transparent;
-    color: var(--main-text-color);
-    border: 1px solid var(--accent-color-1)!important;
-    box-shadow: none!important;
- }
-
-
-.more-btn{
-    border: 1px solid var(--main-text-color);
-    background-color:transparent!important;
-    color: var(--main-text-color)!important;
-    text-decoration: none;
-    margin-left:1%;
-    margin-right:1%;
-    padding:0.7em;
-    padding-left: 1em;
-    padding-right: 1em;
-    font-size: 0.75em;
-    border-radius: 0.4em;
-    
-    transition: transform 0.2s;
+.modal-dialog {
+  max-width: 80%;
+  margin: 2rem auto;
 }
 
-.more-btn:hover{
-    transform: scale(1.1);
-    color: var(--main-text-color);
-    border: 1px solid var(--main-text-color)!important;
-    text-decoration: none;
-    cursor:pointer;
+.modal-title {
+  text-align: center;
 }
 
-.more-btn:focus,.more-btn:active {
-    outline: none!important;
-    background-color: transparent!important;
-    border: 1px solid var(--main-text-color)!important;
-    box-shadow: none!important;
- }
+.exit-button {
+  position: relative;
+  background-color: transparent;
+  color: var(--main-text-color);
+  border: 1px solid var(--accent-color-1);
+  border-radius: 0.4em;
+  left: 50%;
+  max-width: 5em;
+  margin-bottom: 2em;
+  transition: transform 0.3s;
+  transform: translateX(-50%);
+}
+
+.exit-button:hover {
+  background-color: transparent !important;
+  color: var(--main-text-color);
+  border: 1px solid var(--accent-color-1) !important;
+}
+
+.exit-btn:focus,
+.exit:active {
+  outline: none !important;
+  background-color: transparent;
+  color: var(--main-text-color);
+  border: 1px solid var(--accent-color-1) !important;
+  box-shadow: none !important;
+}
+
+.more-btn {
+  border: 1px solid var(--main-text-color);
+  background-color: transparent !important;
+  color: var(--main-text-color) !important;
+  text-decoration: none;
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 0.7em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 0.75em;
+  border-radius: 0.4em;
+
+  transition: transform 0.2s;
+}
+
+.more-btn:hover {
+  transform: scale(1.1);
+  color: var(--main-text-color);
+  border: 1px solid var(--main-text-color) !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.more-btn:focus,
+.more-btn:active {
+  outline: none !important;
+  background-color: transparent !important;
+  border: 1px solid var(--main-text-color) !important;
+  box-shadow: none !important;
+}

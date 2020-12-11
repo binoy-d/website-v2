@@ -5,7 +5,19 @@
 }
 
 
+.color-text{
+  color:var(--main-text-color);
+}
 
+
+.color-bg{
+  color:var(--main-bg-color);
+}
+
+
+.color-accent{
+  color:var(--accent-color-1)
+}
 .App {
   text-align: center;
 }
@@ -14,7 +26,7 @@ html{
 }
 body{
   background-color:var(--main-bg-color)!important;
-
+  color:var(--main-text-color)!important;
   -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;

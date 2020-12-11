@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade'
 function SectionHeader({id="dw-bout-it",text}) {
     return (
         <Fade bottom>
-            <h1 id={id} className = "section-header">{text}</h1>
+            <h1 id={id} className = "noselect section-header">{text}</h1>
         </Fade>
     );
 }

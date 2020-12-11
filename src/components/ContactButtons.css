@@ -18,7 +18,7 @@
 a svg {
     width: 20px;
     height: 20px;
-    fill:var(--accent-color-1)!important;
+    fill:var(--main-text-color)!important;
     transition:transform 0.3s ease-in-out;
     filter:brightness(70%);
     /*opacity:100%;*/
