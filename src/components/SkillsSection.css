@@ -1,3 +1,21 @@
+#skills-pattern-wrapper{
+    --x: 0px;
+    --y: 0px;
+    transition-property: var(--x);
+    transition-duration: 2s;
+    transition-timing-function: ease-out;
+    width:100%;
+    height:1000px;
+    background-position: var(--x) var(--y);
+    background-image: url("./icons.svg");
+    background-repeat: repeat;
+}
+
+
+.skills-tile-svg{
+    fill: var(--accent-color-1);
+}
+
 #skills{
     position:relative;
     background-color:  transparent;
