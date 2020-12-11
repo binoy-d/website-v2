@@ -12,7 +12,6 @@
 .contact-button{
     margin-left:0.4em;
     margin-bottom:1em;
-    
 }
 
 
@@ -20,12 +19,12 @@ a svg {
     width: 20px;
     height: 20px;
     fill:var(--main-text-color)!important;
-    transition:transform 0.2s;
+    transition:transform 0.3s ease-in-out;
     /*opacity:100%;*/
 }
 
 a svg:hover{
-    transform: scale(1.1);
+    transform: scale(1.4);
     cursor:pointer;
 }
 

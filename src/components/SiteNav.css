@@ -1,11 +1,13 @@
 .site-nav{
+    position: fixed!important;
+    z-index: 999!important;
     background-color: transparent;
     justify-content: end;
     text-align:right;
     position: fixed!important;
     transition:transform 0.2s;
     right:1em;
-    z-index:10!important;
+
 }
 
 

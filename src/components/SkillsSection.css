@@ -1,4 +1,10 @@
-#skills-pattern-wrapper{
+#skills-wrapper{
+    position: relative;
+    width:100%;
+    height:840px;
+}
+
+#skills-background{
     --x: 0px;
     --y: 0px;
     transition-property: var(--x);
@@ -7,11 +13,27 @@
     width:100%;
     height:1000px;
     background-position: var(--x) var(--y);
+    z-index:-100;
     background-image: url("./icons.svg");
+    filter: invert(19%) sepia(89%) saturate(2939%) hue-rotate(341deg) brightness(84%) contrast(92%);
+    opacity: 0.1;
     background-repeat: repeat;
 }
 
 
+.skills-content{
+    position: absolute;
+    left:50%;
+    transform: translate(-50%, -50%);
+    top:0;
+    z-index: 100;
+}
+
+.over{
+    position: relative;
+    opacity:1;
+    filter:none;
+}
 .skills-tile-svg{
     fill: var(--accent-color-1);
 }
