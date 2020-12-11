@@ -26,7 +26,7 @@ class SkillsIconBackground extends React.Component {
     render() {
         const { x, y } = this.state;
       return (
-        <div id = "skills-wrapper" onMouseMove={this._onMouseMove.bind(this)} >
+        <div id = "skills-wrapper" onMouseMove={this._onMouseMove.bind(this)}  >
             <div className = "skills-content">
                 {this.props.children}
             </div>

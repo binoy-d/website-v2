@@ -32,8 +32,9 @@ function App() {
             <ContactButtons />
             <LandingSection />
             <AboutSection />
-            <ProjectSection />
             <SkillsSection />
+            <ProjectSection />
+            
             <Footer />
           </ReactBreakpoints>
       </div>
