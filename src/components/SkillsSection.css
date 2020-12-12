@@ -1,6 +1,7 @@
 
 .skills-title{
   color:var(--main-text-color);
+  margin-top:2em;
   font-weight: bolder;
 }
 
@@ -22,6 +23,8 @@
   border-radius: 0.5em;
   padding-top: 3rem;
   padding-bottom: 2rem;
+  margin-top:2em;
+  margin-bottom:1em;
   transition:transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
