@@ -9,7 +9,7 @@ import ProjectSection from './components/Projects/ProjectSection'
 import ReactBreakpoints from 'react-breakpoints'
 import SkillsSection from './components/Skills/SkillsSection'
 import Footer from './components/Footer/Footer'
-
+import NavBar from './components/Nav/NavBar'
 
 
 function App() {
@@ -28,13 +28,12 @@ function App() {
     <>
       <div id="app-root">
           <ReactBreakpoints breakpoints={breakpoints}>
-            <SiteNav />
+            <NavBar />
             <ContactButtons />
             <LandingSection />
             <AboutSection />
             <SkillsSection />
             <ProjectSection />
-            
             <Footer />
           </ReactBreakpoints>
       </div>

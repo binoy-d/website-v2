@@ -1,0 +1,10 @@
+.navbar-collapse{
+    position:fixed;
+    right:1em;
+    top:0em;
+    z-index: 999;
+    display:inline-block;
+}
+.nav-large-item{
+    display:inline-block;
+}
