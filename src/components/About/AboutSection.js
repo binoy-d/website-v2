@@ -1,15 +1,16 @@
 import React from "react";
 import "./AboutSection.css";
 import Image from "react-bootstrap/Image"
-import ProfileImg from "../img/daniel-profile.jpg"
-import ProfileImgAlt1 from "../img/daniel-profile-alt-1.png"
 import Container from "react-bootstrap/Container"
-import SectionHeader from "./SectionHeader"
+import SectionHeader from "../SectionHeader"
 import Fade from "react-reveal/Fade"
-import NavLink from "./NavLink"
+import NavLink from "../NavLink"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import {info, description} from './data.js'
+import {info, description, profile} from '../data.js'
+
+
+
 function CodeWindow() {
     const sendEmail = () => {
         window.open("mailto:dbinoy15@gmail.com");
@@ -56,7 +57,7 @@ function CodeWindow() {
 class ProfileImage extends React.Component {
     constructor() {
         super();
-        this.src = ProfileImg;
+        this.src = profile;
         this.state = { alt: false };
     }
     handleHoverOn() {
@@ -74,7 +75,7 @@ class ProfileImage extends React.Component {
             <Image
                 id="about-img"
                 className='masthead-profile'
-                src={ ProfileImg}
+                src={this.src}
                 roundedCircle />
         );
     }

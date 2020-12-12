@@ -8,7 +8,12 @@ import {BubblifyImg,
     PongImg,
     FractalTreeImg,
     GameOfLifeImg,
-    SpiralOrbitImg} from '../img'
+    SpiralOrbitImg,
+    DanielProfileImg} from '../img'
+
+
+
+export const profile = DanielProfileImg;
 
 export const projects = [
     {
@@ -361,3 +366,7 @@ export const skills= [
           'Audacity']
   }
 ]
+
+
+
+

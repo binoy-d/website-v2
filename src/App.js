@@ -3,7 +3,7 @@ import './App.css';
 import SiteNav from './components/SiteNav'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ContactButtons from './components/ContactButtons'
-import AboutSection from './components/AboutSection';
+import AboutSection from './components/About/AboutSection';
 import LandingSection from './components/LandingSection'
 import ProjectSection from './components/ProjectSection'
 import ReactBreakpoints from 'react-breakpoints'

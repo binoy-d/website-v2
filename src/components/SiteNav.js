@@ -7,7 +7,7 @@ import Fade from 'react-reveal/Fade'
 
 
 function SiteNav() {
-    return (
+    return ( 
         <Fade top>
             <Navbar collapseOnSelect className="justify-content-end site-nav" expand="lg" variant="dark">
                 <Navbar.Toggle className="justify-content-end" id="site-nav-toggle" aria-controls="responsive-navbar-nav" >
