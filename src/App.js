@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import SiteNav from './components/SiteNav'
+import SiteNav from './components/Nav/SiteNav'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ContactButtons from './components/ContactButtons'
+import ContactButtons from './components/ContactButtons/ContactButtons'
 import AboutSection from './components/About/AboutSection';
-import LandingSection from './components/LandingSection'
-import ProjectSection from './components/ProjectSection'
+import LandingSection from './components/Landing/LandingSection'
+import ProjectSection from './components/Projects/ProjectSection'
 import ReactBreakpoints from 'react-breakpoints'
-import SkillsSection from './components/SkillsSection'
-import Footer from './components/Footer'
+import SkillsSection from './components/Skills/SkillsSection'
+import Footer from './components/Footer/Footer'
 
 
 

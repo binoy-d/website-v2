@@ -4,7 +4,7 @@ import Image from "react-bootstrap/Image"
 import Container from "react-bootstrap/Container"
 import SectionHeader from "../SectionHeader"
 import Fade from "react-reveal/Fade"
-import NavLink from "../NavLink"
+import NavLink from "../Nav/NavLink"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import {info, description, profile} from '../data.js'

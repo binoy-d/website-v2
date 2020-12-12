@@ -1,10 +1,10 @@
 import React from 'react';
 import './ProjectSection.css';
 import Container from 'react-bootstrap/Container'
-import SectionHeader from './SectionHeader'
+import SectionHeader from '../SectionHeader'
 import ProjectCard from './ProjectCard'
 import Row from 'react-bootstrap/Row'
-import {projects} from './data.js'
+import {projects} from '../data.js'
 
 
 function ProjectSection() {

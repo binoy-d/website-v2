@@ -5,7 +5,7 @@ import Particles from 'react-particles-js'
 import Fade from 'react-reveal/Fade'
 import { Media } from 'react-breakpoints'
 import { Link } from 'react-scroll'
-import {toggleNightMode, getTagline} from './data.js'
+import {toggleNightMode, getTagline} from '../data.js'
 function LandingParticles() {
     return (
         <>
