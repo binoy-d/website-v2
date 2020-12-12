@@ -19,34 +19,63 @@ class SkillsIconBackground extends React.Component {
 
   _onMouseMove(e) {
     this.setState({ x: e.screenX, y: e.screenY });
-    document.getElementById("skills-background").style.setProperty("--x", -this.state.x + "px");
-    document.getElementById("skills-background").style.setProperty("--y", -this.state.y + "px")
+    document.getElementById("skills-wrapper").style.setProperty("--x", -this.state.x + "px");
+    document.getElementById("skills-wrapper").style.setProperty("--y", -this.state.y + "px")
   }
 
   render() {
-    const { x, y } = this.state;
     return (
       <div id="skills-wrapper" onMouseMove={this._onMouseMove.bind(this)}  >
         <div className="skills-content">
           {this.props.children}
         </div>
-        <div id="skills-background">
-
-        </div>
-
       </div>
     );
   }
 }
 
-function SkillsContent(){
+
+function SkillsList({ title, icon, skillList }) {
   return (
-    <div className = "skills-header">
-      <SectionHeader  text="Skills" />
+    <Col lg={3} className="skill-list">
+      <Row className="justify-content-center">
+        <h2 className = "skill-header">
+          {title}
+        </h2>
+      </Row>
+      {skillList.map(
+        (value, index) =>
+          <Row className="justify-content-center">
+            <p className = "skill-item">{value}</p>
+          </Row>
+      )}
+    </Col>
+  );
+}
+
+
+function SkillsContent() {
+  return (
+    <div className="fill-width skills-content-wrapper">
+      <div className = "skills-title">
+        <SectionHeader text="Skills" />
+      </div>
+      <Container className="fill-width">
+      <div className="skills-window">
+        <Row>
+          
+            {skills.map((value, index) =>
+              <SkillsList title={value.title} skillList={value.items.slice(0, 10)} />
+            )}
+          
+        </Row>
+        </div>
+      </Container>
+
     </div>
   );
- 
 }
+
 
 function SkillsSection() {
   return (
@@ -56,13 +85,6 @@ function SkillsSection() {
         <SkillsContent />
       </SkillsIconBackground>
 
-      <Container className="">
-        <div className="skills-stuff">
-          <Fade top>
-
-          </Fade>
-        </div>
-      </Container>
     </section>
   );
 }

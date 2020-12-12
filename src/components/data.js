@@ -310,34 +310,37 @@ export const skills= [
           'CSS',
           'Processing',
           'C#',
-          'p5.js']
+          'p5.js',
+          'NodeJS']
   },
   {
       title: 'Frameworks',
       items: [
           'ReactJS',
           'Bootstrap',
-          'NodeJS',
           'jQuery',
           'p5.js',
           'GTest',
           'Beautiful Soup',
           'Express.js',
-          'SemanticUI']
+          'SemanticUI',
+          'Express.js',
+          'Selenium']
   },
   {
       title: 'Tools',
       items: [
           'Git/Github',
-          'Selenium',
-          'Heroku',
           'NPM',
-          'VirtualBox',
-          'VMWare Workstation',
-          'Express.js',
-          'ffmpeg',
+          'Heroku',
           'CLIs',
-          'MongoDB']
+          'MongoDB',
+          'VirtualBox',
+          'AWS',
+          'ffmpeg',
+          'Postman',
+          'NLTK'
+          ]
   },
   {
       title: 'Other',
