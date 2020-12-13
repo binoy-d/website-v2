@@ -19,11 +19,11 @@
 
 
 .skills-window{
-  backdrop-filter:brightness(10%) blur(10px);
+  backdrop-filter:brightness(30%) blur(5px);
   border-radius: 0.5em;
   padding-top: 3rem;
   padding-bottom: 2rem;
-  margin-top:2em;
+  margin-top:0em;
   margin-bottom:1em;
   transition:transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
