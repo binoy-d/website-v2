@@ -53,11 +53,14 @@ function SkillsList({ title, icon, skillList }) {
 function SkillsContent() {
   return (
     <div className="fill-width skills-content-wrapper">
-      <div className="skills-title">
-        <SectionHeader text="Skills" />
-      </div>
+
       <Container className="fill-width">
         <div className="skills-window">
+          <Row className = "text-center">
+            <div className="skills-title">
+              <SectionHeader text="Skills" />
+            </div>
+          </Row>
           <Row>
 
             {skills.map((value, index) =>
@@ -65,15 +68,15 @@ function SkillsContent() {
             )}
 
           </Row>
-
+          <Row>
+            <Fade bottom big>
+              <div className='projects-btn'>
+                <NavLink className='btn btn-outline-light skills-btn' destination='projects' text='Projects'></NavLink>
+              </div>
+            </Fade>
+          </Row>
         </div>
-        <Row>
-          <Fade bottom big>
-            <div className='projects-btn'>
-              <NavLink className='btn btn-outline-light skills-btn' destination='projects' text='Projects'></NavLink>
-            </div>
-          </Fade>
-        </Row>
+
       </Container>
 
     </div>
