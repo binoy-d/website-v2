@@ -55,15 +55,3 @@
     color: var(--accent-color-1)!important;
     border: 1px solid var(--accent-color-1)!important;
 }
-.resume-btn{
-    margin-left:1.5em;
-    background-color: transparent!important;
-    color: var(--main-text-color)!important;
-    border: 1px solid var(--accent-color-1)!important;
-    transition: transform 0.2s;
-}
-
-.resume-btn:hover{
-    transition: transform 0.2s;
-    transform: scale(1.1);
-}

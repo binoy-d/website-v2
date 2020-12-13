@@ -350,17 +350,16 @@ export const skills= [
   {
       title: 'Other',
       items: [
-          'Linux',
-          'Agile',
+          'Linux/Unix',
+          'Figma',
           'Arduino',
           'Photoshop',
-          'Windows',
-          'macOS',
           'Premiere Pro',
           'Illustrator',
           'After Effects',
           '3D Printing',
-          'Sketchup(CAD)',
+          'Agile',
+          'CAD',
           'MS Office',
           'G Suite',
           'Audacity']
