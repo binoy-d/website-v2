@@ -64,6 +64,12 @@
   .resume-link{
     color:var(--main-text-color)!important;
   }
+  .hamburger-react {
+    visibility: visible;
+    opacity:1;
+  transition: opacity 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  
 }
 
 @media (min-width: 992px) {
@@ -75,6 +81,15 @@
   }
   .resume-btn{
     border: 1px solid var(--accent-color-1) !important;
+  }
+  .navbar-large{
+    position:fixed;
+    right:1em;
+  }
+  .hamburger-react {
+    visibility: hidden;
+    opacity:0;
+  transition: visibility 0s 0.3s, opacity 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 }
 .nav-large-item {
@@ -92,3 +107,4 @@
   transition: transform 0.2s;
   transform: scale(1.1);
 }
+
