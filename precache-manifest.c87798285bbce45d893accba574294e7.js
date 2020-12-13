@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f0a0bed7e934a6e5549839e59a5ff8a3",
+    "revision": "1abaf8a58aa3cdab93553a981f82191b",
     "url": "/index.html"
   },
   {
-    "revision": "60dce4fafa471ec0cee4",
+    "revision": "187898db28bf29e89869",
     "url": "/static/css/2.d9ad5f5c.chunk.css"
   },
   {
-    "revision": "6b5464a974f7a6c273af",
-    "url": "/static/css/main.3d9203f2.chunk.css"
+    "revision": "7f6a90186c57caeb57ab",
+    "url": "/static/css/main.802d300a.chunk.css"
   },
   {
-    "revision": "60dce4fafa471ec0cee4",
-    "url": "/static/js/2.f7e6cb1d.chunk.js"
+    "revision": "187898db28bf29e89869",
+    "url": "/static/js/2.9599c4dc.chunk.js"
   },
   {
     "revision": "a73511fdd0e79fea52c5f42ad1574633",
-    "url": "/static/js/2.f7e6cb1d.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.9599c4dc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6b5464a974f7a6c273af",
-    "url": "/static/js/main.a05e0281.chunk.js"
+    "revision": "7f6a90186c57caeb57ab",
+    "url": "/static/js/main.48ac902f.chunk.js"
   },
   {
     "revision": "df33f72422b3f1819f3e",
@@ -40,10 +40,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/color-game.00dcd0a9.png"
   },
   {
-    "revision": "1f5401f03cd26cd780b851c9e4d6381b",
-    "url": "/static/media/daniel-profile-alt-1.1f5401f0.png"
-  },
-  {
     "revision": "167189ab8c372f329e3b618e7a20f351",
     "url": "/static/media/daniel-profile.167189ab.jpg"
   },
@@ -54,6 +50,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "93a54274ef1ca03490f0e8a06a7be57d",
     "url": "/static/media/fractaltree.93a54274.png"
+  },
+  {
+    "revision": "68ff37b5a7e526717fcd857cbdb09f09",
+    "url": "/static/media/icons.68ff37b5.svg"
   },
   {
     "revision": "3648b303373f846b7e8c4f4c456ebf7f",
