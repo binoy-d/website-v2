@@ -56,6 +56,32 @@ img{
     font-size: 0.9em;
     padding-left: 1em;
 }
+
+
+@media(max-width:992px){
+    .code-line{
+        font-size: 0.6em;
+    }
+    .code-command{
+        font-size: 0.6em;
+    }
+
+    .code-window-col{
+        width:100%!important;
+        padding:0;
+    }
+    .code-window-content{
+        padding-left:0.5em!important;
+    }
+
+    .about-container{
+        width:100%;
+        padding:0;
+        margin:0;
+    }
+}
+
+
 .code-window-content{
     background-color: black;
     padding:2em;

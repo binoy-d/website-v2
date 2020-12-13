@@ -205,13 +205,12 @@ export const projects = [
   export const info = {
     "Name": ["Daniel", "Binoy"],
     "Location": ["San Jose CA", "Irvine CA"],
-    "Education": ["University of California Irvine", "2022"],
+    "Education": ["UC Irvine", "2021"],
     "Major": "Computer Science",
-
-    "Status": "Looking for software engineering internships",
-    "Email": ["dbinoy15@gmail.com", "dbinoy@uci.edu"],
-    "XP": ["Web Dev/UX Intern @ Curicular", "CS Instructor @ KTBYTE"],
-    "Interests": ["Coding", "Film", "Longboarding", "Design", "Chess"]
+    "Status": "SWE Internship @ Badger Meter",
+    "Email": ["dbinoy15@gmail.com"],
+    "Currently": ["CS Instructor @ KTBYTE"],
+    "Interests": ["Chess", "Film", "Longboarding", "Design"]
 }
 
 export const description = "I'm a computer science student at " +

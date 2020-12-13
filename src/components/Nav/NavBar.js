@@ -5,14 +5,14 @@ import NavLink from './NavLink'
 import Hamburger from 'hamburger-react'
 
 
-function NavMenu(){
+function NavMenu({visible}){
     return (
-        <div className = "nav-menu">
+        <div className = {"nav-menu visible-"+visible}>
             <div className="nav-small-item"><NavLink text="About" destination="about" /></div>
             <div className="nav-small-item"><NavLink text="Skills" destination="skills" /></div>
             <div className="nav-small-item"><NavLink text="Projects" destination="projects" /></div>
             <div className="nav-small-item">
-                <a href={process.env.PUBLIC_URL + '/files/resume.pdf'} className="btn btn-outline-light resume-btn">Resume</a>
+                <a className = "resume-link" href={process.env.PUBLIC_URL + '/files/resume.pdf'}>Resume</a>
             </div>
         </div>
     );
@@ -37,12 +37,7 @@ class OverlayNav extends React.Component {
             
             <div className = "navbar-small">
                 <Hamburger toggled={this.state.open} toggle={this.toggle}/>
-                {this.state.open?
-                (
-                    <div>
-                        <NavMenu />
-                    </div>
-                ):<></>}
+                <NavMenu visible = {this.state.open} />
             </div>
             </>
         );    

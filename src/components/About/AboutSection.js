@@ -90,7 +90,7 @@ function AboutSection() {
     return (
         <section id='about'>
             <div className='about-stuff'>
-                <Container className=' text-center'>
+                <Container className='about-container text-center'>
                     <Row >
                         <Col>
                             <ProfileImage />
@@ -104,8 +104,7 @@ function AboutSection() {
                         </Col>
                     </Row>
                     <Fade bottom>
-                        <Row>
-
+                        <Row className = "about-row">
                             <Col lg={6} md={12} className="d-flex justify-content-center">
                                 <Container>
                                     <Row>
@@ -121,7 +120,7 @@ function AboutSection() {
                                 </Container>
                             </Col>
 
-                            <Col lg={6} md={12}>
+                            <Col lg={6} md={12} className = "code-window-col">
                                 <CodeWindow />
                             </Col>
                         </Row>
@@ -129,7 +128,6 @@ function AboutSection() {
                     <Row>
                         <Col>
                             <Fade bottom big>
-
                                 <div className='skills-btn'>
                                     <NavLink className='btn btn-outline-light skills-btn' destination='skills' text='Skills'></NavLink>
                                 </div>
