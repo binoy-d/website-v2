@@ -11,6 +11,7 @@
 .skills-title:hover{
   cursor:default;
 }
+
 .skill-header{
   color:var(--accent-color-1);
   padding-bottom: 1rem;
