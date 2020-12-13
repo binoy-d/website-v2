@@ -5,8 +5,8 @@ import SectionHeader from '../SectionHeader'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { skills } from '../data'
-
-
+import Fade from 'react-reveal'
+import NavLink from '../Nav/NavLink'
 class SkillsIconBackground extends React.Component {
   constructor(props) {
     super(props);
@@ -35,14 +35,14 @@ function SkillsList({ title, icon, skillList }) {
   return (
     <Col lg={3} className="skill-list">
       <Row className="justify-content-center">
-        <h2 className = "skill-header">
+        <h2 className="skill-header">
           {title}
         </h2>
       </Row>
       {skillList.map(
         (value, index) =>
           <Row className="justify-content-center">
-            <p className = "skill-item">{value}</p>
+            <p className="skill-item">{value}</p>
           </Row>
       )}
     </Col>
@@ -53,19 +53,27 @@ function SkillsList({ title, icon, skillList }) {
 function SkillsContent() {
   return (
     <div className="fill-width skills-content-wrapper">
-      <div className = "skills-title">
+      <div className="skills-title">
         <SectionHeader text="Skills" />
       </div>
       <Container className="fill-width">
-      <div className="skills-window">
-        <Row>
-          
+        <div className="skills-window">
+          <Row>
+
             {skills.map((value, index) =>
               <SkillsList title={value.title} skillList={value.items.slice(0, 10)} />
             )}
-          
-        </Row>
+
+          </Row>
+
         </div>
+        <Row>
+          <Fade bottom big>
+            <div className='projects-btn'>
+              <NavLink className='btn btn-outline-light skills-btn' destination='projects' text='Projects'></NavLink>
+            </div>
+          </Fade>
+        </Row>
       </Container>
 
     </div>

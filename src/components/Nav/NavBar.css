@@ -99,12 +99,10 @@
 .resume-btn {
   background-color: transparent !important;
   color: var(--main-text-color) !important;
-  
   transition: transform 0.2s;
 }
 
 .resume-btn:hover {
-  transition: transform 0.2s;
   transform: scale(1.1);
 }
 
