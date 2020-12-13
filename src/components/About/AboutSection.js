@@ -105,7 +105,7 @@ function AboutSection() {
                     </Row>
                     <Fade bottom>
                         <Row className = "about-row">
-                            <Col lg={6} md={12} className="d-flex justify-content-center">
+                            <Col lg={6} md={6} sm={12} className="d-flex justify-content-center">
                                 <Container>
                                     <Row>
                                         <Col>
@@ -120,7 +120,7 @@ function AboutSection() {
                                 </Container>
                             </Col>
 
-                            <Col lg={6} md={12} className = "code-window-col">
+                            <Col lg={6} md={6} sm={12} className = "code-window-col">
                                 <CodeWindow />
                             </Col>
                         </Row>

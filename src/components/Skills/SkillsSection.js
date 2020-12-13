@@ -33,7 +33,7 @@ class SkillsIconBackground extends React.Component {
 
 function SkillsList({ title, icon, skillList }) {
   return (
-    <Col lg={3} className="skill-list">
+    <Col lg={3} xs={6} className="skill-list">
       <Row className="justify-content-center">
         <h2 className="skill-header">
           {title}

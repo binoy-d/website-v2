@@ -1,5 +1,14 @@
 #tsparticles {
   --color: var(--main-text-color);
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+#home{
+  height:50vh;
 }
 
 #name-header {
@@ -25,16 +34,58 @@
 #landing-tagline {
   color: var(--accent-color-1);
 }
-@media(min-width:992px){
-  .landing-stuff {
-    transform: translate(0, -40vw );
+
+@media(max-width:480px){
+
+  #name-header{
+    font-size: 3em;
+    font-weight: bolder;
+    margin-bottom:0;
+    padding-bottom: 0;
   }
+  #landing-tagline{
+    font-size: 1.5em;
+    margin-top:0;
+    padding-top: 0;
+  }
+  .landing-stuff{
+    position:absolute;
+    left:10%;
+    right:10%;
+    top:40%;
+  }
+
+}
+
+.disable-dbl-tap-zoom {
+  touch-action: manipulation;
+}
+
+
+
+@media(min-width:481px){
+
   #name-header:hover {
     font-size: 6em;
     cursor: pointer;
+  }
+  .landing-stuff{
+    position:absolute;
+    left:25%;
+    right:25%;
+    top:40%;
   }
 
 }
 
 
 
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}

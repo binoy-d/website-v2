@@ -60,10 +60,10 @@ img{
 
 @media(max-width:992px){
     .code-line{
-        font-size: 0.6em;
+        font-size: 0.8em;
     }
     .code-command{
-        font-size: 0.6em;
+        font-size: 0.9em;
     }
 
     .code-window-col{
@@ -75,12 +75,13 @@ img{
     }
 
     .about-container{
-        width:100%;
-        padding:0;
-        margin:0;
+        max-width:none;
     }
 }
 
+.about-container{
+    width:100%;
+}
 
 .code-window-content{
     background-color: black;

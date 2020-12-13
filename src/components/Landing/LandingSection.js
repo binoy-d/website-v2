@@ -5,40 +5,40 @@ import Particles from 'react-particles-js'
 import Fade from 'react-reveal/Fade'
 import { Media } from 'react-breakpoints'
 import { Link } from 'react-scroll'
-import {toggleNightMode, getTagline} from '../data.js'
+import { toggleNightMode, getTagline } from '../data.js'
 function LandingParticles() {
     return (
         <>
-        <Particles
-            params={{
-                "particles": {
-                    "number": {
-                        "value": 100
-                    },
-                    "size": {
-                        "value": 3
-                    },
-                    "color": {
-                        "value": "#C52233"
-                    },
-
-                    "links": {
+            <Particles
+                params={{
+                    "particles": {
+                        "number": {
+                            "value": 50
+                        },
+                        "size": {
+                            "value": 3
+                        },
                         "color": {
                             "value": "#C52233"
                         },
-                    },
 
-                },
-                "interactivity": {
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "repulse"
+                        "links": {
+                            "color": {
+                                "value": "#C52233"
+                            },
+                        },
+
+                    },
+                    "interactivity": {
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "repulse"
+                            }
                         }
                     }
-                }
-            }} />
-            </>
+                }} />
+        </>
     );
 }
 
@@ -47,40 +47,31 @@ function LandingParticles() {
 
 
 
-class  LandingSection extends React.Component {
-    dark = ()=>{
+class LandingSection extends React.Component {
+    dark = () => {
         toggleNightMode();
         this.forceUpdate();
     }
-    render(){
+    render() {
         return (
             <section id="home">
-                <Media>
-                    {({ breakpoints, currentBreakpoint }) =>
-                        breakpoints[currentBreakpoint] > breakpoints.tablet ? (
                             <LandingParticles />
-                        ) : (
-                                <>
-                                </> 
-                            )
-                    }
-                </Media>
-                
-                
-
-
-                <div className="landing-stuff text-center">
-                    <Container>
-                        <Fade top>
-                            <h1 id="landing-name" onClick={this.dark} id="name-header" >Daniel Binoy</h1>
-                            <Link className="nav-link" to="about" spy={true} smooth={true} duration={500} />
-                        </Fade>
                         
-                        <Fade bottom>
-                            <h2 id="landing-tagline">{getTagline()}</h2>
-                        </Fade>
 
-                    </Container>
+
+
+
+                <div className="landing-stuff text-center disable-dbl-tap-zoom">
+
+                    <Fade top>
+                        <h1 className = "noselect" id="landing-name" onClick={this.dark} id="name-header" >Daniel Binoy</h1>
+                        <Link className="nav-link" to="about" spy={true} smooth={true} duration={500} />
+                    </Fade>
+
+                    <Fade bottom>
+                        <h2 className = "noselect" id="landing-tagline">{getTagline()}</h2>
+                    </Fade>
+
                 </div>
 
             </section>
