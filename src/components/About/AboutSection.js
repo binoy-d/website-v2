@@ -7,7 +7,7 @@ import Fade from "react-reveal/Fade"
 import NavLink from "../Nav/NavLink"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import {info, description, profile} from '../data.js'
+import { info, description, profile } from '../data.js'
 
 
 
@@ -15,7 +15,7 @@ function CodeWindow() {
     const sendEmail = () => {
         window.open("mailto:dbinoy15@gmail.com");
     }
-    
+
     let output = [];
     for (var key in info) {
         output.push(
@@ -89,17 +89,17 @@ class ProfileImage extends React.Component {
 function AboutSection() {
     return (
         <section id='about'>
-            <Container className='h-100 w-100 text-center'>
-                <div className='about-stuff'>
+            <div className='about-stuff'>
+                <Container className=' text-center'>
                     <Row >
                         <Col>
-                                <ProfileImage  />
+                            <ProfileImage />
                         </Col>
                     </Row>
                     <Row >
                         <Col>
                             <Fade top>
-                                <SectionHeader id="about-header" className = "color-text" text='About me' />
+                                <SectionHeader id="about-header" className="color-text" text='About me' />
                             </Fade>
                         </Col>
                     </Row>
@@ -136,9 +136,10 @@ function AboutSection() {
                             </Fade>
                         </Col>
                     </Row>
-                </div>
+                </Container>
+            </div>
 
-            </Container>
+
         </section>
     );
 }

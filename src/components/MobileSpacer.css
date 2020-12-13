@@ -1,0 +1,10 @@
+@media(min-width:992px){
+    .mobile-spacer{
+        visibility: hidden;
+    }
+}
+
+
+.mobile-spacer{
+    height:20vh;
+}

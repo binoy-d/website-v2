@@ -69,22 +69,19 @@ class  LandingSection extends React.Component {
                 
 
 
-                <header className="landing-stuff text-center">
+                <div className="landing-stuff text-center">
                     <Container>
                         <Fade top>
                             <h1 id="landing-name" onClick={this.dark} id="name-header" >Daniel Binoy</h1>
-                            <Link className="nav-link" to="about" spy={true} smooth={true} duration={500}>
-                                
-                            </Link>
-                            
-
+                            <Link className="nav-link" to="about" spy={true} smooth={true} duration={500} />
                         </Fade>
+                        
                         <Fade bottom>
                             <h2 id="landing-tagline">{getTagline()}</h2>
                         </Fade>
 
                     </Container>
-                </header>
+                </div>
 
             </section>
         );

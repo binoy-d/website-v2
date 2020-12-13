@@ -4,6 +4,21 @@ import Fade from 'react-reveal/Fade'
 import NavLink from './NavLink'
 import Hamburger from 'hamburger-react'
 
+
+function NavMenu(){
+    return (
+        <div className = "nav-menu">
+            <div className="nav-small-item"><NavLink text="About" destination="about" /></div>
+            <div className="nav-small-item"><NavLink text="Skills" destination="skills" /></div>
+            <div className="nav-small-item"><NavLink text="Projects" destination="projects" /></div>
+            <div className="nav-small-item">
+                <a href={process.env.PUBLIC_URL + '/files/resume.pdf'} className="btn btn-outline-light resume-btn">Resume</a>
+            </div>
+        </div>
+    );
+}
+
+
 class OverlayNav extends React.Component {
     constructor(props){
         super(props);;
@@ -25,9 +40,7 @@ class OverlayNav extends React.Component {
                 {this.state.open?
                 (
                     <div>
-                        <p>
-                            this is a test
-                        </p>
+                        <NavMenu />
                     </div>
                 ):<></>}
             </div>

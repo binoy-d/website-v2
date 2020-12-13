@@ -10,7 +10,7 @@ import ReactBreakpoints from 'react-breakpoints'
 import SkillsSection from './components/Skills/SkillsSection'
 import Footer from './components/Footer/Footer'
 import NavBar from './components/Nav/NavBar'
-
+import MobileSpacer from './components/MobileSpacer'
 
 function App() {
 

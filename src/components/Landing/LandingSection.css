@@ -1,41 +1,40 @@
-
-#tsparticles{
-    --color: var(--main-text-color);
+#tsparticles {
+  --color: var(--main-text-color);
 }
 
-#home{
-    height:100vh;
+#name-header {
+  color: var(--main-text-color);
+
+  font-size: 5em;
+  transition: font-size 0.2s;
+  transition-timing-function: ease-out;
+  z-index: 20;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
 }
 
-#name-header{
-    color:var(--main-text-color);
-    
-    font-size: 5em;
-    transition: font-size 0.2s;
-    transition-timing-function: ease-out;
-    z-index: 20;
-    -webkit-user-select: none; /* Chrome/Safari */        
--moz-user-select: none; /* Firefox */
--ms-user-select: none; /* IE10+ */
 
-/* Rules below not implemented in browsers yet */
--o-user-select: none;
-user-select: none;
+
+
+
+#landing-tagline {
+  color: var(--accent-color-1);
 }
-#name-header:hover{
-    font-size:6em;
+@media(min-width:992px){
+  .landing-stuff {
+    transform: translate(0, -40vw );
+  }
+  #name-header:hover {
+    font-size: 6em;
     cursor: pointer;
-}
-#landing-tagline{
-    color:var(--accent-color-1);
+  }
+
 }
 
-.landing-stuff{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /* bring your own prefixes */
-    transform: translate(-50%, -50%);
-}
 
 
