@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import SiteNav from './components/Nav/SiteNav'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ContactButtons from './components/ContactButtons/ContactButtons'
 import AboutSection from './components/About/AboutSection';
@@ -10,7 +9,6 @@ import ReactBreakpoints from 'react-breakpoints'
 import SkillsSection from './components/Skills/SkillsSection'
 import Footer from './components/Footer/Footer'
 import NavBar from './components/Nav/NavBar'
-import MobileSpacer from './components/MobileSpacer'
 
 function App() {
 

@@ -68,6 +68,7 @@
     background-position: var(--x) var(--y);
     z-index: -100;
     background-image: url("./icons.svg");
+    background-size:20%;
     background-repeat: repeat;
   }
   .skill-item {
