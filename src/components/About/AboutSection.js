@@ -129,7 +129,7 @@ function AboutSection() {
                         <Col>
                             <Fade bottom big>
                                 <div className='skills-btn'>
-                                    <NavLink className='btn btn-outline-light skills-btn' destination='skills' text='Skills'></NavLink>
+                                    <NavLink className='btn btn-outline-light skills-btn' destination='experience' text='Experience'></NavLink>
                                 </div>
                             </Fade>
                         </Col>

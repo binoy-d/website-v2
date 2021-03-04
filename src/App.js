@@ -7,6 +7,7 @@ import LandingSection from './components/Landing/LandingSection'
 import ProjectSection from './components/Projects/ProjectSection'
 import ReactBreakpoints from 'react-breakpoints'
 import SkillsSection from './components/Skills/SkillsSection'
+import ExperienceSection from './components/Experience/ExperienceSection'
 import Footer from './components/Footer/Footer'
 import NavBar from './components/Nav/NavBar'
 
@@ -30,6 +31,7 @@ function App() {
             <ContactButtons />
             <LandingSection />
             <AboutSection />
+            <ExperienceSection />
             <SkillsSection />
             <ProjectSection />
             <Footer />

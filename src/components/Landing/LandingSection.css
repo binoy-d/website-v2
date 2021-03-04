@@ -13,7 +13,6 @@
 
 #name-header {
   color: var(--main-text-color);
-
   font-size: 5em;
   transition: font-size 0.2s;
   transition-timing-function: ease-out;
