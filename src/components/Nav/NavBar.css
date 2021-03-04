@@ -6,6 +6,7 @@
   display: inline-block;
 }
 
+
 .nav-menu{
   height:100%;
   padding-top: 1em;
@@ -74,6 +75,7 @@
 
 @media (min-width: 992px) {
   .navbar-large {
+    top:1em;
     visibility: visible;
   }
   .navbar-small {

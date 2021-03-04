@@ -9,7 +9,8 @@ import {BubblifyImg,
     FractalTreeImg,
     GameOfLifeImg,
     SpiralOrbitImg,
-    DanielProfileImg} from '../img'
+    DanielProfileImg,
+    TankmaniaImg} from '../img'
 
 
 
@@ -127,7 +128,19 @@ export const projects = [
                         ' as a TDS interactive fiction experience.'
                   
     },
-    
+    {
+      title: 'Tankmania',
+      description: ['Tank war simulator project for class on game engines',
+                    'User can pick number of teams and tanks per team"',
+                    'Features 3-stage AI that patrols, chases, and shoots'],
+      languages: ['C#', 'Unity3D'],
+      link: "https://binoy-d.github.io/tankmania/",
+      img: TankmaniaImg,
+      featured: false,
+      codeLink: "https://github.com/binoy-d/tankmania",
+      longDescription:  "A tank war simulator project I made for ICS161: Game Engine Lab"
+                  
+    },
     {
       title: 'Game of Life',
       description: ['Minimalist clone of Conway\'s Game of life',
@@ -207,9 +220,8 @@ export const projects = [
     "Location": ["San Jose CA", "Irvine CA"],
     "Education": ["UC Irvine", "2021"],
     "Major": "Computer Science",
-    "Status": "SWE Internship @ Badger Meter",
-    "Email": ["dbinoy15@gmail.com"],
-    "Currently": ["CS Instructor @ KTBYTE"],
+    "Status": "SWE Intern @ Badger Meter",
+    "Email": ["dbinoy15@gmail.com", "dbinoy@uci.edu"],
     "Interests": ["Chess", "Film", "Longboarding", "Design"]
 }
 

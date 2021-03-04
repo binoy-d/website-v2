@@ -21,7 +21,7 @@
 }
 
 .skills-window {
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(20px);
   border-radius: 0.5em;
   padding-bottom: 2rem;
   margin-left:auto;
@@ -32,12 +32,7 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-@media (min-width: 992px) {
-  .skills-window:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    transform: scale(1.005);
-  }
-}
+
 
 @media (max-width: 480px) {
   #skills-wrapper {
@@ -122,5 +117,10 @@
   margin-left: 35%;
   width: 30%;
   text-align: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
+  transition: transform 1s ease-in-out;
+}
+
+.projects-btn:hover{
+  transform: scale(1.5);
 }
