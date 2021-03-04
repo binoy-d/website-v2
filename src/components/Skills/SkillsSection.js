@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SkillsSection.css';
 import Container from 'react-bootstrap/Container'
 import SectionHeader from '../SectionHeader'
@@ -11,12 +11,6 @@ class SkillsIconBackground extends React.Component {
   constructor(props) {
     super(props);
     this.state = { x: 0, y: 0 };
-  }
-
-  _onMouseMove(e) {
-    this.setState({ x: e.screenX, y: e.screenY });
-    document.getElementById("skills-wrapper").style.setProperty("--x", -this.state.x + "px");
-    document.getElementById("skills-wrapper").style.setProperty("--y", -this.state.y + "px")
   }
 
   render() {
@@ -41,7 +35,7 @@ function SkillsList({ title, icon, skillList }) {
       </Row>
       {skillList.map(
         (value, index) =>
-          <Row className="justify-content-center">
+          <Row className="justify-content-center" key={"skill-"+index}>
             <p className="skill-item">{value}</p>
           </Row>
       )}
@@ -64,7 +58,7 @@ function SkillsContent() {
           <Row>
 
             {skills.map((value, index) =>
-              <SkillsList title={value.title} skillList={value.items.slice(0, 10)} />
+              <SkillsList key = {"skill-list-"+index} title={value.title} skillList={value.items.slice(0, 10)} />
             )}
 
           </Row>

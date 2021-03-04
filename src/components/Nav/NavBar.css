@@ -76,6 +76,8 @@
 @media (min-width: 992px) {
   .navbar-large {
     top:1em;
+    position:fixed;
+    right:1.5em;
     visibility: visible;
   }
   .navbar-small {
@@ -83,10 +85,6 @@
   }
   .resume-btn{
     border: 1px solid var(--accent-color-1) !important;
-  }
-  .navbar-large{
-    position:fixed;
-    right:1em;
   }
   .hamburger-react {
     visibility: hidden;

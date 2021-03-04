@@ -1,16 +1,14 @@
 .contact-wrapper{
-
     color: var(--main-text-color);
-    width:5%;
-    position: sticky;
-    position: -webkit-sticky;
-    top:45%;
-    bottom: 0; /* required */
+
+    position: fixed;
+    left:0;
+    bottom:0;
     z-index:10;
 }
 
 .contact-button{
-    margin-left:0.4em;
+    margin-left:1em;
     margin-bottom:1em;
 }
 

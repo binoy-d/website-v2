@@ -19,14 +19,14 @@ export const profile = DanielProfileImg;
 export const projects = [
     {
       title: 'This Website!',
-      description: ['Mobile-friendly responsive personal portfolio website', 
+      description: ['Responsive personal portfolio website', 
                     'Smooth animations encourage interaction',
-                    'Night mode button offers two aesthetic color modes',
-                    'Currently under development ;)'],
+                    'Dark mode button and many hidden easter eggs',
+                    ],
       languages: ['ReactJS', 'Bootstrap', 'HTML', 'CSS', 'JavaScript'],
-      link: "https://binoy.co/",
+      link: "https://github.com/binoy-d/portfolio-website",
       img: WebsiteImg,
-      featured: true,
+      featured: false,
       codeLink: "https://github.com/binoy-d/portfolio-website",
       longDescription:  'This is the second version of my personal portfolio website. '+
                         'The previous version of this website was done working off of'+
@@ -52,7 +52,7 @@ export const projects = [
       languages: ['p5.js', 'WEBGL', 'JavaScript', 'HTML', 'CSS'],
       link: "https://binoy-d.github.io/spiral-orbit/",
       img: SpiralOrbitImg,
-      featured: true,
+      featured: false,
       codeLink: "https://github.com/binoy-d/spiral-orbit",
       longDescription:  "This is the product of a late night coding session with some buddies. "+
                         "I started out wanting to make some sort of simple music visualizer that works "+
@@ -65,9 +65,9 @@ export const projects = [
     },
     {
       title: 'Bubbles, Together',
-      description: ['Website allowing users to concurrently draw with bubbles',
+      description: ['Users draw together live, with bubbles',
                     'Particle effects and graphics done with p5.js',
-                    'Backend written in NodeJS using SocketIO, hosted on Heroku'],
+                    'Capable of handling many concurrent users'],
       languages: ['p5.js', 'Node', 'JavaScript', 'SocketIO', 'Heroku'],
       link: "https://bubbles-together.herokuapp.com/",
       img: BubblesTogetherImg,
@@ -130,9 +130,9 @@ export const projects = [
     },
     {
       title: 'Tankmania',
-      description: ['Tank war simulator project for class on game engines',
-                    'User can pick number of teams and tanks per team"',
-                    'Features 3-stage AI that patrols, chases, and shoots'],
+      description: ['Tank war simulator project',
+                    'User can pick number of teams and tanks per team',
+                    '3-stage AI that patrols, chases, and shoots'],
       languages: ['C#', 'Unity3D'],
       link: "https://binoy-d.github.io/tankmania/",
       img: TankmaniaImg,
@@ -144,7 +144,7 @@ export const projects = [
     {
       title: 'Game of Life',
       description: ['Minimalist clone of Conway\'s Game of life',
-                    'Features play, pause, toggle cell state, and randomize',
+                    'Play, pause, toggle cell state, and randomize',
                     'Done as a project to begin learning C#'],
       languages: ['C#', '.NET'],
       link: "https://github.com/binoy-d/Game-Of-Life",

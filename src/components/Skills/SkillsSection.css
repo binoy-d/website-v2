@@ -21,7 +21,7 @@
 }
 
 .skills-window {
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(25px);
   border-radius: 0.5em;
   padding-bottom: 2rem;
   margin-left:auto;
@@ -56,14 +56,14 @@
 
 @media (min-width: 481px) {
   #skills-wrapper {
-    --x: 0px;
-    --y: 0px;
+
     transition-duration: 2s;
     transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    background-position: var(--x) var(--y);
+
     z-index: -100;
+    background-attachment: fixed;
     background-image: url("./icons.svg");
-    background-size:20%;
+    background-size:30%;
     background-repeat: repeat;
   }
   .skill-item {

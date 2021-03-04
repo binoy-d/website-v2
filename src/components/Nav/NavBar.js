@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './NavBar.css';
 import Fade from 'react-reveal/Fade'
 import NavLink from './NavLink'
@@ -47,7 +47,6 @@ class OverlayNav extends React.Component {
 
 
 function NavBar() {
-    const [isOpen, setOpen] = React.useState(false);
 
     return (
         <Fade top>

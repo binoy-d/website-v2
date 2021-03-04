@@ -38,3 +38,11 @@ body{
 .body:empty {
   background: black;
 }
+
+
+@media (max-width: 500px) {
+  html, body{
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
