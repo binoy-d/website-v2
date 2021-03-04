@@ -1,9 +1,7 @@
 import React from 'react'
 import './LandingSection.css';
-import Container from 'react-bootstrap/Container'
 import Particles from 'react-particles-js'
 import Fade from 'react-reveal/Fade'
-import { Media } from 'react-breakpoints'
 import { Link } from 'react-scroll'
 import { toggleNightMode, getTagline } from '../data.js'
 function LandingParticles() {
@@ -64,7 +62,7 @@ class LandingSection extends React.Component {
                 <div className="landing-stuff text-center disable-dbl-tap-zoom">
 
                     <Fade top>
-                        <h1 className = "noselect" id="landing-name" onClick={this.dark} id="name-header" >Daniel Binoy</h1>
+                        <h1 className = "noselect" id="landing-name name-header" onClick={this.dark} >Daniel Binoy</h1>
                         <Link className="nav-link" to="about" spy={true} smooth={true} duration={500} />
                     </Fade>
 
