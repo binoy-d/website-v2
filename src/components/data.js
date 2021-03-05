@@ -245,8 +245,8 @@ export const info = {
   Education: ["UC Irvine", "2021"],
   Major: "Computer Science",
   Status: "SWE Intern @ Badger Meter",
-  Email: ["dbinoy15@gmail.com", "dbinoy@uci.edu"],
-  Interests: ["Chess", "Film", "Longboarding", "Design"],
+  Email: "dbinoy15@gmail.com",
+  Interests: ["Chess", "Film", "Longboarding"],
 };
 
 export const description =
@@ -256,7 +256,7 @@ export const description =
   "its writing code, filming videos, or creating art, I'm always making something. Connect with me " +
   "to make something great, together!";
 
-var nightMode = false;
+export var nightMode = true;
 
 var tagline = "student developer";
 var taglineList = [

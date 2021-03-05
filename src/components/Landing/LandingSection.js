@@ -72,7 +72,7 @@ class LandingSection extends React.Component {
                 smooth={true}
                 duration={500}
               >
-                <i class="arrow arrow-down"></i>
+                <i className="arrow arrow-down"></i>
               </Link>
               
             </div>

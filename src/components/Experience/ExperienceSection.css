@@ -1,9 +1,52 @@
 .experience-timeline-wrapper{
     width:60%;
     margin-left:20%;
-    height:80vh;
+    height:75vh;
 }   
 
-.vertical-item-row{
-    height:25vh;
+.experience-timeline-wrapper-mobile{
+    width:100%;
+}   
+
+
+
+
+@media (min-width: 481px) {
+    .vertical-item-row{
+        height:25vh;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .timeline-main-wrapper{
+        padding-left:0em!important;
+        padding-right:0em!important;
+        width:100%!important;
+    }
+
+    .timeline-item-title{
+        text-align: center;
+        padding:0!important;
+    }
+    .css-mpnodf-TimelineTitleWrapper{
+        width:20%!important;
+    }
+    .css-1iv48dl-TimelineVerticalWrapper{
+        padding:0.25em!important;
+    }
+}
+
+
+.card-description{
+    margin-left:1em!important;
+}
+
+.card-title{
+    margin-top:1em!important;
+    margin-left:1em!important;
+}
+
+.card-sub-title{
+    margin-left:1em!important;
 }

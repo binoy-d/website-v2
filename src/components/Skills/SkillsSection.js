@@ -80,6 +80,8 @@ function SkillsContent() {
 
 function SkillsSection() {
   return (
+    <Fade bottom>
+      
     <section id="skills">
 
       <SkillsIconBackground>
@@ -87,6 +89,7 @@ function SkillsSection() {
       </SkillsIconBackground>
 
     </section>
+    </Fade>
   );
 }
 

@@ -10,7 +10,6 @@ import SkillsSection from './components/Skills/SkillsSection'
 import ExperienceSection from './components/Experience/ExperienceSection'
 import Footer from './components/Footer/Footer'
 import NavBar from './components/Nav/NavBar'
-
 function App() {
 
   const breakpoints = {
@@ -22,6 +21,7 @@ function App() {
     desktopLarge: 1500,
     desktopWide: 1920,
   }
+
 
   return (
     <>

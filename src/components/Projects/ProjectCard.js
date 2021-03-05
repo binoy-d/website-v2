@@ -134,6 +134,7 @@ function ProjectCardRightDesktop({ proj }) {
 
 function ProjectCardMobile({ proj }) {
     return (
+        <Fade bottom>
         <div className="project-card-mobile">
             <h2 className="proj-title-mobile">{proj.title}</h2>
             <a href={proj.link}><Image className="project-image" src={proj.img}></Image></a>
@@ -152,6 +153,7 @@ function ProjectCardMobile({ proj }) {
                 </div>
             </div>
         </div>
+        </Fade>
     );
 }
 
