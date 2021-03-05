@@ -1,22 +1,19 @@
 .contact-wrapper{
-    color: var(--main-text-color);
-
+    mix-blend-mode: difference;
+    /*color: var(--main-text-color);*/
+    z-index:10;
     position: fixed;
     left:0;
-    bottom:0;
-    z-index:10;
-}
-
-.contact-button{
-    margin-left:1em;
-    margin-bottom:1em;
+    bottom:2em;
+    
 }
 
 
 a svg {
     width: 20px;
     height: 20px;
-    fill:var(--main-text-color)!important;
+    fill: var(--light);
+    /*fill:var(--main-text-color)!important;*/
     transition:transform 0.3s ease-in-out;
     /*opacity:100%;*/
 }
@@ -26,7 +23,21 @@ a svg:hover{
     cursor:pointer;
 }
 
-.night-button{
-    fill:var(--accent-color-1)!important;
+.contact-button{
+    z-index:12;
+    mix-blend-mode: unset;
+    margin-left:0.5em;
+    margin-bottom:1em;
     /*opacity:100%;*/
+}
+
+.night-button-wrapper{
+    z-index:10;
+    position: fixed;
+    left:0.5em;
+    bottom:0.75em;
+}
+
+.night-button{
+    fill:var(--accent-color-1);
 }

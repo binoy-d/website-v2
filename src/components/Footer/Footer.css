@@ -9,11 +9,41 @@
     text-align: center;
 }
 
-#back{
-    width:30%;
+
+@media(max-width:570px){
+
+    #back{
+        width:50%;
+        margin-left:25%;
+        padding:0.5em;
+        
+        border-radius: 0.3em;
+        background-color: var(--main-bg-color);
+        color:var(--main-text-color)!important;
+        text-align:center!important;
+        cursor:pointer;
+        transition: transform 0.2s;
+    }
+}
+  
+@media(min-width:571px){
+
+    #back{
+        width:30%;
     margin-left:35%;
     margin-right:35%;
     padding:0.5em;
+        
+        border-radius: 0.3em;
+        background-color: var(--main-bg-color);
+        color:var(--main-text-color)!important;
+        text-align:center!important;
+        cursor:pointer;
+        transition: transform 0.2s;
+    }
+}
+#back{
+    
     
     border-radius: 0.3em;
     background-color: var(--main-bg-color);

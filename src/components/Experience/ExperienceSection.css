@@ -9,7 +9,9 @@
 }   
 
 
-
+#experience{
+    margin-top:0em;
+}
 
 @media (min-width: 481px) {
     .vertical-item-row{
