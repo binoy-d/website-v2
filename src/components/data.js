@@ -261,11 +261,11 @@ export var nightMode = true;
 var tagline = "student developer";
 var taglineList = [
   "student developer",
+  "software engineer intern",
   "dark mode lover",
   "cs instructor",
-  "web dev intern",
-  "swe intern",
   "chess player",
+  "web dev intern",
   "longboarder",
   "filmmaker",
   "graphic designer",
