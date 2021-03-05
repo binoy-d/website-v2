@@ -39,34 +39,13 @@ function CodeWindow() {
   const sendEmail = () => {
     window.open("mailto:dbinoy15@gmail.com");
   };
-  /*
-  let output = [];
-  for (var key in info) {
-    output.push(
-      <>
-        <span className="code-line">
-          <span className="code-key">>binoy.{key} </span>
-          <span>
-            {!Array.isArray(info[key]) ? (
-              <span>{info[key]}</span>
-            ) : (
-              <span>
-                <span>[ </span>
-                {info[key].join(", ")}
-                <span> ]</span>
-              </span>
-            )}
-          </span>
-        </span>
-        <br />
-      </>
-    );
-  }
-  */
   return (
     <div onClick={sendEmail} className="code-window-wrapper">
       <div className="code-window-top">
         <p>click_to_contact.exe</p>
+        <span className = "code-window-dot">  </span>
+        <span className = "code-window-dot">  </span>
+        <span className = "code-window-dot">  </span>
       </div>
       <div className="code-window-content">
         <span className="code-command typewriter">

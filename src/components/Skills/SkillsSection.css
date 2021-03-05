@@ -46,11 +46,11 @@
 
 @media (min-width: 481px) {
   #skills-wrapper {
-
-    transition-duration: 2s;
+    transition-duration: 4s;
     transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-
     z-index: -100;
+    --x: 0;
+    background-position-x: var(--x);
     background-attachment: fixed;
     background-image: url("./icons.svg");
     background-size:30%;
@@ -68,20 +68,24 @@
   }
 
   .skills-window {
-    backdrop-filter: blur(25px)!important;
-    background-color: var(--main-bg-color);
-    -webkit-backdrop-filter: blur(25px);
+    background-color: var(--secondary-bg-color);
     border-radius: 0.5em;
     padding-bottom: 2rem;
     margin-left:auto;
     margin-right:auto;
     margin-top: 2em;
     margin-bottom: 1em;
+
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+    
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
 }
+
+
+
+
 
 .skills-header:hover {
   cursor: default;

@@ -10,7 +10,31 @@ import NavLink from '../Nav/NavLink'
 class SkillsIconBackground extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { x: 0, y: 0 };
+    this.state = {scrollpos: 0}
+  }
+
+
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.listenToScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.listenToScroll)
+  }
+
+  listenToScroll = () => {
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop
+  
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight
+  
+    const scrolled = 200*(winScroll / height)
+
+    document.getElementById("skills-wrapper").style.setProperty("--x", -scrolled + "em");
+    
   }
 
   render() {
