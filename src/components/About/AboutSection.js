@@ -9,11 +9,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { info, description, profile } from "../data.js";
 
-function CodeLine({info}) {
+function CodeLine({ info }) {
   return (
     <>
       {Object.keys(info).map((key, index) => (
-        <div key={"code-line-"+key}>
+        <div key={"code-line-" + key}>
           <span className="code-line">
             <span className="code-key">>binoy.{key} </span>
             <span>
@@ -40,19 +40,19 @@ function CodeWindow() {
     window.open("mailto:dbinoy15@gmail.com");
   };
   return (
-    <div onClick={sendEmail} className="code-window-wrapper">
-      <div className="code-window-top">
+    <div  className="code-window-wrapper">
+      <div onClick={sendEmail} className="code-window-top">
         <p>click_to_contact.exe</p>
-        <span className = "code-window-dot">  </span>
-        <span className = "code-window-dot">  </span>
-        <span className = "code-window-dot">  </span>
+        <span className="code-window-dot"> </span>
+        <span className="code-window-dot"> </span>
+        <span className="code-window-dot"> </span>
       </div>
       <div className="code-window-content">
         <span className="code-command typewriter">
           >import daniel-binoy as binoy
         </span>
         <br />
-        <CodeLine info={info}/>
+        <CodeLine info={info} />
       </div>
     </div>
   );
@@ -139,7 +139,7 @@ function AboutSection() {
               <Fade bottom big>
                 <div className="skills-btn">
                   <NavLink
-                    className="btn btn-outline-light skills-btn"
+                    className="btn btn-outline-light"
                     destination="experience"
                     text="Experience"
                   ></NavLink>

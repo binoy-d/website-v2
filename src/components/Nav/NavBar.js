@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './NavBar.css';
 import Fade from 'react-reveal/Fade'
 import NavLink from './NavLink'
 import Hamburger from 'hamburger-react'
-
-
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 function NavMenu({visible}){
     return (
         <div className = {"nav-menu visible-"+visible}>
@@ -46,11 +46,38 @@ class OverlayNav extends React.Component {
     }
 }
 
+function ResumeModal({show, handleClose}){
+    return (
+        <div className = "resume-modal">
+        <Modal show={show} onHide={handleClose} >
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <object className = "resume-data" data={process.env.PUBLIC_URL + '/files/resume.pdf'} type="application/pdf">
+            <embed src={process.env.PUBLIC_URL + '/files/resume.pdf'} type="application/pdf" />
+        </object>
 
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      </div>
+    );
+}
+//process.env.PUBLIC_URL + '/files/resume.pdf'
 
 function NavBar() {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
 
     return (
+        <>
         <Fade top>
             <div className="navbar-collapse">
                 <div className="navbar-large">
@@ -59,12 +86,14 @@ function NavBar() {
                     <div className="nav-large-item"><NavLink text="Skills" destination="skills" /></div>
                     <div className="nav-large-item"><NavLink text="Projects" destination="projects" /></div>
                     <div className="nav-large-item">
-                        <a href={process.env.PUBLIC_URL + '/files/resume.pdf'} className="btn btn-outline-light resume-btn">Resume</a>
+                        <div onClick = {handleShow} className="btn btn-outline-light resume-btn">Resume</div>
                     </div>
                 </div>
                 <OverlayNav />
             </div>
         </Fade>
+        <ResumeModal show={show} handleClose={handleClose}/>
+        </>
     );
 }
 

@@ -54,12 +54,12 @@ img{
 .skills-btn{
     margin-top:2em;
     border-radius:0.4em;
-    width:30%;
-    margin-left:35%;
     border: 1px solid var(--accent-color-1);
+    width: 40%;
+    margin-left: 30%;
 }
 
-@media(min-width:481){
+@media(min-width:641){
     .code-line{
         font-size: 0.8em;
     }
@@ -82,13 +82,13 @@ img{
         margin-top:2em;
         border-radius:0.4em;
         border: 1px solid var(--accent-color-1);
-        margin-left: 35%;
-        width:30%;
+        margin-left: 30%;
+        width:50%;
     }
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
     .skills-btn{
         
         margin-left: 10%;
@@ -183,7 +183,9 @@ img{
       blink-caret .75s step-end infinite;
 }
 
-
+.code-window-top:hover{
+    cursor: pointer;
+}
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: var(--accent-color-1); }
@@ -200,7 +202,7 @@ img{
 .code-window-wrapper:hover{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   transform:scale(1.01);
-    cursor:pointer
+  cursor:default;
 }
 
 #about-img{
