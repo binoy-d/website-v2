@@ -63,7 +63,8 @@ class LandingSection extends React.Component {
             </h2>
           </Fade>
 
-            <div className="down-arrow bubble">
+          <Fade bottom big>
+            <div className="down-arrow">
               <Link
                 className="nav-link"
                 to="about"
@@ -75,6 +76,7 @@ class LandingSection extends React.Component {
               </Link>
               
             </div>
+          </Fade>
         </div>
       </section>
     );

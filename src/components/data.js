@@ -332,6 +332,7 @@ export const toggleNightMode = () => {
     root.style.setProperty("--secondary-bg-color", "#DEDEDE");
   }
   tagline = taglineList[tagIndex];
+  console.log(tagline);
 };
 
 export const getTagline = () => {

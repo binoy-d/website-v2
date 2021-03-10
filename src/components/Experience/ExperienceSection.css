@@ -1,4 +1,8 @@
-
+.experience-timeline-wrapper{
+    width:60%;
+    margin-left:20%;
+    height:75vh;
+}   
 
 .experience-timeline-wrapper-mobile{
     width:100%;
@@ -13,27 +17,14 @@
     .vertical-item-row{
         height:25vh;
     }
-    .experience-timeline-wrapper{
-        width:80%;
-        margin-left:10%;
-        height:75vh;
-    }   
-    
-}
 
-
-@media (min-width: 1260px) {
-    .vertical-item-row{
-        height:25vh;
+    .skills-btn{
+        width:10%;
+        margin-left:45%;
     }
-    .experience-timeline-wrapper{
-        width:60%;
-        margin-left:20%;
-        height:75vh;
-    }   
+
     
 }
-
 @media (max-width: 480px) {
     .timeline-main-wrapper{
         padding-left:0em!important;

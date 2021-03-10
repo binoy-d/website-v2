@@ -109,18 +109,3 @@
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
-
-.bubble{
-  animation: bubble 0.75s cubic-bezier(0.37, 0, 0.63, 1)  infinite alternate;
-  -webkit-animation: bubble 0.75s cubic-bezier(0.37, 0, 0.63, 1)  infinite alternate;
-}
-
-@keyframes bubble {
-  from {
-    transform: translateY(0vh);
-  }
-
-  to {
-    transform: translateY(2vh);
-  }
-}
