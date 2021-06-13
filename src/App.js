@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ContactButtons from './components/ContactButtons/ContactButtons'
@@ -10,6 +10,7 @@ import SkillsSection from './components/Skills/SkillsSection'
 import ExperienceSection from './components/Experience/ExperienceSection'
 import Footer from './components/Footer/Footer'
 import NavBar from './components/Nav/NavBar'
+import {updateNightMode} from "./components/data"
 function App() {
 
   const breakpoints = {
@@ -22,10 +23,13 @@ function App() {
     desktopWide: 1920,
   }
 
-
+  useEffect(()=>{
+   updateNightMode();
+  }, [])
   return (
     <>
       <div id="app-root">
+      
           <ReactBreakpoints breakpoints={breakpoints}>
             <NavBar />
             <ContactButtons />

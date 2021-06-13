@@ -137,9 +137,9 @@ function AboutSection() {
           <Row>
             <Col>
               <Fade bottom big>
-                <div className="skills-btn">
+                <div className="skills-btn experience-btn">
                   <NavLink
-                    className="btn btn-outline-light skills-btn"
+                    className="btn btn-outline-light"
                     destination="experience"
                     text="Experience"
                   ></NavLink>

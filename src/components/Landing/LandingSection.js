@@ -57,13 +57,13 @@ class LandingSection extends React.Component {
             </h1>
           </Fade>
 
-          <Fade bottom>
+          <Fade>
             <h2 className="noselect" id="landing-tagline">
               {getTagline()}
             </h2>
           </Fade>
 
-          <Fade bottom big>
+          <Fade bottom>
             <div className="down-arrow">
               <Link
                 className="nav-link"
@@ -72,7 +72,7 @@ class LandingSection extends React.Component {
                 smooth={true}
                 duration={500}
               >
-                <i className="arrow arrow-down"></i>
+                <i className="arrow arrow-down bounce"></i>
               </Link>
               
             </div>

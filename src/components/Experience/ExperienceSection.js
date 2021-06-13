@@ -52,7 +52,7 @@ function ExperienceSection() {
             }
         </Media>
       
-      <Fade bottom big>
+      <Fade bottom>
         <div className="skills-btn text-center">
           <NavLink
             className="btn btn-outline-light skills-btn"

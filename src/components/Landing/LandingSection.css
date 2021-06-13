@@ -28,28 +28,6 @@
 }
 
 
-.arrow {
-  border: solid var(--main-text-color);
-  border-width: 0px 2px 2px 0;
-  display: inline-block;
-  padding: 3px;
-  transition-duration: 0.2s;
-}
-
-.arrow:hover {
-  transform: rotate(45deg) scale(3.3);
-  cursor: pointer;
-}
-
-.arrow-down {
-  /*
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  */
-  
-  transform: rotate(45deg) scale(3);
-  -webkit-transform: rotate(45deg) scale(3);
-}
 
 #landing-tagline {
   color: var(--accent-color-1);
@@ -108,4 +86,37 @@
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+@keyframes bounce{
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(45deg) scale(3);
+  }
+	40% {
+    transform: translateY(-15px) rotate(45deg) scale(3);
+  }
+	60% {
+    transform: translateY(-8px) rotate(45deg) scale(3);
+  }
+}
+
+.bounce{
+  animation: bounce 2s 10;
+}
+
+
+.arrow {
+  border: solid var(--main-text-color);
+  border-width: 0px 2px 2px 0;
+  display: inline-block;
+  transition: transform 0.1s ease-in;
+  transform: translateY(-8px) rotate(45deg) scale(3);
+  padding: 4px;
+}
+
+.arrow:hover {
+  
+  transform: translateY(-8px) rotate(45deg) scale(4);
+  cursor: pointer;
 }
