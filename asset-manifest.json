@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.061c206a.chunk.css",
+    "main.css": "/static/css/main.321863d4.chunk.css",
     "main.js": "/static/js/main.98f8a5f0.chunk.js",
     "main.js.map": "/static/js/main.98f8a5f0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a64d78df.js",
@@ -9,10 +9,10 @@
     "static/js/2.8583c697.chunk.js": "/static/js/2.8583c697.chunk.js",
     "static/js/2.8583c697.chunk.js.map": "/static/js/2.8583c697.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.a4dab30b8c6aeccb94360c7bdacca74b.js": "/precache-manifest.a4dab30b8c6aeccb94360c7bdacca74b.js",
+    "precache-manifest.e4a6cd1d6771b44e6780ef4fe70efa80.js": "/precache-manifest.e4a6cd1d6771b44e6780ef4fe70efa80.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.69233f45.chunk.css.map": "/static/css/2.69233f45.chunk.css.map",
-    "static/css/main.061c206a.chunk.css.map": "/static/css/main.061c206a.chunk.css.map",
+    "static/css/main.321863d4.chunk.css.map": "/static/css/main.321863d4.chunk.css.map",
     "static/js/2.8583c697.chunk.js.LICENSE.txt": "/static/js/2.8583c697.chunk.js.LICENSE.txt",
     "static/media/bubbles-together.png": "/static/media/bubbles-together.36b4ba6d.png",
     "static/media/bubblify.png": "/static/media/bubblify.20e3ec16.png",
@@ -32,7 +32,7 @@
     "static/js/runtime-main.a64d78df.js",
     "static/css/2.69233f45.chunk.css",
     "static/js/2.8583c697.chunk.js",
-    "static/css/main.061c206a.chunk.css",
+    "static/css/main.321863d4.chunk.css",
     "static/js/main.98f8a5f0.chunk.js"
   ]
 }
