@@ -59,7 +59,7 @@ img{
     border: 1px solid var(--accent-color-1);
 }
 
-@media(min-width:481){
+@media(min-width:481px){
     .code-line{
         font-size: 0.8em;
     }
