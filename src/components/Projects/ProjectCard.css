@@ -9,7 +9,7 @@ ul{
 
 
 .project-description-text{
-    color:#EFF1F3;
+    color:var(--main-text-color);
 }
 
 
