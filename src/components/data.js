@@ -237,7 +237,7 @@ export const info = {
     Location: ["San Jose CA", "Irvine CA"],
     Education: ["UC Irvine", "2021"],
     Major: "Computer Science",
-    Status: "SWE Intern @ Badger Meter",
+    Status: "Open to full stack web dev work",
     Email: "dbinoy15@gmail.com",
     Interests: ["Chess", "Film", "Longboarding"],
 };
@@ -389,7 +389,7 @@ export const skills = [{
 ];
 
 export const experience = [{
-        title: "Jan 2021 - Present",
+        title: "Jan 2021 - Sep 2021",
         cardTitle: "Badger Meter",
         cardSubtitle: "Software Engineer Intern",
         cardDetailedText: [

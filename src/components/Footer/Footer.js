@@ -15,8 +15,7 @@ function Footer() {
             <Container className = "w-100">
                 <Row>
                     <Col>
-                        <p id = "footer-text">Made with ♥ by Daniel Binoy, 2020</p>
-                        
+                        <p id = "footer-text">Made with ♥ by Daniel Binoy, 2021</p>
                     </Col>
                 </Row>
                 <Row>
