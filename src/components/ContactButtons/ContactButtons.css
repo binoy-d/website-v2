@@ -1,31 +1,69 @@
 .contact-wrapper{
-    mix-blend-mode: difference;
     /*color: var(--main-text-color);*/
     z-index:10;
     position: fixed;
     left:0;
     bottom:2em;
     
+    
 }
 
+
+#github-stats-card{
+    visibility:hidden;
+    display:none;
+    position:absolute;
+    bottom:1em;
+    left:2em;
+    opacity:0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+#github-contact-icon:hover #github-stats-card{
+    visibility: visible;
+    display: inline-block;
+    opacity:1;
+}
+
+
+#linkedin-contact-icon:hover #linkedin-stats-card{
+    visibility: visible;
+    display: inline-block;
+    opacity:1;
+}
+
+#linkedin-stats-card{
+    visibility:hidden;
+    display:none;
+    position:absolute;
+    bottom:1em;
+    left:2em;
+    opacity:0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.contact-button-mix{
+    display: inline-block;
+    mix-blend-mode: difference;
+}
 
 a svg {
     width: 20px;
     height: 20px;
-    fill: var(--light);
+    fill:rgb(100, 100, 100);
     /*fill:var(--main-text-color)!important;*/
-    transition:transform 0.3s ease-in-out;
+    transition:transform 0.2s ease-in-out;
     /*opacity:100%;*/
 }
 
 a svg:hover{
-    transform: scale(1.4);
+    transform: scale(1.3);
     cursor:pointer;
+    fill:#f1394b;
 }
 
 .contact-button{
     z-index:12;
-    mix-blend-mode: unset;
     margin-left:0.5em;
     margin-bottom:1em;
     /*opacity:100%;*/

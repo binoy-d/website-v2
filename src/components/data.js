@@ -251,15 +251,15 @@ export const description =
 
 export var nightMode = false;
 
-var tagline = "student developer";
+var tagline = "software engineer";
 var taglineList = [
-    "student developer",
-    "software engineer intern",
+    "software engineer",
     "dark mode lover",
     "cs instructor",
     "chess player",
     "web dev intern",
     "longboarder",
+    "software engineer intern",
     "filmmaker",
     "graphic designer",
     "proud anteater",
@@ -388,7 +388,17 @@ export const skills = [{
     },
 ];
 
-export const experience = [{
+export const experience = [
+    {
+        title: "Feb 2022 - Present",
+        cardTitle: "Badger Meter",
+        cardSubtitle: "Software Engineer",
+        cardDetailedText: [
+            "Will be working on data exchange platform and frontend React",
+            "Just started here!",
+        ]
+    },
+    {
         title: "Jan 2021 - Sep 2021",
         cardTitle: "Badger Meter",
         cardSubtitle: "Software Engineer Intern",
@@ -418,7 +428,7 @@ export const experience = [{
         ]
     },
     {
-        title: "Apr 2020 - Present",
+        title: "Apr 2020 - Jan 2022",
         cardTitle: "KTBYTE",
         cardSubtitle: "Computer Science Instructor",
         cardDetailedText: [
@@ -446,7 +456,6 @@ export const experience = [{
             "Promoted creativity, curiosity, and lifelong learning in the next generation",
         ]
     },
-
     {
         title: "Feb 2018 - Sep 2018",
         cardTitle: "Children's Discovery Museum",
