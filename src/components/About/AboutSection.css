@@ -17,20 +17,21 @@ img{
 }
 .about-me-paragraph{
     color: var(--main-text-color);
-    margin-bottom:3em;
-    margin-left:50%;
-    transform:translateX(-50%);
+    margin-bottom:1.5em;
+    margin-left: 0;
+    transform: none;
     text-align: left;
-    width:70%;
-    max-width:650px;
+    width: 100%;
+    max-width: 100%;
 }
 
 #hello{
     text-align: left;
     color:var(--accent-color-1);
     padding-top:0.5em;
-    margin-left:50%;
-    transform:translateX(-70%);
+    margin-left: 0;
+    transform: none;
+    margin-bottom: 1rem;
 }
 
 .about-stuff{
@@ -89,6 +90,18 @@ img{
         border: 1px solid var(--accent-color-1);
         margin-left: 35%;
         width:30%;
+    }
+}
+
+@media(min-width:992px){
+    .about-row{
+        margin: 0 auto;
+        max-width: 1200px;
+        align-items: center;
+    }
+    
+    .about-row .col-lg-6{
+        padding: 0 2rem;
     }
 }
 
@@ -201,6 +214,7 @@ img{
     max-width: 650px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    margin: 0 auto;
 }
 
 .code-window-wrapper:hover{

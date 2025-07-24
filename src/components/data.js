@@ -6,6 +6,7 @@ import {
     TodoListImg,
     WebsiteImg,
     DebugDuckImg,
+    PingImg,
     PongImg,
     FractalTreeImg,
     GameOfLifeImg,
@@ -16,7 +17,9 @@ import {
 
 export const profile = DanielProfileImg;
 
-export const projects = [{
+export const projects = [
+    
+    {
         title: "This Website!",
         description: [
             "Responsive personal portfolio website",
@@ -43,6 +46,27 @@ export const projects = [{
             " as react-reveal react-particles-js, and more to achieve many of the effects. " +
             "Overall, this has been a great learning experience for me, and I will continue" +
             " to update it. ",
+    },
+    {
+        title: "Ping",
+        description: [
+            "Experimental simple app tracking clicks with smooth graph visualization",
+            "Real-time data visualization showing click patterns over time",
+            "Self-hosted full-stack application with modern tech stack",
+        ],
+        languages: ["React", "Express", "SQLite", "JavaScript", "CSS"],
+        link: "https://ping.binoy.co",
+        img: PingImg,
+        featured: false,
+        codeLink: "https://ping.binoy.co",
+        longDescription: "Ping is an experimental web application that demonstrates real-time data " +
+            "collection and visualization. The app tracks user clicks and displays them as a smooth, " +
+            "interactive graph over time. Built with a modern tech stack including React for the frontend, " +
+            "Express.js for the backend API, and SQLite for lightweight data storage. The application is " +
+            "self-hosted and showcases skills in full-stack development, real-time data visualization, " +
+            "and deployment. The smooth graphing functionality provides an engaging way to visualize " +
+            "user interaction patterns and demonstrates proficiency with data visualization libraries " +
+            "and responsive web design principles.",
     },
     {
         title: "Generative Spiral Art",
@@ -234,12 +258,12 @@ export const projects = [{
 
 export const info = {
     Name: ["Daniel", "Binoy"],
-    Location: ["San Jose CA", "Irvine CA"],
+    Locations: ["San Jose", "Los Gatos", "Irvine"],
     Education: ["UC Irvine", "2021"],
     Major: "Computer Science",
-    Status: "Open to full stack web dev work",
+    Status: "Software Engineer 2 @ Badger Meter",
     Email: "dbinoy15@gmail.com",
-    Interests: ["Chess", "Film", "Longboarding"],
+    Interests: ["VR", "Homelab", "Film", "AI", "Longboarding"],
 };
 
 export const description =
@@ -251,15 +275,16 @@ export const description =
 
 export var nightMode = false;
 
-var tagline = "software engineer";
+var tagline = "software engineer 2";
 var taglineList = [
-    "software engineer",
+    "software engineer 2",
+    "senior software engineer",
     "dark mode lover",
     "cs instructor",
     "chess player",
-    "web dev intern",
+    "web dev expert",
     "longboarder",
-    "software engineer intern",
+    "frontend specialist",
     "filmmaker",
     "graphic designer",
     "proud anteater",
@@ -390,12 +415,25 @@ export const skills = [{
 
 export const experience = [
     {
-        title: "Feb 2022 - Present",
+        title: "Dec 2024 - Present",
         cardTitle: "Badger Meter",
-        cardSubtitle: "Software Engineer",
+        cardSubtitle: "Software Engineer II",
         cardDetailedText: [
-            "Will be working on data exchange platform and frontend React",
-            "Just started here!",
+            "Investigated and resolved deep-rooted structural issues, saving thousands of tech-support hours",
+            "Triaging tickets, mentoring junior developers, and presenting to product owners/customers",
+            "Solving large-scale data-integrity and scalability issues while transitioning to new system architecture",
+            "Engaging in high-level system architecture discussions"
+        ]
+    },
+    {
+        title: "Feb 2022 - Jan 2025",
+        cardTitle: "Badger Meter",
+        cardSubtitle: "Software Engineer I",
+        cardDetailedText: [
+            "Developed new Data Exchange (DE2) UI with React, Redux Toolkit, and various frontend libraries",
+            "Improved DE2 Python 3 backend processing time by 84% in time series calculation phase",
+            "Created automated REST service to identify resolve data integrity errors (Eventbridge/Lambda/Kibana)",
+            "Resolved structural bugs in legacy DE1 backend (Python 2, Flask, MySQL, Elasticsearch, EC2)"
         ]
     },
     {
@@ -413,7 +451,7 @@ export const experience = [
         cardTitle: "UCI ICS Student Council",
         cardSubtitle: "Projects Committee Member",
         cardDetailedText: [
-            "Working to develop online solutions tailored to aid UCI students",
+            "Develop online solutions tailored to aid UCI students",
             "Rebuilding and redesigning zotistics website from ground up in React",
         ]
     },
