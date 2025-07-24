@@ -267,8 +267,7 @@ export const info = {
 };
 
 export const description =
-    "I'm a computer science student at " +
-    "University of California, Irvine. I love designing and coding beautiful, " +
+    "I'm a software engineer, currently working at Badger Meter. I love designing and coding beautiful, " +
     "functional applications and interfaces that have a real impact on users. Whether " +
     "its writing code, filming videos, or creating art, I'm always making something. Connect with me " +
     "to make something great, together!";
