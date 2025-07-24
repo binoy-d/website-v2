@@ -81,7 +81,7 @@ export const projects = [
         languages: ["p5.js", "Node", "JavaScript", "SocketIO", "Docker"],
         link: "https://bubbles.binoy.co",
         img: BubblesTogetherImg,
-        featured: true,
+        featured: false,
         codeLink: "https://github.com/binoy-d/draw-together",
         longDescription: "Real-time collaborative application enabling simultaneous multi-user interaction through " +
             "WebSocket technology. Built with Node.js backend and p5.js frontend, implementing efficient " +
