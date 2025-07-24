@@ -14,8 +14,6 @@
 #name-header {
   color: var(--main-text-color);
   font-size: 5em;
-  transition: font-size 0.2s;
-  transition-timing-function: ease-out;
   z-index: 20;
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
@@ -64,7 +62,6 @@
 @media(min-width:481px){
 
   #name-header:hover {
-    font-size: 6em;
     cursor: pointer;
   }
   .landing-stuff{
