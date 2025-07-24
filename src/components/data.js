@@ -275,10 +275,9 @@ export const description =
 
 export var nightMode = false;
 
-var tagline = "software engineer 2";
+var tagline = "software engineer";
 var taglineList = [
-    "software engineer 2",
-    "senior software engineer",
+    "software engineer",
     "dark mode lover",
     "cs instructor",
     "chess player",
