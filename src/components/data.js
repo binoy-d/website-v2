@@ -22,237 +22,225 @@ export const projects = [
     {
         title: "This Website!",
         description: [
-            "Responsive personal portfolio website",
-            "Smooth animations encourage interaction",
-            "Dark mode button and many hidden easter eggs",
+            "Modern React portfolio with responsive design and optimized performance",
+            "Implements component-based architecture with smooth animations",
+            "Features dark mode, particle effects, and accessibility considerations",
         ],
         languages: ["ReactJS", "Bootstrap", "HTML", "CSS", "JavaScript"],
         link: "https://github.com/binoy-d/portfolio-website",
         img: WebsiteImg,
         featured: false,
         codeLink: "https://github.com/binoy-d/portfolio-website",
-        longDescription: "This is the second version of my personal portfolio website. " +
-            "The previous version of this website was done working off of" +
-            " a bootstrap template, with major customizations done down the line." +
-            " It was a great learning experience for me, but after some time " +
-            "I felt unsatisfied with it. I decided to do a complete overhaul " +
-            "of the site, both visually and behind the scenes.\n I started by listing " +
-            'every issue I had with version 1. These included being too "bootstrappy", ' +
-            "lacking a single cohesive color scheme, irrelevant pages, bloat, and parts " +
-            " breaking on mobile. From there, I started learning React following a course " +
-            "on LinkedIn Learning. Using what I learned, I started building and rebuilding" +
-            " the website. I iterated through many different layouts, color schemes, and " +
-            "component tree structures until I arrived at this one. I used libraries such" +
-            " as react-reveal react-particles-js, and more to achieve many of the effects. " +
-            "Overall, this has been a great learning experience for me, and I will continue" +
-            " to update it. ",
+        longDescription: "Portfolio application built with React 18, featuring component-based architecture " +
+            "and modern development practices. Migrated from Bootstrap template to custom React implementation " +
+            "with improved performance, mobile responsiveness, and maintainable codebase. " +
+            "Implemented advanced features including particle animations, dark mode toggle, and optimized " +
+            "build pipeline for production deployment.",
     },
     {
         title: "Ping",
         description: [
-            "Experimental simple app tracking clicks with smooth graph visualization",
-            "Real-time data visualization showing click patterns over time",
-            "Self-hosted full-stack application with modern tech stack",
+            "Full-stack real-time analytics application with interactive data visualization",
+            "Self-hosted solution using React frontend and Express.js backend",
+            "Implements SQLite for lightweight data persistence and graph rendering",
         ],
         languages: ["React", "Express", "SQLite", "JavaScript", "CSS"],
         link: "https://ping.binoy.co",
         img: PingImg,
         featured: false,
         codeLink: "https://ping.binoy.co",
-        longDescription: "Ping is an experimental web application that demonstrates real-time data " +
-            "collection and visualization. The app tracks user clicks and displays them as a smooth, " +
-            "interactive graph over time. Built with a modern tech stack including React for the frontend, " +
-            "Express.js for the backend API, and SQLite for lightweight data storage. The application is " +
-            "self-hosted and showcases skills in full-stack development, real-time data visualization, " +
-            "and deployment. The smooth graphing functionality provides an engaging way to visualize " +
-            "user interaction patterns and demonstrates proficiency with data visualization libraries " +
-            "and responsive web design principles.",
+        longDescription: "Full-stack web application demonstrating real-time data collection and visualization " +
+            "capabilities. Built with React frontend and Express.js backend, utilizing SQLite for efficient " +
+            "data storage. Features responsive design, smooth graph animations, and real-time updates. " +
+            "Self-hosted deployment showcases DevOps skills and infrastructure management.",
     },
     {
         title: "Generative Spiral Art",
         description: [
-            "3d generative art made of beziers",
-            "Viewers can interact with an orbiting spiral visual",
-            "Implemented with p5.js webGL",
+            "3D generative art application using WebGL and Bézier curve mathematics",
+            "Interactive visualization with real-time user controls and parameter adjustment",
+            "Built with p5.js and WebGL for optimized 3D rendering performance",
         ],
         languages: ["p5.js", "WEBGL", "JavaScript", "HTML", "CSS"],
         link: "https://binoy-d.github.io/spiral-orbit/",
         img: SpiralOrbitImg,
         featured: false,
         codeLink: "https://github.com/binoy-d/spiral-orbit",
-        longDescription: "This is the product of a late night coding session with some buddies. " +
-            "I started out wanting to make some sort of simple music visualizer that works " +
-            "using perlin noise. However, as we added more and more to the visual, it ended up " +
-            "resulting in a wild visual experience. Adding mouse and keyboard interaction made it even more" +
-            " interesting. By using WASD to move around, QE to zoom in and out, and ZX to increase and " +
-            "decrease number of strands, the user can create complex visuals. Some of my favorites include " +
-            "shapes that act like a jellyfish, mushroom, and even one that looked like an iris. " +
-            "This was my first time working with webgl in p5.js.",
+        longDescription: "Interactive 3D generative art application utilizing WebGL and advanced mathematical " +
+            "algorithms for real-time visualization. Implements Bézier curves, Perlin noise, and dynamic " +
+            "parameter manipulation through keyboard and mouse controls. Features optimized rendering " +
+            "performance and complex visual effects including jellyfish, mushroom, and iris-like patterns.",
     },
     {
         title: "Bubbles, Together",
         description: [
-            "Users draw together live, with bubbles",
-            "Particle effects and graphics done with p5.js",
-            "Capable of handling many concurrent users",
+            "Real-time collaborative drawing application with WebSocket architecture",
+            "Multi-user particle system with synchronized state management",
+            "Self-hosted with Node.js backend and p5.js frontend",
         ],
-        languages: ["p5.js", "Node", "JavaScript", "SocketIO", "Heroku"],
-        link: "https://bubbles-together.herokuapp.com/",
+        languages: ["p5.js", "Node", "JavaScript", "SocketIO", "Docker"],
+        link: "https://bubbles.binoy.co",
         img: BubblesTogetherImg,
-        featured: false,
-        codeLink: "https://github.com/binoy-d/particle-draw2",
-        longDescription: "I have always loved simple, beautiful particle effects." +
-            "Any user that visits this website can generate randomly colored" +
-            " bubbles by clicking and dragging their mouse around the screen. " +
-            "All users who are on the site at the same time can also see eachother's" +
-            " bubbles. This makes for a fun, interactive shared experience for " +
-            " users as they play around drawing shapes and often writing things in bubbles" +
-            " The front end as well as all particle effects are done using p5.js, a port" +
-            " of Processing to JavaScript. The backend is a NodeJS server using SocketIO" +
-            " to communicate. Interestingly, the only data I send back and forth is " +
-            "the mouse positions. The bubble creation is handled on the front end " +
-            "for speed purposes. This means that though each client gets roughly the same" +
-            "view, there will be slight differences as each client generates their own" +
-            "version of the current state.",
+        featured: true,
+        codeLink: "https://github.com/binoy-d/draw-together",
+        longDescription: "Real-time collaborative application enabling simultaneous multi-user interaction through " +
+            "WebSocket technology. Built with Node.js backend and p5.js frontend, implementing efficient " +
+            "particle systems and real-time state synchronization. Optimized network architecture transmits " +
+            "only coordinate data while maintaining responsive user experience across concurrent sessions.",
     },
     {
         title: "Puzzle Game",
         description: [
-            "Turn based puzzle game with retro aesthetic",
-            "Written purely with Java and standard libraries",
-            "Reads custom map files as matrix of tiles",
+            "2D puzzle game engine with custom level system and game mechanics",
+            "Implemented dual-character control system and collision detection",
+            "Built with Java Graphics2D and custom file parsing for level configuration",
         ],
         languages: ["Java", "Graphics2D"],
         link: "https://github.com/binoy-d/2p1p-puzzle-game",
         img: PuzzleGameImg,
         featured: false,
         codeLink: "https://github.com/binoy-d/2p1p-puzzle-game",
-        longDescription: "A puzzle game I made as a sophomore. The player uses the arrow keys to " +
-            "move two characters at once. Avoid lava and moving enemies to get to the" +
-            " green goals. Have fun trying to find the fastest solution for each level!" +
-            'This was one of the first "complete" games I had written, and has a soft spot' +
-            " in my heart. I'm especially proud of this because its a genuinly fun game to play" +
-            " and often players find themselves hooked after the first few levels." +
-            " One day, I might recreate this in C# or some other language with more levels.",
+        longDescription: "Game engine built from scratch using Java and Graphics2D, featuring custom level " +
+            "architecture and simultaneous dual-character control mechanics. Implements efficient collision " +
+            "detection, enemy AI pathfinding, and modular level design through matrix-based tile parsing. " +
+            "Demonstrates object-oriented design principles and game development fundamentals.",
     },
     {
         title: "Debug Duck",
         description: [
-            "Story based TDS video game written in 48 hours for GGJ 2020",
-            'Play as the duck from "rubber duck debugging"',
-            "My role: Programming in c# and creating assets",
+            "Unity3D game developed in 48-hour Global Game Jam with cross-functional team",
+            "Implemented dynamic game mechanics and meta-narrative progression system",
+            "Created custom assets and programmed interactive story elements in C#",
         ],
         languages: ["C#", "Unity3D", "Piskelapp"],
         link: "https://globalgamejam.org/2020/games/debug-duck-2",
         img: DebugDuckImg,
         featured: false,
         codeLink: "https://github.com/binoy-d/debug-duck",
-        longDescription: "This was my first time going to a game jam, and I went with my friend Evan Cheng" +
-            "(https://frolicks.itch.io/) From there, we met a few more people and formed a team." +
-            'My role was both in programming and creating assets. The 2020 theme was "repair", and we brainstormed many ideas before settling on the ' +
-            'concept of fixing code. Often times, programmers do what is called "rubber duck debugging"' +
-            " in which one explains their problems to a rubber duck to help think through it. " +
-            " In the game, you play as the rubber duck, solving your programmer's bugs." +
-            " As you fix more bugs, the game fixes itself by changing its own mechanics. " +
-            "As the programmer relies more and more on your fixing, he begins bringing up" +
-            " problems in his personal life as well, and it becomes your job to solve those" +
-            " as well by changing negative thoughts into healthy ones. The game can be described" +
-            " as a TDS interactive fiction experience.",
+        longDescription: "Unity3D game developed during Global Game Jam 2020, featuring self-modifying mechanics " +
+            "and interactive narrative design. Implemented C# programming for dynamic gameplay systems that " +
+            "evolve based on player progress. Collaborated with multidisciplinary team to deliver complete " +
+            "game experience within 48-hour constraint, including custom asset creation and narrative design.",
     },
     {
         title: "Tankmania",
         description: [
-            "Tank war simulator project",
-            "User can pick number of teams and tanks per team",
-            "3-stage AI that patrols, chases, and shoots",
+            "Unity3D simulation with multi-agent AI system and configurable parameters",
+            "Implemented three-tier AI behavior: patrol, chase, and combat algorithms",
+            "Features scalable team-based warfare with dynamic entity management",
         ],
         languages: ["C#", "Unity3D"],
         link: "https://binoy-d.github.io/tankmania/",
         img: TankmaniaImg,
         featured: false,
         codeLink: "https://github.com/binoy-d/tankmania",
-        longDescription: "A tank war simulator project I made for ICS161: Game Engine Lab",
+        longDescription: "Unity3D simulation featuring advanced multi-agent AI systems with configurable team " +
+            "dynamics and scalable entity management. Implemented sophisticated behavior trees for patrol, " +
+            "pursuit, and combat states with efficient pathfinding algorithms. Demonstrates game engine " +
+            "proficiency and complex system architecture design.",
     },
     {
         title: "Game of Life",
         description: [
-            "Minimalist clone of Conway's Game of life",
-            "Play, pause, toggle cell state, and randomize",
-            "Done as a project to begin learning C#",
+            "C# implementation of Conway's Game of Life with interactive controls",
+            "Features real-time simulation with play/pause, cell editing, and randomization",
+            "Built with .NET framework demonstrating algorithm optimization and UI design",
         ],
         languages: ["C#", ".NET"],
         link: "https://github.com/binoy-d/Game-Of-Life",
         img: GameOfLifeImg,
         featured: false,
         codeLink: "https://github.com/binoy-d/Game-Of-Life",
-        longDescription: "this is a test",
+        longDescription: "Interactive implementation of Conway's Game of Life cellular automaton using C# and .NET. " +
+            "Features optimized algorithm for large grid calculations, real-time visualization, and comprehensive " +
+            "user controls including pattern editing and random generation. Demonstrates proficiency in " +
+            "mathematical algorithms and desktop application development.",
     },
     {
         title: "Fractal Tree",
         description: [
-            "Demonstrates recursion by drawing a fractal tree",
-            "Users change starting node position, length, and angle of branches",
+            "Interactive fractal generation using recursive algorithms and parametric controls",
+            "Real-time manipulation of branch angles, lengths, and iteration depth",
+            "Mathematical visualization built with p5.js and optimized rendering",
         ],
         languages: ["p5.js", "JavaScript", "HTML", "CSS"],
         link: "https://binoy-d.github.io/fractal-tree",
         img: FractalTreeImg,
         featured: false,
         codeLink: "https://github.com/binoy-d/fractal-tree",
-        longDescription: "this is a test",
+        longDescription: "Mathematical visualization application demonstrating recursive algorithms through " +
+            "interactive fractal tree generation. Features real-time parameter manipulation, optimized " +
+            "rendering performance, and educational interface for exploring mathematical concepts. " +
+            "Built with p5.js for efficient canvas-based graphics rendering.",
     },
     {
         title: "Color Game",
         description: [
-            "Guess which color is represented from rgb value",
-            "Bootstrap for responsive layout, with smooth fades in CSS",
+            "Interactive RGB color recognition game with responsive design",
+            "Features dynamic difficulty progression and smooth CSS transitions",
+            "Built with vanilla JavaScript and Bootstrap for cross-platform compatibility",
         ],
         languages: ["Bootstrap", "CSS", "JavaScript"],
         link: "https://binoy-d.github.io/color-game/",
         img: ColorGameImg,
         featured: false,
         codeLink: "https://github.com/binoy-d/color-game",
-        longDescription: "this is a test",
+        longDescription: "Educational web application combining color theory with interactive gameplay. " +
+            "Implements dynamic RGB value generation, progressive difficulty scaling, and responsive " +
+            "design principles. Features smooth animations and cross-browser compatibility through " +
+            "vanilla JavaScript and modern CSS techniques.",
     },
 
     {
         title: "Bubblify",
         description: [
-            "Recreates any online image out of bubbles",
-            "Visualization done with p5.js",
-            "Bubblified images can be downloaded",
+            "Image processing application with custom particle rendering algorithms",
+            "Converts digital images into procedural bubble visualizations",
+            "Features download functionality and real-time canvas manipulation with p5.js",
         ],
         languages: ["p5.js", "HTML", "CSS", "JavaScript"],
         link: "https://binoy-d.github.io/bubblify",
         img: BubblifyImg,
         featured: false,
         codeLink: "https://github.com/binoy-d/bubblify",
-        longDescription: "this is a test",
+        longDescription: "Image processing application utilizing advanced computer graphics algorithms to transform " +
+            "digital images into artistic bubble representations. Implements pixel sampling, color analysis, " +
+            "and procedural generation techniques. Features canvas export functionality and optimized " +
+            "rendering performance for large-scale image processing.",
     },
     {
         title: "To Do List",
         description: [
-            "To Do List app with clean interface",
-            "Add, delete, mark as done, add new list",
+            "Task management application with persistent local storage",
+            "Features CRUD operations, list organization, and completion tracking",
+            "Built with jQuery and Bootstrap for responsive user experience",
         ],
         languages: ["jQuery", "JavaScript", "Bootstrap", "CSS"],
         link: "https://binoy-d.github.io/to-do-app/",
         img: TodoListImg,
         featured: false,
         codeLink: "https://github.com/binoy-d/to-do-app",
-        longDescription: "this is a test",
+        longDescription: "Task management web application featuring persistent data storage and intuitive user " +
+            "interface design. Implements local storage APIs, dynamic DOM manipulation, and responsive " +
+            "layouts. Demonstrates proficiency in jQuery, Bootstrap framework, and modern web development " +
+            "practices for productivity applications.",
     },
     {
         title: "Pong",
         description: [
-            "The classic game of pong",
-            "Smooth movement and responsive controls",
+            "Classic Pong implementation with physics simulation and collision detection",
+            "Features smooth animation, responsive controls, and game state management",
+            "Built with Processing for optimized 2D graphics rendering",
         ],
         languages: ["Processing"],
         link: "https://github.com/binoy-d/pong",
         img: PongImg,
         featured: false,
         codeLink: "https://github.com/binoy-d/pong",
-        longDescription: "this is a test",
+        longDescription: "Recreation of the classic Pong arcade game implementing fundamental game development " +
+            "concepts including physics simulation, collision detection, and real-time input handling. " +
+            "Demonstrates understanding of game loops, vector mathematics, and efficient rendering " +
+            "techniques using the Processing framework.",
     },
 ];
 
@@ -267,10 +255,9 @@ export const info = {
 };
 
 export const description =
-    "I'm a software engineer, currently working at Badger Meter. I love designing and coding beautiful, " +
-    "functional applications and interfaces that have a real impact on users. Whether " +
-    "its writing code, filming videos, or creating art, I'm always making something. Connect with me " +
-    "to make something great, together!";
+    "I'm currently a Software Engineer II at Badger Meter specializing in full-stack development and system architecture. " +
+    "Experienced in building scalable applications, optimizing performance, and leading technical initiatives. " +
+    "I'm passionate about creating robust solutions that drive meaningful impact, especially with new and emerging technologies.";
 
 export var nightMode = false;
 
