@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.342a8274.css",
-    "main.js": "/static/js/main.47711e95.js",
+    "main.js": "/static/js/main.ded591be.js",
     "static/media/debug-duck.png": "/static/media/debug-duck.190afe86e1e901df8170.png",
     "static/media/bubblify.png": "/static/media/bubblify.1eb73b39ff8ccc688fe5.png",
     "static/media/spiral-orbit.png": "/static/media/spiral-orbit.03056c3ec3a54e82f421.png",
@@ -18,10 +18,10 @@
     "static/media/puzzle-game.PNG": "/static/media/puzzle-game.a75824b48a1db6c1116f.PNG",
     "index.html": "/index.html",
     "main.342a8274.css.map": "/static/css/main.342a8274.css.map",
-    "main.47711e95.js.map": "/static/js/main.47711e95.js.map"
+    "main.ded591be.js.map": "/static/js/main.ded591be.js.map"
   },
   "entrypoints": [
     "static/css/main.342a8274.css",
-    "static/js/main.47711e95.js"
+    "static/js/main.ded591be.js"
   ]
 }
