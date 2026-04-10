@@ -431,7 +431,7 @@ export const skills = [{
 
 export const experience = [
     {
-        title: "Dec 2024 - Present",
+        title: "Jan 2025 - Present",
         cardTitle: "Badger Meter",
         cardSubtitle: "Software Engineer II",
         impact: "Drove platform reliability improvements while leveraging AI tools and agents to reduce support cost/time and improve engineering productivity.",
