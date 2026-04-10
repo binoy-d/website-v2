@@ -44,6 +44,31 @@ function LandingParticles() {
 }
 
 class LandingSection extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { animationPhase: "initial", showMeta: false };
+  }
+
+  componentDidMount() {
+    this.coOutTimer = setTimeout(() => {
+      this.setState({ animationPhase: "co-out" });
+    }, 1200);
+
+    this.nameRevealTimer = setTimeout(() => {
+      this.setState({ animationPhase: "reveal" });
+    }, 1640);
+
+    this.metaRevealTimer = setTimeout(() => {
+      this.setState({ showMeta: true });
+    }, 2160);
+  }
+
+  componentWillUnmount() {
+    if (this.coOutTimer) clearTimeout(this.coOutTimer);
+    if (this.nameRevealTimer) clearTimeout(this.nameRevealTimer);
+    if (this.metaRevealTimer) clearTimeout(this.metaRevealTimer);
+  }
+
   dark = () => {
     toggleNightMode();
     this.forceUpdate();
@@ -54,32 +79,44 @@ class LandingSection extends React.Component {
         <LandingParticles />
 
         <div className="landing-stuff text-center disable-dbl-tap-zoom">
-          <Fade top>
-            <h1 className="noselect" id="name-header" onClick={this.dark}>
-              Daniel Binoy
-            </h1>
-          </Fade>
-
-          <Fade>
-            <h2 className="noselect" id="landing-tagline">
-              {getTagline()}
-            </h2>
-          </Fade>
-
-          <Fade bottom>
-            <div className="down-arrow">
-              <Link
-                className="nav-link"
-                to="about"
-                spy={true}
-                smooth={true}
-                duration={500}
+          <div className="landing-title-group">
+            <Fade top>
+              <h1
+                className={`noselect name-header-animated ${this.state.animationPhase}`}
+                id="name-header"
+                onClick={this.dark}
+                title="Click me ;)"
               >
-                <i className="arrow arrow-down bounce"></i>
-              </Link>
-              
-            </div>
-          </Fade>
+                <span className="name-daniel">Daniel</span>
+                <span className="name-binoy">Binoy</span>
+                <span className="name-co">.co</span>
+              </h1>
+            </Fade>
+
+            {this.state.showMeta ? (
+              <Fade>
+                <h2 className="noselect" id="landing-tagline">
+                  {getTagline()}
+                </h2>
+              </Fade>
+            ) : null}
+          </div>
+
+          {this.state.showMeta ? (
+            <Fade bottom>
+              <div className="down-arrow">
+                <Link
+                  className="nav-link"
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                >
+                  <i className="arrow arrow-down bounce"></i>
+                </Link>
+              </div>
+            </Fade>
+          ) : null}
         </div>
       </section>
     );
