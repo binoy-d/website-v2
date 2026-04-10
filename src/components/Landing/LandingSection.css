@@ -11,6 +11,10 @@
   height:100vh;
 }
 
+.landing-stuff {
+  opacity: 1;
+}
+
 #name-header {
   color: var(--main-text-color);
   font-size: 5em;
@@ -26,6 +30,7 @@
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+  animation: titleEnter 420ms ease-out both;
 }
 
 .landing-title-group {
@@ -114,6 +119,15 @@
   margin-right: auto;
 }
 
+.landing-meta {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.landing-meta-visible {
+  animation: metaEnter 360ms ease-out forwards;
+}
+
 @media(max-width:480px){
 
   #name-header{
@@ -178,6 +192,28 @@
   }
 	60% {
     transform: translateY(-8px) rotate(45deg) scale(3);
+  }
+}
+
+@keyframes titleEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes metaEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

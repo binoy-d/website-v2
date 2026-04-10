@@ -1,15 +1,16 @@
-import React from "react";
+import React, { Suspense } from "react";
 import "./LandingSection.css";
-import Particles from "react-particles-js";
-import Fade from "react-reveal/Fade";
 import { Link } from "react-scroll";
 import { toggleNightMode, getTagline } from "../data.js";
+
+const Particles = React.lazy(() => import("react-particles-js"));
+
 function LandingParticles() {
   const isSmallScreen = typeof window !== "undefined" && window.innerWidth < 768;
   const particleCount = isSmallScreen ? 20 : 50;
 
   return (
-    <>
+    <Suspense fallback={null}>
       <Particles
         params={{
           particles: {
@@ -39,17 +40,21 @@ function LandingParticles() {
           },
         }}
       />
-    </>
+    </Suspense>
   );
 }
 
 class LandingSection extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { animationPhase: "initial", showMeta: false };
+    this.state = { animationPhase: "initial", showMeta: false, showParticles: false };
   }
 
   componentDidMount() {
+    this.particleTimer = setTimeout(() => {
+      this.setState({ showParticles: true });
+    }, 350);
+
     this.coOutTimer = setTimeout(() => {
       this.setState({ animationPhase: "co-out" });
     }, 1200);
@@ -64,6 +69,7 @@ class LandingSection extends React.Component {
   }
 
   componentWillUnmount() {
+    if (this.particleTimer) clearTimeout(this.particleTimer);
     if (this.coOutTimer) clearTimeout(this.coOutTimer);
     if (this.nameRevealTimer) clearTimeout(this.nameRevealTimer);
     if (this.metaRevealTimer) clearTimeout(this.metaRevealTimer);
@@ -76,46 +82,40 @@ class LandingSection extends React.Component {
   render() {
     return (
       <section id="home">
-        <LandingParticles />
+        {this.state.showParticles ? <LandingParticles /> : null}
 
         <div className="landing-stuff text-center disable-dbl-tap-zoom">
           <div className="landing-title-group">
-            <Fade top>
-              <h1
-                className={`noselect name-header-animated ${this.state.animationPhase}`}
-                id="name-header"
-                onClick={this.dark}
-                title="Click me ;)"
-              >
-                <span className="name-daniel">Daniel</span>
-                <span className="name-binoy">Binoy</span>
-                <span className="name-co">.co</span>
-              </h1>
-            </Fade>
+            <h1
+              className={`noselect name-header-animated ${this.state.animationPhase}`}
+              id="name-header"
+              onClick={this.dark}
+              title="Click me ;)"
+            >
+              <span className="name-daniel">Daniel</span>
+              <span className="name-binoy">Binoy</span>
+              <span className="name-co">.co</span>
+            </h1>
 
             {this.state.showMeta ? (
-              <Fade>
-                <h2 className="noselect" id="landing-tagline">
-                  {getTagline()}
-                </h2>
-              </Fade>
+              <h2 className="noselect landing-meta landing-meta-visible" id="landing-tagline">
+                {getTagline()}
+              </h2>
             ) : null}
           </div>
 
           {this.state.showMeta ? (
-            <Fade bottom>
-              <div className="down-arrow">
-                <Link
-                  className="nav-link"
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                >
-                  <i className="arrow arrow-down bounce"></i>
-                </Link>
-              </div>
-            </Fade>
+            <div className="down-arrow landing-meta landing-meta-visible">
+              <Link
+                className="nav-link"
+                to="about"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                <i className="arrow arrow-down bounce"></i>
+              </Link>
+            </div>
           ) : null}
         </div>
       </section>

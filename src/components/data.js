@@ -259,7 +259,10 @@ export const description =
     "I focus on architecture, reliability, and building features in close partnership with product managers to deliver experiences customers and internal users love. " +
     "I also help teams leverage AI tools and agents in practical day-to-day engineering workflows to improve speed and execution quality.";
 
-export var nightMode = false;
+export var nightMode =
+    typeof window !== "undefined" &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 var tagline = "software engineer";
 var taglineList = [
@@ -339,6 +342,7 @@ export const toggleNightMode = () => {
 
 export const updateNightMode = () =>{
     let root = document.documentElement;
+    root.setAttribute("data-theme", nightMode ? "dark" : "light");
     if (nightMode) {
         root.style.setProperty("--main-bg-color", "#080705");
         root.style.setProperty("--main-text-color", "#e9e9e9");
