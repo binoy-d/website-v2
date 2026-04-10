@@ -13,7 +13,7 @@ function ProjectLanguageTags({ languages }) {
     return (
         <div className="project-tags">
             {languages.map((lang, index) =>
-                <Badge className="proj-tag" variant="info">{lang}</Badge>
+                <Badge key={`${lang}-${index}`} className="proj-tag" variant="info">{lang}</Badge>
             )}
         </div>
     );
@@ -26,7 +26,7 @@ function ProjectDescription({ proj, side }) {
             <div className="project-description">
                 <ul>
                     {proj.description.map((line, index) =>
-                        <li className="project-description-text">
+                        <li key={`${proj.title}-desc-${index}`} className="project-description-text">
                             {line}
                         </li>
                     )}
@@ -56,8 +56,8 @@ function ProjectModal({ proj, show, handleClose }) {
                     </Row>
                     <Row>
                         <Col>
-                            <Button href={proj.link} className="modal-btn">View Project</Button>
-                            <Button href={proj.codeLink} className="modal-btn">View Code</Button>
+                            <Button href={proj.link} target="_blank" rel="noopener noreferrer" className="modal-btn">View Project</Button>
+                            <Button href={proj.codeLink} target="_blank" rel="noopener noreferrer" className="modal-btn">View Code</Button>
                         </Col>
                         <Col>
                             <ProjectLanguageTags languages={proj.languages} />
@@ -67,7 +67,7 @@ function ProjectModal({ proj, show, handleClose }) {
                     <Modal.Footer className="modal-ftr" />
                     <Row>
                         <Col className="modal-img-wrapper">
-                            <Image className="modal-image" src={proj.img}></Image>
+                            <Image className="modal-image" src={proj.img} alt={`${proj.title} preview`}></Image>
                         </Col>
                     </Row>
 
@@ -89,11 +89,11 @@ function ProjectImage({ proj }) {
 
     return (
         <>
-            <div class="img-wrapper">
-                <a onClick={handleShow}>
-                    <Image className="project-image" src={proj.img}></Image>
-                </a>
-                <ProjectModal proj={proj} show={show} handleClose={handleClose} />
+            <div className="img-wrapper">
+                <button type="button" className="project-image-button" onClick={handleShow} aria-label={`Open details for ${proj.title}`}>
+                    <Image className="project-image" src={proj.img} alt={`${proj.title} preview`} loading="lazy" />
+                </button>
+                {show ? <ProjectModal proj={proj} show={show} handleClose={handleClose} /> : null}
             </div>
         </>
     );
@@ -137,12 +137,14 @@ function ProjectCardMobile({ proj }) {
         <Fade bottom>
         <div className="project-card-mobile">
             <h2 className="proj-title-mobile">{proj.title}</h2>
-            <a href={proj.link}><Image className="project-image" src={proj.img}></Image></a>
+            <a href={proj.link} target="_blank" rel="noopener noreferrer" aria-label={`Open ${proj.title} project`}>
+                <Image className="project-image" src={proj.img} alt={`${proj.title} preview`} loading="lazy" />
+            </a>
             <div>
                 <div className="project-description-mobile">
                     <ul>
                         {proj.description.map((line, index) =>
-                            <li className="project-description-text">
+                            <li key={`${proj.title}-mobile-desc-${index}`} className="project-description-text">
                                 {line}
                             </li>
                         )}

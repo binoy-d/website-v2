@@ -38,38 +38,21 @@ export const projects = [
             "build pipeline for production deployment.",
     },
     {
-        title: "Ping",
+        title: "Lockstep",
         description: [
-            "Full-stack real-time analytics application with interactive data visualization",
-            "Self-hosted solution using React frontend and Express.js backend",
-            "Implements SQLite for lightweight data persistence and graph rendering",
+            "Browser-first puzzle game where all players move together each turn",
+            "Built an in-game level editor for designing and publishing custom maps",
+            "Implemented pathfinding-based level verification with leaderboard-backed challenge progression",
         ],
-        languages: ["React", "Express", "SQLite", "JavaScript", "CSS"],
-        link: "https://ping.binoy.co",
-        img: PingImg,
+        languages: ["TypeScript", "Phaser 3", "Vite", "Node.js", "SQLite", "Docker"],
+        link: "https://lockstep.binoy.co",
+        img: PuzzleGameImg,
         featured: false,
-        codeLink: "https://ping.binoy.co",
-        longDescription: "Full-stack web application demonstrating real-time data collection and visualization " +
-            "capabilities. Built with React frontend and Express.js backend, utilizing SQLite for efficient " +
-            "data storage. Features responsive design, smooth graph animations, and real-time updates. " +
-            "Self-hosted deployment showcases DevOps skills and infrastructure management.",
-    },
-    {
-        title: "Generative Spiral Art",
-        description: [
-            "3D generative art application using WebGL and Bézier curve mathematics",
-            "Interactive visualization with real-time user controls and parameter adjustment",
-            "Built with p5.js and WebGL for optimized 3D rendering performance",
-        ],
-        languages: ["p5.js", "WEBGL", "JavaScript", "HTML", "CSS"],
-        link: "https://binoy-d.github.io/spiral-orbit/",
-        img: SpiralOrbitImg,
-        featured: false,
-        codeLink: "https://github.com/binoy-d/spiral-orbit",
-        longDescription: "Interactive 3D generative art application utilizing WebGL and advanced mathematical " +
-            "algorithms for real-time visualization. Implements Bézier curves, Perlin noise, and dynamic " +
-            "parameter manipulation through keyboard and mouse controls. Features optimized rendering " +
-            "performance and complex visual effects including jellyfish, mushroom, and iris-like patterns.",
+        codeLink: "https://github.com/binoy-d/lockstep",
+        longDescription: "Multiplayer browser puzzle game centered on coordinated movement, with a full " +
+            "custom level creation pipeline and integrated level editor for rapid map iteration. Includes " +
+            "pathfinding-based puzzle level verification and backend-backed leaderboards to support replayable " +
+            "challenge progression and community-created content.",
     },
     {
         title: "Bubbles, Together",
@@ -89,21 +72,38 @@ export const projects = [
             "only coordinate data while maintaining responsive user experience across concurrent sessions.",
     },
     {
-        title: "Puzzle Game",
+        title: "Generative Spiral Art",
         description: [
-            "2D puzzle game engine with custom level system and game mechanics",
-            "Implemented dual-character control system and collision detection",
-            "Built with Java Graphics2D and custom file parsing for level configuration",
+            "3D generative art application using WebGL and Bézier curve mathematics",
+            "Interactive visualization with real-time user controls and parameter adjustment",
+            "Built with p5.js and WebGL for optimized 3D rendering performance",
         ],
-        languages: ["Java", "Graphics2D"],
-        link: "https://github.com/binoy-d/2p1p-puzzle-game",
-        img: PuzzleGameImg,
+        languages: ["p5.js", "WEBGL", "JavaScript", "HTML", "CSS"],
+        link: "https://binoy-d.github.io/spiral-orbit/",
+        img: SpiralOrbitImg,
         featured: false,
-        codeLink: "https://github.com/binoy-d/2p1p-puzzle-game",
-        longDescription: "Game engine built from scratch using Java and Graphics2D, featuring custom level " +
-            "architecture and simultaneous dual-character control mechanics. Implements efficient collision " +
-            "detection, enemy AI pathfinding, and modular level design through matrix-based tile parsing. " +
-            "Demonstrates object-oriented design principles and game development fundamentals.",
+        codeLink: "https://github.com/binoy-d/spiral-orbit",
+        longDescription: "Interactive 3D generative art application utilizing WebGL and advanced mathematical " +
+            "algorithms for real-time visualization. Implements Bézier curves, Perlin noise, and dynamic " +
+            "parameter manipulation through keyboard and mouse controls. Features optimized rendering " +
+            "performance and complex visual effects including jellyfish, mushroom, and iris-like patterns.",
+    },
+    {
+        title: "Ping",
+        description: [
+            "Full-stack real-time analytics application with interactive data visualization",
+            "Self-hosted solution using React frontend and Express.js backend",
+            "Implements SQLite for lightweight data persistence and graph rendering",
+        ],
+        languages: ["React", "Express", "SQLite", "JavaScript", "CSS"],
+        link: "https://ping.binoy.co",
+        img: PingImg,
+        featured: false,
+        codeLink: "https://ping.binoy.co",
+        longDescription: "Full-stack web application demonstrating real-time data collection and visualization " +
+            "capabilities. Built with React frontend and Express.js backend, utilizing SQLite for efficient " +
+            "data storage. Features responsive design, smooth graph animations, and real-time updates. " +
+            "Self-hosted deployment showcases DevOps skills and infrastructure management.",
     },
     {
         title: "Debug Duck",
@@ -140,23 +140,6 @@ export const projects = [
             "proficiency and complex system architecture design.",
     },
     {
-        title: "Game of Life",
-        description: [
-            "C# implementation of Conway's Game of Life with interactive controls",
-            "Features real-time simulation with play/pause, cell editing, and randomization",
-            "Built with .NET framework demonstrating algorithm optimization and UI design",
-        ],
-        languages: ["C#", ".NET"],
-        link: "https://github.com/binoy-d/Game-Of-Life",
-        img: GameOfLifeImg,
-        featured: false,
-        codeLink: "https://github.com/binoy-d/Game-Of-Life",
-        longDescription: "Interactive implementation of Conway's Game of Life cellular automaton using C# and .NET. " +
-            "Features optimized algorithm for large grid calculations, real-time visualization, and comprehensive " +
-            "user controls including pattern editing and random generation. Demonstrates proficiency in " +
-            "mathematical algorithms and desktop application development.",
-    },
-    {
         title: "Fractal Tree",
         description: [
             "Interactive fractal generation using recursive algorithms and parametric controls",
@@ -172,6 +155,23 @@ export const projects = [
             "interactive fractal tree generation. Features real-time parameter manipulation, optimized " +
             "rendering performance, and educational interface for exploring mathematical concepts. " +
             "Built with p5.js for efficient canvas-based graphics rendering.",
+    },
+    {
+        title: "Game of Life",
+        description: [
+            "C# implementation of Conway's Game of Life with interactive controls",
+            "Features real-time simulation with play/pause, cell editing, and randomization",
+            "Built with .NET framework demonstrating algorithm optimization and UI design",
+        ],
+        languages: ["C#", ".NET"],
+        link: "https://github.com/binoy-d/Game-Of-Life",
+        img: GameOfLifeImg,
+        featured: false,
+        codeLink: "https://github.com/binoy-d/Game-Of-Life",
+        longDescription: "Interactive implementation of Conway's Game of Life cellular automaton using C# and .NET. " +
+            "Features optimized algorithm for large grid calculations, real-time visualization, and comprehensive " +
+            "user controls including pattern editing and random generation. Demonstrates proficiency in " +
+            "mathematical algorithms and desktop application development.",
     },
     {
         title: "Color Game",
@@ -251,13 +251,13 @@ export const info = {
     Major: "Computer Science",
     Status: "Software Engineer 2 @ Badger Meter",
     Email: "dbinoy15@gmail.com",
-    Interests: ["VR", "Homelab", "Film", "AI", "Longboarding"],
+    Interests: ["AI Agents", "VR", "Homelab", "Film", "Longboarding"],
 };
 
 export const description =
-    "I'm currently a Software Engineer II at Badger Meter specializing in full-stack development and system architecture. " +
-    "Experienced in building scalable applications, optimizing performance, and leading technical initiatives. " +
-    "I'm passionate about creating robust solutions that drive meaningful impact, especially with new and emerging technologies.";
+    "I'm currently a Software Engineer II at Badger Meter, where my recent work has been heavily full stack across React, Flask, MySQL, and Elasticsearch. " +
+    "I focus on architecture, reliability, and building features in close partnership with product managers to deliver experiences customers and internal users love. " +
+    "I also help teams leverage AI tools and agents in practical day-to-day engineering workflows to improve speed and execution quality.";
 
 export var nightMode = false;
 
@@ -299,6 +299,30 @@ var taglineList = [
     "youtu.be/dQw4w9WgXcQ",
     "more coming soon",
     "ok back to the top",
+    "probably over-engineered (on purpose)",
+    "it works on my machine",
+    "zero merge conflicts (today)",
+    "coffee in, code out",
+    "small commits, big impact",
+    "deployed and prayed",
+    "rubber duck approved",
+    "ship > perfect",
+    "fewer meetings, more shipping",
+    "made with tests and stubbornness",
+    "calm in production incidents",
+    "frontend by day, backend by night",
+    "yes, I read the logs",
+    "clean diffs only",
+    "latency is a feature",
+    "the bug stops here",
+    "pixel-perfect-ish",
+    "high uptime energy",
+    "opened 37 tabs for this",
+    "built for real users",
+    "vibes: stable and scalable",
+    "risk lowered, value shipped",
+    "less clickbait, more throughput",
+    "this page has range",
 ];
 
 var tagIndex = 0;
@@ -376,6 +400,9 @@ export const skills = [{
             "VirtualBox",
             "ffmpeg",
             "NLTK",
+            "AI Agent Workflows",
+            "LLM Tooling",
+            "Prompt Engineering",
         ],
     },
     {
@@ -403,50 +430,63 @@ export const experience = [
         title: "Dec 2024 - Present",
         cardTitle: "Badger Meter",
         cardSubtitle: "Software Engineer II",
+        impact: "Drove platform reliability improvements while leveraging AI tools and agents to reduce support cost/time and improve engineering productivity.",
         cardDetailedText: [
-            "Investigated and resolved deep-rooted structural issues, saving thousands of tech-support hours",
-            "Triaging tickets, mentoring junior developers, and presenting to product owners/customers",
-            "Solving large-scale data-integrity and scalability issues while transitioning to new system architecture",
-            "Engaging in high-level system architecture discussions"
+            "Led deep-dive investigations into structural platform issues and shipped long-term fixes",
+            "Resolved data-integrity and scalability bottlenecks during a major architecture transition",
+            "Built and deployed multiple internal tech-support tools independently to speed issue triage and resolution",
+            "Deployed monitoring tools that continuously reported on data-integrity health across pipelines",
+            "Increased legacy service test coverage from 0% to 94% to improve release confidence and regression detection",
+            "Designed and rolled out AI-assisted engineering workflows used by multiple teams",
+            "Regularly gave presentations and live demos to engineers/managers on AI workflow adoption",
+            "Partnered across teams as an AI evangelist to improve day-to-day developer efficiency",
+            "Partnered directly with product owners and customers to prioritize high-impact technical work",
+            "Mentored junior engineers while driving triage and incident response quality"
         ]
     },
     {
         title: "Feb 2022 - Jan 2025",
         cardTitle: "Badger Meter",
         cardSubtitle: "Software Engineer I",
+        impact: "Led end-to-end BEACON modernization and built automation that improved delivery speed, reliability, and supportability.",
         cardDetailedText: [
-            "Developed new Data Exchange (DE2) UI with React, Redux Toolkit, and various frontend libraries",
-            "Improved DE2 Python 3 backend processing time by 84% in time series calculation phase",
-            "Created automated REST service to identify resolve data integrity errors (Eventbridge/Lambda/Kibana)",
-            "Resolved structural bugs in legacy DE1 backend (Python 2, Flask, MySQL, Elasticsearch, EC2)"
+            "Built and launched major BEACON user experience improvements with React + Redux Toolkit",
+            "Improved Python backend time-series processing performance by 84%",
+            "Designed an automated service to detect and resolve data-integrity failures across pipelines",
+            "Created internal support tooling that reduced technical support time and operational cost",
+            "Built reusable workflow automation patterns that reduced repetitive engineering and support effort",
+            "Untangled critical legacy DE1 backend defects across Python, Flask, MySQL, and Elasticsearch"
         ]
     },
     {
         title: "Jan 2021 - Sep 2021",
         cardTitle: "Badger Meter",
         cardSubtitle: "Software Engineer Intern",
+        impact: "Shipped production code early, strengthened test coverage, and resolved customer-impacting defects in a live system.",
         cardDetailedText: [
-            "Producing clean, efficient code based on user stories and integrated software components",
-            "Authoring automated unit, integration, and system tests",
-            "Troubleshooting and debugging existing Python and React code base"
+            "Delivered production code from user stories across Python and React systems",
+            "Wrote unit, integration, and system tests to improve release confidence",
+            "Debugged and shipped fixes in a mature codebase with real customer impact"
         ]
     },
     {
         title: "Nov 2020 - Present",
         cardTitle: "UCI ICS Student Council",
         cardSubtitle: "Projects Committee Member",
+        impact: "Built high-utility student tools and led a full React rebuild to modernize key campus project infrastructure.",
         cardDetailedText: [
-            "Develop online solutions tailored to aid UCI students",
-            "Rebuilding and redesigning zotistics website from ground up in React",
+            "Built online tools tailored to real student workflows",
+            "Rebuilt and redesigned the Zotistics website from the ground up in React",
         ]
     },
     {
         title: "Sep 2020 - Dec 2020",
         cardTitle: "Curicular",
-        cardSubtitle: "Web Develepor / UI Design Intern",
+        cardSubtitle: "Web Developer / UI Design Intern",
+        impact: "Delivered a UX + performance overhaul that improved clarity, usability, and page load speed by 4x.",
         cardDetailedText: [
-            "Managed website interface, pitching and implementing ideas to better design, code, and modify the site",
-            "Created visually appealing site features for user-friendly design and clear navigation",
+            "Owned interface improvements end-to-end, from UX proposals to implementation",
+            "Designed clearer navigation patterns and interaction flows",
             "Streamlined website structure and page layouts, resulting in 4x faster load times"
         ]
     },
@@ -454,16 +494,18 @@ export const experience = [
         title: "Apr 2020 - Jan 2022",
         cardTitle: "KTBYTE",
         cardSubtitle: "Computer Science Instructor",
+        impact: "Scaled CS instruction quality for 60+ students with stronger curriculum design and auto-graded learning systems.",
         cardDetailedText: [
-            "Taught computer science concepts at various levels in Processing and Java to over 60 pre-college students",
-            "Communicated with operations staff on optimizing problem sets to emphasize learning and retention",
-            "Developed automatically graded curricula and problem sets"
+            "Taught Processing and Java to 60+ pre-college students across multiple levels",
+            "Improved problem-set quality with operations staff to maximize learning retention",
+            "Built auto-graded curriculum and assignments to scale instruction quality"
         ]
     },
     {
         title: "Mar 2020 - Sep 2020",
         cardTitle: "UCI Social Sciences Computing Services",
         cardSubtitle: "IT Help Desk Assistant",
+        impact: "Maintained operational continuity for campus users through fast, reliable frontline technical support.",
         cardDetailedText: [
             "Provided computing and network support to the school of Social Sciences",
             "Resolved hardware and software issues on Macs and PCs"
@@ -473,6 +515,7 @@ export const experience = [
         title: "Sep 2018 - Sep 2019",
         cardTitle: "Children's Discovery Museum",
         cardSubtitle: "Exhibit Specialist",
+        impact: "Created engaging, hands-on learning experiences while operating high-traffic public exhibits reliably.",
         cardDetailedText: [
             "Assisted in the opening/closing procedures of the Museum ",
             "Actively interacted with children and adults to enhance visitor experience",
@@ -483,6 +526,7 @@ export const experience = [
         title: "Feb 2018 - Sep 2018",
         cardTitle: "Children's Discovery Museum",
         cardSubtitle: "Team Teal Volunteer",
+        impact: "Built strong communication and leadership skills in fast-paced, public-facing environments.",
         cardDetailedText: [
             "Volunteered as a member of Team Teal to help enhance visitor experience",
             "Developed skills such as interacting with children, group management, creative problem solving, and verbal communication.",
@@ -492,6 +536,7 @@ export const experience = [
         title: "Aug 2017 - May 2019",
         cardTitle: "MESA Club, STHS",
         cardSubtitle: "Vice President",
+        impact: "Expanded membership by 40% and led the club’s strongest competitive year, with 90% of members winning awards.",
         cardDetailedText: [
             "Grew MESA(Mathematics Engineering Science Achievement) by over 40% from 50+ to 80+ members",
             "Lead club to best year to date, winning over 72% of all prizes, with 90% of members winning",

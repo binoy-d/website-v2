@@ -47,7 +47,7 @@
     mix-blend-mode: difference;
 }
 
-a svg {
+.contact-button a svg {
     width: 20px;
     height: 20px;
     fill:rgb(100, 100, 100);
@@ -56,7 +56,7 @@ a svg {
     /*opacity:100%;*/
 }
 
-a svg:hover{
+.contact-button a svg:hover{
     transform: scale(1.3);
     cursor:pointer;
     fill:#f1394b;
@@ -78,4 +78,11 @@ a svg:hover{
 
 .night-button{
     fill:var(--accent-color-1);
+}
+
+.night-mode-toggle{
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
 }

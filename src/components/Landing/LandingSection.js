@@ -5,16 +5,19 @@ import Fade from "react-reveal/Fade";
 import { Link } from "react-scroll";
 import { toggleNightMode, getTagline } from "../data.js";
 function LandingParticles() {
+  const isSmallScreen = typeof window !== "undefined" && window.innerWidth < 768;
+  const particleCount = isSmallScreen ? 20 : 50;
+
   return (
     <>
       <Particles
         params={{
           particles: {
             number: {
-              value: 50,
+              value: particleCount,
             },
             size: {
-              value: 3,
+              value: isSmallScreen ? 2 : 3,
             },
             color: {
               value: "#C52233",
@@ -29,7 +32,7 @@ function LandingParticles() {
           interactivity: {
             events: {
               onhover: {
-                enable: true,
+                enable: !isSmallScreen,
                 mode: "repulse",
               },
             },

@@ -40,9 +40,14 @@ function CodeWindow() {
     window.open("mailto:dbinoy15@gmail.com");
   };
   return (
-    <div onClick={sendEmail} className="code-window-wrapper">
+    <button
+      type="button"
+      onClick={sendEmail}
+      className="code-window-wrapper code-window-button"
+      aria-label="Send email to Daniel"
+    >
       <div className="code-window-top">
-        <p>click_to_contact.exe</p>
+        <p>Click to Contact</p>
         <span className = "code-window-dot">  </span>
         <span className = "code-window-dot">  </span>
         <span className = "code-window-dot">  </span>
@@ -54,7 +59,7 @@ function CodeWindow() {
         <br />
         <CodeLine info={info}/>
       </div>
-    </div>
+    </button>
   );
 }
 
@@ -66,12 +71,10 @@ class ProfileImage extends React.Component {
   }
   handleHoverOn() {
     //this.setState({ alt: true });
-    console.log("enter");
   }
 
   handleHoverOff() {
     this.setState({ alt: false });
-    console.log("exit");
   }
 
   render() {
@@ -80,6 +83,8 @@ class ProfileImage extends React.Component {
         id="about-img"
         className="masthead-profile"
         src={this.src}
+        alt="Daniel Binoy profile"
+        loading="lazy"
         roundedCircle
       />
     );

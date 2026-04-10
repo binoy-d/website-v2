@@ -1,11 +1,28 @@
 #projects{
     background-color:  transparent;
-    margin-top: 2em;
-    margin-bottom:7em;
+    margin-top: 2.5em;
+    margin-bottom: 5em;
     border-radius:0.5em;
 }
 
+.projects-stuff{
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
 
 .project-card-col{
-    margin-top:2em;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+@media (max-width: 768px){
+    #projects{
+        margin-bottom: 3.5em;
+    }
+
+    .project-card-col{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
 }

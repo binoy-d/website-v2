@@ -9,12 +9,12 @@ import { projects } from "../data.js";
 function ProjectSection() {
   return (
     <section id="projects">
-      <div class="projects-stuff">
+      <div className="projects-stuff">
         <SectionHeader text="Projects" />
         <Container>
           <Row>
             {projects.map((proj, index) => (
-              <ProjectCard proj={proj} side={index % 2} />
+              <ProjectCard key={proj.title} proj={proj} side={index % 2} />
             ))}
           </Row>
         </Container>

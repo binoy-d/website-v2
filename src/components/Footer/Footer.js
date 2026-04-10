@@ -9,13 +9,14 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
 function Footer() {
+    const currentYear = new Date().getFullYear();
 
     return (
         <section id='footer'>
             <Container className = "w-100">
                 <Row>
                     <Col>
-                        <p id = "footer-text">Made with ♥ by Daniel Binoy, 2021</p>
+                        <p id = "footer-text">Made with ♥ by Daniel Binoy, {currentYear}</p>
                     </Col>
                 </Row>
                 <Row>
