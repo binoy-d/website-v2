@@ -13,11 +13,14 @@
 
 .landing-stuff {
   opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #name-header {
   color: var(--main-text-color);
-  font-size: 5em;
+  font-size: clamp(2.4em, 11vw, 5em);
   z-index: 20;
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
@@ -34,9 +37,10 @@
 }
 
 .landing-title-group {
-  width: fit-content;
-  margin: 0 auto;
-  transform: translateX(0.32em);
+  /* --shift-initial / --shift-reveal are set from JS: half the width of the invisible span. */
+  --shift-initial: 0px;
+  --shift-reveal: 0px;
+  width: max-content; /* centered by .landing-stuff (flex); no auto margins, they would win over align-items and collapse when wider than the column */
 }
 
 .name-header-animated {
@@ -45,14 +49,20 @@
   align-items: baseline;
   align-items: baseline;
   gap: 0;
-  left: 0;
+  left: var(--shift-initial);
   transform: translateX(0);
   transform-origin: center center;
-  transition: text-shadow 220ms ease, color 220ms ease, transform 220ms ease, left 220ms ease;
+  transition: text-shadow 220ms ease, color 220ms ease, transform 220ms ease;
+}
+
+.name-header-animated.co-out,
+.name-header-animated.reveal {
+  transition: text-shadow 220ms ease, color 220ms ease, transform 220ms ease,
+    left 620ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .name-header-animated.reveal {
-  left: 2.75rem;
+  left: var(--shift-reveal);
 }
 
 .name-header-animated:hover {
@@ -131,7 +141,7 @@
 @media(max-width:480px){
 
   #name-header{
-    font-size: 3em;
+    font-size: min(3em, 10.5vw);
     font-weight: bolder;
     margin-bottom:0;
     padding-bottom: 0;
