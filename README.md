@@ -15,6 +15,7 @@ started with a single `docker compose up`. Pushing to `master` deploys it.
 ├── .github/workflows/       deploy.yml: test + build on GitHub, then deploy via self-hosted runner
 ├── scripts/server-deploy.sh Runs on the server: compose up --build + health check
 ├── scripts/deploy.sh        Manual deploy over ssh (rsync + server-deploy.sh)
+├── scripts/kindle/          one-off: scrape old Kindle highlights and import them into BookOrbit (see its README)
 └── Makefile                 shortcuts (`make deploy`, `make up`, `make logs`, ...)
 ```
 
