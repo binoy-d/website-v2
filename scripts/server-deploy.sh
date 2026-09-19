@@ -13,7 +13,8 @@ docker compose up -d --build --remove-orphans
 docker image prune -f >/dev/null || true
 docker compose ps
 
-PORT="$(grep -E '^WEB_PORT=' .env | tail -n1 | cut -d= -f2- | tr -d '[:space:]')"
+# WEB_PORT may be absent from a hand-written .env; sed exits 0 either way (grep would not, under set -e).
+PORT="$(sed -nE 's/^WEB_PORT=(.*)$/\1/p' .env | tail -n1 | tr -d '[:space:]')"
 PORT="${PORT:-8088}"
 for _ in $(seq 1 30); do
   if curl -fsS "http://127.0.0.1:${PORT}/api/health" >/dev/null 2>&1; then

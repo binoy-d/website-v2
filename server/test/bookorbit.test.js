@@ -123,3 +123,31 @@ test("bookorbit client", async (t) => {
     assert.equal(await client.health(), true);
   });
 });
+
+test("cleanText repairs undecoded Windows-1252 characters and strips controls", async () => {
+  const { cleanText } = await import("../src/bookorbit.js");
+  assert.equal(cleanText("When you\u0092re talking\u0085 \u0093quoted\u0094 \u0096 dash"), "When you’re talking… “quoted” – dash");
+  assert.equal(cleanText("tab\there\u0001bad\u007f\r\nline  two   \r\n\r\n\r\nthree \u200b"), "tab\therebad\nline two\n\nthree");
+  assert.equal(cleanText(null), "");
+  assert.equal(cleanText("   "), "");
+
+  const fake = fakeBookorbit({ total: 2 });
+  const client = createBookorbitClient(
+    { BOOKORBIT_URL: "http://bookorbit.test", BOOKORBIT_MAGIC_TOKEN: "magic" },
+    {
+      fetchImpl: async (url, init) => {
+        const res = await fake.fetchImpl(url, init);
+        if (!String(url).includes("/annotations")) return res;
+        const data = await res.json();
+        data.items = data.items.map((it) => ({ ...it, text: `it\u0092s ${it.text}`, note: "don\u0092t", bookTitle: "Zen \u0096 Art", chapterTitle: "Ch\u0085" }));
+        return new Response(JSON.stringify(data), { status: 200, headers: { "content-type": "application/json" } });
+      },
+      logger: quietLogger,
+    }
+  );
+  const first = (await client.listHighlights()).find((h) => h.id === "a1");
+  assert.equal(first.text, "it’s Text 1");
+  assert.equal(first.note, "don’t");
+  assert.equal(first.book.title, "Zen – Art");
+  assert.equal(first.location, "Ch…");
+});
