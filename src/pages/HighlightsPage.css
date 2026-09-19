@@ -355,8 +355,11 @@
         flex-direction: column;
     }
 
+    /* In a column, flex-basis would become the *height*; size the controls by content instead. */
+    .highlights-input,
     .highlights-select {
-        flex-basis: auto;
+        flex: none;
+        width: 100%;
     }
 
     .highlights-shuffle {

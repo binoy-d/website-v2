@@ -249,14 +249,14 @@ export const info = {
     Locations: ["San Jose", "Los Gatos", "Irvine"],
     Education: ["UC Irvine", "2021"],
     Major: "Computer Science",
-    Status: "Software Engineer 2 @ Badger Meter",
+    Status: "Software Engineer @ Skydio",
     Email: "dbinoy15@gmail.com",
     Interests: ["AI Agents", "VR", "Homelab", "Film", "Longboarding"],
 };
 
 export const description =
-    "I'm currently a Software Engineer II at Badger Meter, where my recent work has been heavily full stack across React, Flask, MySQL, and Elasticsearch. " +
-    "I focus on architecture, reliability, and building features in close partnership with product managers to deliver experiences customers and internal users love. " +
+    "I'm currently a Software Engineer at Skydio on the Drone Program Management team, building the program operations and administration experience in Skydio Cloud that customers use to run their drone programs at scale. " +
+    "Before that I spent four years at Badger Meter doing full-stack work across React, Flask, MySQL, and Elasticsearch, focused on architecture, reliability, and building features in close partnership with product managers. " +
     "I also help teams leverage AI tools and agents in practical day-to-day engineering workflows to improve speed and execution quality.";
 
 export var nightMode =
@@ -431,7 +431,18 @@ export const skills = [{
 
 export const experience = [
     {
-        title: "Jan 2025 - Present",
+        title: "Jul 2026 - Present",
+        cardTitle: "Skydio",
+        cardSubtitle: "Software Engineer",
+        impact: "Building the program operations and administration experience in Skydio Cloud that customers use to run their drone programs at scale.",
+        cardDetailedText: [
+            "Member of the Drone Program Management team, which owns the program operations and administration experience in Skydio Cloud",
+            "Ensuring Skydio Cloud supports large fleets, complex organizations, and performant data review at scale",
+            "Keeping the overall product experience coherent across Commands as the platform grows"
+        ]
+    },
+    {
+        title: "Jan 2025 - Jul 2026",
         cardTitle: "Badger Meter",
         cardSubtitle: "Software Engineer II",
         impact: "Drove platform reliability improvements while leveraging AI tools and agents to reduce support cost/time and improve engineering productivity.",

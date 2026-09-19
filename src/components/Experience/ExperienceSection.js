@@ -83,6 +83,7 @@ function ExperienceSection() {
   const featuredExperience = experience.slice(0, FEATURED_COUNT);
   const olderExperience = experience.slice(FEATURED_COUNT);
   const highlights = [
+    { metric: "Skydio", label: "Building fleet-scale program operations in Skydio Cloud" },
     { metric: "84%", label: "Backend speedup in time-series processing" },
     { metric: "BEACON", label: "Delivered major frontend and UX improvements in production" },
     { metric: "94%", label: "Raised legacy service test coverage from 0% to 94%" },
