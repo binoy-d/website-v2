@@ -1,57 +1,14 @@
-import { createHash, timingSafeEqual } from "node:crypto";
 import express from "express";
 
-export const LIMITS = { name: 100, email: 200, message: 5000 };
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-const text = (value) => (typeof value === "string" ? value.trim() : "");
-
-export function validateContact(body) {
-  const errors = [];
-  const name = text(body.name);
-  const email = text(body.email);
-  const message = text(body.message);
-
-  if (!name) errors.push("Please enter your name.");
-  else if (name.length > LIMITS.name) errors.push(`Name must be ${LIMITS.name} characters or fewer.`);
-
-  if (!email) errors.push("Please enter your email.");
-  else if (email.length > LIMITS.email || !EMAIL_RE.test(email)) errors.push("Please enter a valid email address.");
-
-  if (!message) errors.push("Please enter a message.");
-  else if (message.length > LIMITS.message) errors.push(`Message must be ${LIMITS.message} characters or fewer.`);
-
-  return { errors, values: { name, email, message } };
-}
-
-// Constant-time comparison that tolerates different lengths.
-function safeEqual(a, b) {
-  const ha = createHash("sha256").update(String(a)).digest();
-  const hb = createHash("sha256").update(String(b)).digest();
-  return timingSafeEqual(ha, hb);
-}
-
-const noopLimiter = (req, res, next) => next();
-
 /**
- * Builds the Express app. All I/O dependencies are injected so it can be tested in isolation.
+ * Builds the Express app. Dependencies are injected so it can be tested in isolation.
+ *   highlights: service from createHighlightsService() (null => highlights endpoints answer 503)
  */
-export function createApp({
-  db,
-  mailer = null,
-  adminToken = "",
-  contactLimiter = noopLimiter,
-  highlights = null,
-  logger = console,
-  version = "dev",
-}) {
-  if (!db) throw new Error("createApp requires a db");
-
+export function createApp({ highlights = null, logger = console, version = "dev" } = {}) {
   const app = express();
   app.disable("x-powered-by");
-  // We sit behind nginx (and possibly Cloudflare); trust X-Forwarded-* so req.ip is the real client.
+  // We sit behind nginx (and Cloudflare); trust X-Forwarded-* so req.ip is the real client.
   app.set("trust proxy", true);
-  app.use(express.json({ limit: "32kb" }));
 
   app.get("/api/health", (req, res) => {
     res.set("Cache-Control", "no-store");
@@ -59,57 +16,58 @@ export function createApp({
       status: "ok",
       version,
       uptime: Math.round(process.uptime()),
+      highlights: Boolean(highlights),
       timestamp: new Date().toISOString(),
     });
   });
 
-  app.post("/api/contact", contactLimiter, (req, res) => {
-    const body = req.body && typeof req.body === "object" ? req.body : {};
+  // ---- highlights (BookOrbit) ----
+  const intParam = (value, { min, max, fallback }) => {
+    const n = Number.parseInt(value, 10);
+    return Number.isFinite(n) ? Math.min(Math.max(n, min), max) : fallback;
+  };
+  const strParam = (value, max) => (typeof value === "string" ? value.trim().slice(0, max) : "");
 
-    // Honeypot: the "website" field is hidden from humans; bots tend to fill it.
-    if (text(body.website)) {
-      logger.warn(`contact: honeypot triggered from ${req.ip}`);
-      return res.status(202).json({ ok: true });
-    }
-
-    const { errors, values } = validateContact(body);
-    if (errors.length) {
-      return res.status(400).json({ error: "Invalid submission", details: errors });
-    }
-
-    const record = {
-      ...values,
-      ip: req.ip ?? null,
-      userAgent: (req.get("user-agent") || "").slice(0, 300) || null,
-    };
-    const id = db.insertMessage(record);
-    logger.info(`contact: stored message #${id} from ${values.email}`);
-
-    if (mailer) {
-      // Fire-and-forget: the message is already persisted, email is a best-effort notification.
-      mailer
-        .sendContactNotification({ id, ...record })
-        .catch((err) => logger.error(`contact: email notification failed for #${id}:`, err));
-    }
-
-    res.status(201).json({ ok: true, id });
-  });
-
-  app.get("/api/highlights/random", async (req, res) => {
+  const withHighlights = (handler) => async (req, res) => {
     res.set("Cache-Control", "no-store");
-    if (!highlights) {
-      return res.status(503).json({ error: "Highlights are not configured yet." });
-    }
-    const requested = Number.parseInt(req.query.count, 10);
-    const count = Number.isFinite(requested) ? Math.min(Math.max(requested, 1), 24) : 6;
+    if (!highlights) return res.status(503).json({ error: "Highlights are not configured yet." });
     try {
-      const items = await highlights.getRandom(count);
-      res.json({ highlights: items });
+      await handler(req, res);
     } catch (err) {
-      logger.error("highlights: failed to load:", err);
+      logger.error("highlights: request failed:", err);
       res.status(502).json({ error: "Couldn't reach the highlights library right now." });
     }
-  });
+  };
+
+  // Search / filter / page. Same seed => same order, so paging is stable until the client reshuffles.
+  app.get(
+    "/api/highlights",
+    withHighlights(async (req, res) => {
+      const result = await highlights.query({
+        q: strParam(req.query.q, 200),
+        bookId: strParam(req.query.book, 100) || null,
+        limit: intParam(req.query.limit, { min: 1, max: 50, fallback: 12 }),
+        offset: intParam(req.query.offset, { min: 0, max: 100_000, fallback: 0 }),
+        seed: strParam(req.query.seed, 64),
+      });
+      res.json(result);
+    })
+  );
+
+  app.get(
+    "/api/highlights/books",
+    withHighlights(async (req, res) => {
+      res.json({ books: await highlights.books() });
+    })
+  );
+
+  app.get(
+    "/api/highlights/random",
+    withHighlights(async (req, res) => {
+      const count = intParam(req.query.count, { min: 1, max: 24, fallback: 6 });
+      res.json({ highlights: await highlights.getRandom(count) });
+    })
+  );
 
   app.get("/api/highlights/cover/:bookId", async (req, res) => {
     if (!highlights) return res.status(404).end();
@@ -125,29 +83,10 @@ export function createApp({
     }
   });
 
-  const requireAdmin = (req, res, next) => {
-    if (!adminToken) return res.status(404).json({ error: "Not found" });
-    const header = req.get("authorization") || "";
-    const token = header.startsWith("Bearer ") ? header.slice(7).trim() : "";
-    if (!token || !safeEqual(token, adminToken)) {
-      return res.status(401).json({ error: "Unauthorized" });
-    }
-    next();
-  };
-
-  app.get("/api/admin/messages", requireAdmin, (req, res) => {
-    const requested = Number.parseInt(req.query.limit, 10);
-    const limit = Number.isFinite(requested) ? Math.min(Math.max(requested, 1), 500) : 50;
-    res.set("Cache-Control", "no-store");
-    res.json({ total: db.countMessages(), messages: db.listMessages(limit) });
-  });
-
   app.use("/api", (req, res) => res.status(404).json({ error: "Not found" }));
 
   // eslint-disable-next-line no-unused-vars
   app.use((err, req, res, next) => {
-    if (err?.type === "entity.parse.failed") return res.status(400).json({ error: "Invalid JSON body" });
-    if (err?.type === "entity.too.large") return res.status(413).json({ error: "Request body too large" });
     logger.error(err);
     res.status(500).json({ error: "Internal server error" });
   });

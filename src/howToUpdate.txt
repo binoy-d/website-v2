@@ -3,15 +3,19 @@ THIS IS FROM DANIEL, TO DANIEL:
 
 steps to push an update:
 
-1. do the code changes and commit to master
-2. cd to repo directory, and "make deploy"
-   (needs .env.deploy with DEPLOY_HOST — see .env.deploy.example)
-3. it rsyncs the repo to the server, rebuilds the docker images there,
-   restarts the containers, and checks /api/health
-4. give it a minute, check if it works
-5. logs:    ssh <server> 'cd dev/website-v2 && docker compose logs -f --tail=100'
-   status:  ssh <server> 'cd dev/website-v2 && docker compose ps'
-6. secrets (ADMIN_TOKEN, SMTP) live in .env ON THE SERVER, not in git
-7. if not working, figure it out lmao
+1. do the code changes, commit, and push to master (from any computer)
+2. that's it. GitHub Actions runs the tests + build, then the self-hosted
+   runner on binoyserver pulls master and rebuilds the docker containers.
+   watch it at https://github.com/binoy-d/website-v2/actions
+   (re-run by hand: "gh workflow run deploy", or the Run workflow button)
+3. give it ~5 minutes, check https://binoy.co
 
-(the old gh-pages flow is gone; DNS for binoy.co should point at the server / tunnel)
+manual fallbacks:
+   from a machine with ssh access:  make deploy
+   on the server itself:            cd ~/dev/website-v2 && git pull && ./scripts/server-deploy.sh
+   logs:                            cd ~/dev/website-v2 && docker compose logs -f --tail=100
+
+secrets (BookOrbit login for the Highlights page) live in ~/dev/website-v2/.env
+ON THE SERVER, not in git. the runner lives in ~/actions-runner-website.
+
+if not working, figure it out lmao

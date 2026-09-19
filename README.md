@@ -1,42 +1,54 @@
 # binoy.co
 
 Personal site: a React frontend plus a small Express API, packaged as two Docker containers and
-started with a single `docker compose up`.
+started with a single `docker compose up`. Pushing to `master` deploys it.
 
 ```
 .
-├── src/, public/          React app (Create React App)
-├── server/                Express API — contact form, health check (Node 24, SQLite via node:sqlite)
-├── nginx/default.conf     Serves the built site and proxies /api/* to the api container
-├── Dockerfile             web image: builds the React app, serves it with nginx
-├── server/Dockerfile      api image
-├── compose.yaml           web + api + a volume for the SQLite database
-├── scripts/deploy.sh      rsync to the server, `docker compose up -d --build`, health check
-└── Makefile               shortcuts (`make deploy`, `make up`, `make logs`, ...)
+├── src/, public/            React app (Create React App + react-router)
+│   └── src/pages/Highlights  /highlights page: search, filter by book, expandable cards
+├── server/                  Express API (Node 24): health + highlights from BookOrbit
+├── nginx/default.conf       Serves the built site and proxies /api/* to the api container
+├── Dockerfile               web image: builds the React app, serves it with nginx
+├── server/Dockerfile        api image
+├── compose.yaml             web + api
+├── .github/workflows/       deploy.yml: test + build on GitHub, then deploy via self-hosted runner
+├── scripts/server-deploy.sh Runs on the server: compose up --build + health check
+├── scripts/deploy.sh        Manual deploy over ssh (rsync + server-deploy.sh)
+└── Makefile                 shortcuts (`make deploy`, `make up`, `make logs`, ...)
 ```
 
-## Deploy
+## Deploying
 
-One-time setup:
+**Push to `master`.** The `deploy` workflow runs the backend tests and the frontend build on
+GitHub, then a self-hosted runner on the server (label `website`) pulls `master` into
+`/home/daniel/dev/website-v2` and runs `scripts/server-deploy.sh`, which rebuilds the images,
+restarts the containers and waits for `/api/health`. Progress is in the repo's Actions tab.
+Re-run it by hand with `gh workflow run deploy` or the "Run workflow" button.
 
-1. `cp .env.deploy.example .env.deploy` and set `DEPLOY_HOST` to your SSH host/alias.
-2. On the server: Docker (with the compose plugin), `rsync`, and `curl` installed, and your SSH key authorized.
+Manual fallbacks:
 
-Then, every time:
+- From a machine with ssh access to the server: `make deploy` (rsyncs the working tree, then runs
+  `server-deploy.sh` there). Needs `.env.deploy` with `DEPLOY_HOST`; see `.env.deploy.example`.
+- On the server: `cd ~/dev/website-v2 && git pull && ./scripts/server-deploy.sh`.
+
+The site is published on the server at `http://<server>:${WEB_PORT}` (default `8088`); a Cloudflare
+Tunnel maps binoy.co to it. TLS is handled there, not in these containers.
+
+### One-time runner setup (already done on binoyserver)
 
 ```bash
-make deploy
+mkdir -p ~/actions-runner-website && cd ~/actions-runner-website
+curl -sSfL -o runner.tar.gz https://github.com/actions/runner/releases/download/v2.337.0/actions-runner-linux-x64-2.337.0.tar.gz
+tar xzf runner.tar.gz && rm runner.tar.gz
+TOKEN=$(gh api -X POST repos/binoy-d/website-v2/actions/runners/registration-token --jq .token)
+./config.sh --unattended --url https://github.com/binoy-d/website-v2 --token "$TOKEN" \
+  --name binoyserver-website --labels website --work _work --replace
+sudo ./svc.sh install daniel && sudo ./svc.sh start
 ```
 
-That rsyncs the repo to `DEPLOY_DIR` on the server (skipping `.git`, `node_modules`, `.env`), runs
-`docker compose up -d --build --remove-orphans` there, prunes dangling images, and waits for
-`/api/health` to respond. `npm run deploy` does the same thing.
-
-The first deploy creates `.env` on the server from `.env.example`. Edit it there to set `ADMIN_TOKEN`
-and (optionally) SMTP settings, then run `make deploy` again to apply.
-
-The site is published on the server at `http://<server>:${WEB_PORT}` (default `8088`). Point your
-reverse proxy or Cloudflare Tunnel at that port; TLS is handled there, not in these containers.
+The runner user needs to be in the `docker` group. Configuration (`.env`) lives on the server and
+is never touched by deploys.
 
 ## Run with Docker anywhere
 
@@ -62,52 +74,28 @@ Backend tests: `make test-api`.
 
 ## API
 
-| Method | Path                      | Notes                                                                                   |
-| ------ | ------------------------- | --------------------------------------------------------------------------------------- |
-| GET    | `/api/health`             | `{ status, version, uptime, timestamp }`                                                |
-| POST   | `/api/contact`            | Body `{ name, email, message }`. `201 { ok, id }`, `400 { error, details[] }`, `429` when rate-limited |
-| GET    | `/api/admin/messages`     | `Authorization: Bearer $ADMIN_TOKEN`. `?limit=50` (max 500). Returns `{ total, messages[] }`. `404` if no token configured |
-| GET    | `/api/highlights/random` | `?count=6` (max 24). Random highlights from BookOrbit: `{ highlights: [{ id, text, note, location, createdAt, book: { id, title, author, coverUrl } }] }`. `503` until BookOrbit is configured |
+| Method | Path                            | Notes |
+| ------ | ------------------------------- | ----- |
+| GET    | `/api/health`                   | `{ status, version, uptime, highlights, timestamp }` |
+| GET    | `/api/highlights`               | `?q=<words>&book=<bookId>&limit=12&offset=0&seed=<any>`. Search + filter over the cached BookOrbit highlights in a seeded random order that round-robins across books, so the first results come from different books and paging with the same seed is stable. Returns `{ total, offset, limit, seed, items[] }`; each item is `{ id, text, note, location, createdAt, origin, book: { id, title, author, coverUrl } }`. `503` until BookOrbit is configured |
+| GET    | `/api/highlights/books`         | Books that have highlights: `{ books: [{ id, title, author, count, coverUrl }] }` |
+| GET    | `/api/highlights/random`        | `?count=6` (max 24). Shortcut for a fresh random set: `{ highlights[] }` |
 | GET    | `/api/highlights/cover/:bookId` | Book thumbnail, proxied from BookOrbit (only for books that appear in the highlights) |
 
-Contact submissions are always stored in SQLite. If SMTP is configured they are also emailed to
-`CONTACT_TO`. A hidden honeypot field and a per-IP rate limit (5/hour by default) keep bots out.
-
-The Highlights page (`/highlights`) pulls from a self-hosted [BookOrbit](https://github.com/bookorbit/bookorbit)
-instance server-side (BookOrbit has no CORS in production and covers need auth). The api logs in with the
-configured credentials, pages through `GET /api/v1/annotations`, caches the full list for 10 minutes, and
-serves random picks from that cache. Covers are cached for a day.
-
-Read your messages:
-
-```bash
-curl -H "Authorization: Bearer $ADMIN_TOKEN" https://binoy.co/api/admin/messages | jq
-```
+The Highlights page pulls from a self-hosted [BookOrbit](https://github.com/bookorbit/bookorbit)
+instance server-side (BookOrbit has no CORS in production and covers need auth). The api logs in
+with the configured credentials, pages through `GET /api/v1/annotations`, caches the full list for
+10 minutes, and answers searches and shuffles from that cache. Covers are cached for a day.
 
 ## Configuration (`.env`)
 
-| Variable                   | Default                | Purpose                                                   |
-| -------------------------- | ---------------------- | --------------------------------------------------------- |
-| `WEB_PORT`                 | `8088`                 | Host port the site is published on                        |
-| `WEB_BIND`                 | `0.0.0.0`              | Interface to bind; `127.0.0.1` to only allow a local proxy |
-| `ADMIN_TOKEN`              | empty (disabled)       | Bearer token for `/api/admin/messages`                    |
-| `SMTP_HOST` / `SMTP_PORT`  | empty (disabled) / 587 | SMTP server for email notifications                       |
-| `SMTP_USER` / `SMTP_PASS`  |                        | SMTP credentials                                          |
-| `CONTACT_TO`               | `dbinoy15@gmail.com`   | Where notifications go                                    |
-| `CONTACT_FROM`             | `SMTP_USER`            | From address                                              |
-| `CONTACT_RATE_MAX`         | `5`                    | Contact submissions allowed per IP per window             |
-| `CONTACT_RATE_WINDOW_MS`   | `3600000`              | Rate-limit window (ms)                                    |
-| `BOOKORBIT_URL`            | `http://host.docker.internal:3000` | BookOrbit base URL as seen from the api container (empty disables highlights) |
-| `BOOKORBIT_MAGIC_TOKEN`    |                        | Reusable BookOrbit magic-link token (preferred)            |
-| `BOOKORBIT_USERNAME` / `BOOKORBIT_PASSWORD` |       | Alternative to the magic token                            |
-
-## Data
-
-The SQLite database lives in the `api-data` Docker volume at `/data/app.db`. Back it up with:
-
-```bash
-docker compose cp api:/data/app.db ./app-backup.db
-```
+| Variable                                     | Default                            | Purpose |
+| -------------------------------------------- | ---------------------------------- | ------- |
+| `WEB_PORT`                                   | `8088`                             | Host port the site is published on |
+| `WEB_BIND`                                   | `0.0.0.0`                          | Interface to bind; `127.0.0.1` to only allow a local proxy |
+| `BOOKORBIT_URL`                              | `http://host.docker.internal:3000` | BookOrbit base URL as seen from the api container (empty disables highlights) |
+| `BOOKORBIT_MAGIC_TOKEN`                      |                                    | Reusable BookOrbit magic-link token (preferred) |
+| `BOOKORBIT_USERNAME` / `BOOKORBIT_PASSWORD`  |                                    | Alternative to the magic token |
 
 ---
 

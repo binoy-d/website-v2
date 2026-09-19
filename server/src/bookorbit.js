@@ -95,6 +95,7 @@ export function createBookorbitClient(
       note,
       location: location || null,
       createdAt: item.highlightedAt || item.createdAt || null,
+      origin: typeof item.origin === "string" && item.origin ? item.origin : null,
       book: {
         id: bookId,
         title: item.bookTitle || null,

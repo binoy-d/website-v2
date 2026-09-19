@@ -1,0 +1,52 @@
+name: deploy
+
+# Push to master => tests + build on GitHub, then the self-hosted runner on the server
+# pulls master and rebuilds the containers. Also runnable by hand from the Actions tab
+# (or `gh workflow run deploy`).
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Test and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            server/package-lock.json
+
+      - name: Backend tests
+        run: npm ci --prefix server --no-audit --no-fund && npm test --prefix server
+
+      - name: Frontend build
+        env:
+          CI: "false" # same as the Docker build: don't turn lint warnings into errors
+        run: npm ci --no-audit --no-fund && npm run build
+
+  deploy:
+    name: Deploy binoy.co
+    needs: verify
+    runs-on: [self-hosted, website]
+    steps:
+      - name: Pull master and rebuild containers
+        run: |
+          set -euo pipefail
+          cd /home/daniel/dev/website-v2
+          git fetch origin master
+          git checkout -q -B master origin/master
+          ./scripts/server-deploy.sh

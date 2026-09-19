@@ -6,7 +6,6 @@ import AboutSection from "../components/About/AboutSection";
 import ExperienceSection from "../components/Experience/ExperienceSection";
 import SkillsSection from "../components/Skills/SkillsSection";
 import ProjectSection from "../components/Projects/ProjectSection";
-import ContactSection from "../components/Contact/ContactSection";
 
 function HomePage() {
   const { hash } = useLocation();
@@ -28,7 +27,6 @@ function HomePage() {
       <ExperienceSection />
       <SkillsSection />
       <ProjectSection />
-      <ContactSection />
     </>
   );
 }
