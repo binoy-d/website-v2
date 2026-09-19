@@ -10,6 +10,28 @@ const TOKEN_TTL_MS = 13 * 60 * 1000; // BookOrbit access tokens last 15 minutes 
 const PAGE_SIZE = 100; // BookOrbit's maximum
 const MAX_PAGES = 50; // safety cap: 5,000 highlights
 
+// Highlights exported from e-readers often arrive with Windows-1252 bytes left undecoded
+// (e.g. \u0092 where a ’ should be), which browsers render as boxes. Map the C1 range back
+// to the characters Windows-1252 meant, drop other control characters and tidy whitespace.
+const CP1252 = {
+  0x80: "€", 0x82: "‚", 0x83: "ƒ", 0x84: "„", 0x85: "…", 0x86: "†", 0x87: "‡", 0x88: "ˆ",
+  0x89: "‰", 0x8a: "Š", 0x8b: "‹", 0x8c: "Œ", 0x8e: "Ž", 0x91: "‘", 0x92: "’", 0x93: "“",
+  0x94: "”", 0x95: "•", 0x96: "–", 0x97: "—", 0x98: "˜", 0x99: "™", 0x9a: "š", 0x9b: "›",
+  0x9c: "œ", 0x9e: "ž", 0x9f: "Ÿ",
+};
+
+export function cleanText(value) {
+  if (typeof value !== "string") return "";
+  return value
+    .replace(/[\u0080-\u009f]/g, (ch) => CP1252[ch.charCodeAt(0)] ?? "")
+    .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f\u200b-\u200d\ufeff]/g, "")
+    .replace(/\r\n?/g, "\n")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .replace(/[ \t]{2,}/g, " ")
+    .trim();
+}
+
 export function createBookorbitClient(
   env = process.env,
   { fetchImpl = globalThis.fetch, logger = console, now = Date.now, requestTimeoutMs = 15_000 } = {}
@@ -83,10 +105,10 @@ export function createBookorbitClient(
   }
 
   function normalize(item) {
-    const text = typeof item.text === "string" ? item.text.trim() : "";
-    const note = typeof item.note === "string" && item.note.trim() ? item.note.trim() : null;
+    const text = cleanText(item.text);
+    const note = cleanText(item.note) || null;
     const location =
-      (typeof item.chapterTitle === "string" && item.chapterTitle.trim()) ||
+      cleanText(item.chapterTitle) ||
       (item.pageno != null && item.pageno !== "" ? `p. ${item.pageno}` : null);
     const bookId = item.bookId != null ? String(item.bookId) : null;
     return {
@@ -98,8 +120,8 @@ export function createBookorbitClient(
       origin: typeof item.origin === "string" && item.origin ? item.origin : null,
       book: {
         id: bookId,
-        title: item.bookTitle || null,
-        author: item.author || null,
+        title: cleanText(item.bookTitle) || null,
+        author: cleanText(item.author) || null,
         coverUrl: bookId ? `/api/highlights/cover/${encodeURIComponent(bookId)}` : null,
       },
     };
