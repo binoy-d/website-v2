@@ -1,0 +1,13 @@
+.git
+node_modules
+build
+coverage
+server
+scripts
+Makefile
+compose.yaml
+.env
+.env.*
+.rsyncignore
+*.md
+.DS_Store

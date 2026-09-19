@@ -3,6 +3,7 @@
   "version": "0.9.0",
   "private": false,
   "homepage": "https://binoy.co",
+  "proxy": "http://localhost:4000",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -21,6 +22,7 @@
     "react-loading-screen": "0.0.17",
     "react-particles-js": "^3.3.0",
     "react-reveal": "^1.2.2",
+    "react-router-dom": "^6.30.6",
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.1",
     "react-spinners": "^0.9.0",
@@ -28,8 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "./scripts/deploy.sh",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -48,8 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^3.1.0"
   }
 }
