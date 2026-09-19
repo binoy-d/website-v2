@@ -4,11 +4,13 @@ import { useSearchParams } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Modal from "react-bootstrap/Modal";
 import Fade from "react-reveal/Fade";
 import SectionHeader from "../components/SectionHeader";
 
 const PAGE_SIZE = 12;
 const PREVIEW_CHARS = 220;
+const TITLE_MAX = 44;
 const SEARCH_DEBOUNCE_MS = 300;
 const ORIGIN_LABELS = { web: "BookOrbit reader", kobo: "Kobo", koreader: "KOReader" };
 
@@ -21,6 +23,29 @@ function shorten(text, max = PREVIEW_CHARS) {
   const lastSpace = cut.lastIndexOf(" ");
   const short = (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:.]+$/, "");
   return { short: `${short}…`, truncated: true };
+}
+
+/**
+ * Card-sized book title: drop subtitles, series/edition tags, then cap the length.
+ * "How to Change Your Mind: What the New Science of…" -> "How to Change Your Mind"
+ * "Death's End (The Three-Body Problem Series Book 3)" -> "Death's End"
+ */
+export function shortTitle(title) {
+  const full = (title || "").trim();
+  if (!full) return "Untitled";
+  let t = full
+    .replace(/\s*\([^()]*\b(?:book|series|edition|vol\.?|volume|novel|trilogy|collection)\b[^()]*\)\s*$/i, "")
+    .replace(/\s*[:–—]\s+.*$/, "")
+    .replace(/,\s*\d+(?:st|nd|rd|th)\s+edition.*$/i, "")
+    .replace(/[\s,]+(?:\S+\s+)?edition\s*$/i, "")
+    .trim();
+  if (!t) t = full;
+  if (t.length > TITLE_MAX) {
+    const cut = t.slice(0, TITLE_MAX);
+    const lastSpace = cut.lastIndexOf(" ");
+    t = `${(lastSpace > TITLE_MAX * 0.5 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:]+$/, "")}…`;
+  }
+  return t;
 }
 
 const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -43,104 +68,132 @@ function formatDate(value, style) {
 }
 
 /** Cover thumbnail that disappears instead of showing a broken image when the book has none. */
-function Cover({ src }) {
+function Cover({ src, className = "highlight-cover" }) {
   const [failed, setFailed] = useState(false);
   if (!src || failed) return null;
-  return <img className="highlight-cover" src={src} alt="" loading="lazy" onError={() => setFailed(true)} />;
+  return <img className={className} src={src} alt="" loading="lazy" onError={() => setFailed(true)} />;
 }
 
-function HighlightCard({ highlight, tokens, expanded, onToggle, onFilterBook }) {
-  const { text, note, book = {}, location, createdAt, origin } = highlight;
+function HighlightCard({ highlight, tokens, onOpen }) {
+  const { text, book = {}, location, createdAt } = highlight;
   const { short, truncated } = shorten(text);
-  const shownText = expanded ? text : short;
   const shortDate = formatDate(createdAt, "short");
-  const longDate = formatDate(createdAt, "long");
-  const source = origin ? ORIGIN_LABELS[origin] || origin : null;
 
   const onKeyDown = (event) => {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
-      onToggle();
+      onOpen();
     }
   };
 
   return (
     <article
-      className={`highlight-card${expanded ? " expanded" : ""}`}
+      className="highlight-card"
       role="button"
       tabIndex={0}
-      aria-expanded={expanded}
-      onClick={onToggle}
+      aria-haspopup="dialog"
+      onClick={onOpen}
       onKeyDown={onKeyDown}
     >
       <blockquote className="highlight-text">
-        <Highlighted text={shownText} tokens={tokens} />
+        <Highlighted text={short} tokens={tokens} />
       </blockquote>
-
-      {expanded && note && (
-        <p className="highlight-note">
-          <Highlighted text={note} tokens={tokens} />
-        </p>
-      )}
-
-      {expanded && (
-        <dl className="highlight-details">
-          {location && (
-            <>
-              <dt>Where</dt>
-              <dd>{location}</dd>
-            </>
-          )}
-          {longDate && (
-            <>
-              <dt>Highlighted</dt>
-              <dd>{longDate}</dd>
-            </>
-          )}
-          {source && (
-            <>
-              <dt>Source</dt>
-              <dd>{source}</dd>
-            </>
-          )}
-        </dl>
-      )}
 
       <footer className="highlight-meta">
         <Cover src={book.coverUrl} />
         <div className="highlight-book">
-          <span className="highlight-title">
-            <Highlighted text={book.title || "Untitled"} tokens={tokens} />
+          <span className="highlight-title" title={book.title || undefined}>
+            <Highlighted text={shortTitle(book.title)} tokens={tokens} />
           </span>
           {book.author && (
             <span className="highlight-author">
               <Highlighted text={book.author} tokens={tokens} />
             </span>
           )}
-          {!expanded && (location || shortDate) && (
+          {(location || shortDate) && (
             <span className="highlight-where">{[location, shortDate].filter(Boolean).join(" · ")}</span>
           )}
         </div>
         <span className="highlight-more" aria-hidden="true">
-          {expanded ? "Show less" : truncated ? "Read more" : "Details"}
+          {truncated ? "Read more" : "Details"}
         </span>
       </footer>
-
-      {expanded && book.id && (
-        <div className="highlight-actions">
-          <button
-            type="button"
-            className="btn highlight-filter-btn"
-            onClick={(event) => {
-              event.stopPropagation();
-              onFilterBook(book.id);
-            }}
-          >
-            More from this book
-          </button>
-        </div>
-      )}
     </article>
+  );
+}
+
+/** Full passage + details, as a dialog over the page. */
+function HighlightModal({ highlight, tokens, onClose, onFilterBook }) {
+  const h = highlight || {};
+  const book = h.book || {};
+  const longDate = formatDate(h.createdAt, "long");
+  const source = h.origin ? ORIGIN_LABELS[h.origin] || h.origin : null;
+
+  return (
+    <Modal
+      show={Boolean(highlight)}
+      onHide={onClose}
+      centered
+      size="lg"
+      dialogClassName="highlight-modal"
+      aria-labelledby="highlight-modal-title"
+    >
+      {highlight && (
+        <>
+          <Modal.Header closeButton>
+            <Modal.Title id="highlight-modal-title" className="highlight-modal-book">
+              <Cover src={book.coverUrl} className="highlight-cover highlight-modal-cover" />
+              <div className="highlight-book">
+                <span className="highlight-title">{book.title || "Untitled"}</span>
+                {book.author && <span className="highlight-author">{book.author}</span>}
+              </div>
+            </Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <blockquote className="highlight-text highlight-modal-text">
+              <Highlighted text={h.text} tokens={tokens} />
+            </blockquote>
+            {h.note && (
+              <p className="highlight-note">
+                <Highlighted text={h.note} tokens={tokens} />
+              </p>
+            )}
+            <dl className="highlight-details">
+              {h.location && (
+                <>
+                  <dt>Where</dt>
+                  <dd>{h.location}</dd>
+                </>
+              )}
+              {longDate && (
+                <>
+                  <dt>Highlighted</dt>
+                  <dd>{longDate}</dd>
+                </>
+              )}
+              {source && (
+                <>
+                  <dt>Source</dt>
+                  <dd>{source}</dd>
+                </>
+              )}
+            </dl>
+          </Modal.Body>
+
+          <Modal.Footer>
+            {book.id && (
+              <button type="button" className="btn highlight-filter-btn" onClick={() => onFilterBook(book.id)}>
+                More from this book
+              </button>
+            )}
+            <button type="button" className="btn highlights-shuffle" onClick={onClose}>
+              Close
+            </button>
+          </Modal.Footer>
+        </>
+      )}
+    </Modal>
   );
 }
 
@@ -167,7 +220,7 @@ function HighlightsPage() {
   const [books, setBooks] = useState([]);
   const [status, setStatus] = useState("loading"); // loading | more | ready | error
   const [error, setError] = useState("");
-  const [expandedId, setExpandedId] = useState(null);
+  const [active, setActive] = useState(null); // highlight shown in the modal
   const requestId = useRef(0);
 
   const tokens = useMemo(() => q.toLowerCase().split(/\s+/).filter(Boolean), [q]);
@@ -236,13 +289,14 @@ function HighlightsPage() {
   );
 
   useEffect(() => {
-    setExpandedId(null);
+    setActive(null);
     fetchPage({ offset: 0, append: false });
   }, [fetchPage]);
 
   const shuffle = () => setSeed(newSeed());
   const clearFilters = () => updateParams({ q: "", book: "" });
   const filterBook = (id) => {
+    setActive(null);
     updateParams({ book: id, q: "" });
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -260,7 +314,7 @@ function HighlightsPage() {
     else
       summary =
         `${total} ${noun}` +
-        (selectedBook ? ` in ${selectedBook.title || "this book"}` : "") +
+        (selectedBook ? ` in ${shortTitle(selectedBook.title)}` : "") +
         (q ? ` matching “${q}”` : "") +
         ".";
   }
@@ -327,25 +381,11 @@ function HighlightsPage() {
               </Col>
             ))}
           {!loading &&
-            items.map((highlight) => {
-              const expanded = expandedId === highlight.id;
-              return (
-                <Col
-                  key={highlight.id}
-                  md={expanded ? 12 : 6}
-                  lg={expanded ? 12 : 4}
-                  className="highlight-col"
-                >
-                  <HighlightCard
-                    highlight={highlight}
-                    tokens={tokens}
-                    expanded={expanded}
-                    onToggle={() => setExpandedId(expanded ? null : highlight.id)}
-                    onFilterBook={filterBook}
-                  />
-                </Col>
-              );
-            })}
+            items.map((highlight) => (
+              <Col key={highlight.id} md={6} lg={4} className="highlight-col">
+                <HighlightCard highlight={highlight} tokens={tokens} onOpen={() => setActive(highlight)} />
+              </Col>
+            ))}
         </Row>
 
         {status === "ready" && items.length === 0 && (
@@ -367,6 +407,8 @@ function HighlightsPage() {
           </div>
         )}
       </Container>
+
+      <HighlightModal highlight={active} tokens={tokens} onClose={() => setActive(null)} onFilterBook={filterBook} />
     </section>
   );
 }
