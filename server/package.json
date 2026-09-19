@@ -2,7 +2,7 @@
   "name": "binoy-co-api",
   "version": "1.0.0",
   "private": true,
-  "description": "Backend API for binoy.co (contact form + health)",
+  "description": "Backend API for binoy.co (health + highlights from BookOrbit)",
   "type": "module",
   "engines": {
     "node": ">=22.13"
@@ -13,7 +13,6 @@
     "test": "node --test --no-warnings=ExperimentalWarning"
   },
   "dependencies": {
-    "express": "^5.1.0",
-    "nodemailer": "^7.0.0"
+    "express": "^5.1.0"
   }
 }

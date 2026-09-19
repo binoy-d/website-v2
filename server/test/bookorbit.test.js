@@ -68,7 +68,7 @@ test("bookorbit client", async (t) => {
     assert.equal(items.length, 149); // blank text dropped
     const first = items[0];
     assert.deepEqual(first, {
-      id: "a1", text: "Text 1", note: "keep this", location: "Chapter 1", createdAt: "2026-01-02T00:00:00Z",
+      id: "a1", text: "Text 1", note: "keep this", location: "Chapter 1", createdAt: "2026-01-02T00:00:00Z", origin: null,
       book: { id: "b1", title: "Book 1", author: "Someone", coverUrl: "/api/highlights/cover/b1" },
     });
     assert.equal(items.find((h) => h.id === "a5").location, "p. 42");
