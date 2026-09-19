@@ -57,3 +57,8 @@
     text-decoration: none;
     transform: scale(1.1);
 }
+button#back{
+    border: 0;
+    appearance: none;
+    -webkit-appearance: none;
+}

@@ -1,0 +1,9 @@
+.git/
+node_modules/
+build/
+coverage/
+server/data/
+.env
+.env.deploy
+.DS_Store
+*.log

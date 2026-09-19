@@ -1,15 +1,13 @@
 import React, {useEffect} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ContactButtons from './components/ContactButtons/ContactButtons'
-import AboutSection from './components/About/AboutSection';
-import LandingSection from './components/Landing/LandingSection'
-import ProjectSection from './components/Projects/ProjectSection'
+import { Routes, Route, Navigate } from 'react-router-dom';
 import ReactBreakpoints from 'react-breakpoints'
-import SkillsSection from './components/Skills/SkillsSection'
-import ExperienceSection from './components/Experience/ExperienceSection'
+import ContactButtons from './components/ContactButtons/ContactButtons'
 import Footer from './components/Footer/Footer'
 import NavBar from './components/Nav/NavBar'
+import HomePage from './pages/HomePage'
+import HighlightsPage from './pages/HighlightsPage'
 import {updateNightMode} from "./components/data"
 function App() {
 
@@ -33,11 +31,11 @@ function App() {
           <ReactBreakpoints breakpoints={breakpoints}>
             <NavBar />
             <ContactButtons />
-            <LandingSection />
-            <AboutSection />
-            <ExperienceSection />
-            <SkillsSection />
-            <ProjectSection />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/highlights" element={<HighlightsPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
             <Footer />
           </ReactBreakpoints>
       </div>
@@ -47,5 +45,3 @@ function App() {
 }
 
 export default App;
-
-

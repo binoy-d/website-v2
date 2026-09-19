@@ -12,6 +12,8 @@ function NavMenu({visible}){
             <div className="nav-small-item"><NavLink text="Experience" destination="experience" /></div>
             <div className="nav-small-item"><NavLink text="Skills" destination="skills" /></div>
             <div className="nav-small-item"><NavLink text="Projects" destination="projects" /></div>
+            <div className="nav-small-item"><NavLink text="Contact" destination="contact" /></div>
+            <div className="nav-small-item"><NavLink text="Highlights" to="/highlights" /></div>
             
             <div className="nav-small-item">
                 <a className = "resume-link" href={process.env.PUBLIC_URL + '/files/resume.pdf'}>Resume</a>
@@ -57,6 +59,8 @@ function NavBar() {
                     <div className="nav-large-item"><NavLink text="Experience" destination="experience" /></div>
                     <div className="nav-large-item"><NavLink text="Skills" destination="skills" /></div>
                     <div className="nav-large-item"><NavLink text="Projects" destination="projects" /></div>
+                    <div className="nav-large-item"><NavLink text="Contact" destination="contact" /></div>
+                    <div className="nav-large-item"><NavLink text="Highlights" to="/highlights" /></div>
                     <div className="nav-large-item">
                         <a href={process.env.PUBLIC_URL + '/files/resume.pdf'} className="btn btn-outline-light resume-btn">Resume</a>
                     </div>

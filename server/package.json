@@ -1,0 +1,19 @@
+{
+  "name": "binoy-co-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend API for binoy.co (contact form + health)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --no-warnings=ExperimentalWarning src/index.js",
+    "dev": "node --watch --no-warnings=ExperimentalWarning src/index.js",
+    "test": "node --test --no-warnings=ExperimentalWarning"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.0"
+  }
+}
