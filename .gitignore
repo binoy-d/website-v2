@@ -28,3 +28,7 @@ yarn-error.log*
 
 # backend
 node_modules/
+
+# kindle import: personal data + credentials
+/scripts/kindle/data/
+.env.import
