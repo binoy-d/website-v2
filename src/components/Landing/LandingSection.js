@@ -1,9 +1,11 @@
 import React, { Suspense } from "react";
 import "./LandingSection.css";
 import { Link } from "react-scroll";
-import { toggleNightMode, getTagline } from "../data.js";
+import { toggleTheme } from "../../theme";
+import { useSection } from "../../content/ContentContext";
 
 const Particles = React.lazy(() => import("react-particles-js"));
+const DEFAULT_TAGLINES = ["software engineer"];
 
 function LandingParticles() {
   const isSmallScreen = typeof window !== "undefined" && window.innerWidth < 768;
@@ -14,28 +16,14 @@ function LandingParticles() {
       <Particles
         params={{
           particles: {
-            number: {
-              value: particleCount,
-            },
-            size: {
-              value: isSmallScreen ? 2 : 3,
-            },
-            color: {
-              value: "#C52233",
-            },
-
-            links: {
-              color: {
-                value: "#C52233",
-              },
-            },
+            number: { value: particleCount },
+            size: { value: isSmallScreen ? 2 : 3 },
+            color: { value: "#C52233" },
+            links: { color: { value: "#C52233" } },
           },
           interactivity: {
             events: {
-              onhover: {
-                enable: !isSmallScreen,
-                mode: "repulse",
-              },
+              onhover: { enable: !isSmallScreen, mode: "repulse" },
             },
           },
         }}
@@ -44,14 +32,16 @@ function LandingParticles() {
   );
 }
 
-class LandingSection extends React.Component {
+/** Animated "Daniel Binoy.co" title; clicking it flips the theme and cycles the tagline. */
+class LandingHero extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { animationPhase: "initial", showMeta: false, showParticles: false };
+    this.state = { animationPhase: "initial", showMeta: false, showParticles: false, taglineIndex: 0 };
     this.groupRef = React.createRef();
     this.danielRef = React.createRef();
     this.binoyRef = React.createRef();
     this.coRef = React.createRef();
+    this.timers = [];
   }
 
   /**
@@ -76,46 +66,38 @@ class LandingSection extends React.Component {
     this.measureTitle();
     window.addEventListener("resize", this.measureTitle);
 
-    this.particleTimer = setTimeout(() => {
-      this.setState({ showParticles: true });
-    }, 350);
-
-    this.coOutTimer = setTimeout(() => {
-      this.setState({ animationPhase: "co-out" });
-    }, 1200);
-
-    this.nameRevealTimer = setTimeout(() => {
-      this.setState({ animationPhase: "reveal" });
-    }, 1640);
-
-    this.metaRevealTimer = setTimeout(() => {
-      this.setState({ showMeta: true });
-    }, 2160);
+    const schedule = (ms, patch) => this.timers.push(setTimeout(() => this.setState(patch), ms));
+    schedule(350, { showParticles: true });
+    schedule(1200, { animationPhase: "co-out" });
+    schedule(1640, { animationPhase: "reveal" });
+    schedule(2160, { showMeta: true });
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.measureTitle);
-    if (this.particleTimer) clearTimeout(this.particleTimer);
-    if (this.coOutTimer) clearTimeout(this.coOutTimer);
-    if (this.nameRevealTimer) clearTimeout(this.nameRevealTimer);
-    if (this.metaRevealTimer) clearTimeout(this.metaRevealTimer);
+    this.timers.forEach(clearTimeout);
   }
 
-  dark = () => {
-    toggleNightMode();
-    this.forceUpdate();
+  onTitleClick = () => {
+    toggleTheme();
+    this.setState((prev) => ({ taglineIndex: prev.taglineIndex + 1 }));
   };
+
   render() {
+    const { taglines } = this.props;
+    const { animationPhase, showMeta, showParticles, taglineIndex } = this.state;
+    const tagline = taglines[taglineIndex % taglines.length];
+
     return (
       <section id="home">
-        {this.state.showParticles ? <LandingParticles /> : null}
+        {showParticles ? <LandingParticles /> : null}
 
         <div className="landing-stuff text-center disable-dbl-tap-zoom">
           <div className="landing-title-group" ref={this.groupRef}>
             <h1
-              className={`noselect name-header-animated ${this.state.animationPhase}`}
+              className={`noselect name-header-animated ${animationPhase}`}
               id="name-header"
-              onClick={this.dark}
+              onClick={this.onTitleClick}
               title="Click me ;)"
             >
               <span className="name-daniel" ref={this.danielRef}>Daniel</span>
@@ -123,22 +105,16 @@ class LandingSection extends React.Component {
               <span className="name-co" ref={this.coRef}>.co</span>
             </h1>
 
-            {this.state.showMeta ? (
+            {showMeta ? (
               <h2 className="noselect landing-meta landing-meta-visible" id="landing-tagline">
-                {getTagline()}
+                {tagline}
               </h2>
             ) : null}
           </div>
 
-          {this.state.showMeta ? (
+          {showMeta ? (
             <div className="down-arrow landing-meta landing-meta-visible">
-              <Link
-                className="nav-link"
-                to="about"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
+              <Link className="nav-link" to="about" spy={true} smooth={true} duration={500}>
                 <i className="arrow arrow-down bounce"></i>
               </Link>
             </div>
@@ -147,6 +123,12 @@ class LandingSection extends React.Component {
       </section>
     );
   }
+}
+
+function LandingSection() {
+  const { data: profile } = useSection("profile");
+  const taglines = profile && profile.taglines && profile.taglines.length ? profile.taglines : DEFAULT_TAGLINES;
+  return <LandingHero taglines={taglines} />;
 }
 
 export default LandingSection;

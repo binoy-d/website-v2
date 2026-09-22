@@ -1,64 +1,37 @@
-#footer{
+#footer {
     background-color: var(--main-text-color);
-    height:20vh;
+    height: 20vh;
 }
 
-#footer-text{
-    margin-top:5%;
-    color:var(--main-bg-color);
+#footer-text {
+    margin-top: 5%;
+    color: var(--main-bg-color);
     text-align: center;
 }
 
-
-@media(max-width:570px){
-
-    #back{
-        width:50%;
-        margin-left:25%;
-        padding:0.5em;
-        
-        border-radius: 0.3em;
-        background-color: var(--main-bg-color);
-        color:var(--main-text-color)!important;
-        text-align:center!important;
-        cursor:pointer;
-        transition: transform 0.2s;
-    }
-}
-  
-@media(min-width:571px){
-
-    #back{
-        width:30%;
-    margin-left:35%;
-    margin-right:35%;
-    padding:0.5em;
-        
-        border-radius: 0.3em;
-        background-color: var(--main-bg-color);
-        color:var(--main-text-color)!important;
-        text-align:center!important;
-        cursor:pointer;
-        transition: transform 0.2s;
-    }
-}
-#back{
-    
-    
-    border-radius: 0.3em;
-    background-color: var(--main-bg-color);
-    color:var(--main-text-color)!important;
-    text-align:center!important;
-    cursor:pointer;
-    transition: transform 0.2s;
-}
-
-#back:hover{
-    text-decoration: none;
-    transform: scale(1.1);
-}
-button#back{
+#back {
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+    padding: 0.5em;
     border: 0;
     appearance: none;
     -webkit-appearance: none;
+    border-radius: 0.3em;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color) !important;
+    text-align: center !important;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#back:hover {
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+@media (max-width: 570px) {
+    #back {
+        width: 50%;
+    }
 }

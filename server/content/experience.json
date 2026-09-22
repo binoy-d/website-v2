@@ -1,0 +1,145 @@
+{
+  "careerHighlights": [
+    { "metric": "Skydio", "label": "Building fleet-scale program operations in Skydio Cloud" },
+    { "metric": "84%", "label": "Backend speedup in time-series processing" },
+    { "metric": "BEACON", "label": "Delivered major frontend and UX improvements in production" },
+    { "metric": "94%", "label": "Raised legacy service test coverage from 0% to 94%" },
+    { "metric": "AI", "label": "Designed and rolled out practical AI workflows for engineering teams" },
+    { "metric": "Agents", "label": "Strong operator of AI agents for technical and support workflows" },
+    { "metric": "Enablement", "label": "Frequently staffed to help teams improve delivery with AI" },
+    { "metric": "Demos", "label": "Ran internal presentations and live demos to drive AI adoption" },
+    { "metric": "Support", "label": "Built multiple internal tools that reduced support time and cost" },
+    { "metric": "Monitoring", "label": "Deployed data-integrity monitoring across critical pipelines" },
+    { "metric": "Scale", "label": "Stabilized legacy services and removed recurring failure points" },
+    { "metric": "Ownership", "label": "Drove roadmap-critical fixes with product and customer stakeholders" }
+  ],
+  "items": [
+    {
+      "period": "Jul 2026 - Present",
+      "company": "Skydio",
+      "role": "Software Engineer",
+      "impact": "Building the program operations and administration experience in Skydio Cloud that customers use to run their drone programs at scale.",
+      "details": [
+        "Member of the Drone Program Management team, which owns the program operations and administration experience in Skydio Cloud",
+        "Ensuring Skydio Cloud supports large fleets, complex organizations, and performant data review at scale",
+        "Keeping the overall product experience coherent across Commands as the platform grows"
+      ]
+    },
+    {
+      "period": "Jan 2025 - Jul 2026",
+      "company": "Badger Meter",
+      "role": "Software Engineer II",
+      "impact": "Drove platform reliability improvements while leveraging AI tools and agents to reduce support cost/time and improve engineering productivity.",
+      "details": [
+        "Led deep-dive investigations into structural platform issues and shipped long-term fixes",
+        "Resolved data-integrity and scalability bottlenecks during a major architecture transition",
+        "Built and deployed multiple internal tech-support tools independently to speed issue triage and resolution",
+        "Deployed monitoring tools that continuously reported on data-integrity health across pipelines",
+        "Increased legacy service test coverage from 0% to 94% to improve release confidence and regression detection",
+        "Designed and rolled out AI-assisted engineering workflows used by multiple teams",
+        "Regularly gave presentations and live demos to engineers/managers on AI workflow adoption",
+        "Partnered across teams as an AI evangelist to improve day-to-day developer efficiency",
+        "Partnered directly with product owners and customers to prioritize high-impact technical work",
+        "Mentored junior engineers while driving triage and incident response quality"
+      ]
+    },
+    {
+      "period": "Feb 2022 - Jan 2025",
+      "company": "Badger Meter",
+      "role": "Software Engineer I",
+      "impact": "Led end-to-end BEACON modernization and built automation that improved delivery speed, reliability, and supportability.",
+      "details": [
+        "Built and launched major BEACON user experience improvements with React + Redux Toolkit",
+        "Improved Python backend time-series processing performance by 84%",
+        "Designed an automated service to detect and resolve data-integrity failures across pipelines",
+        "Created internal support tooling that reduced technical support time and operational cost",
+        "Built reusable workflow automation patterns that reduced repetitive engineering and support effort",
+        "Untangled critical legacy DE1 backend defects across Python, Flask, MySQL, and Elasticsearch"
+      ]
+    },
+    {
+      "period": "Jan 2021 - Sep 2021",
+      "company": "Badger Meter",
+      "role": "Software Engineer Intern",
+      "impact": "Shipped production code early, strengthened test coverage, and resolved customer-impacting defects in a live system.",
+      "details": [
+        "Delivered production code from user stories across Python and React systems",
+        "Wrote unit, integration, and system tests to improve release confidence",
+        "Debugged and shipped fixes in a mature codebase with real customer impact"
+      ]
+    },
+    {
+      "period": "Nov 2020 - Present",
+      "company": "UCI ICS Student Council",
+      "role": "Projects Committee Member",
+      "impact": "Built high-utility student tools and led a full React rebuild to modernize key campus project infrastructure.",
+      "details": [
+        "Built online tools tailored to real student workflows",
+        "Rebuilt and redesigned the Zotistics website from the ground up in React"
+      ]
+    },
+    {
+      "period": "Sep 2020 - Dec 2020",
+      "company": "Curicular",
+      "role": "Web Developer / UI Design Intern",
+      "impact": "Delivered a UX + performance overhaul that improved clarity, usability, and page load speed by 4x.",
+      "details": [
+        "Owned interface improvements end-to-end, from UX proposals to implementation",
+        "Designed clearer navigation patterns and interaction flows",
+        "Streamlined website structure and page layouts, resulting in 4x faster load times"
+      ]
+    },
+    {
+      "period": "Apr 2020 - Jan 2022",
+      "company": "KTBYTE",
+      "role": "Computer Science Instructor",
+      "impact": "Scaled CS instruction quality for 60+ students with stronger curriculum design and auto-graded learning systems.",
+      "details": [
+        "Taught Processing and Java to 60+ pre-college students across multiple levels",
+        "Improved problem-set quality with operations staff to maximize learning retention",
+        "Built auto-graded curriculum and assignments to scale instruction quality"
+      ]
+    },
+    {
+      "period": "Mar 2020 - Sep 2020",
+      "company": "UCI Social Sciences Computing Services",
+      "role": "IT Help Desk Assistant",
+      "impact": "Maintained operational continuity for campus users through fast, reliable frontline technical support.",
+      "details": [
+        "Provided computing and network support to the school of Social Sciences",
+        "Resolved hardware and software issues on Macs and PCs"
+      ]
+    },
+    {
+      "period": "Sep 2018 - Sep 2019",
+      "company": "Children's Discovery Museum",
+      "role": "Exhibit Specialist",
+      "impact": "Created engaging, hands-on learning experiences while operating high-traffic public exhibits reliably.",
+      "details": [
+        "Assisted in the opening/closing procedures of the Museum",
+        "Actively interacted with children and adults to enhance visitor experience",
+        "Promoted creativity, curiosity, and lifelong learning in the next generation"
+      ]
+    },
+    {
+      "period": "Feb 2018 - Sep 2018",
+      "company": "Children's Discovery Museum",
+      "role": "Team Teal Volunteer",
+      "impact": "Built strong communication and leadership skills in fast-paced, public-facing environments.",
+      "details": [
+        "Volunteered as a member of Team Teal to help enhance visitor experience",
+        "Developed skills such as interacting with children, group management, creative problem solving, and verbal communication."
+      ]
+    },
+    {
+      "period": "Aug 2017 - May 2019",
+      "company": "MESA Club, STHS",
+      "role": "Vice President",
+      "impact": "Expanded membership by 40% and led the club’s strongest competitive year, with 90% of members winning awards.",
+      "details": [
+        "Grew MESA(Mathematics Engineering Science Achievement) by over 40% from 50+ to 80+ members",
+        "Lead club to best year to date, winning over 72% of all prizes, with 90% of members winning"
+      ]
+    }
+  ]
+}

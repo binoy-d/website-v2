@@ -1,6 +1,6 @@
 name: deploy
 
-# Push to master => tests + build on GitHub, then the self-hosted runner on the server
+# Push to master => backend + frontend tests and a build on GitHub, then the self-hosted runner on the server
 # pulls master and rebuilds the containers. Also runnable by hand from the Actions tab
 # (or `gh workflow run deploy`).
 on:
@@ -33,10 +33,13 @@ jobs:
       - name: Backend tests
         run: npm ci --prefix server --no-audit --no-fund && npm test --prefix server
 
+      - name: Frontend tests
+        run: npm ci --no-audit --no-fund && npm test -- --watchAll=false
+
       - name: Frontend build
         env:
           CI: "false" # same as the Docker build: don't turn lint warnings into errors
-        run: npm ci --no-audit --no-fund && npm run build
+        run: npm run build
 
   deploy:
     name: Deploy binoy.co

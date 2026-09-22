@@ -1,0 +1,214 @@
+{
+  "items": [
+    {
+      "id": "highlights",
+      "title": "Reading Highlights",
+      "description": [
+        "Searchable, shuffleable feed of passages I've highlighted while reading, live on this site",
+        "Express API pulls from a self-hosted BookOrbit library, caches it, and serves seeded shuffles so paging stays stable",
+        "Old Kindle highlights migrated in with a notebook scraper and an importer that builds stub EPUBs"
+      ],
+      "languages": ["React", "Express", "Node.js", "Docker", "BookOrbit"],
+      "link": "/highlights",
+      "codeLink": "https://github.com/binoy-d/website-v2",
+      "image": "highlights.png",
+      "featured": false,
+      "longDescription": "Every passage I highlight while reading ends up in a self-hosted BookOrbit library; this feature pulls them onto binoy.co. The Express API logs in to BookOrbit server-side, pages through the annotations, caches the list, and answers word searches, per-book filters and seeded random shuffles from that cache, so 'Show more' never repeats a card. Book covers are proxied and cached too. Years of pre-BookOrbit Kindle highlights were brought along with a browser-console scraper for the Kindle notebook and a Node importer that wraps each book's highlights in a tiny EPUB and creates one annotation per passage."
+    },
+    {
+      "id": "this-website",
+      "title": "This Website!",
+      "description": [
+        "React portfolio with a small Express API behind it, packaged as two Docker containers",
+        "Site content (projects, experience, skills) and images are served from the API, not baked into the build",
+        "Pushing to master runs tests and a build, then a self-hosted runner redeploys the containers"
+      ],
+      "languages": ["ReactJS", "Express", "Docker", "nginx", "GitHub Actions"],
+      "link": "https://binoy.co",
+      "codeLink": "https://github.com/binoy-d/website-v2",
+      "image": "website.png",
+      "featured": false,
+      "longDescription": "Portfolio application built with React 18 and react-router, served by nginx alongside an Express API in Docker Compose on my homelab. The API owns the site content and images as well as the reading highlights integration, so updating the site is a JSON edit rather than a rebuild of the frontend bundle. Deploys are automatic: a GitHub Actions workflow runs the backend tests and the production build, then a self-hosted runner on the server pulls master, rebuilds the images and waits for the health check. Features dark mode, particle effects, and a responsive layout down to small phones."
+    },
+    {
+      "id": "lockstep",
+      "title": "Lockstep",
+      "description": [
+        "Browser-first puzzle game where all players move together each turn",
+        "Built an in-game level editor for designing and publishing custom maps",
+        "Implemented pathfinding-based level verification with leaderboard-backed challenge progression"
+      ],
+      "languages": ["TypeScript", "Phaser 3", "Vite", "Node.js", "SQLite", "Docker"],
+      "link": "https://lockstep.binoy.co",
+      "codeLink": "https://github.com/binoy-d/lockstep",
+      "image": "lockstep.png",
+      "featured": false,
+      "longDescription": "Multiplayer browser puzzle game centered on coordinated movement, with a full custom level creation pipeline and integrated level editor for rapid map iteration. Includes pathfinding-based puzzle level verification and backend-backed leaderboards to support replayable challenge progression and community-created content."
+    },
+    {
+      "id": "bubbles-together",
+      "title": "Bubbles, Together",
+      "description": [
+        "Real-time collaborative drawing application with WebSocket architecture",
+        "Multi-user particle system with synchronized state management",
+        "Self-hosted with Node.js backend and p5.js frontend"
+      ],
+      "languages": ["p5.js", "Node", "JavaScript", "SocketIO", "Docker"],
+      "link": "https://bubbles.binoy.co",
+      "codeLink": "https://github.com/binoy-d/draw-together",
+      "image": "bubbles-together.png",
+      "featured": false,
+      "longDescription": "Real-time collaborative application enabling simultaneous multi-user interaction through WebSocket technology. Built with Node.js backend and p5.js frontend, implementing efficient particle systems and real-time state synchronization. Optimized network architecture transmits only coordinate data while maintaining responsive user experience across concurrent sessions."
+    },
+    {
+      "id": "spiral-orbit",
+      "title": "Generative Spiral Art",
+      "description": [
+        "3D generative art application using WebGL and Bézier curve mathematics",
+        "Interactive visualization with real-time user controls and parameter adjustment",
+        "Built with p5.js and WebGL for optimized 3D rendering performance"
+      ],
+      "languages": ["p5.js", "WEBGL", "JavaScript", "HTML", "CSS"],
+      "link": "https://binoy-d.github.io/spiral-orbit/",
+      "codeLink": "https://github.com/binoy-d/spiral-orbit",
+      "image": "spiral-orbit.png",
+      "featured": false,
+      "longDescription": "Interactive 3D generative art application utilizing WebGL and advanced mathematical algorithms for real-time visualization. Implements Bézier curves, Perlin noise, and dynamic parameter manipulation through keyboard and mouse controls. Features optimized rendering performance and complex visual effects including jellyfish, mushroom, and iris-like patterns."
+    },
+    {
+      "id": "ping",
+      "title": "Ping",
+      "description": [
+        "Full-stack real-time analytics application with interactive data visualization",
+        "Self-hosted solution using React frontend and Express.js backend",
+        "Implements SQLite for lightweight data persistence and graph rendering"
+      ],
+      "languages": ["React", "Express", "SQLite", "JavaScript", "CSS"],
+      "link": "https://ping.binoy.co",
+      "codeLink": "https://ping.binoy.co",
+      "image": "ping.png",
+      "featured": false,
+      "longDescription": "Full-stack web application demonstrating real-time data collection and visualization capabilities. Built with React frontend and Express.js backend, utilizing SQLite for efficient data storage. Features responsive design, smooth graph animations, and real-time updates. Self-hosted deployment showcases DevOps skills and infrastructure management."
+    },
+    {
+      "id": "debug-duck",
+      "title": "Debug Duck",
+      "description": [
+        "Unity3D game developed in 48-hour Global Game Jam with cross-functional team",
+        "Implemented dynamic game mechanics and meta-narrative progression system",
+        "Created custom assets and programmed interactive story elements in C#"
+      ],
+      "languages": ["C#", "Unity3D", "Piskelapp"],
+      "link": "https://globalgamejam.org/2020/games/debug-duck-2",
+      "codeLink": "https://github.com/binoy-d/debug-duck",
+      "image": "debug-duck.png",
+      "featured": false,
+      "longDescription": "Unity3D game developed during Global Game Jam 2020, featuring self-modifying mechanics and interactive narrative design. Implemented C# programming for dynamic gameplay systems that evolve based on player progress. Collaborated with multidisciplinary team to deliver complete game experience within 48-hour constraint, including custom asset creation and narrative design."
+    },
+    {
+      "id": "tankmania",
+      "title": "Tankmania",
+      "description": [
+        "Unity3D simulation with multi-agent AI system and configurable parameters",
+        "Implemented three-tier AI behavior: patrol, chase, and combat algorithms",
+        "Features scalable team-based warfare with dynamic entity management"
+      ],
+      "languages": ["C#", "Unity3D"],
+      "link": "https://binoy-d.github.io/tankmania/",
+      "codeLink": "https://github.com/binoy-d/tankmania",
+      "image": "tankmania.png",
+      "featured": false,
+      "longDescription": "Unity3D simulation featuring advanced multi-agent AI systems with configurable team dynamics and scalable entity management. Implemented sophisticated behavior trees for patrol, pursuit, and combat states with efficient pathfinding algorithms. Demonstrates game engine proficiency and complex system architecture design."
+    },
+    {
+      "id": "fractal-tree",
+      "title": "Fractal Tree",
+      "description": [
+        "Interactive fractal generation using recursive algorithms and parametric controls",
+        "Real-time manipulation of branch angles, lengths, and iteration depth",
+        "Mathematical visualization built with p5.js and optimized rendering"
+      ],
+      "languages": ["p5.js", "JavaScript", "HTML", "CSS"],
+      "link": "https://binoy-d.github.io/fractal-tree",
+      "codeLink": "https://github.com/binoy-d/fractal-tree",
+      "image": "fractaltree.png",
+      "featured": false,
+      "longDescription": "Mathematical visualization application demonstrating recursive algorithms through interactive fractal tree generation. Features real-time parameter manipulation, optimized rendering performance, and educational interface for exploring mathematical concepts. Built with p5.js for efficient canvas-based graphics rendering."
+    },
+    {
+      "id": "game-of-life",
+      "title": "Game of Life",
+      "description": [
+        "C# implementation of Conway's Game of Life with interactive controls",
+        "Features real-time simulation with play/pause, cell editing, and randomization",
+        "Built with .NET framework demonstrating algorithm optimization and UI design"
+      ],
+      "languages": ["C#", ".NET"],
+      "link": "https://github.com/binoy-d/Game-Of-Life",
+      "codeLink": "https://github.com/binoy-d/Game-Of-Life",
+      "image": "game-of-life.png",
+      "featured": false,
+      "longDescription": "Interactive implementation of Conway's Game of Life cellular automaton using C# and .NET. Features optimized algorithm for large grid calculations, real-time visualization, and comprehensive user controls including pattern editing and random generation. Demonstrates proficiency in mathematical algorithms and desktop application development."
+    },
+    {
+      "id": "color-game",
+      "title": "Color Game",
+      "description": [
+        "Interactive RGB color recognition game with responsive design",
+        "Features dynamic difficulty progression and smooth CSS transitions",
+        "Built with vanilla JavaScript and Bootstrap for cross-platform compatibility"
+      ],
+      "languages": ["Bootstrap", "CSS", "JavaScript"],
+      "link": "https://binoy-d.github.io/color-game/",
+      "codeLink": "https://github.com/binoy-d/color-game",
+      "image": "color-game.png",
+      "featured": false,
+      "longDescription": "Educational web application combining color theory with interactive gameplay. Implements dynamic RGB value generation, progressive difficulty scaling, and responsive design principles. Features smooth animations and cross-browser compatibility through vanilla JavaScript and modern CSS techniques."
+    },
+    {
+      "id": "bubblify",
+      "title": "Bubblify",
+      "description": [
+        "Image processing application with custom particle rendering algorithms",
+        "Converts digital images into procedural bubble visualizations",
+        "Features download functionality and real-time canvas manipulation with p5.js"
+      ],
+      "languages": ["p5.js", "HTML", "CSS", "JavaScript"],
+      "link": "https://binoy-d.github.io/bubblify",
+      "codeLink": "https://github.com/binoy-d/bubblify",
+      "image": "bubblify.png",
+      "featured": false,
+      "longDescription": "Image processing application utilizing advanced computer graphics algorithms to transform digital images into artistic bubble representations. Implements pixel sampling, color analysis, and procedural generation techniques. Features canvas export functionality and optimized rendering performance for large-scale image processing."
+    },
+    {
+      "id": "to-do-list",
+      "title": "To Do List",
+      "description": [
+        "Task management application with persistent local storage",
+        "Features CRUD operations, list organization, and completion tracking",
+        "Built with jQuery and Bootstrap for responsive user experience"
+      ],
+      "languages": ["jQuery", "JavaScript", "Bootstrap", "CSS"],
+      "link": "https://binoy-d.github.io/to-do-app/",
+      "codeLink": "https://github.com/binoy-d/to-do-app",
+      "image": "todo-list.png",
+      "featured": false,
+      "longDescription": "Task management web application featuring persistent data storage and intuitive user interface design. Implements local storage APIs, dynamic DOM manipulation, and responsive layouts. Demonstrates proficiency in jQuery, Bootstrap framework, and modern web development practices for productivity applications."
+    },
+    {
+      "id": "pong",
+      "title": "Pong",
+      "description": [
+        "Classic Pong implementation with physics simulation and collision detection",
+        "Features smooth animation, responsive controls, and game state management",
+        "Built with Processing for optimized 2D graphics rendering"
+      ],
+      "languages": ["Processing"],
+      "link": "https://github.com/binoy-d/pong",
+      "codeLink": "https://github.com/binoy-d/pong",
+      "image": "pong.png",
+      "featured": false,
+      "longDescription": "Recreation of the classic Pong arcade game implementing fundamental game development concepts including physics simulation, collision detection, and real-time input handling. Demonstrates understanding of game loops, vector mathematics, and efficient rendering techniques using the Processing framework."
+    }
+  ]
+}

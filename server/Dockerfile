@@ -7,6 +7,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev --no-audit --no-fund && npm cache clean --force
 
 COPY src ./src
+COPY content ./content
 
 USER node
 ENV HOST=0.0.0.0 PORT=4000
