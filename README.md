@@ -6,8 +6,11 @@ started with a single `docker compose up`. Pushing to `master` deploys it.
 ```
 .
 ├── src/, public/            React app (Create React App + react-router)
+│   ├── src/content/          fetches /api/content once and shares it with the home page sections
+│   ├── src/api/              fetchJson + useApi hook used by every API call
 │   └── src/pages/Highlights  /highlights page: search, filter by book, expandable cards
-├── server/                  Express API (Node 24): health + highlights from BookOrbit
+├── server/                  Express API (Node 24): health, site content, highlights from BookOrbit
+│   └── content/             THE SITE'S CONTENT: profile/projects/experience/skills .json + images/
 ├── nginx/default.conf       Serves the built site and proxies /api/* to the api container
 ├── Dockerfile               web image: builds the React app, serves it with nginx
 ├── server/Dockerfile        api image
@@ -19,9 +22,27 @@ started with a single `docker compose up`. Pushing to `master` deploys it.
 └── Makefile                 shortcuts (`make deploy`, `make up`, `make logs`, ...)
 ```
 
+## Editing the site
+
+Everything the home page shows lives in `server/content/` and is served by the API, the same way
+the highlights come from BookOrbit; the React app just renders whatever it gets back:
+
+| File                           | Drives |
+| ------------------------------ | ------ |
+| `profile.json`                 | About section (photo, greeting, bio, the terminal card's `info` fields) and the landing taglines |
+| `projects.json`                | Projects grid (`items[]`: title, bullets, tags, links, screenshot, long description) |
+| `experience.json`              | Experience timeline (`items[]`) and the scrolling `careerHighlights` strip |
+| `skills.json`                  | Skills groups |
+| `images/`                      | Screenshots and the profile photo; reference them by file name in an `"image"` field |
+
+Image URLs are rewritten to `/api/content/images/<file>?v=<content hash>` so they cache for a
+month and still refresh when the file changes. The JSON is validated when the api starts (a typo
+fails the deploy's health check) and by `npm test --prefix server`. In development the files are
+re-read on every request, so edits show up on reload; in production they are loaded once.
+
 ## Deploying
 
-**Push to `master`.** The `deploy` workflow runs the backend tests and the frontend build on
+**Push to `master`.** The `deploy` workflow runs the backend and frontend tests and the frontend build on
 GitHub, then a self-hosted runner on the server (label `website`) pulls `master` into
 `/home/daniel/dev/website-v2` and runs `scripts/server-deploy.sh`, which rebuilds the images,
 restarts the containers and waits for `/api/health`. Progress is in the repo's Actions tab.
@@ -71,13 +92,16 @@ npm --prefix server install && make dev-api   # API on http://localhost:4000, au
 npm install && make dev-web                    # CRA on http://localhost:3000, proxies /api to :4000
 ```
 
-Backend tests: `make test-api`.
+Tests: `make test-api` (backend) and `npm test` (frontend, jsdom). Both also run in the deploy workflow.
 
 ## API
 
 | Method | Path                            | Notes |
 | ------ | ------------------------------- | ----- |
-| GET    | `/api/health`                   | `{ status, version, uptime, highlights, timestamp }` |
+| GET    | `/api/health`                   | `{ status, version, uptime, highlights, content, timestamp }` |
+| GET    | `/api/content`                  | `{ profile, projects, experience, skills }`, everything the home page renders (cached 5 min) |
+| GET    | `/api/content/:section`         | One of the four sections above; `404` for anything else |
+| GET    | `/api/content/images/:file`     | Screenshots / profile photo from `server/content/images`, `immutable` for 30 days (URLs carry `?v=<hash>`) |
 | GET    | `/api/highlights`               | `?q=<words>&book=<bookId>&limit=12&offset=0&seed=<any>`. Search + filter over the cached BookOrbit highlights in a seeded random order that round-robins across books, so the first results come from different books and paging with the same seed is stable. Returns `{ total, offset, limit, seed, items[] }`; each item is `{ id, text, note, location, createdAt, origin, book: { id, title, author, coverUrl } }`. `503` until BookOrbit is configured |
 | GET    | `/api/highlights/books`         | Books that have highlights: `{ books: [{ id, title, author, count, coverUrl }] }` |
 | GET    | `/api/highlights/random`        | `?count=6` (max 24). Shortcut for a fresh random set: `{ highlights[] }` |

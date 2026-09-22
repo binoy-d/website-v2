@@ -1,7 +1,7 @@
 import React from 'react';
 import './ContactButtons.css';
 import Fade from 'react-reveal/Fade'
-import { toggleNightMode } from '../data.js'
+import { toggleTheme } from '../../theme'
 
 
 
@@ -53,7 +53,7 @@ function ContactButtons() {
                 
             </div>
             <div className="night-button-wrapper">
-                <button type="button" className="night-mode-toggle" onClick={toggleNightMode} aria-label="Toggle night mode">
+                <button type="button" className="night-mode-toggle" onClick={toggleTheme} aria-label="Toggle night mode">
                     <svg xmlns="http://www.w3.org/2000/svg" className="night-button" width="24" height="24" viewBox="0 0 26 26"><path xmlns="http://www.w3.org/2000/svg" d="M19.282 17.038c-4.15-.513-7.691-3.379-9.245-7.261a11.042 11.042 0 0 1-.748-5.355.5.5 0 0 0-.772-.468C5.09 6.156 2.905 10.121 3.261 14.573c.442 5.524 4.959 10.056 10.482 10.513 5.646.468 10.522-3.148 12.01-8.213.118-.402-.274-.774-.661-.614a11.43 11.43 0 0 1-5.81.779z" /></svg>
                 </button>
             </div>

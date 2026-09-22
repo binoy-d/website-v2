@@ -5,49 +5,17 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
-import Fade from "react-reveal/Fade";
 import SectionHeader from "../components/SectionHeader";
+import { SkeletonBlock, SkeletonLines } from "../components/Skeleton";
+import { fetchJson } from "../api/client";
+import useApi from "../api/useApi";
+import { formatDate, shorten, shortTitle } from "../utils/text";
 
 const PAGE_SIZE = 12;
-const PREVIEW_CHARS = 220;
-const TITLE_MAX = 44;
 const SEARCH_DEBOUNCE_MS = 300;
 const ORIGIN_LABELS = { web: "BookOrbit reader", kobo: "Kobo", koreader: "KOReader" };
 
 const newSeed = () => Math.random().toString(36).slice(2, 10);
-
-/** Cut long passages at a word boundary for the collapsed card. */
-function shorten(text, max = PREVIEW_CHARS) {
-  if (!text || text.length <= max) return { short: text || "", truncated: false };
-  const cut = text.slice(0, max);
-  const lastSpace = cut.lastIndexOf(" ");
-  const short = (lastSpace > max * 0.6 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:.]+$/, "");
-  return { short: `${short}…`, truncated: true };
-}
-
-/**
- * Card-sized book title: drop subtitles, series/edition tags, then cap the length.
- * "How to Change Your Mind: What the New Science of…" -> "How to Change Your Mind"
- * "Death's End (The Three-Body Problem Series Book 3)" -> "Death's End"
- */
-export function shortTitle(title) {
-  const full = (title || "").trim();
-  if (!full) return "Untitled";
-  let t = full
-    .replace(/\s*\([^()]*\b(?:book|series|edition|vol\.?|volume|novel|trilogy|collection)\b[^()]*\)\s*$/i, "")
-    .replace(/\s*[:–—]\s+.*$/, "")
-    .replace(/,\s*\d+(?:st|nd|rd|th)\s+edition.*$/i, "")
-    .replace(/[\s,]+(?:\S+\s+)?edition\s*$/i, "")
-    .trim();
-  if (!t) t = full;
-  if (t.length > TITLE_MAX) {
-    const cut = t.slice(0, TITLE_MAX);
-    const lastSpace = cut.lastIndexOf(" ");
-    t = `${(lastSpace > TITLE_MAX * 0.5 ? cut.slice(0, lastSpace) : cut).replace(/[\s,;:]+$/, "")}…`;
-  }
-  return t;
-}
-
 const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 /** Wraps search terms in <mark>. */
@@ -56,15 +24,6 @@ function Highlighted({ text, tokens }) {
   const re = new RegExp(`(${tokens.map(escapeRegExp).join("|")})`, "ig");
   // With a capturing group, split() puts the matches at the odd indexes.
   return text.split(re).map((part, i) => (i % 2 === 1 ? <mark key={i}>{part}</mark> : part));
-}
-
-function formatDate(value, style) {
-  if (!value) return null;
-  const d = new Date(value);
-  if (Number.isNaN(d.getTime())) return null;
-  return style === "long"
-    ? d.toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })
-    : d.toLocaleDateString(undefined, { year: "numeric", month: "short" });
 }
 
 /** Cover thumbnail that disappears instead of showing a broken image when the book has none. */
@@ -128,6 +87,11 @@ function HighlightModal({ highlight, tokens, onClose, onFilterBook }) {
   const book = h.book || {};
   const longDate = formatDate(h.createdAt, "long");
   const source = h.origin ? ORIGIN_LABELS[h.origin] || h.origin : null;
+  const details = [
+    ["Where", h.location],
+    ["Highlighted", longDate],
+    ["Source", source],
+  ].filter(([, value]) => value);
 
   return (
     <Modal
@@ -159,35 +123,25 @@ function HighlightModal({ highlight, tokens, onClose, onFilterBook }) {
                 <Highlighted text={h.note} tokens={tokens} />
               </p>
             )}
-            <dl className="highlight-details">
-              {h.location && (
-                <>
-                  <dt>Where</dt>
-                  <dd>{h.location}</dd>
-                </>
-              )}
-              {longDate && (
-                <>
-                  <dt>Highlighted</dt>
-                  <dd>{longDate}</dd>
-                </>
-              )}
-              {source && (
-                <>
-                  <dt>Source</dt>
-                  <dd>{source}</dd>
-                </>
-              )}
-            </dl>
+            {details.length > 0 && (
+              <dl className="highlight-details">
+                {details.map(([label, value]) => (
+                  <React.Fragment key={label}>
+                    <dt>{label}</dt>
+                    <dd>{value}</dd>
+                  </React.Fragment>
+                ))}
+              </dl>
+            )}
           </Modal.Body>
 
           <Modal.Footer>
             {book.id && (
-              <button type="button" className="btn highlight-filter-btn" onClick={() => onFilterBook(book.id)}>
+              <button type="button" className="btn btn-outline-accent" onClick={() => onFilterBook(book.id)}>
                 More from this book
               </button>
             )}
-            <button type="button" className="btn highlights-shuffle" onClick={onClose}>
+            <button type="button" className="btn btn-accent" onClick={onClose}>
               Close
             </button>
           </Modal.Footer>
@@ -200,10 +154,8 @@ function HighlightModal({ highlight, tokens, onClose, onFilterBook }) {
 function SkeletonCard() {
   return (
     <div className="highlight-card highlight-skeleton" aria-hidden="true">
-      <div className="skeleton-line" />
-      <div className="skeleton-line" />
-      <div className="skeleton-line short" />
-      <div className="skeleton-meta" />
+      <SkeletonLines count={3} />
+      <SkeletonBlock />
     </div>
   );
 }
@@ -217,11 +169,17 @@ function HighlightsPage() {
   const [seed, setSeed] = useState(newSeed);
   const [items, setItems] = useState([]);
   const [total, setTotal] = useState(0);
-  const [books, setBooks] = useState([]);
   const [status, setStatus] = useState("loading"); // loading | more | ready | error
   const [error, setError] = useState("");
   const [active, setActive] = useState(null); // highlight shown in the modal
   const requestId = useRef(0);
+
+  // The book filter list; an unavailable library just leaves the dropdown with "All books".
+  const booksRequest = useApi("/api/highlights/books");
+  const books = useMemo(
+    () => (booksRequest.data && Array.isArray(booksRequest.data.books) ? booksRequest.data.books : []),
+    [booksRequest.data]
+  );
 
   const tokens = useMemo(() => q.toLowerCase().split(/\s+/).filter(Boolean), [q]);
 
@@ -256,10 +214,6 @@ function HighlightsPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch("/api/highlights/books")
-      .then((res) => (res.ok ? res.json() : { books: [] }))
-      .then((data) => setBooks(Array.isArray(data.books) ? data.books : []))
-      .catch(() => setBooks([]));
   }, []);
 
   const fetchPage = useCallback(
@@ -271,9 +225,7 @@ function HighlightsPage() {
         const params = new URLSearchParams({ limit: String(PAGE_SIZE), offset: String(offset), seed });
         if (q) params.set("q", q);
         if (bookId) params.set("book", bookId);
-        const response = await fetch(`/api/highlights?${params}`);
-        const data = await response.json().catch(() => ({}));
-        if (!response.ok) throw new Error(data.error || `Request failed (${response.status})`);
+        const data = await fetchJson(`/api/highlights?${params}`);
         if (id !== requestId.current) return; // a newer request superseded this one
         const page = Array.isArray(data.items) ? data.items : [];
         setItems((prev) => (append ? [...prev, ...page] : page));
@@ -322,9 +274,7 @@ function HighlightsPage() {
   return (
     <section id="highlights" className="highlights-page">
       <Container className="highlights-container">
-        <Fade top>
-          <SectionHeader id="highlights-header" text="Highlights" />
-        </Fade>
+        <SectionHeader id="highlights-header" text="Highlights" />
         <p className="highlights-intro">
           Passages I've highlighted while reading, pulled live from my BookOrbit library. Search by
           words, pick a book, or shuffle for a fresh set. Click a card to read the whole passage.
@@ -353,7 +303,7 @@ function HighlightsPage() {
               </option>
             ))}
           </select>
-          <button type="button" className="btn highlights-shuffle" onClick={shuffle} disabled={loading}>
+          <button type="button" className="btn btn-accent" onClick={shuffle} disabled={loading}>
             {loading ? "Shuffling…" : "Shuffle"}
           </button>
         </form>
@@ -367,7 +317,7 @@ function HighlightsPage() {
             <span>{summary}</span>
           )}
           {filtered && (
-            <button type="button" className="highlights-clear" onClick={clearFilters}>
+            <button type="button" className="link-button" onClick={clearFilters}>
               Clear filters
             </button>
           )}
@@ -398,7 +348,7 @@ function HighlightsPage() {
           <div className="highlights-actions">
             <button
               type="button"
-              className="btn highlights-more-btn"
+              className="btn btn-outline-accent"
               onClick={() => fetchPage({ offset: items.length, append: true })}
               disabled={loadingMore}
             >

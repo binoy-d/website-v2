@@ -1,13 +1,20 @@
+#skills {
+  background-color: transparent;
+  margin-top: 10em;
+  margin-bottom: 10em;
+  border-radius: 0.5em;
+}
+
 .skills-title {
   color: var(--main-text-color);
-  margin-top: 0em;
   font-weight: bolder;
   text-align: center;
   width: 50%;
   margin: 0 auto;
 }
 
-.skills-title:hover {
+.skills-title:hover,
+.skills-header:hover {
   cursor: default;
 }
 
@@ -18,95 +25,6 @@
 
 .skill-item {
   color: var(--main-text-color);
-}
-
-
-
-
-
-@media (max-width: 1000px) {
-  #skills-wrapper {
-    background: none;
-  }
-  .skills-title {
-    font-size: 1em;
-  }
-  .skill-header {
-    font-size: 1.2em;
-  }
-
-  .skill-item {
-    font-size: 0.7em;
-  }
-  .section-header{
-    font-size:2.25em;
-    padding-bottom:0;
-  }
-
-  .projects-btn {
-    margin-top: 2em;
-    border-radius: 0.4em;
-    border: 1px solid var(--accent-color-1);
-    margin-left: 35%;
-    width: 30%;
-    text-align: center;
-    backdrop-filter: blur(5px);
-    transition: transform 1s ease-in-out;
-  }
-  
-}
-
-@media (min-width: 1000px) {
-  #skills-wrapper {
-    transition-duration: 4s;
-    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: -100;
-    --x: 0;
-    background-position-x: var(--x);
-    background-attachment: fixed;
-    background-image: url("./icons.svg");
-    background-size:30%;
-    background-repeat: repeat;
-  }
-  .skill-item {
-    font-size: 1.1em;
-    padding: 0.3em;
-    transition: transform 0.2s ease-out;
-  }
-
-  .skills-window {
-    background-color: var(--secondary-bg-color);
-    border-radius: 0.5em;
-    padding-bottom: 2rem;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top: 2em;
-    margin-bottom: 1em;
-
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
-    
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  }
-
-  .projects-btn {
-    margin-top: 2em;
-    border-radius: 0.4em;
-    border: 1px solid var(--accent-color-1);
-    margin-left: 45%;
-    width: 10%;
-    text-align: center;
-    backdrop-filter: blur(5px);
-    transition: transform 1s ease-in-out;
-  }
-
-}
-
-
-
-
-
-.skills-header:hover {
-  cursor: default;
 }
 
 .fill-width {
@@ -125,47 +43,103 @@
   opacity: 1;
 }
 
-#skills {
-  background-color: transparent;
-  margin-top: 10em;
-  margin-bottom: 10em;
-  border-radius: 0.5em;
-}
-
-
-.projects-btn:hover{
-  transform: scale(1.5);
-}
-
-
-.skill-count{
+.skill-count {
   font-size: 300%;
   font-weight: bolder;
-  color:var(--main-text-color);
+  color: var(--main-text-color);
 }
 
 .skill-list {
   margin-right: 0;
   padding: 0;
-  
   transition: transform 0.2s ease-in;
 }
 
-
-.skill-list:hover{
-  cursor:pointer;
-  transform:scale(1.1);
+.skill-list:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
-.skills-back-arrow{
-  color:var(--accent-color-1);
+/* ---- back arrow when a group is open ---- */
+.skills-back {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+
+.skills-back-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  line-height: 0;
+  border-radius: 50%;
+}
+
+.skills-back-button:focus-visible {
+  outline: 2px solid var(--accent-color-1);
+  outline-offset: 2px;
+}
+
+.skills-back-arrow {
+  color: var(--accent-color-1);
+  width: 2.5em;
+  height: 2.5em;
   transition: transform 0.1s ease-in;
-  margin-left:48%;
-  width:4%;
-  height:auto;
 }
 
-.skills-back-arrow:hover{
-  transform:scale(1.1);
-  cursor:pointer;
+.skills-back-button:hover .skills-back-arrow {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  #skills-wrapper {
+    background: none;
+  }
+
+  .skills-title {
+    font-size: 1em;
+  }
+
+  .skill-header {
+    font-size: 1.2em;
+  }
+
+  .skill-item {
+    font-size: 0.7em;
+  }
+
+  .section-header {
+    font-size: 2.25em;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  #skills-wrapper {
+    transition-duration: 4s;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -100;
+    --x: 0;
+    background-position-x: var(--x);
+    background-attachment: fixed;
+    background-image: url("./icons.svg");
+    background-size: 30%;
+    background-repeat: repeat;
+  }
+
+  .skill-item {
+    font-size: 1.1em;
+    padding: 0.3em;
+    transition: transform 0.2s ease-out;
+  }
+
+  .skills-window {
+    background-color: var(--secondary-bg-color);
+    border-radius: 0.5em;
+    padding-bottom: 2rem;
+    margin: 2em auto 1em;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
 }

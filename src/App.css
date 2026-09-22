@@ -8,42 +8,39 @@
   --dark: #080705;
 }
 
-
-.color-text{
-  color:var(--main-text-color);
+.color-text {
+  color: var(--main-text-color);
 }
 
-
-.color-bg{
-  color:var(--main-bg-color);
+.color-bg {
+  color: var(--main-bg-color);
 }
 
-
-.color-accent{
-  color:var(--accent-color-1)
-}
-.App {
-  text-align: center;
-}
-html{
-  background-color: var(--main-bg-color)!important;
-}
-body{
-  background-color:var(--main-bg-color)!important;
-  color:var(--main-text-color)!important;
-  -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
+.color-accent {
+  color: var(--accent-color-1);
 }
 
-.body:empty {
-  background: black;
+html {
+  background-color: var(--main-bg-color) !important;
 }
 
+body {
+  background-color: var(--main-bg-color) !important;
+  color: var(--main-text-color) !important;
+  transition: all 0.2s ease-in;
+}
+
+/* Headings and other decorative text that shouldn't be selectable. */
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 @media (max-width: 500px) {
-  html, body{
+  html, body {
     max-width: 100%;
     overflow-x: hidden;
   }

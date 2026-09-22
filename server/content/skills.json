@@ -1,0 +1,26 @@
+{
+  "groups": [
+    {
+      "title": "Languages",
+      "items": ["Python", "C++", "Java", "Javascript", "HTML", "CSS", "SQL", "Processing", "C#", "p5.js", "NodeJS"]
+    },
+    {
+      "title": "Frameworks",
+      "items": ["ReactJS", "Bootstrap", "jQuery", "p5.js", "GTest", "Beautiful Soup", "Express.js", "SemanticUI", "Selenium"]
+    },
+    {
+      "title": "Tools",
+      "items": [
+        "Git/Github", "NPM", "Postman", "AWS", "GCP", "Numpy", "Heroku", "CLIs", "MongoDB", "VirtualBox", "ffmpeg", "NLTK",
+        "AI Agent Workflows", "LLM Tooling", "Prompt Engineering"
+      ]
+    },
+    {
+      "title": "Other",
+      "items": [
+        "Linux/Unix", "Figma", "Arduino", "Photoshop", "Premiere Pro", "Illustrator", "After Effects", "3D Printing", "Agile",
+        "CAD", "MS Office", "G Suite", "Audacity"
+      ]
+    }
+  ]
+}

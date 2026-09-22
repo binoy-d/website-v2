@@ -1,6 +1,13 @@
 THIS IS FROM DANIEL, TO DANIEL:
 
 
+where stuff lives:
+
+   projects / experience / skills / about text / taglines  ->  server/content/*.json
+   project screenshots + profile photo                      ->  server/content/images/
+   (the React app fetches all of it from /api/content; no need to touch src/ for content edits.
+    put the screenshot in images/, reference it by file name in the json, done.)
+
 steps to push an update:
 
 1. do the code changes, commit, and push to master (from any computer)
