@@ -102,6 +102,7 @@ test("content service", async (t) => {
       [{ experience: { careerHighlights: [], items: [] } }, /experience\.items must have at least 1/],
       [{ experience: { careerHighlights: [], items: [{ period: "x", company: "y" }] } }, /items\[0\]\.role must be a non-empty string/],
       [{ skills: { groups: [{ title: "T", items: [1] }] } }, /skills\.groups\[0\]\.items\[0\] must be a string/],
+      [{ skills: { intro: "", groups: fixtures.skills.groups } }, /skills\.intro must be a non-empty string/],
       [{ profile: { ...fixtures.profile, taglines: [] } }, /taglines must have at least 1/],
       [{ profile: [] }, /profile must be a JSON object/],
     ];
@@ -120,6 +121,10 @@ test("the shipped content in server/content is valid", async () => {
   assert.ok(all.projects.items.some((p) => p.link === "/highlights"), "the highlights feature is listed as a project");
   assert.ok(all.experience.items.length >= 5);
   assert.ok(all.skills.groups.length === 4);
+  assert.match(all.skills.intro, /one true skill/, "the skills section opens with the blurb");
+  for (const id of ["webtoon-koplugin", "draw", "highlights"]) {
+    assert.ok(all.projects.items.some((p) => p.id === id), `project  is listed`);
+  }
   for (const project of all.projects.items) {
     assert.match(project.image, /^\/api\/content\/images\/[^?]+\?v=[0-9a-f]{10}$/, `${project.id} image`);
   }

@@ -91,6 +91,7 @@ const validators = {
     });
   },
   skills(s, where) {
+    if (s.intro !== undefined) requireString(s, "intro", where);
     requireArray(s, "groups", where, { minLength: 1 });
     s.groups.forEach((group, i) => {
       requireString(group, "title", `${where}.groups[${i}]`);

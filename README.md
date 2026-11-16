@@ -32,7 +32,7 @@ the highlights come from BookOrbit; the React app just renders whatever it gets 
 | `profile.json`                 | About section (photo, greeting, bio, the terminal card's `info` fields) and the landing taglines |
 | `projects.json`                | Projects grid (`items[]`: title, bullets, tags, links, screenshot, long description) |
 | `experience.json`              | Experience timeline (`items[]`) and the scrolling `careerHighlights` strip |
-| `skills.json`                  | Skills groups |
+| `skills.json`                  | Skills section: the collapsed blurb (`intro`) and the skill groups it expands into |
 | `images/`                      | Screenshots and the profile photo; reference them by file name in an `"image"` field |
 
 Image URLs are rewritten to `/api/content/images/<file>?v=<content hash>` so they cache for a

@@ -1,6 +1,35 @@
 {
   "items": [
     {
+      "id": "webtoon-koplugin",
+      "title": "webtoon.koplugin",
+      "description": [
+        "KOReader plugin for reading webtoons on e-ink: each tap glides the strip so the next panel lands whole at the top",
+        "Search webtoons.com, download episodes in the background and keep a library with read marks, all on the Kindle",
+        "Companion kowebtoon converter finds panel gaps pixel by pixel and delivers to a reader and a book server at once"
+      ],
+      "languages": ["Lua", "KOReader", "Python", "E-ink", "CBZ"],
+      "link": "https://github.com/binoy-d/webtoon.koplugin",
+      "codeLink": "https://github.com/binoy-d/webtoon.koplugin",
+      "image": "webtoon-koplugin.png",
+      "featured": false,
+      "longDescription": "Webtoons are drawn for phone scrolling: cut them into pages and panels and speech bubbles get split, scroll them on e-ink and you get a smeary mess. This KOReader plugin does something in between. Every tap shows two quick dithered frames for motion, then one crisp refresh with the next panel starting at the top; slightly-too-tall panels are shrunk to fit and the margins take the colour of the art so dark scenes don’t get white bars. It also finds series on the device: search webtoons.com from the menu, download episodes in the background while you keep reading, and get a library with read marks, progress and a one-tap ‘download the next 5’ when you run out. Episodes get real covers, the next strips are pre-rendered while you read, and any webtoon CBZ from another tool gets panel snapping too, with the panels detected in the background. The Python converter, kowebtoon, builds the same files on a computer, follows series so a cron job can keep up, and delivers over USB or SSH to a reader and a book server at once. Tested on a Kindle Paperwhite; MIT licensed."
+    },
+    {
+      "id": "draw",
+      "title": "draw.binoy.co",
+      "description": [
+        "One shared, persistent canvas on the open internet: no rooms, no accounts, no reset button",
+        "The world starts as a small clearing in the fog and grows for good wherever people draw toward the edges",
+        "Every stroke lives in an append-only log, so History scrubs back to the first mark and Stats knows who drew what"
+      ],
+      "languages": ["TypeScript", "React", "WebGL", "Fastify", "WebSockets", "Postgres", "Docker"],
+      "link": "https://draw.binoy.co",
+      "image": "draw.png",
+      "featured": false,
+      "longDescription": "A single drawing canvas that everyone on the internet shares, live. Pick a name and your strokes stream to whoever is looking at the same area, with presence cursors, pen and touch support and deep zoom from 1/64x to 8x over a pyramid of server-rendered tiles. The world is a grid of 256 px chunks ringed by WebGL fog: ink near the edge adds reveal progress and, usually with a few people’s help, unlocks a chunk forever, and once a day a ‘fog tide’ makes one stretch of the edge give way faster. The event log is the truth. Every stroke, erase and unlock is a row with a global sequence number, tiles and checkpoints are caches rebuilt from it, and the History view replays any moment of the world’s life, including things that were later erased. One Node process (Fastify, a WebSocket hub and a single-writer commit pipeline) with Postgres, behind Cloudflare Tunnel on my homelab, with server-side validation of every message, rate limits and owner-only moderation that records rather than rewrites."
+    },
+    {
       "id": "highlights",
       "title": "Reading Highlights",
       "description": [
@@ -64,7 +93,7 @@
       "id": "spiral-orbit",
       "title": "Generative Spiral Art",
       "description": [
-        "3D generative art application using WebGL and Bézier curve mathematics",
+        "3D generative art application using WebGL and BÃ©zier curve mathematics",
         "Interactive visualization with real-time user controls and parameter adjustment",
         "Built with p5.js and WebGL for optimized 3D rendering performance"
       ],
@@ -73,7 +102,7 @@
       "codeLink": "https://github.com/binoy-d/spiral-orbit",
       "image": "spiral-orbit.png",
       "featured": false,
-      "longDescription": "Interactive 3D generative art application utilizing WebGL and advanced mathematical algorithms for real-time visualization. Implements Bézier curves, Perlin noise, and dynamic parameter manipulation through keyboard and mouse controls. Features optimized rendering performance and complex visual effects including jellyfish, mushroom, and iris-like patterns."
+      "longDescription": "Interactive 3D generative art application utilizing WebGL and advanced mathematical algorithms for real-time visualization. Implements BÃ©zier curves, Perlin noise, and dynamic parameter manipulation through keyboard and mouse controls. Features optimized rendering performance and complex visual effects including jellyfish, mushroom, and iris-like patterns."
     },
     {
       "id": "ping",

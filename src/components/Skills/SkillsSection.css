@@ -27,6 +27,46 @@
   color: var(--main-text-color);
 }
 
+/* ---- collapsed state: the one-line blurb that stands in for the list ---- */
+.skills-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5em 1.5em 0;
+}
+
+.skills-intro-text {
+  max-width: 34em;
+  margin: 0 auto;
+  padding: 0.5em 0.75em;
+  border: 0;
+  background: transparent;
+  color: var(--main-text-color);
+  font-size: 1.3em;
+  line-height: 1.6;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.5em;
+  transition: color 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.skills-intro-text:hover {
+  color: var(--accent-color-1);
+  transform: scale(1.02);
+}
+
+.skills-intro-text:focus-visible {
+  outline: 2px solid var(--accent-color-1);
+  outline-offset: 2px;
+}
+
+.skills-intro-hint {
+  margin-top: 0.25em;
+  font-size: 0.8em;
+  color: var(--main-text-color);
+  opacity: 0.5;
+}
+
 .fill-width {
   width: 100%;
   cursor: default;
@@ -95,6 +135,10 @@
 @media (max-width: 1000px) {
   #skills-wrapper {
     background: none;
+  }
+
+  .skills-intro-text {
+    font-size: 1em;
   }
 
   .skills-title {

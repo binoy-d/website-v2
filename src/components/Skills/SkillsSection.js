@@ -34,6 +34,20 @@ function SkillsIconBackground({ children }) {
   );
 }
 
+/** The collapsed state: one sentence instead of the list. Clicking it reveals the skill groups. */
+function SkillsIntro({ text, onExpand }) {
+  return (
+    <div className="skills-intro">
+      <button type="button" className="skills-intro-text" onClick={onExpand} aria-expanded="false" aria-controls="skills-groups">
+        {text}
+      </button>
+      <div className="skills-intro-hint" aria-hidden="true">
+        (but the list is still there if you click)
+      </div>
+    </div>
+  );
+}
+
 function SkillGroupCard({ group, onSelect }) {
   return (
     <Col lg={3} xs={6} className="skill-list" onClick={onSelect}>
@@ -59,8 +73,11 @@ function SkillGroupCard({ group, onSelect }) {
 
 function SkillsContent() {
   const { status, error, reload, data } = useSection("skills");
+  const [expanded, setExpanded] = useState(false);
   const [selectedTitle, setSelectedTitle] = useState(null);
   const groups = data ? data.groups : [];
+  const intro = data ? data.intro : null;
+  const collapsed = Boolean(intro) && !expanded;
   const selected = groups.find((g) => g.title === selectedTitle) || null;
 
   return (
@@ -73,23 +90,27 @@ function SkillsContent() {
             </div>
           </Row>
           <SectionState status={status} error={error} onRetry={reload} label="my skills" lines={3}>
-            {() =>
-              selected ? (
-                <Row>
-                  {selected.items.map((skill) => (
-                    <Col key={skill} xs={6} sm={4} md={3} className="text-center">
-                      <div className="skill-item">{skill}</div>
-                    </Col>
-                  ))}
-                </Row>
-              ) : (
-                <Row>
+            {() => {
+              if (collapsed) return <SkillsIntro text={intro} onExpand={() => setExpanded(true)} />;
+              if (selected) {
+                return (
+                  <Row>
+                    {selected.items.map((skill) => (
+                      <Col key={skill} xs={6} sm={4} md={3} className="text-center">
+                        <div className="skill-item">{skill}</div>
+                      </Col>
+                    ))}
+                  </Row>
+                );
+              }
+              return (
+                <Row id="skills-groups">
                   {groups.map((group) => (
                     <SkillGroupCard key={group.title} group={group} onSelect={() => setSelectedTitle(group.title)} />
                   ))}
                 </Row>
-              )
-            }
+              );
+            }}
           </SectionState>
           {selected ? (
             <div className="skills-back">
