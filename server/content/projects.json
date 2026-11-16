@@ -4,240 +4,240 @@
       "id": "webtoon-koplugin",
       "title": "webtoon.koplugin",
       "description": [
-        "KOReader plugin for reading webtoons on e-ink: each tap glides the strip so the next panel lands whole at the top",
-        "Search webtoons.com, download episodes in the background and keep a library with read marks, all on the Kindle",
-        "Companion kowebtoon converter finds panel gaps pixel by pixel and delivers to a reader and a book server at once"
+        "KOReader plugin that reads webtoons on e-ink one panel at a time: tap, glide, next panel",
+        "Search, download and keep up with series right on the Kindle, no computer needed",
+        "Plus a small Python converter that finds the panel gaps and ships episodes to your reader"
       ],
       "languages": ["Lua", "KOReader", "Python", "E-ink", "CBZ"],
       "link": "https://github.com/binoy-d/webtoon.koplugin",
       "codeLink": "https://github.com/binoy-d/webtoon.koplugin",
       "image": "webtoon-koplugin.png",
       "featured": false,
-      "longDescription": "Webtoons are drawn for phone scrolling: cut them into pages and panels and speech bubbles get split, scroll them on e-ink and you get a smeary mess. This KOReader plugin does something in between. Every tap shows two quick dithered frames for motion, then one crisp refresh with the next panel starting at the top; slightly-too-tall panels are shrunk to fit and the margins take the colour of the art so dark scenes don’t get white bars. It also finds series on the device: search webtoons.com from the menu, download episodes in the background while you keep reading, and get a library with read marks, progress and a one-tap ‘download the next 5’ when you run out. Episodes get real covers, the next strips are pre-rendered while you read, and any webtoon CBZ from another tool gets panel snapping too, with the panels detected in the background. The Python converter, kowebtoon, builds the same files on a computer, follows series so a cron job can keep up, and delivers over USB or SSH to a reader and a book server at once. Tested on a Kindle Paperwhite; MIT licensed."
+      "longDescription": "Webtoons are made for scrolling on a phone, and e-ink is bad at scrolling. So this plugin fakes it: a tap glides the strip just far enough that the next panel lands at the top, with a couple of quick frames for motion and one clean refresh. No panel or speech bubble ever gets split. It also searches webtoons.com from the device, downloads episodes in the background, remembers what you've read and offers the next five when you run out. There's a converter (kowebtoon) if you'd rather do it from a laptop. Built for my Paperwhite, works anywhere KOReader runs."
     },
     {
       "id": "draw",
       "title": "Draw",
       "description": [
-        "One shared, persistent canvas on the open internet: no rooms, no accounts, no reset button",
-        "The world starts as a small clearing in the fog and grows for good wherever people draw toward the edges",
-        "Every stroke lives in an append-only log, so History scrubs back to the first mark and Stats knows who drew what"
+        "One shared canvas for the whole internet. No rooms, no accounts, no reset button",
+        "The world starts small and ringed by fog; draw at the edge and it grows, for good",
+        "Every stroke is kept forever, so you can scrub back and watch the world get made"
       ],
       "languages": ["TypeScript", "React", "WebGL", "Fastify", "WebSockets", "Postgres", "Docker"],
       "link": "https://draw.binoy.co",
       "image": "draw.png",
       "featured": false,
-      "longDescription": "A single drawing canvas that everyone on the internet shares, live. Pick a name and your strokes stream to whoever is looking at the same area, with presence cursors, pen and touch support and deep zoom from 1/64x to 8x over a pyramid of server-rendered tiles. The world is a grid of 256 px chunks ringed by WebGL fog: ink near the edge adds reveal progress and, usually with a few people’s help, unlocks a chunk forever, and once a day a ‘fog tide’ makes one stretch of the edge give way faster. The event log is the truth. Every stroke, erase and unlock is a row with a global sequence number, tiles and checkpoints are caches rebuilt from it, and the History view replays any moment of the world’s life, including things that were later erased. One Node process (Fastify, a WebSocket hub and a single-writer commit pipeline) with Postgres, behind Cloudflare Tunnel on my homelab, with server-side validation of every message, rate limits and owner-only moderation that records rather than rewrites."
+      "longDescription": "A persistent corner of the internet where everyone draws on the same canvas, live. Pick a name and go. The map is ringed by fog that only gives way when people draw toward it, usually together, and once a day a fog tide makes one stretch of the edge easier to push back. Nothing is ever lost: every stroke sits in an append-only log, so History replays the whole life of the world and Stats knows who drew what. One Node process and Postgres on my homelab, behind Cloudflare."
     },
     {
       "id": "highlights",
       "title": "Reading Highlights",
       "description": [
-        "Searchable, shuffleable feed of passages I've highlighted while reading, live on this site",
-        "Express API pulls from a self-hosted BookOrbit library, caches it, and serves seeded shuffles so paging stays stable",
-        "Old Kindle highlights migrated in with a notebook scraper and an importer that builds stub EPUBs"
+        "Passages I've highlighted while reading, searchable and shuffleable, live on this site",
+        "Pulled from my self-hosted BookOrbit library through the site's API",
+        "Years of old Kindle highlights migrated in with a scraper and an importer"
       ],
       "languages": ["React", "Express", "Node.js", "Docker", "BookOrbit"],
       "link": "/highlights",
       "codeLink": "https://github.com/binoy-d/website-v2",
       "image": "highlights.png",
       "featured": false,
-      "longDescription": "Every passage I highlight while reading ends up in a self-hosted BookOrbit library; this feature pulls them onto binoy.co. The Express API logs in to BookOrbit server-side, pages through the annotations, caches the list, and answers word searches, per-book filters and seeded random shuffles from that cache, so 'Show more' never repeats a card. Book covers are proxied and cached too. Years of pre-BookOrbit Kindle highlights were brought along with a browser-console scraper for the Kindle notebook and a Node importer that wraps each book's highlights in a tiny EPUB and creates one annotation per passage."
+      "longDescription": "Everything I highlight while reading lands in a BookOrbit library on my homelab, and this page pulls it onto binoy.co. The API logs in server-side, caches the lot, and answers searches, per-book filters and seeded shuffles so Show more never repeats itself. The pre-BookOrbit Kindle years came along too, via a scraper for the Kindle notebook and an importer that wraps each book in a tiny EPUB."
     },
     {
       "id": "this-website",
       "title": "This Website!",
       "description": [
-        "React portfolio with a small Express API behind it, packaged as two Docker containers",
-        "Site content (projects, experience, skills) and images are served from the API, not baked into the build",
-        "Pushing to master runs tests and a build, then a self-hosted runner redeploys the containers"
+        "React up front, a small Express API behind it, two Docker containers on my homelab",
+        "Projects, experience and skills live in JSON served by the API, so an update is an edit, not a rebuild",
+        "Push to master and it tests, builds and redeploys itself"
       ],
       "languages": ["ReactJS", "Express", "Docker", "nginx", "GitHub Actions"],
       "link": "https://binoy.co",
       "codeLink": "https://github.com/binoy-d/website-v2",
       "image": "website.png",
       "featured": false,
-      "longDescription": "Portfolio application built with React 18 and react-router, served by nginx alongside an Express API in Docker Compose on my homelab. The API owns the site content and images as well as the reading highlights integration, so updating the site is a JSON edit rather than a rebuild of the frontend bundle. Deploys are automatic: a GitHub Actions workflow runs the backend tests and the production build, then a self-hosted runner on the server pulls master, rebuilds the images and waits for the health check. Features dark mode, particle effects, and a responsive layout down to small phones."
+      "longDescription": "The site you're looking at. React and react-router in front, an Express API behind it that owns the content, the images and the reading highlights. nginx serves the build and proxies the API, Docker Compose runs both on my homelab, and a GitHub Actions workflow plus a self-hosted runner redeploy it on every push to master. Dark mode, particles, works on a phone."
     },
     {
       "id": "lockstep",
       "title": "Lockstep",
       "description": [
-        "Browser-first puzzle game where all players move together each turn",
-        "Built an in-game level editor for designing and publishing custom maps",
-        "Implemented pathfinding-based level verification with leaderboard-backed challenge progression"
+        "Browser puzzle game where every player moves at the same time, every turn",
+        "In-game level editor for designing and publishing your own maps",
+        "Levels get verified by pathfinding, and leaderboards keep the challenges going"
       ],
       "languages": ["TypeScript", "Phaser 3", "Vite", "Node.js", "SQLite", "Docker"],
       "link": "https://lockstep.binoy.co",
       "codeLink": "https://github.com/binoy-d/lockstep",
       "image": "lockstep.png",
       "featured": false,
-      "longDescription": "Multiplayer browser puzzle game centered on coordinated movement, with a full custom level creation pipeline and integrated level editor for rapid map iteration. Includes pathfinding-based puzzle level verification and backend-backed leaderboards to support replayable challenge progression and community-created content."
+      "longDescription": "A multiplayer puzzle game built around coordinated movement: everyone moves together, so the puzzle is in the timing. It has a full level editor for making and publishing maps, pathfinding checks so published levels are actually solvable, and leaderboards for the challenge ladder. TypeScript and Phaser 3 with a small Node and SQLite backend, in Docker."
     },
     {
       "id": "bubbles-together",
       "title": "Bubbles, Together",
       "description": [
-        "Real-time collaborative drawing application with WebSocket architecture",
-        "Multi-user particle system with synchronized state management",
-        "Self-hosted with Node.js backend and p5.js frontend"
+        "Draw bubbles with friends, in real time, over WebSockets",
+        "Everyone's particles stay in sync across the room",
+        "Node backend, p5.js frontend, self-hosted"
       ],
       "languages": ["p5.js", "Node", "JavaScript", "SocketIO", "Docker"],
       "link": "https://bubbles.binoy.co",
       "codeLink": "https://github.com/binoy-d/draw-together",
       "image": "bubbles-together.png",
       "featured": false,
-      "longDescription": "Real-time collaborative application enabling simultaneous multi-user interaction through WebSocket technology. Built with Node.js backend and p5.js frontend, implementing efficient particle systems and real-time state synchronization. Optimized network architecture transmits only coordinate data while maintaining responsive user experience across concurrent sessions."
+      "longDescription": "A real-time collaborative toy: everyone in the room draws bubbles and sees everyone else's. Only coordinates travel over the wire, so it stays snappy with a few people on at once. Node and Socket.IO on the back, p5.js on the front."
     },
     {
       "id": "spiral-orbit",
       "title": "Generative Spiral Art",
       "description": [
-        "3D generative art application using WebGL and BÃ©zier curve mathematics",
-        "Interactive visualization with real-time user controls and parameter adjustment",
-        "Built with p5.js and WebGL for optimized 3D rendering performance"
+        "3D generative art in WebGL, driven by Bézier curves and Perlin noise",
+        "Tweak the parameters live with the keyboard and mouse",
+        "p5.js, nothing else"
       ],
       "languages": ["p5.js", "WEBGL", "JavaScript", "HTML", "CSS"],
       "link": "https://binoy-d.github.io/spiral-orbit/",
       "codeLink": "https://github.com/binoy-d/spiral-orbit",
       "image": "spiral-orbit.png",
       "featured": false,
-      "longDescription": "Interactive 3D generative art application utilizing WebGL and advanced mathematical algorithms for real-time visualization. Implements BÃ©zier curves, Perlin noise, and dynamic parameter manipulation through keyboard and mouse controls. Features optimized rendering performance and complex visual effects including jellyfish, mushroom, and iris-like patterns."
+      "longDescription": "An interactive 3D art toy. Bézier curves and Perlin noise feed a spiral you can bend in real time, and depending on the settings it ends up looking like a jellyfish, a mushroom or an iris. p5.js in WebGL mode."
     },
     {
       "id": "ping",
       "title": "Ping",
       "description": [
-        "Full-stack real-time analytics application with interactive data visualization",
-        "Self-hosted solution using React frontend and Express.js backend",
-        "Implements SQLite for lightweight data persistence and graph rendering"
+        "Real-time analytics dashboard with live, animated graphs",
+        "React up front, Express behind, SQLite underneath",
+        "Self-hosted on my homelab"
       ],
       "languages": ["React", "Express", "SQLite", "JavaScript", "CSS"],
       "link": "https://ping.binoy.co",
       "codeLink": "https://ping.binoy.co",
       "image": "ping.png",
       "featured": false,
-      "longDescription": "Full-stack web application demonstrating real-time data collection and visualization capabilities. Built with React frontend and Express.js backend, utilizing SQLite for efficient data storage. Features responsive design, smooth graph animations, and real-time updates. Self-hosted deployment showcases DevOps skills and infrastructure management."
+      "longDescription": "A small full-stack app for collecting data points and watching them move. React and Express with SQLite for storage, smooth graph animations and live updates. Mostly an excuse to self-host something and keep it running."
     },
     {
       "id": "debug-duck",
       "title": "Debug Duck",
       "description": [
-        "Unity3D game developed in 48-hour Global Game Jam with cross-functional team",
-        "Implemented dynamic game mechanics and meta-narrative progression system",
-        "Created custom assets and programmed interactive story elements in C#"
+        "Unity game made in 48 hours at Global Game Jam 2020",
+        "The mechanics change as the story goes on",
+        "C# and pixel art, with a small team"
       ],
       "languages": ["C#", "Unity3D", "Piskelapp"],
       "link": "https://globalgamejam.org/2020/games/debug-duck-2",
       "codeLink": "https://github.com/binoy-d/debug-duck",
       "image": "debug-duck.png",
       "featured": false,
-      "longDescription": "Unity3D game developed during Global Game Jam 2020, featuring self-modifying mechanics and interactive narrative design. Implemented C# programming for dynamic gameplay systems that evolve based on player progress. Collaborated with multidisciplinary team to deliver complete game experience within 48-hour constraint, including custom asset creation and narrative design."
+      "longDescription": "A Global Game Jam 2020 entry built in a weekend with a small team. The game's rules shift as the meta-narrative unfolds, so what you learned in the last level doesn't quite hold in the next. I wrote gameplay code in C# and made some of the pixel art."
     },
     {
       "id": "tankmania",
       "title": "Tankmania",
       "description": [
-        "Unity3D simulation with multi-agent AI system and configurable parameters",
-        "Implemented three-tier AI behavior: patrol, chase, and combat algorithms",
-        "Features scalable team-based warfare with dynamic entity management"
+        "Unity simulation of tanks fighting it out in teams",
+        "Three-state AI: patrol, chase, fight",
+        "Set the team sizes and watch it play out"
       ],
       "languages": ["C#", "Unity3D"],
       "link": "https://binoy-d.github.io/tankmania/",
       "codeLink": "https://github.com/binoy-d/tankmania",
       "image": "tankmania.png",
       "featured": false,
-      "longDescription": "Unity3D simulation featuring advanced multi-agent AI systems with configurable team dynamics and scalable entity management. Implemented sophisticated behavior trees for patrol, pursuit, and combat states with efficient pathfinding algorithms. Demonstrates game engine proficiency and complex system architecture design."
+      "longDescription": "A Unity sandbox where teams of AI tanks patrol, chase and fight each other. Each tank runs a simple behaviour tree with some pathfinding; you set the numbers and watch. Written in C#."
     },
     {
       "id": "fractal-tree",
       "title": "Fractal Tree",
       "description": [
-        "Interactive fractal generation using recursive algorithms and parametric controls",
-        "Real-time manipulation of branch angles, lengths, and iteration depth",
-        "Mathematical visualization built with p5.js and optimized rendering"
+        "A recursive fractal tree you can bend in real time",
+        "Controls for branch angle, length and depth",
+        "p5.js on a canvas"
       ],
       "languages": ["p5.js", "JavaScript", "HTML", "CSS"],
       "link": "https://binoy-d.github.io/fractal-tree",
       "codeLink": "https://github.com/binoy-d/fractal-tree",
       "image": "fractaltree.png",
       "featured": false,
-      "longDescription": "Mathematical visualization application demonstrating recursive algorithms through interactive fractal tree generation. Features real-time parameter manipulation, optimized rendering performance, and educational interface for exploring mathematical concepts. Built with p5.js for efficient canvas-based graphics rendering."
+      "longDescription": "A tiny p5.js page that draws a tree recursively and lets you play with the angle, the length ratio and the depth. Made to show people what recursion looks like, and because it's pretty."
     },
     {
       "id": "game-of-life",
       "title": "Game of Life",
       "description": [
-        "C# implementation of Conway's Game of Life with interactive controls",
-        "Features real-time simulation with play/pause, cell editing, and randomization",
-        "Built with .NET framework demonstrating algorithm optimization and UI design"
+        "Conway's Game of Life in C# and .NET",
+        "Play, pause, click cells on and off, or randomise the grid",
+        "Handles big grids without breaking a sweat"
       ],
       "languages": ["C#", ".NET"],
       "link": "https://github.com/binoy-d/Game-Of-Life",
       "codeLink": "https://github.com/binoy-d/Game-Of-Life",
       "image": "game-of-life.png",
       "featured": false,
-      "longDescription": "Interactive implementation of Conway's Game of Life cellular automaton using C# and .NET. Features optimized algorithm for large grid calculations, real-time visualization, and comprehensive user controls including pattern editing and random generation. Demonstrates proficiency in mathematical algorithms and desktop application development."
+      "longDescription": "Conway's Game of Life as a desktop app. Play, pause, edit cells by clicking and randomise the board. Written in C# on .NET."
     },
     {
       "id": "color-game",
       "title": "Color Game",
       "description": [
-        "Interactive RGB color recognition game with responsive design",
-        "Features dynamic difficulty progression and smooth CSS transitions",
-        "Built with vanilla JavaScript and Bootstrap for cross-platform compatibility"
+        "Guess which swatch matches the RGB value",
+        "Gets harder as you go",
+        "Vanilla JavaScript and Bootstrap"
       ],
       "languages": ["Bootstrap", "CSS", "JavaScript"],
       "link": "https://binoy-d.github.io/color-game/",
       "codeLink": "https://github.com/binoy-d/color-game",
       "image": "color-game.png",
       "featured": false,
-      "longDescription": "Educational web application combining color theory with interactive gameplay. Implements dynamic RGB value generation, progressive difficulty scaling, and responsive design principles. Features smooth animations and cross-browser compatibility through vanilla JavaScript and modern CSS techniques."
+      "longDescription": "A little colour game: you get an RGB value and pick the swatch that matches. The difficulty ramps up as you go, the transitions are smooth, and it runs on plain JavaScript with Bootstrap for layout."
     },
     {
       "id": "bubblify",
       "title": "Bubblify",
       "description": [
-        "Image processing application with custom particle rendering algorithms",
-        "Converts digital images into procedural bubble visualizations",
-        "Features download functionality and real-time canvas manipulation with p5.js"
+        "Turns any image into a picture made of bubbles",
+        "Upload, watch it render, download the result",
+        "p5.js on a canvas"
       ],
       "languages": ["p5.js", "HTML", "CSS", "JavaScript"],
       "link": "https://binoy-d.github.io/bubblify",
       "codeLink": "https://github.com/binoy-d/bubblify",
       "image": "bubblify.png",
       "featured": false,
-      "longDescription": "Image processing application utilizing advanced computer graphics algorithms to transform digital images into artistic bubble representations. Implements pixel sampling, color analysis, and procedural generation techniques. Features canvas export functionality and optimized rendering performance for large-scale image processing."
+      "longDescription": "Drop in an image and Bubblify samples its pixels into a field of coloured bubbles, then lets you download the result. p5.js and a canvas, nothing more."
     },
     {
       "id": "to-do-list",
       "title": "To Do List",
       "description": [
-        "Task management application with persistent local storage",
-        "Features CRUD operations, list organization, and completion tracking",
-        "Built with jQuery and Bootstrap for responsive user experience"
+        "A to-do app that remembers your lists between visits",
+        "Add, edit, finish and organise tasks",
+        "jQuery and Bootstrap, saved in localStorage"
       ],
       "languages": ["jQuery", "JavaScript", "Bootstrap", "CSS"],
       "link": "https://binoy-d.github.io/to-do-app/",
       "codeLink": "https://github.com/binoy-d/to-do-app",
       "image": "todo-list.png",
       "featured": false,
-      "longDescription": "Task management web application featuring persistent data storage and intuitive user interface design. Implements local storage APIs, dynamic DOM manipulation, and responsive layouts. Demonstrates proficiency in jQuery, Bootstrap framework, and modern web development practices for productivity applications."
+      "longDescription": "An early one: a to-do list with multiple lists, completion tracking and persistence in localStorage. jQuery and Bootstrap."
     },
     {
       "id": "pong",
       "title": "Pong",
       "description": [
-        "Classic Pong implementation with physics simulation and collision detection",
-        "Features smooth animation, responsive controls, and game state management",
-        "Built with Processing for optimized 2D graphics rendering"
+        "Classic Pong, rebuilt in Processing",
+        "Physics, collisions and a proper game loop",
+        "Two paddles, one ball, no mercy"
       ],
       "languages": ["Processing"],
       "link": "https://github.com/binoy-d/pong",
       "codeLink": "https://github.com/binoy-d/pong",
       "image": "pong.png",
       "featured": false,
-      "longDescription": "Recreation of the classic Pong arcade game implementing fundamental game development concepts including physics simulation, collision detection, and real-time input handling. Demonstrates understanding of game loops, vector mathematics, and efficient rendering techniques using the Processing framework."
+      "longDescription": "Pong, recreated in Processing: a ball, two paddles, collision detection and a game loop. The classic, for the sake of making it."
     }
   ]
 }
