@@ -114,7 +114,7 @@
       ],
       "languages": ["React", "Express", "SQLite", "JavaScript", "CSS"],
       "link": "https://ping.binoy.co",
-      "codeLink": "https://ping.binoy.co",
+      "codeLink": "https://github.com/binoy-d/ping",
       "image": "ping.png",
       "featured": false,
       "longDescription": "A small full-stack app for collecting data points and watching them move. React and Express with SQLite for storage, smooth graph animations and live updates. Mostly an excuse to self-host something and keep it running."

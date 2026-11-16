@@ -40,6 +40,8 @@ function ProjectBullets({ proj }) {
 
 /** Long description, links and screenshot as a dialog. */
 function ProjectModal({ proj, show, onClose }) {
+  // A project whose only link is its repo gets one "View Code" button instead of "View Project".
+  const codeOnly = (!proj.codeLink || proj.codeLink === proj.link) && /github\.com/.test(proj.link);
   return (
     <Modal className="project-modal" show={show} onHide={onClose} centered>
       <Modal.Header closeButton>
@@ -49,7 +51,7 @@ function ProjectModal({ proj, show, onClose }) {
         <p className="project-modal-description">{proj.longDescription}</p>
         <div className="project-modal-actions">
           <Button as={SmartLink} href={proj.link} variant="outline-accent">
-            View Project
+            {codeOnly ? "View Code" : "View Project"}
           </Button>
           {proj.codeLink && proj.codeLink !== proj.link ? (
             <Button as={SmartLink} href={proj.codeLink} variant="outline-accent">
